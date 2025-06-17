@@ -33,10 +33,10 @@ const ContactCTA = () => {
             FROM CONCEPT TO COMPLETE CHAOS,
           </p>
           <p className="mb-4 text-doa-neon uppercase tracking-wide">
-            WE'RE HERE TO AMPLIFY YOUR VISION
+            WE&apos;RE HERE TO AMPLIFY YOUR VISION
           </p>
           <p className="text-doa-accent uppercase tracking-wide">
-            LET'S TALK ABOUT WHAT WE'RE DESTROYING
+            LET&apos;S TALK ABOUT WHAT WE&apos;RE DESTROYING
           </p>
         </div>
         
@@ -46,7 +46,7 @@ const ContactCTA = () => {
             href="#"
             className="punk-btn text-2xl font-['Fredoka_One'] hover:animate-shake transform hover:scale-110 transition-all duration-300"
           >
-            🔥 LET'S CAUSE CHAOS 🔥
+            🔥 LET&apos;S CAUSE CHAOS 🔥
           </Link>
           
           <Link
@@ -104,7 +104,7 @@ const ContactCTA = () => {
         
         {/* Subtitle */}
         <div className="mt-4 text-lg font-['Metal_Mania'] text-doa-accent uppercase tracking-wide">
-          PORTLAND'S MOST DANGEROUS SET BUILDERS
+          PORTLAND&apos;S MOST DANGEROUS SET BUILDERS
         </div>
       </div>
       
