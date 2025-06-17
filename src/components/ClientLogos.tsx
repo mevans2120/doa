@@ -23,7 +23,7 @@ const ClientLogos = () => {
           THE SCENE TRUSTS US
         </h2>
         <div className="text-xl font-['Metal_Mania'] text-doa-accent uppercase tracking-wide">
-          <span className="text-doa-neon">💀 PORTLAND'S UNDERGROUND 💀</span>
+          <span className="text-doa-neon">💀 PORTLAND&apos;S UNDERGROUND 💀</span>
         </div>
         <div className="mt-4 w-32 h-1 bg-gradient-to-r from-doa-pink to-doa-neon mx-auto"></div>
       </div>

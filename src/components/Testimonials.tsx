@@ -1,14 +1,14 @@
 const Testimonials = () => {
   const testimonials = [
     {
-      quote: "DOA doesn't just build sets - they create CHAOS that makes audiences lose their minds. These maniacs delivered our apocalyptic nightmare on time and under budget. PURE DESTRUCTION!",
+      quote: "DOA doesn&apos;t just build sets - they create CHAOS that makes audiences lose their minds. These maniacs delivered our apocalyptic nightmare on time and under budget. PURE DESTRUCTION!",
       author: "— RIOT PRODUCTIONS",
       subtitle: "HORROR FILM COLLECTIVE",
       rating: "★★★★★",
       color: "doa-pink"
     },
     {
-      quote: "These punks are the ONLY team in Portland that gets it. They don't just understand our vision - they AMPLIFY it into something beautiful and terrifying. Underground legends!",
+      quote: "These punks are the ONLY team in Portland that gets it. They don&apos;t just understand our vision - they AMPLIFY it into something beautiful and terrifying. Underground legends!",
       author: "— CHAOS CINEMA",
       subtitle: "INDEPENDENT FILM REBELS",
       rating: "★★★★★",
@@ -53,10 +53,10 @@ const Testimonials = () => {
             
             {/* Quote marks - punk style */}
             <div className={`text-6xl font-['Creepster'] text-${testimonial.color} opacity-30 absolute top-4 left-4 leading-none`}>
-              "
+              &quot;
             </div>
             <div className={`text-6xl font-['Creepster'] text-${testimonial.color} opacity-30 absolute bottom-4 right-4 leading-none rotate-180`}>
-              "
+              &quot;
             </div>
             
             {/* Review content */}
@@ -114,7 +114,7 @@ const Testimonials = () => {
           ⚡ READY TO JOIN THE TESTIMONIALS? ⚡
         </div>
         <div className="mt-4 text-lg font-['Metal_Mania'] text-doa-accent">
-          LET'S CREATE SOME BEAUTIFUL DESTRUCTION
+          LET&apos;S CREATE SOME BEAUTIFUL DESTRUCTION
         </div>
       </div>
       

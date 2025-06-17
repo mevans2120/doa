@@ -36,7 +36,7 @@ const Hero = () => {
           {/* Subheading with attitude */}
           <p className="text-3xl mb-10 font-['Metal_Mania'] text-doa-accent uppercase tracking-wide">
             <span className="block">FILM • TV • COMMERCIAL</span>
-            <span className="block text-doa-neon">SET DESTRUCTION & CONSTRUCTION</span>
+            <span className="block text-doa-neon">SET DESTRUCTION &amp; CONSTRUCTION</span>
             <span className="block text-doa-warning">NO COMPROMISE • NO LIMITS</span>
           </p>
           
@@ -46,7 +46,7 @@ const Hero = () => {
               href="#"
               className="punk-btn text-xl font-['Fredoka_One'] hover:animate-shake"
             >
-              🔥 LET'S DESTROY SOMETHING 🔥
+              🔥 LET&apos;S DESTROY SOMETHING 🔥
             </Link>
             
             <Link
@@ -59,7 +59,7 @@ const Hero = () => {
           
           {/* Punk rock tagline */}
           <div className="mt-8 text-doa-pink font-['Metal_Mania'] text-lg uppercase tracking-widest opacity-80">
-            <span className="animate-pulse">⚡ PORTLAND'S MOST DANGEROUS SET BUILDERS ⚡</span>
+            <span className="animate-pulse">⚡ PORTLAND&apos;S MOST DANGEROUS SET BUILDERS ⚡</span>
           </div>
         </div>
       </div>

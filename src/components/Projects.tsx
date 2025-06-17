@@ -44,7 +44,7 @@ const Projects = () => {
       {/* Section title */}
       <div className="relative z-10 text-center mb-20">
         <h2 className="text-6xl font-bold font-['Creepster'] neon-text uppercase tracking-wider mb-4">
-          CHAOS WE'VE CREATED
+          CHAOS WE&apos;VE CREATED
         </h2>
         <div className="text-2xl font-['Metal_Mania'] text-doa-accent uppercase tracking-wide">
           <span className="text-doa-neon">💀 RECENT DESTRUCTION 💀</span>
