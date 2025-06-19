@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'display': ['Keania One', 'sans-serif'],
+        'display': ['var(--font-keania-one)', 'Keania One', 'sans-serif'],
         'heading': ['Helvetica', 'Arial', 'sans-serif'],
         'body': ['Garamond', 'Times New Roman', 'serif'],
       },
