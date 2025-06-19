@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Keania+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Keania+One:wght@400&display=swap');
 @import "tailwindcss";
 
 :root {
@@ -26,7 +26,8 @@ body {
 
 /* Typography Classes */
 .display-font {
-  font-family: 'Keania One', sans-serif;
+  font-family: 'Keania One', 'Arial Black', 'Helvetica', sans-serif !important;
+  font-weight: 400 !important;
 }
 
 .heading-font {
