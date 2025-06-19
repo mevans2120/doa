@@ -168,20 +168,6 @@ const Projects = () => {
               </div>
             </div>
             
-            {/* Modal footer */}
-            <div className="p-6 border-t border-gray-200 bg-gray-50 rounded-b-lg">
-              <div className="flex justify-end space-x-3">
-                <button
-                  onClick={closeModal}
-                  className="px-4 py-2 text-gray-600 hover:text-gray-800 transition-colors duration-200"
-                >
-                  Close
-                </button>
-                <button className="px-6 py-2 bg-doa-gold text-black heading-font text-sm uppercase tracking-wide hover:bg-opacity-90 transition-all duration-300 rounded">
-                  View Full Project
-                </button>
-              </div>
-            </div>
           </div>
         </div>
       )}

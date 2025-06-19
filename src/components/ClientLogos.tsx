@@ -37,7 +37,7 @@ const ClientLogos = () => {
           Our Clients
         </h2>
         <div className="text-xl heading-font text-gray-600 mb-8">
-          Trusted Partners in Creative Excellence
+          Partnering Together in Creative Excellence
         </div>
         <div className="professional-divider max-w-md mx-auto"></div>
       </div>
