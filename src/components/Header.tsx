@@ -1,57 +1,54 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 const Header = () => {
   return (
-    <nav className="flex justify-between items-center px-10 py-5 bg-gradient-to-r from-black via-doa-light-gray to-black border-b-4 border-doa-pink torn-edge relative z-10">
-      {/* Grunge overlay */}
-      <div className="absolute inset-0 grunge-bg opacity-50"></div>
+    <nav className="flex justify-between items-center px-10 py-6 bg-white border-b border-gray-200 relative z-10">
+      {/* Logo */}
+      <div className="relative z-20 flex items-center">
+        <Image
+          src="/doa-logo.png"
+          alt="Department of Art"
+          width={60}
+          height={60}
+          className="mr-4"
+        />
       
-      {/* Logo with punk styling */}
-      <div className="relative z-20 w-48 h-12 bg-gradient-to-r from-doa-pink to-doa-accent text-black flex items-center justify-center font-bold jagged-border skull-icon">
-        <span className="font-['Creepster'] text-lg tracking-wider">💀 DOA 💀</span>
       </div>
       
-      {/* Navigation links with punk styling */}
+      {/* Navigation links */}
       <div className="flex gap-8 relative z-20">
         <Link
-          href="#"
-          className="py-3 px-2 border-b-3 border-transparent text-doa-pink font-bold font-['Metal_Mania'] text-lg uppercase tracking-wide hover:border-doa-neon hover:text-doa-neon hover:animate-pulse transition-all duration-300 hover:drop-shadow-[0_0_10px_rgba(0,255,65,0.8)] distressed"
-          data-text="PROJECTS"
+          href="#projects"
+          className="py-2 px-4 text-black heading-font text-sm uppercase tracking-wide hover:text-doa-gold transition-all duration-300 border-b-2 border-transparent hover:border-doa-gold"
         >
-          PROJECTS
+          Projects
         </Link>
         <Link
-          href="#"
-          className="py-3 px-2 border-b-3 border-transparent text-doa-pink font-bold font-['Metal_Mania'] text-lg uppercase tracking-wide hover:border-doa-neon hover:text-doa-neon hover:animate-pulse transition-all duration-300 hover:drop-shadow-[0_0_10px_rgba(0,255,65,0.8)] distressed"
-          data-text="DESTROY & BUILD"
+          href="#services"
+          className="py-2 px-4 text-black heading-font text-sm uppercase tracking-wide hover:text-doa-gold transition-all duration-300 border-b-2 border-transparent hover:border-doa-gold"
         >
-          DESTROY & BUILD
+          Services
         </Link>
         <Link
-          href="#"
-          className="py-3 px-2 border-b-3 border-transparent text-doa-pink font-bold font-['Metal_Mania'] text-lg uppercase tracking-wide hover:border-doa-neon hover:text-doa-neon hover:animate-pulse transition-all duration-300 hover:drop-shadow-[0_0_10px_rgba(0,255,65,0.8)] distressed"
-          data-text="THE SCENE"
+          href="#clients"
+          className="py-2 px-4 text-black heading-font text-sm uppercase tracking-wide hover:text-doa-gold transition-all duration-300 border-b-2 border-transparent hover:border-doa-gold"
         >
-          THE SCENE
+          Clients
         </Link>
         <Link
-          href="#"
-          className="py-3 px-2 border-b-3 border-transparent text-doa-pink font-bold font-['Metal_Mania'] text-lg uppercase tracking-wide hover:border-doa-neon hover:text-doa-neon hover:animate-pulse transition-all duration-300 hover:drop-shadow-[0_0_10px_rgba(0,255,65,0.8)] distressed"
-          data-text="ABOUT"
+          href="#about"
+          className="py-2 px-4 text-black heading-font text-sm uppercase tracking-wide hover:text-doa-gold transition-all duration-300 border-b-2 border-transparent hover:border-doa-gold"
         >
-          ABOUT
+          About
         </Link>
         <Link
-          href="#"
-          className="py-3 px-2 border-b-3 border-transparent text-doa-pink font-bold font-['Metal_Mania'] text-lg uppercase tracking-wide hover:border-doa-neon hover:text-doa-neon hover:animate-pulse transition-all duration-300 hover:drop-shadow-[0_0_10px_rgba(0,255,65,0.8)] distressed"
-          data-text="CONTACT"
+          href="#contact"
+          className="py-2 px-4 text-black heading-font text-sm uppercase tracking-wide hover:text-doa-gold transition-all duration-300 border-b-2 border-transparent hover:border-doa-gold"
         >
-          CONTACT
+          Contact
         </Link>
       </div>
-      
-      {/* Punk divider at bottom */}
-      <div className="absolute bottom-0 left-0 right-0 punk-divider"></div>
     </nav>
   )
 }

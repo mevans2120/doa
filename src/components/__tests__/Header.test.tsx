@@ -1,18 +1,18 @@
 import { render, screen } from '@testing-library/react'
-import Header from '../Header'
+import Header from '@/components/Header'
 
 describe('Header', () => {
   it('renders the DOA logo', () => {
     render(<Header />)
-    expect(screen.getByText('DOA LOGO')).toBeInTheDocument()
+    expect(screen.getByText('Department of Art')).toBeInTheDocument()
   })
 
   it('renders all navigation links', () => {
     render(<Header />)
     
     expect(screen.getByRole('link', { name: 'Projects' })).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: 'Capabilities' })).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: 'Partners' })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'Services' })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'Clients' })).toBeInTheDocument()
     expect(screen.getByRole('link', { name: 'About' })).toBeInTheDocument()
     expect(screen.getByRole('link', { name: 'Contact' })).toBeInTheDocument()
   })
@@ -23,7 +23,7 @@ describe('Header', () => {
     const nav = screen.getByRole('navigation')
     expect(nav).toBeInTheDocument()
     
-    const logo = screen.getByText('DOA LOGO')
+    const logo = screen.getByText('Department of Art')
     expect(logo).toBeInTheDocument()
   })
 

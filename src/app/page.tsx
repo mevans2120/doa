@@ -4,7 +4,7 @@ import Services from '@/components/Services'
 import Projects from '@/components/Projects'
 import ClientLogos from '@/components/ClientLogos'
 import Testimonials from '@/components/Testimonials'
-import ContactCTA from '@/components/ContactCTA'
+import Footer from '@/components/Footer'
 
 export default function Home() {
   return (
@@ -15,7 +15,7 @@ export default function Home() {
       <Projects />
       <ClientLogos />
       <Testimonials />
-      <ContactCTA />
+      <Footer />
     </div>
   )
 }

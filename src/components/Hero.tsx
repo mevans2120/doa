@@ -1,71 +1,58 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 const Hero = () => {
   return (
-    <section role="banner" className="relative h-[700px] bg-black flex items-center px-10 overflow-hidden">
-      {/* Chaotic background layers */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-doa-light-gray to-black"></div>
-      <div className="absolute inset-0 grunge-bg"></div>
-      <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black/80"></div>
+    <section role="banner" className="relative h-[700px] bg-white flex items-center px-10 overflow-hidden">
+      {/* Subtle background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-50"></div>
       
-      {/* Animated background elements */}
-      <div className="absolute top-10 left-10 w-20 h-20 border-4 border-doa-neon rotate-45 animate-spin opacity-20"></div>
-      <div className="absolute bottom-20 right-20 w-16 h-16 border-4 border-doa-warning rotate-12 animate-pulse opacity-30"></div>
-      <div className="absolute top-1/3 right-1/4 w-12 h-12 bg-doa-pink rotate-45 animate-bounce opacity-25"></div>
-      
-      {/* Massive skull watermark */}
-      <div className="absolute right-[-100px] top-1/2 transform -translate-y-1/2 w-80 h-96 z-10 text-doa-pink opacity-20 flex items-center justify-center">
-        <div className="text-9xl skull-icon filter drop-shadow-[0_0_30px_rgba(255,0,128,0.5)]">
-          💀
-        </div>
+      {/* Skull SVG as featured element */}
+      <div className="absolute right-10 top-1/2 transform -translate-y-1/2 w-96 h-[500px] z-10 opacity-20">
+        <Image
+          src="/skull.svg"
+          alt="Skull"
+          width={384}
+          height={500}
+          className="filter grayscale opacity-60"
+        />
       </div>
-      
-      {/* Glitch overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-doa-pink/5 to-transparent animate-pulse"></div>
       
       {/* Hero content */}
-      <div className="relative z-20 text-doa-pink max-w-3xl">
-        <div className="relative z-20">
-          {/* Main headline with punk styling */}
-          <h1 className="text-7xl font-bold mb-8 leading-tight font-['Creepster'] neon-text uppercase tracking-wider">
-            <span className="block distressed" data-text="DOA DESTROYS">DOA DESTROYS</span>
-            <span className="block text-doa-neon distressed" data-text="& REBUILDS">& REBUILDS</span>
-            <span className="block text-doa-warning distressed" data-text="YOUR VISION">YOUR VISION</span>
+      <div className="relative z-20 text-black max-w-4xl">
+        <div className="relative z-20 fade-in-up">
+          {/* Main headline */}
+          <h1 className="text-9xl font-normal mb-8 leading-tight display-font text-black">
+            <span className="block">Department of Art</span>
           </h1>
+     
           
-          {/* Subheading with attitude */}
-          <p className="text-3xl mb-10 font-['Metal_Mania'] text-doa-accent uppercase tracking-wide">
-            <span className="block">FILM • TV • COMMERCIAL</span>
-            <span className="block text-doa-neon">SET DESTRUCTION &amp; CONSTRUCTION</span>
-            <span className="block text-doa-warning">NO COMPROMISE • NO LIMITS</span>
-          </p>
+          {/* Professional description */}
+          <div className="mb-12 body-font text-lg text-gray-600 leading-relaxed max-w-2xl">
+            <p>
+              We bring creative visions to life through expert craftsmanship and innovative design.
+              From concept to completion, our team delivers exceptional set construction services
+              for the entertainment industry.
+            </p>
+          </div>
           
-          {/* Aggressive CTA button */}
+          {/* Professional CTA buttons */}
           <div className="flex gap-6">
             <Link
-              href="#"
-              className="punk-btn text-xl font-['Fredoka_One'] hover:animate-shake"
+              href="#contact"
+              className="professional-btn text-lg"
             >
-              🔥 LET&apos;S DESTROY SOMETHING 🔥
+              Get in Touch
             </Link>
             
-            <Link
-              href="#"
-              className="bg-transparent border-4 border-doa-neon text-doa-neon px-8 py-4 text-lg font-bold font-['Metal_Mania'] uppercase tracking-wider hover:bg-doa-neon hover:text-black hover:animate-pulse transition-all duration-300 jagged-border"
-            >
-              SEE THE CHAOS
-            </Link>
+   
           </div>
-          
-          {/* Punk rock tagline */}
-          <div className="mt-8 text-doa-pink font-['Metal_Mania'] text-lg uppercase tracking-widest opacity-80">
-            <span className="animate-pulse">⚡ PORTLAND&apos;S MOST DANGEROUS SET BUILDERS ⚡</span>
-          </div>
+    
         </div>
       </div>
       
-      {/* Bottom torn edge effect */}
-      <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-r from-doa-pink via-doa-neon to-doa-warning torn-edge"></div>
+      {/* Subtle bottom accent */}
+      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-doa-gold to-transparent"></div>
     </section>
   )
 }
