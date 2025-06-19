@@ -1,125 +1,82 @@
 const Testimonials = () => {
   const testimonials = [
     {
-      quote: "DOA doesn&apos;t just build sets - they create CHAOS that makes audiences lose their minds. These maniacs delivered our apocalyptic nightmare on time and under budget. PURE DESTRUCTION!",
-      author: "— RIOT PRODUCTIONS",
-      subtitle: "HORROR FILM COLLECTIVE",
-      rating: "★★★★★",
-      color: "doa-pink"
+      quote: "Department of Art delivered exceptional craftsmanship and creative vision for our feature film. Their attention to detail and professional approach made our production successful.",
+      author: "Dr Doom",
+      subtitle: "Producer, Cascade Films",
     },
     {
-      quote: "These punks are the ONLY team in Portland that gets it. They don&apos;t just understand our vision - they AMPLIFY it into something beautiful and terrifying. Underground legends!",
-      author: "— CHAOS CINEMA",
-      subtitle: "INDEPENDENT FILM REBELS",
-      rating: "★★★★★",
-      color: "doa-neon"
+      quote: "Working with DOA was a game-changer for our series. They understood our vision perfectly and brought it to life with remarkable skill. Highly recommended.",
+      author: "Michael Chen",
+      subtitle: "Director, Northwest Media",
+    },
+    {
+      quote: "The team at DOA exceeded our expectations with their innovative approach and technical expertise. They transformed our concept into a stunning visual experience that captivated our audience.",
+      author: "Sarah Rodriguez",
+      subtitle: "Creative Director, Stellar Productions",
+    },
+    {
+      quote: "DOA's collaborative spirit and artistic excellence made them the perfect partner for our project. Their ability to adapt and deliver under tight deadlines was truly impressive.",
+      author: "James Thompson",
+      subtitle: "Executive Producer, Horizon Studios",
     }
   ]
 
   return (
-    <section className="py-24 px-10 bg-black relative overflow-hidden">
-      {/* Grunge background */}
-      <div className="absolute inset-0 grunge-bg"></div>
-      <div className="absolute inset-0 bg-gradient-to-br from-doa-light-gray/10 via-transparent to-doa-light-gray/10"></div>
-      
-      {/* Scattered punk elements */}
-      <div className="absolute top-20 right-20 w-10 h-10 border-3 border-doa-pink rotate-45 animate-spin opacity-20"></div>
-      <div className="absolute bottom-32 left-16 w-6 h-6 bg-doa-neon rotate-12 animate-bounce opacity-30"></div>
-      <div className="absolute top-1/3 left-1/4 w-4 h-4 bg-doa-warning animate-pulse opacity-40"></div>
+    <section className="py-24 px-10 bg-white relative overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-50"></div>
       
       {/* Section title */}
-      <div className="relative z-10 text-center mb-20">
-        <h2 className="text-6xl font-bold font-['Creepster'] neon-text uppercase tracking-wider mb-4">
-          WHAT THE SCENE SAYS
+      <div className="relative z-10 text-center mb-20 fade-in-up">
+        <h2 className="text-5xl font-bold heading-font text-black mb-6">
+          Client Testimonials
         </h2>
-        <div className="text-2xl font-['Metal_Mania'] text-doa-accent uppercase tracking-wide">
-          <span className="text-doa-neon">💀 UNDERGROUND REVIEWS 💀</span>
+        <div className="text-xl heading-font text-gray-600 mb-8">
+          What Our Partners Say About Working With Us
         </div>
-        <div className="mt-6 w-40 h-1 bg-gradient-to-r from-doa-pink via-doa-neon to-doa-warning mx-auto"></div>
+        <div className="professional-divider max-w-md mx-auto"></div>
       </div>
       
-      {/* Testimonials as punk zine reviews */}
+      {/* Testimonials */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto relative z-10">
         {testimonials.map((testimonial, index) => (
           <div
             key={index}
-            className={`punk-card p-8 transform hover:scale-105 hover:rotate-1 transition-all duration-500 hover:shadow-[0_0_30px_rgba(255,0,128,0.5)] relative overflow-hidden group`}
+            className="professional-card p-8 rounded-lg relative overflow-hidden group"
           >
-            {/* Zine-style background */}
-            <div className="absolute inset-0 grunge-bg opacity-20"></div>
-            
-            {/* Torn paper effect at top */}
-            <div className={`absolute top-0 left-0 right-0 h-3 bg-${testimonial.color} torn-edge`}></div>
-            
-            {/* Quote marks - punk style */}
-            <div className={`text-6xl font-['Creepster'] text-${testimonial.color} opacity-30 absolute top-4 left-4 leading-none`}>
+            {/* Quote marks */}
+            <div className="text-4xl heading-font text-doa-gold opacity-30 absolute top-4 left-4 leading-none">
               &quot;
             </div>
-            <div className={`text-6xl font-['Creepster'] text-${testimonial.color} opacity-30 absolute bottom-4 right-4 leading-none rotate-180`}>
+            <div className="text-4xl heading-font text-doa-gold opacity-30 absolute bottom-4 right-4 leading-none rotate-180">
               &quot;
             </div>
             
             {/* Review content */}
             <div className="relative z-10 pt-8">
-              {/* Rating stars */}
-              <div className={`text-2xl text-${testimonial.color} mb-4 font-bold tracking-wider`}>
-                {testimonial.rating}
-              </div>
-              
               {/* Quote */}
-              <div className="text-lg font-['Metal_Mania'] text-doa-pink leading-relaxed mb-6 italic">
+              <div className="text-lg body-font text-gray-700 leading-relaxed mb-6 italic">
                 {testimonial.quote}
               </div>
               
               {/* Author info */}
-              <div className="border-t-2 border-doa-accent pt-4">
-                <div className={`font-['Fredoka_One'] text-${testimonial.color} text-xl uppercase tracking-wider mb-1 distressed`} data-text={testimonial.author}>
+              <div className="border-t border-doa-gold/20 pt-4">
+                <div className="heading-font text-black text-lg font-semibold mb-1">
                   {testimonial.author}
                 </div>
-                <div className="font-['Metal_Mania'] text-doa-accent text-sm uppercase tracking-wide">
+                <div className="heading-font text-doa-gold text-sm">
                   {testimonial.subtitle}
-                </div>
-              </div>
-              
-              {/* Punk decorative elements */}
-              <div className="flex justify-between items-center mt-6">
-                <div className="flex gap-1">
-                  <div className={`w-2 h-2 bg-${testimonial.color} rotate-45`}></div>
-                  <div className="w-2 h-2 bg-doa-pink rotate-45"></div>
-                  <div className={`w-2 h-2 bg-${testimonial.color} rotate-45`}></div>
-                </div>
-                <div className="text-xs font-['Metal_Mania'] text-doa-accent uppercase tracking-widest">
-                  VERIFIED CHAOS
                 </div>
               </div>
             </div>
             
-            {/* Corner rips and wear */}
-            <div className="absolute top-2 right-2 w-3 h-3 bg-black transform rotate-45"></div>
-            <div className="absolute bottom-2 left-2 w-2 h-2 bg-black transform rotate-45"></div>
-            
-            {/* Staple effects */}
-            <div className="absolute top-6 left-6 w-2 h-1 bg-gray-400"></div>
-            <div className="absolute top-6 right-6 w-2 h-1 bg-gray-400"></div>
-            
-            {/* Hover glow effect */}
-            <div className={`absolute inset-0 bg-gradient-to-br from-${testimonial.color}/20 via-transparent to-${testimonial.color}/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
+            {/* Top accent */}
+            <div className="absolute top-0 left-0 right-0 h-1 bg-doa-gold"></div>
           </div>
         ))}
       </div>
       
-      {/* Bottom section */}
-      <div className="relative z-10 text-center mt-20">
-        <div className="text-xl font-['Metal_Mania'] text-doa-pink uppercase tracking-widest animate-pulse">
-          ⚡ READY TO JOIN THE TESTIMONIALS? ⚡
-        </div>
-        <div className="mt-4 text-lg font-['Metal_Mania'] text-doa-accent">
-          LET&apos;S CREATE SOME BEAUTIFUL DESTRUCTION
-        </div>
-      </div>
-      
-      {/* Bottom torn edge */}
-      <div className="absolute bottom-0 left-0 right-0 h-6 bg-gradient-to-r from-doa-pink via-doa-neon to-doa-warning torn-edge"></div>
     </section>
   )
 }

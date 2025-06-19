@@ -1,39 +1,39 @@
 import { render, screen } from '@testing-library/react'
-import Hero from '../Hero'
+import Hero from '@/components/Hero'
 
 describe('Hero', () => {
   it('renders the main heading', () => {
     render(<Hero />)
-    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('DOA brings your projects to life')
+    const heading = screen.getByRole('heading', { level: 1 })
+    expect(heading).toHaveTextContent('Department')
+    expect(heading).toHaveTextContent('of Art')
   })
 
-  it('renders the subtitle', () => {
+  it('renders the call-to-action buttons', () => {
     render(<Hero />)
-    expect(screen.getByText('Film, TV and commercial set design, construction & facilitation')).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'Start Your Project' })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'View Our Work' })).toBeInTheDocument()
   })
 
-  it('renders the CTA button', () => {
+  it('has proper section role', () => {
     render(<Hero />)
-    expect(screen.getByRole('link', { name: 'Get in Touch' })).toBeInTheDocument()
+    expect(screen.getByRole('region')).toBeInTheDocument()
   })
 
-  it('has proper hero section structure', () => {
+  it('renders the tagline', () => {
     render(<Hero />)
-    
-    const heroSection = screen.getByRole('banner')
-    expect(heroSection).toBeInTheDocument()
-    expect(heroSection).toHaveClass('relative', 'h-[600px]')
+    expect(screen.getByText('Professional Set Construction & Design')).toBeInTheDocument()
   })
 
-  it('renders the watermark text', () => {
+  it('displays service categories', () => {
     render(<Hero />)
-    expect(screen.getByText(/SKULL LOGO WATERMARK/)).toBeInTheDocument()
+    expect(screen.getByText('Film • Television • Commercial Productions')).toBeInTheDocument()
+    expect(screen.getByText('Portland, Oregon')).toBeInTheDocument()
+    expect(screen.getByText('Crafting Extraordinary Environments Since 2010')).toBeInTheDocument()
   })
 
-  it('applies correct CTA button styling', () => {
+  it('renders the description', () => {
     render(<Hero />)
-    
-    const ctaButton = screen.getByRole('link', { name: 'Get in Touch' })
-    expect(ctaButton).toHaveClass('bg-doa-red', 'text-white')
+    expect(screen.getByText(/We bring creative visions to life/)).toBeInTheDocument()
   })
 })
