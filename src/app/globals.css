@@ -4,14 +4,6 @@
 :root {
   --background: #ffffff;
   --foreground: #000000;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: 'Helvetica', 'Arial', sans-serif;
-  --font-serif: 'Garamond', 'Times New Roman', serif;
-  --font-display: 'Keania One', sans-serif;
   
   /* Professional DOA Brand Colors */
   --color-doa-black: #000000;
@@ -30,6 +22,20 @@ body {
   overflow-x: hidden;
   position: relative;
   line-height: 1.6;
+}
+
+/* Typography Classes */
+.display-font {
+  font-family: 'Keania One', sans-serif;
+}
+
+.heading-font {
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  color: var(--color-doa-black);
+}
+
+.body-font {
+  font-family: 'Garamond', 'Times New Roman', serif;
 }
 
 /* Professional Button Styles - Gold only */
@@ -121,19 +127,6 @@ body {
   box-shadow: 0 8px 32px rgba(212, 175, 55, 0.2);
 }
 
-/* Typography Classes */
-.display-font {
-  font-family: 'Keania One', sans-serif;
-}
-
-.heading-font {
-  font-family: 'Helvetica', 'Arial', sans-serif;
-  color: var(--color-doa-black);
-}
-
-.body-font {
-  font-family: 'Garamond', 'Times New Roman', serif;
-}
 
 /* Subtle animations */
 @keyframes fadeInUp {
