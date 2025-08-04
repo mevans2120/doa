@@ -1,28 +1,30 @@
+import Image from 'next/image'
+
 const ClientLogos = () => {
   const clients = [
     {
-      name: "Northwest Studios",
-      type: "Film Production"
+      name: "Netflix",
+      logo: "/Netflix_2015_logo.svg"
     },
     {
-      name: "Cascade Media",
-      type: "Television Network"
+      name: "Microsoft",
+      logo: "/Microsoft_logo_(2012).svg"
     },
     {
-      name: "Portland Creative",
-      type: "Commercial Agency"
+      name: "Nike",
+      logo: "/Logo_NIKE.svg"
     },
     {
-      name: "Pacific Films",
-      type: "Independent Studio"
+      name: "Intel",
+      logo: "/Intel_logo_(2020,_light_blue).svg"
     },
     {
-      name: "Oregon Broadcasting",
-      type: "Media Company"
+      name: "Amazon Studios",
+      logo: "/Amazon_logo.svg"
     },
     {
-      name: "Creative Collective",
-      type: "Production House"
+      name: "Columbia Sportswear",
+      logo: "/Columbia_Sportswear_Co_logo.svg"
     }
   ]
 
@@ -43,25 +45,21 @@ const ClientLogos = () => {
       </div>
       
       {/* Client grid */}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 max-w-7xl mx-auto relative z-10">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 max-w-7xl mx-auto relative z-10">
         {clients.map((client, index) => (
           <div
             key={index}
             className="professional-card p-6 text-center transform transition-all duration-300 hover:scale-105 relative overflow-hidden group rounded-lg"
           >
-            {/* Client logo placeholder */}
-            <div className="w-full h-20 image-wireframe mb-4 rounded flex items-center justify-center">
-              <span className="text-xs">Logo</span>
-            </div>
-            
-            {/* Client name */}
-            <h3 className="text-sm heading-font text-white font-semibold mb-1">
-              {client.name}
-            </h3>
-            
-            {/* Client type */}
-            <div className="text-xs heading-font text-doa-gold">
-              {client.type}
+            {/* Client logo */}
+            <div className="w-full h-20 flex items-center justify-center relative">
+              <Image
+                src={client.logo}
+                alt={`${client.name} logo`}
+                width={140}
+                height={70}
+                className="object-contain filter brightness-0 invert opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+              />
             </div>
             
             {/* Top accent */}
