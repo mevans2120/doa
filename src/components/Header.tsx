@@ -3,15 +3,15 @@ import Image from 'next/image'
 
 const Header = () => {
   return (
-    <nav className="flex justify-between items-center px-10 py-6 bg-white border-b border-gray-200 relative z-10">
+    <nav className="flex justify-between items-center px-10 py-6 bg-[#252525] border-b border-gray-700 relative z-10">
       {/* Logo */}
       <div className="relative z-20 flex items-center">
         <Image
           src="/doa-logo.png"
           alt="Department of Art"
-          width={60}
-          height={60}
-          className="mr-4"
+          width={120}
+          height={120}
+          className="mr-4 brightness-0 invert"
         />
       
       </div>
@@ -20,31 +20,31 @@ const Header = () => {
       <div className="flex gap-8 relative z-20">
         <Link
           href="#projects"
-          className="py-2 px-4 text-black heading-font text-sm uppercase tracking-wide hover:text-doa-gold transition-all duration-300 border-b-2 border-transparent hover:border-doa-gold"
+          className="py-2 px-4 text-white heading-font text-sm uppercase tracking-wide hover:text-doa-gold transition-all duration-300 border-b-2 border-transparent hover:border-doa-gold"
         >
           Projects
         </Link>
         <Link
           href="#services"
-          className="py-2 px-4 text-black heading-font text-sm uppercase tracking-wide hover:text-doa-gold transition-all duration-300 border-b-2 border-transparent hover:border-doa-gold"
+          className="py-2 px-4 text-white heading-font text-sm uppercase tracking-wide hover:text-doa-gold transition-all duration-300 border-b-2 border-transparent hover:border-doa-gold"
         >
           Services
         </Link>
         <Link
           href="#clients"
-          className="py-2 px-4 text-black heading-font text-sm uppercase tracking-wide hover:text-doa-gold transition-all duration-300 border-b-2 border-transparent hover:border-doa-gold"
+          className="py-2 px-4 text-white heading-font text-sm uppercase tracking-wide hover:text-doa-gold transition-all duration-300 border-b-2 border-transparent hover:border-doa-gold"
         >
           Clients
         </Link>
         <Link
           href="#about"
-          className="py-2 px-4 text-black heading-font text-sm uppercase tracking-wide hover:text-doa-gold transition-all duration-300 border-b-2 border-transparent hover:border-doa-gold"
+          className="py-2 px-4 text-white heading-font text-sm uppercase tracking-wide hover:text-doa-gold transition-all duration-300 border-b-2 border-transparent hover:border-doa-gold"
         >
           About
         </Link>
         <Link
           href="#contact"
-          className="py-2 px-4 text-black heading-font text-sm uppercase tracking-wide hover:text-doa-gold transition-all duration-300 border-b-2 border-transparent hover:border-doa-gold"
+          className="py-2 px-4 text-white heading-font text-sm uppercase tracking-wide hover:text-doa-gold transition-all duration-300 border-b-2 border-transparent hover:border-doa-gold"
         >
           Contact
         </Link>
