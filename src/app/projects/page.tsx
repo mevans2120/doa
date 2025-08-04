@@ -293,7 +293,7 @@ const ProjectsPage = () => {
           {filteredProjects.map((project) => (
             <div
               key={project.id}
-              className="group cursor-pointer relative overflow-hidden rounded-lg bg-zinc-900"
+              className="group cursor-pointer relative overflow-hidden rounded-lg bg-zinc-900 border border-zinc-800 transition-all duration-300 hover:scale-105 hover:brightness-110 hover:border-gray-400 hover:shadow-[0_8px_32px_rgba(192,192,192,0.3)]"
               onClick={() => openModal(project)}
             >
               <div className="aspect-[4/3] relative overflow-hidden">
@@ -301,7 +301,7 @@ const ProjectsPage = () => {
                   src={project.imageUrl}
                   alt={project.title}
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>

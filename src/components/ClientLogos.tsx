@@ -49,7 +49,7 @@ const ClientLogos = () => {
         {clients.map((client, index) => (
           <div
             key={index}
-            className="professional-card p-6 text-center transform transition-all duration-300 hover:scale-105 relative overflow-hidden group rounded-lg"
+            className="professional-card p-6 text-center relative overflow-hidden rounded-lg"
           >
             {/* Client logo */}
             <div className="w-full h-20 flex items-center justify-center relative">
