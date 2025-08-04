@@ -4,15 +4,6 @@
 :root {
   --background: #252525;
   --foreground: #ffffff;
-  
-  /* Professional DOA Brand Colors */
-  --color-doa-black: #000000;
-  --color-doa-white: #ffffff;
-  --color-doa-light-gray: #333333;
-  --color-doa-gray: #999999;
-  --color-doa-gold: #d4af37;
-  --color-doa-gold-light: #f4e4a6;
-  --color-doa-gold-dark: #b8941f;
 }
 
 body {
@@ -32,76 +23,53 @@ body {
 
 .heading-font {
   font-family: 'Helvetica', 'Arial', sans-serif;
-  color: var(--color-doa-white);
+  @apply text-white;
 }
 
 .body-font {
   font-family: 'Garamond', 'Times New Roman', serif;
 }
 
-/* Professional Button Styles - Gold only */
+/* Professional Button Styles */
 .professional-btn {
-  background: var(--color-doa-gold);
-  color: var(--color-doa-white);
+  @apply text-white font-semibold uppercase tracking-wide px-6 py-3
+         transition-all duration-300 cursor-pointer no-underline inline-block;
   font-family: 'Helvetica', 'Arial', sans-serif;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  padding: 12px 24px;
-  border: none;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-block;
+  background-color: #c0c0c0;
 }
 
 .professional-btn:hover {
-  background: var(--color-doa-gold-dark);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+  @apply -translate-y-0.5;
+  background-color: #a0a0a0;
+  box-shadow: 0 4px 12px rgba(192, 192, 192, 0.3);
 }
 
 .professional-btn-outline {
-  background: transparent;
-  color: var(--color-doa-white);
-  border: 2px solid var(--color-doa-gold);
+  @apply bg-transparent text-white font-semibold
+         uppercase tracking-wide px-5 py-2.5 transition-all duration-300
+         cursor-pointer no-underline inline-block;
   font-family: 'Helvetica', 'Arial', sans-serif;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  padding: 10px 22px;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-block;
+  border: 2px solid #c0c0c0;
 }
 
 .professional-btn-outline:hover {
-  background: var(--color-doa-gold);
-  color: var(--color-doa-white);
-  transform: translateY(-2px);
+  @apply text-white -translate-y-0.5;
+  background-color: #c0c0c0;
 }
 
 /* Minimal View All CTA Style */
 .view-all-cta {
-  color: var(--color-doa-gold);
+  @apply font-medium uppercase tracking-wider text-sm no-underline
+         inline-flex items-center gap-2 transition-all duration-300
+         border-b border-transparent;
   font-family: 'Helvetica', 'Arial', sans-serif;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  font-size: 14px;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  transition: all 0.3s ease;
-  border-bottom: 1px solid transparent;
+  color: #c0c0c0;
 }
 
 .view-all-cta:hover {
-  color: var(--color-doa-gold-dark);
-  border-bottom-color: var(--color-doa-gold-dark);
-  transform: translateX(4px);
+  @apply translate-x-1;
+  color: #a0a0a0;
+  border-bottom-color: #a0a0a0;
 }
 
 .view-all-cta::after {
@@ -123,9 +91,9 @@ body {
 }
 
 .professional-card:hover {
-  border-color: var(--color-doa-gold);
-  transform: translateY(-4px);
-  box-shadow: 0 8px 32px rgba(212, 175, 55, 0.3);
+  @apply -translate-y-1;
+  border-color: #c0c0c0;
+  box-shadow: 0 8px 32px rgba(192, 192, 192, 0.3);
 }
 
 
@@ -147,9 +115,8 @@ body {
 
 /* Professional section divider */
 .professional-divider {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--color-doa-gold), transparent);
-  margin: 2rem 0;
+  @apply h-px my-8;
+  background: linear-gradient(90deg, transparent, #c0c0c0, transparent);
 }
 
 /* Image wireframe styles for projects */
@@ -171,15 +138,4 @@ body {
   background-position: 0 0, 10px 10px;
 }
 
-/* Tailwind custom utilities */
-.text-doa-gold {
-  color: var(--color-doa-gold);
-}
-
-.bg-doa-gold {
-  background-color: var(--color-doa-gold);
-}
-
-.border-doa-gold {
-  border-color: var(--color-doa-gold);
-}
+/* Additional utility classes can be removed as Tailwind handles these */
