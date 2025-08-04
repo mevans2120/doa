@@ -137,12 +137,12 @@ const Services = ({ limit }: ServicesProps = {}) => {
   ]
 
   return (
-    <section className="py-24 px-10 bg-[#252525] relative overflow-hidden" id="services" role="region">
+    <section className="pt-7 pb-24 px-10 bg-[#252525] relative overflow-hidden" id="services" role="region">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-800 via-[#252525] to-gray-800"></div>
       
       {/* Section title */}
-      <div className="relative z-10 text-center mb-20 fade-in-up">
+      <div className="relative z-10 text-center mb-8 fade-in-up">
         <h2 className="text-5xl font-bold text-white mb-6 display-font">
           Our Services
         </h2>
