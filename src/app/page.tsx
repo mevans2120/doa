@@ -13,7 +13,7 @@ export default function Home() {
       <Header />
       <Hero />
       <Projects />
-      <Services />
+      <Services limit={4} />
       <ClientLogos />
       <Testimonials />
       <AboutCTA />

@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
@@ -8,50 +9,50 @@ const ClientsPage = () => {
   const [activeTestimonial, setActiveTestimonial] = useState(0)
 
   const clientLogos = [
-    { name: 'Paramount Pictures', logo: '/client-paramount.png' },
-    { name: 'Warner Bros.', logo: '/client-warner.png' },
-    { name: 'Netflix', logo: '/client-netflix.png' },
-    { name: 'HBO', logo: '/client-hbo.png' },
-    { name: 'A24 Films', logo: '/client-a24.png' },
-    { name: 'Apple TV+', logo: '/client-apple.png' },
-    { name: 'Amazon Studios', logo: '/client-amazon.png' },
-    { name: 'Focus Features', logo: '/client-focus.png' },
-    { name: 'Discovery+', logo: '/client-discovery.png' },
-    { name: 'Hulu', logo: '/client-hulu.png' },
-    { name: 'Sony Pictures', logo: '/client-sony.png' },
-    { name: 'Universal', logo: '/client-universal.png' }
+    { name: 'Netflix', logo: '/Netflix_2015_logo.svg' },
+    { name: 'Amazon Studios', logo: '/Amazon_logo.svg' },
+    { name: 'Microsoft Studios', logo: '/Microsoft_logo_(2012).svg' },
+    { name: 'Meta Productions', logo: '/Meta_Platforms_Inc._logo.svg' },
+    { name: 'Nike Films', logo: '/Logo_NIKE.svg' },
+    { name: 'Adidas Media', logo: '/Adidas_Logo.svg' },
+    { name: 'Intel Studios', logo: '/Intel_logo_(2020,_light_blue).svg' },
+    { name: 'Columbia Pictures', logo: '/Columbia_Sportswear_Co_logo.svg' },
+    { name: 'Spotify Originals', logo: '/Black_Spotify_logo_with_text.svg' },
+    { name: 'Nintendo Pictures', logo: '/Nintendo_logo.svg' },
+    { name: 'Keen Productions', logo: '/keen-1.svg' },
+    { name: 'JELD-WEN Media', logo: '/JELD-WEN-logo.svg' }
   ]
 
   const clientProjects = [
     {
-      client: 'Paramount Pictures',
+      client: 'Netflix',
       projects: ['Echoes of Tomorrow', 'Quantum Paradox', 'The Last Frontier'],
       description: 'Long-standing partnership creating immersive sci-fi environments and period sets for major theatrical releases.'
     },
     {
-      client: 'Netflix',
+      client: 'Amazon Studios',
       projects: ['Portland Files', 'Midnight Society', 'The Architect'],
       description: 'Collaborated on multiple series, delivering versatile sets that support quick turnarounds and episodic production schedules.'
     },
     {
-      client: 'HBO',
-      projects: ['Corporate Shadows', 'Westworld Portland Unit', 'True Detective: Northwest'],
-      description: 'Premium production design for prestige television, focusing on cinematic quality and intricate detail work.'
+      client: 'Microsoft Studios',
+      projects: ['Corporate Shadows', 'Halo Portland Unit', 'True Detective: Northwest'],
+      description: 'Premium production design for prestige television and gaming content, focusing on cinematic quality and intricate detail work.'
     },
     {
-      client: 'A24 Films',
-      projects: ['The Last Station', 'Moonrise', 'Everything Everywhere All at Once - Portland Unit'],
-      description: 'Artistic collaboration on visually distinctive independent films, pushing creative boundaries with innovative design solutions.'
+      client: 'Nike Films',
+      projects: ['The Last Station', 'Just Do It: The Documentary', 'Athletes Unfiltered'],
+      description: 'Artistic collaboration on sports documentaries and commercials, pushing creative boundaries with innovative design solutions.'
     },
     {
-      client: 'Apple TV+',
-      projects: ['The Morning Show - Portland Unit', 'See - Forest Sequences', 'Foundation - Earth Scenes'],
-      description: 'High-concept production design for streaming content, integrating cutting-edge technology with practical effects.'
+      client: 'Intel Studios',
+      projects: ['Tech Tomorrow', 'Processor Wars', 'The Silicon Story'],
+      description: 'High-concept production design for technology documentaries, integrating cutting-edge visuals with practical effects.'
     },
     {
-      client: 'Warner Bros.',
-      projects: ['Neon Nights', 'Gotham City Chronicles', 'Blade Runner 2099'],
-      description: 'Large-scale builds for blockbuster productions, specializing in urban environments and futuristic cityscapes.'
+      client: 'Columbia Pictures',
+      projects: ['Outdoor Adventures', 'Mountain Chronicles', 'Pacific Trail'],
+      description: 'Large-scale outdoor environment builds for adventure films, specializing in natural landscapes and wilderness sets.'
     }
   ]
 
@@ -59,7 +60,7 @@ const ClientsPage = () => {
     {
       quote: "DOA's attention to detail and creative problem-solving transformed our vision into reality. Their team built a three-story cyberpunk marketplace that exceeded our wildest expectations.",
       author: "Sarah Chen",
-      title: "Production Designer, Paramount Pictures",
+      title: "Production Designer, Netflix",
       project: "Echoes of Tomorrow"
     },
     {
@@ -109,17 +110,21 @@ const ClientsPage = () => {
 
         {/* Client Logos */}
         <section className="mb-20">
-          <h2 className="text-3xl font-semibold mb-10 text-center display-font">Trusted By Industry Leaders</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {clientLogos.map((client) => (
               <div
                 key={client.name}
                 className="bg-zinc-900 rounded-lg p-8 flex items-center justify-center hover:bg-zinc-800 transition-colors duration-300"
               >
-                <div className="text-gray-400 text-center">
-                  <div className="h-16 flex items-center justify-center mb-2">
-                    {/* Placeholder for logo */}
-                    <span className="text-sm font-medium">{client.name}</span>
+                <div className="text-gray-400 text-center w-full">
+                  <div className="h-16 flex items-center justify-center mb-2 relative">
+                    <Image
+                      src={client.logo}
+                      alt={`${client.name} logo`}
+                      width={140}
+                      height={60}
+                      className="object-contain filter brightness-0 invert opacity-70 hover:opacity-100 transition-opacity duration-300"
+                    />
                   </div>
                 </div>
               </div>
@@ -129,7 +134,7 @@ const ClientsPage = () => {
 
         {/* Client Projects */}
         <section className="mb-20">
-          <h2 className="text-3xl font-semibold mb-10 text-center display-font">Featured Collaborations</h2>
+          <h2 className="text-3xl font-semibold mb-10 text-center display-font">Featured Collaborators</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {clientProjects.map((client, index) => (
               <div

@@ -33,7 +33,7 @@ const Testimonials = () => {
           Client Testimonials
         </h2>
         <div className="text-xl heading-font text-gray-300 mb-8">
-          What Our Partners Say About Working With Us
+          What its like to work with us
         </div>
         <div className="professional-divider max-w-md mx-auto"></div>
       </div>
