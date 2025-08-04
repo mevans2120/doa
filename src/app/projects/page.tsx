@@ -266,11 +266,8 @@ const ProjectsPage = () => {
   return (
     <div className="min-h-screen">
       <Header />
-      <main className="relative min-h-screen text-white">
-        {/* Background gradient */}
-        <div className="fixed inset-0 bg-gradient-to-br from-gray-800 via-[#252525] to-gray-800 -z-10"></div>
-        
-        <div className="relative z-10 py-20">
+      <main className="min-h-screen text-white bg-gradient-to-br from-gray-800 via-[#252525] to-gray-800">
+        <div className="py-20">
           <div className="max-w-7xl mx-auto px-8">
         <h1 className="text-5xl font-bold mb-12 text-center display-font">Our Work</h1>
         

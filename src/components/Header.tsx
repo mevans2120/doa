@@ -27,12 +27,7 @@ const Header = () => {
         
         {/* Desktop Navigation links */}
         <div className="hidden md:flex gap-8 relative z-20">
-          <Link
-            href="/"
-            className="py-2 px-4 text-white heading-font text-sm uppercase tracking-wide hover:text-doa-gold transition-all duration-300 border-b-2 border-transparent hover:border-doa-gold"
-          >
-            Home
-          </Link>
+          
           <Link
             href="/projects"
             className="py-2 px-4 text-white heading-font text-sm uppercase tracking-wide hover:text-doa-gold transition-all duration-300 border-b-2 border-transparent hover:border-doa-gold"

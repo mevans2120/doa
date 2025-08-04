@@ -23,7 +23,7 @@ const Footer = () => {
               Professional excellence in film & television set design, commercial productions, and custom prop building.
             </p>
             <div className="text-white text-sm uppercase tracking-widest" style={{ color: '#ffffff', fontFamily: 'Helvetica, Arial, sans-serif' }}>
-              Tagline here • Maybe?
+              Build • Destroy
             </div>
           </div>
           
