@@ -3,12 +3,18 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { usePathname } from 'next/navigation'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const pathname = usePathname()
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
+  }
+
+  const isActive = (path: string) => {
+    return pathname === path
   }
 
   return (
@@ -30,31 +36,41 @@ const Header = () => {
           
           <Link
             href="/projects"
-            className="py-2 px-4 text-white heading-font text-sm uppercase tracking-wide hover:text-doa-gold transition-all duration-300 border-b-2 border-transparent hover:border-doa-gold"
+            className={`py-2 px-4 text-white heading-font text-sm uppercase tracking-wide transition-all duration-300 ${
+              isActive('/projects') ? '[text-shadow:_0_0_25px_rgba(255,255,255,1)]' : 'hover:[text-shadow:_0_0_25px_rgba(255,255,255,1)]'
+            }`}
           >
             Projects
           </Link>
           <Link
             href="/services"
-            className="py-2 px-4 text-white heading-font text-sm uppercase tracking-wide hover:text-doa-gold transition-all duration-300 border-b-2 border-transparent hover:border-doa-gold"
+            className={`py-2 px-4 text-white heading-font text-sm uppercase tracking-wide transition-all duration-300 ${
+              isActive('/services') ? '[text-shadow:_0_0_25px_rgba(255,255,255,1)]' : 'hover:[text-shadow:_0_0_25px_rgba(255,255,255,1)]'
+            }`}
           >
             Services
           </Link>
           <Link
             href="/clients"
-            className="py-2 px-4 text-white heading-font text-sm uppercase tracking-wide hover:text-doa-gold transition-all duration-300 border-b-2 border-transparent hover:border-doa-gold"
+            className={`py-2 px-4 text-white heading-font text-sm uppercase tracking-wide transition-all duration-300 ${
+              isActive('/clients') ? '[text-shadow:_0_0_25px_rgba(255,255,255,1)]' : 'hover:[text-shadow:_0_0_25px_rgba(255,255,255,1)]'
+            }`}
           >
             Clients
           </Link>
           <Link
             href="/about"
-            className="py-2 px-4 text-white heading-font text-sm uppercase tracking-wide hover:text-doa-gold transition-all duration-300 border-b-2 border-transparent hover:border-doa-gold"
+            className={`py-2 px-4 text-white heading-font text-sm uppercase tracking-wide transition-all duration-300 ${
+              isActive('/about') ? '[text-shadow:_0_0_25px_rgba(255,255,255,1)]' : 'hover:[text-shadow:_0_0_25px_rgba(255,255,255,1)]'
+            }`}
           >
             About
           </Link>
           <Link
             href="/contact"
-            className="py-2 px-4 text-white heading-font text-sm uppercase tracking-wide hover:text-doa-gold transition-all duration-300 border-b-2 border-transparent hover:border-doa-gold"
+            className={`py-2 px-4 text-white heading-font text-sm uppercase tracking-wide transition-all duration-300 ${
+              isActive('/contact') ? '[text-shadow:_0_0_25px_rgba(255,255,255,1)]' : 'hover:[text-shadow:_0_0_25px_rgba(255,255,255,1)]'
+            }`}
           >
             Contact
           </Link>
@@ -78,42 +94,54 @@ const Header = () => {
           <Link
             href="/"
             onClick={() => setIsMenuOpen(false)}
-            className="py-4 px-4 text-white heading-font text-lg uppercase tracking-wide hover:text-doa-gold transition-colors"
+            className={`py-4 px-6 text-white heading-font text-lg uppercase tracking-wide transition-all duration-300 ${
+              isActive('/') ? '[text-shadow:_0_0_25px_rgba(255,255,255,1)]' : 'hover:[text-shadow:_0_0_25px_rgba(255,255,255,1)]'
+            }`}
           >
             Home
           </Link>
           <Link
             href="/projects"
             onClick={() => setIsMenuOpen(false)}
-            className="py-4 px-4 text-white heading-font text-lg uppercase tracking-wide hover:text-doa-gold transition-colors"
+            className={`py-4 px-6 text-white heading-font text-lg uppercase tracking-wide transition-all duration-300 ${
+              isActive('/projects') ? '[text-shadow:_0_0_25px_rgba(255,255,255,1)]' : 'hover:[text-shadow:_0_0_25px_rgba(255,255,255,1)]'
+            }`}
           >
             Projects
           </Link>
           <Link
             href="/services"
             onClick={() => setIsMenuOpen(false)}
-            className="py-4 px-4 text-white heading-font text-lg uppercase tracking-wide hover:text-doa-gold transition-colors"
+            className={`py-4 px-6 text-white heading-font text-lg uppercase tracking-wide transition-all duration-300 ${
+              isActive('/services') ? '[text-shadow:_0_0_25px_rgba(255,255,255,1)]' : 'hover:[text-shadow:_0_0_25px_rgba(255,255,255,1)]'
+            }`}
           >
             Services
           </Link>
           <Link
             href="/clients"
             onClick={() => setIsMenuOpen(false)}
-            className="py-4 px-4 text-white heading-font text-lg uppercase tracking-wide hover:text-doa-gold transition-colors"
+            className={`py-4 px-6 text-white heading-font text-lg uppercase tracking-wide transition-all duration-300 ${
+              isActive('/clients') ? '[text-shadow:_0_0_25px_rgba(255,255,255,1)]' : 'hover:[text-shadow:_0_0_25px_rgba(255,255,255,1)]'
+            }`}
           >
             Clients
           </Link>
           <Link
             href="/about"
             onClick={() => setIsMenuOpen(false)}
-            className="py-4 px-4 text-white heading-font text-lg uppercase tracking-wide hover:text-doa-gold transition-colors"
+            className={`py-4 px-6 text-white heading-font text-lg uppercase tracking-wide transition-all duration-300 ${
+              isActive('/about') ? '[text-shadow:_0_0_25px_rgba(255,255,255,1)]' : 'hover:[text-shadow:_0_0_25px_rgba(255,255,255,1)]'
+            }`}
           >
             About
           </Link>
           <Link
             href="/contact"
             onClick={() => setIsMenuOpen(false)}
-            className="py-4 px-4 text-white heading-font text-lg uppercase tracking-wide hover:text-doa-gold transition-colors"
+            className={`py-4 px-6 text-white heading-font text-lg uppercase tracking-wide transition-all duration-300 ${
+              isActive('/contact') ? '[text-shadow:_0_0_25px_rgba(255,255,255,1)]' : 'hover:[text-shadow:_0_0_25px_rgba(255,255,255,1)]'
+            }`}
           >
             Contact
           </Link>
