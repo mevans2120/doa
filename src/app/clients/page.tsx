@@ -106,11 +106,11 @@ const ClientsPage = () => {
         
         <div className="relative z-10 py-20">
           <div className="max-w-7xl mx-auto px-8">
-        <h1 className="text-5xl font-bold mb-16 text-center">Our Clients</h1>
+        <h1 className="text-5xl font-bold mb-16 text-center display-font">Our Clients</h1>
 
         {/* Client Logos */}
         <section className="mb-20">
-          <h2 className="text-3xl font-semibold mb-10 text-center">Trusted By Industry Leaders</h2>
+          <h2 className="text-3xl font-semibold mb-10 text-center display-font">Trusted By Industry Leaders</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {clientLogos.map((client) => (
               <div
@@ -130,7 +130,7 @@ const ClientsPage = () => {
 
         {/* Client Projects */}
         <section className="mb-20">
-          <h2 className="text-3xl font-semibold mb-10 text-center">Featured Collaborations</h2>
+          <h2 className="text-3xl font-semibold mb-10 text-center display-font">Featured Collaborations</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {clientProjects.map((client, index) => (
               <div
@@ -154,7 +154,7 @@ const ClientsPage = () => {
 
         {/* Testimonials */}
         <section>
-          <h2 className="text-3xl font-semibold mb-10 text-center">What Our Clients Say</h2>
+          <h2 className="text-3xl font-semibold mb-10 text-center display-font">What Our Clients Say</h2>
           <div className="relative max-w-4xl mx-auto">
             <div className="bg-zinc-900 rounded-lg p-12">
               <svg className="w-12 h-12 text-gray-600 mb-6" fill="currentColor" viewBox="0 0 24 24">

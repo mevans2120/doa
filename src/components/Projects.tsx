@@ -260,7 +260,7 @@ const Projects = () => {
   return (
     <section id="projects" className="min-h-screen bg-doa-black text-white py-20">
       <div className="max-w-7xl mx-auto px-8">
-        <h2 className="text-5xl font-bold mb-12 text-center">Featured Projects</h2>
+        <h2 className="text-5xl font-bold mb-12 text-center display-font">Featured Projects</h2>
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -290,10 +290,7 @@ const Projects = () => {
 
         {/* View All Projects Button */}
         <div className="text-center mt-12">
-          <a
-            href="/projects"
-            className="inline-block bg-white text-black px-8 py-4 rounded-full font-semibold hover:bg-gray-200 transition-colors duration-300"
-          >
+          <a href="/projects" className="view-all-cta">
             View All Projects
           </a>
         </div>

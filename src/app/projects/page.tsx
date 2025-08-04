@@ -272,7 +272,7 @@ const ProjectsPage = () => {
         
         <div className="relative z-10 py-20">
           <div className="max-w-7xl mx-auto px-8">
-        <h1 className="text-5xl font-bold mb-12 text-center">Our Work</h1>
+        <h1 className="text-5xl font-bold mb-12 text-center display-font">Our Work</h1>
         
         {/* Category Filter */}
         <div className="flex justify-center gap-4 mb-12 flex-wrap">

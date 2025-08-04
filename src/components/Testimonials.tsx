@@ -29,7 +29,7 @@ const Testimonials = () => {
       
       {/* Section title */}
       <div className="relative z-10 text-center mb-20 fade-in-up">
-        <h2 className="text-5xl font-bold heading-font text-white mb-6">
+        <h2 className="text-5xl font-bold text-white mb-6 display-font">
           Client Testimonials
         </h2>
         <div className="text-xl heading-font text-gray-300 mb-8">

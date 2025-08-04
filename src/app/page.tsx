@@ -4,6 +4,7 @@ import Services from '@/components/Services'
 import Projects from '@/components/Projects'
 import ClientLogos from '@/components/ClientLogos'
 import Testimonials from '@/components/Testimonials'
+import AboutCTA from '@/components/AboutCTA'
 import Footer from '@/components/Footer'
 
 export default function Home() {
@@ -11,10 +12,11 @@ export default function Home() {
     <div className="min-h-screen">
       <Header />
       <Hero />
-      <Services />
       <Projects />
+      <Services />
       <ClientLogos />
       <Testimonials />
+      <AboutCTA />
       <Footer />
     </div>
   )
