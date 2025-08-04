@@ -27,16 +27,16 @@ const ClientLogos = () => {
   ]
 
   return (
-    <section className="py-24 px-10 bg-gray-50 relative overflow-hidden" id="clients">
+    <section className="py-24 px-10 bg-[#252525] relative overflow-hidden" id="clients">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white via-gray-50 to-white"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-800 via-[#252525] to-gray-800"></div>
       
       {/* Section title */}
       <div className="relative z-10 text-center mb-20 fade-in-up">
-        <h2 className="text-5xl font-bold heading-font text-black mb-6">
+        <h2 className="text-5xl font-bold heading-font text-white mb-6">
           Our Clients
         </h2>
-        <div className="text-xl heading-font text-gray-600 mb-8">
+        <div className="text-xl heading-font text-gray-300 mb-8">
           Partnering Together in Creative Excellence
         </div>
         <div className="professional-divider max-w-md mx-auto"></div>
@@ -55,7 +55,7 @@ const ClientLogos = () => {
             </div>
             
             {/* Client name */}
-            <h3 className="text-sm heading-font text-black font-semibold mb-1">
+            <h3 className="text-sm heading-font text-white font-semibold mb-1">
               {client.name}
             </h3>
             

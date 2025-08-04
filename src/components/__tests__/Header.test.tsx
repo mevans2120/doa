@@ -4,7 +4,7 @@ import Header from '@/components/Header'
 describe('Header', () => {
   it('renders the DOA logo', () => {
     render(<Header />)
-    expect(screen.getByText('Department of Art')).toBeInTheDocument()
+    expect(screen.getByAltText('Department of Art')).toBeInTheDocument()
   })
 
   it('renders all navigation links', () => {
@@ -23,7 +23,7 @@ describe('Header', () => {
     const nav = screen.getByRole('navigation')
     expect(nav).toBeInTheDocument()
     
-    const logo = screen.getByText('Department of Art')
+    const logo = screen.getByAltText('Department of Art')
     expect(logo).toBeInTheDocument()
   })
 

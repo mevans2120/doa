@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 const Header = () => {
   return (
-    <nav className="flex justify-between items-center px-10 py-6 bg-[#252525] border-b border-gray-700 relative z-10">
+    <nav className="flex justify-between items-center px-10 py-6 bg-black border-b border-gray-800 relative z-10">
       {/* Logo */}
       <div className="relative z-20 flex items-center">
         <Image
@@ -19,31 +19,37 @@ const Header = () => {
       {/* Navigation links */}
       <div className="flex gap-8 relative z-20">
         <Link
-          href="#projects"
+          href="/"
+          className="py-2 px-4 text-white heading-font text-sm uppercase tracking-wide hover:text-doa-gold transition-all duration-300 border-b-2 border-transparent hover:border-doa-gold"
+        >
+          Home
+        </Link>
+        <Link
+          href="/projects"
           className="py-2 px-4 text-white heading-font text-sm uppercase tracking-wide hover:text-doa-gold transition-all duration-300 border-b-2 border-transparent hover:border-doa-gold"
         >
           Projects
         </Link>
         <Link
-          href="#services"
+          href="/services"
           className="py-2 px-4 text-white heading-font text-sm uppercase tracking-wide hover:text-doa-gold transition-all duration-300 border-b-2 border-transparent hover:border-doa-gold"
         >
           Services
         </Link>
         <Link
-          href="#clients"
+          href="/clients"
           className="py-2 px-4 text-white heading-font text-sm uppercase tracking-wide hover:text-doa-gold transition-all duration-300 border-b-2 border-transparent hover:border-doa-gold"
         >
           Clients
         </Link>
         <Link
-          href="#about"
+          href="/about"
           className="py-2 px-4 text-white heading-font text-sm uppercase tracking-wide hover:text-doa-gold transition-all duration-300 border-b-2 border-transparent hover:border-doa-gold"
         >
           About
         </Link>
         <Link
-          href="#contact"
+          href="/contact"
           className="py-2 px-4 text-white heading-font text-sm uppercase tracking-wide hover:text-doa-gold transition-all duration-300 border-b-2 border-transparent hover:border-doa-gold"
         >
           Contact
