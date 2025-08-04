@@ -2,14 +2,14 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #000000;
+  --background: #252525;
+  --foreground: #ffffff;
   
   /* Professional DOA Brand Colors */
   --color-doa-black: #000000;
   --color-doa-white: #ffffff;
-  --color-doa-light-gray: #f5f5f5;
-  --color-doa-gray: #666666;
+  --color-doa-light-gray: #333333;
+  --color-doa-gray: #999999;
   --color-doa-gold: #d4af37;
   --color-doa-gold-light: #f4e4a6;
   --color-doa-gold-dark: #b8941f;
@@ -32,7 +32,7 @@ body {
 
 .heading-font {
   font-family: 'Helvetica', 'Arial', sans-serif;
-  color: var(--color-doa-black);
+  color: var(--color-doa-white);
 }
 
 .body-font {
@@ -42,7 +42,7 @@ body {
 /* Professional Button Styles - Gold only */
 .professional-btn {
   background: var(--color-doa-gold);
-  color: var(--color-doa-black);
+  color: var(--color-doa-white);
   font-family: 'Helvetica', 'Arial', sans-serif;
   font-weight: 600;
   text-transform: uppercase;
@@ -63,7 +63,7 @@ body {
 
 .professional-btn-outline {
   background: transparent;
-  color: var(--color-doa-gold);
+  color: var(--color-doa-white);
   border: 2px solid var(--color-doa-gold);
   font-family: 'Helvetica', 'Arial', sans-serif;
   font-weight: 600;
@@ -78,7 +78,7 @@ body {
 
 .professional-btn-outline:hover {
   background: var(--color-doa-gold);
-  color: var(--color-doa-black);
+  color: var(--color-doa-white);
   transform: translateY(-2px);
 }
 
@@ -113,19 +113,19 @@ body {
   transform: translateX(2px);
 }
 
-/* Professional Card Styles - Light mode */
+/* Professional Card Styles - Dark mode */
 .professional-card {
-  background: rgba(255, 255, 255, 0.95);
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(40, 40, 40, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .professional-card:hover {
   border-color: var(--color-doa-gold);
   transform: translateY(-4px);
-  box-shadow: 0 8px 32px rgba(212, 175, 55, 0.2);
+  box-shadow: 0 8px 32px rgba(212, 175, 55, 0.3);
 }
 
 
@@ -154,19 +154,19 @@ body {
 
 /* Image wireframe styles for projects */
 .image-wireframe {
-  background: #f8f9fa;
-  border: 2px dashed #dee2e6;
+  background: #1a1a1a;
+  border: 2px dashed #444;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #6c757d;
+  color: #888;
   font-family: 'Helvetica', 'Arial', sans-serif;
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  background-image: 
-    linear-gradient(45deg, transparent 40%, rgba(0,0,0,0.05) 40%, rgba(0,0,0,0.05) 60%, transparent 60%),
-    linear-gradient(-45deg, transparent 40%, rgba(0,0,0,0.05) 40%, rgba(0,0,0,0.05) 60%, transparent 60%);
+  background-image:
+    linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.05) 40%, rgba(255,255,255,0.05) 60%, transparent 60%),
+    linear-gradient(-45deg, transparent 40%, rgba(255,255,255,0.05) 40%, rgba(255,255,255,0.05) 60%, transparent 60%);
   background-size: 20px 20px;
   background-position: 0 0, 10px 10px;
 }
