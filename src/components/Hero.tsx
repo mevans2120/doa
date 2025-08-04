@@ -23,7 +23,7 @@ const Hero = () => {
       <div className="relative z-20 text-white max-w-4xl">
         <div className="relative z-20 fade-in-up">
           {/* Main headline */}
-          <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-normal mb-4 md:mb-8 leading-tight display-font text-white">
+          <h1 className="text-7xl sm:text-7xl md:text-8xl lg:text-9xl font-normal mb-4 md:mb-8 leading-tight display-font text-white">
             <span className="block">Department of Art</span>
           </h1>
      
