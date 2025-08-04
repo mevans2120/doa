@@ -106,7 +106,7 @@ const ServicesPage = () => {
         <div className="relative z-10 py-20">
           <div className="max-w-7xl mx-auto px-8">
         <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold mb-6">Our Services</h1>
+          <h1 className="text-5xl font-bold mb-6 display-font">Our Services</h1>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
             From initial concept to final construction, DOA provides comprehensive production design services 
             for film, television, commercials, and live events.

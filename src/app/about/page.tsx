@@ -53,7 +53,7 @@ const AboutPage = () => {
           <div className="max-w-7xl mx-auto px-8">
         {/* Hero Section */}
         <section className="text-center mb-20">
-          <h1 className="text-5xl font-bold mb-6">About DOA</h1>
+          <h1 className="text-5xl font-bold mb-6 display-font">About DOA</h1>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
             Department of Art Productions is Portland's premier production design company, 
             transforming creative visions into cinematic reality since 2008.
@@ -63,7 +63,7 @@ const AboutPage = () => {
         {/* Company Overview */}
         <section className="mb-20 grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-3xl font-semibold mb-6">Building Worlds, Telling Stories</h2>
+            <h2 className="text-3xl font-semibold mb-6 display-font">Building Worlds, Telling Stories</h2>
             <p className="text-gray-300 mb-4 leading-relaxed">
               Founded in the heart of Portland's creative district, DOA has grown from a small 
               art department collective to a full-service production design powerhouse. We've had 
@@ -112,7 +112,7 @@ const AboutPage = () => {
 
         {/* Team Section */}
         <section className="mb-20">
-          <h2 className="text-3xl font-semibold mb-10 text-center">Leadership Team</h2>
+          <h2 className="text-3xl font-semibold mb-10 text-center display-font">Leadership Team</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {teamMembers.map((member) => (
               <div key={member.name} className="text-center">
@@ -131,7 +131,7 @@ const AboutPage = () => {
 
         {/* Capabilities */}
         <section className="mb-20">
-          <h2 className="text-3xl font-semibold mb-10 text-center">Our Capabilities</h2>
+          <h2 className="text-3xl font-semibold mb-10 text-center display-font">Our Capabilities</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {capabilities.map((capability, index) => (
               <div
@@ -146,7 +146,7 @@ const AboutPage = () => {
 
         {/* Values */}
         <section className="text-center">
-          <h2 className="text-3xl font-semibold mb-10">Our Values</h2>
+          <h2 className="text-3xl font-semibold mb-10 display-font">Our Values</h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
               <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-zinc-800 flex items-center justify-center">
