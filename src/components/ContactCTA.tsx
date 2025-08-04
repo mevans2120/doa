@@ -13,7 +13,7 @@ const ContactCTA = () => {
         
         {/* Subheading */}
         <p className="text-xl heading-font text-gray-300 mb-12 leading-relaxed">
-          Let's discuss your vision and bring it to life with expert craftsmanship and creative excellence.
+          Let&apos;s discuss your vision and bring it to life with expert craftsmanship and creative excellence.
         </p>
         
         {/* Contact information */}

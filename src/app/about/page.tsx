@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
@@ -55,7 +54,7 @@ const AboutPage = () => {
         <section className="text-center mb-20">
           <h1 className="text-5xl font-bold mb-6 display-font">About DOA</h1>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Department of Art Productions is Portland's premier production design company, 
+            Department of Art Productions is Portland&apos;s premier production design company,
             transforming creative visions into cinematic reality since 2008.
           </p>
         </section>
@@ -65,20 +64,20 @@ const AboutPage = () => {
           <div>
             <h2 className="text-3xl font-semibold mb-6 display-font">Building Worlds, Telling Stories</h2>
             <p className="text-gray-300 mb-4 leading-relaxed">
-              Founded in the heart of Portland's creative district, DOA has grown from a small 
-              art department collective to a full-service production design powerhouse. We've had 
-              the privilege of working on over 200 productions, from intimate independent films 
+              Founded in the heart of Portland&apos;s creative district, DOA has grown from a small
+              art department collective to a full-service production design powerhouse. We&apos;ve had
+              the privilege of working on over 200 productions, from intimate independent films
               to major studio blockbusters.
             </p>
             <p className="text-gray-300 mb-4 leading-relaxed">
-              Our 50,000 square foot facility houses state-of-the-art workshops, soundstages, 
-              and one of the region's largest prop and set dressing inventories. But what truly 
-              sets us apart is our team – a diverse group of artists, craftspeople, and problem 
+              Our 50,000 square foot facility houses state-of-the-art workshops, soundstages,
+              and one of the region&apos;s largest prop and set dressing inventories. But what truly
+              sets us apart is our team – a diverse group of artists, craftspeople, and problem
               solvers who bring passion and expertise to every project.
             </p>
             <p className="text-gray-300 leading-relaxed">
-              We believe that great production design doesn't just support the story – it elevates 
-              it. Whether we're building a dystopian future or recreating historical Portland, 
+              We believe that great production design doesn&apos;t just support the story – it elevates
+              it. Whether we&apos;re building a dystopian future or recreating historical Portland,
               our commitment to authenticity, creativity, and collaboration remains constant.
             </p>
           </div>
@@ -102,8 +101,8 @@ const AboutPage = () => {
             <div>
               <h3 className="text-2xl font-semibold mb-4">Our Vision</h3>
               <p className="text-gray-300 leading-relaxed">
-                To be the Pacific Northwest's most trusted production design partner, known for our 
-                creativity, reliability, and commitment to pushing the boundaries of what's possible 
+                To be the Pacific Northwest&apos;s most trusted production design partner, known for our
+                creativity, reliability, and commitment to pushing the boundaries of what&apos;s possible
                 in visual storytelling.
               </p>
             </div>
