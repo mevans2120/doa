@@ -13,7 +13,7 @@ module.exports = {
         'body': ['Garamond', 'Times New Roman', 'serif'],
       },
       colors: {
-        'doa-black': '#000000',
+        'doa-black': '#121212',
         'doa-white': '#ffffff',
         'doa-light-gray': '#f5f5f5',
         'doa-gray': '#666666',

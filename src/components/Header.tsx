@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 const Header = () => {
   return (
-    <nav className="flex justify-between items-center px-10 py-6 bg-black border-b border-gray-800 relative z-10">
+    <nav className="flex justify-between items-center px-10 py-6 bg-doa-black border-b border-gray-800 relative z-10">
       {/* Logo */}
       <div className="relative z-20 flex items-center">
         <Image
