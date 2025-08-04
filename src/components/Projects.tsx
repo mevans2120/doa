@@ -258,7 +258,7 @@ const Projects = () => {
   const featuredProjects = allProjects.slice(0, 3)
 
   return (
-    <section id="projects" className="min-h-screen bg-doa-black text-white pt-20 pb-12">
+    <section id="projects" className="bg-doa-black text-white pt-20 pb-24">
       <div className="max-w-7xl mx-auto px-8">
         <h2 className="text-5xl font-bold mb-12 text-center display-font">Featured Projects</h2>
 
@@ -289,7 +289,7 @@ const Projects = () => {
         </div>
 
         {/* View All Projects Button */}
-        <div className="text-center mt-12">
+        <div className="text-center mt-16">
           <a href="/projects" className="view-all-cta">
             View All Projects
           </a>
