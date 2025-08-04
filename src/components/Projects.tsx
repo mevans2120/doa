@@ -183,7 +183,7 @@ const Projects = () => {
       category: "Commercial Production",
       type: "Environmental Campaign",
       description: "Created an eco-friendly living space using reclaimed materials and living walls. The build showcased sustainable construction techniques while maintaining high production values for automotive brand sustainability campaign.",
-      imageUrl: "/doa-sample-17.png",
+      imageUrl: "/doa-sample-17.jpeg",
       client: "Tesla",
       year: 2023,
       technicalDetails: {
@@ -200,7 +200,7 @@ const Projects = () => {
       type: "Fashion Show",
       description: "Designed and constructed a 120-foot modular runway with integrated lighting and projection mapping capabilities. The design featured a transformable backdrop system allowing for rapid scene changes between shows.",
       imageUrl: "/doa-sample-18.jpeg",
-      galleryImages: ["/doa-sample-18.jpeg", "/doa-sample-19.jpeg"],
+      galleryImages: ["/doa-sample-18.jpeg"],
       client: "Portland Fashion Council",
       year: 2024,
       technicalDetails: {
@@ -215,7 +215,7 @@ const Projects = () => {
       category: "Live Events",
       type: "Corporate Conference",
       description: "Built a multi-zone conference environment including main stage, breakout rooms, and interactive demo areas. Featured custom-built tech installations and seamless AV integration throughout.",
-      imageUrl: "/doa-sample-20.jpeg",
+      imageUrl: "/doa-sample-16.jpeg",
       client: "Portland Tech Association",
       year: 2023,
       technicalDetails: {

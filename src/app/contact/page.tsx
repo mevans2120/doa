@@ -32,7 +32,7 @@ const ContactPage = () => {
       await new Promise(resolve => setTimeout(resolve, 1000))
       setSubmitStatus('success')
       setFormData({ name: '', email: '', subject: '', message: '' })
-    } catch (error) {
+    } catch {
       setSubmitStatus('error')
     } finally {
       setIsSubmitting(false)
@@ -56,7 +56,7 @@ const ContactPage = () => {
           <div>
             <h2 className="text-3xl font-semibold mb-6 display-font">Get in Touch</h2>
             <p className="text-gray-400 mb-8">
-              Ready to bring your creative vision to life? We'd love to hear about your project. 
+              Ready to bring your creative vision to life? We&apos;d love to hear about your project.
               Fill out the form below and our team will get back to you within 24 hours.
             </p>
 
