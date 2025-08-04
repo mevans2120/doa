@@ -23,16 +23,16 @@ const Testimonials = () => {
   ]
 
   return (
-    <section className="py-24 px-10 bg-white relative overflow-hidden">
+    <section className="py-24 px-10 bg-[#252525] relative overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-50"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-800 via-[#252525] to-gray-800"></div>
       
       {/* Section title */}
       <div className="relative z-10 text-center mb-20 fade-in-up">
-        <h2 className="text-5xl font-bold heading-font text-black mb-6">
+        <h2 className="text-5xl font-bold heading-font text-white mb-6">
           Client Testimonials
         </h2>
-        <div className="text-xl heading-font text-gray-600 mb-8">
+        <div className="text-xl heading-font text-gray-300 mb-8">
           What Our Partners Say About Working With Us
         </div>
         <div className="professional-divider max-w-md mx-auto"></div>
@@ -56,13 +56,13 @@ const Testimonials = () => {
             {/* Review content */}
             <div className="relative z-10 pt-8">
               {/* Quote */}
-              <div className="text-lg body-font text-gray-700 leading-relaxed mb-6 italic">
+              <div className="text-lg body-font text-gray-200 leading-relaxed mb-6 italic">
                 {testimonial.quote}
               </div>
               
               {/* Author info */}
               <div className="border-t border-doa-gold/20 pt-4">
-                <div className="heading-font text-black text-lg font-semibold mb-1">
+                <div className="heading-font text-white text-lg font-semibold mb-1">
                   {testimonial.author}
                 </div>
                 <div className="heading-font text-doa-gold text-sm">

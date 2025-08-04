@@ -15,16 +15,16 @@ const Services = () => {
   ]
 
   return (
-    <section className="py-24 px-10 bg-white relative overflow-hidden" id="services">
+    <section className="py-24 px-10 bg-[#252525] relative overflow-hidden" id="services" role="region">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-50"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-800 via-[#252525] to-gray-800"></div>
       
       {/* Section title */}
       <div className="relative z-10 text-center mb-20 fade-in-up">
-        <h2 className="text-5xl font-bold heading-font text-black mb-6">
+        <h2 className="text-5xl font-bold heading-font text-white mb-6">
           Our Services
         </h2>
-        <div className="text-xl heading-font text-gray-600 mb-8">
+        <div className="text-xl heading-font text-gray-300 mb-8">
           Comprehensive Set Construction & Design Solutions
         </div>
         <div className="professional-divider max-w-md mx-auto"></div>
@@ -43,12 +43,12 @@ const Services = () => {
             </div>
             
             {/* Service title */}
-            <h3 className="text-xl heading-font text-black font-semibold mb-4">
+            <h3 className="text-xl heading-font text-white font-semibold mb-4">
               {service.title}
             </h3>
             
             {/* Service description */}
-            <p className="text-gray-600 body-font leading-relaxed">
+            <p className="text-gray-300 body-font leading-relaxed">
               {service.description}
             </p>
             

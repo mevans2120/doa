@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-12 px-10">
+    <footer className="bg-black text-white py-12 px-10">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo and Company Info */}
@@ -13,7 +13,7 @@ const Footer = () => {
                 alt="Department of Art"
                 width={50}
                 height={50}
-                className="mr-3"
+                className="mr-3 brightness-0 invert"
               />
               <h3 className="text-xl font-semibold text-white" style={{ color: '#ffffff', fontFamily: 'Helvetica, Arial, sans-serif' }}>
                 Department of Art
@@ -23,7 +23,7 @@ const Footer = () => {
               Professional excellence in film & television set design, commercial productions, and custom prop building.
             </p>
             <div className="text-white text-sm uppercase tracking-widest" style={{ color: '#ffffff', fontFamily: 'Helvetica, Arial, sans-serif' }}>
-              Creative Vision • Reliable Service
+              Tagline here • Maybe?
             </div>
           </div>
           
@@ -70,16 +70,16 @@ const Footer = () => {
               Quick Links
             </h3>
             <div className="space-y-2 text-white body-font">
-              <div><a href="#projects" className="text-white hover:text-gray-300 transition-colors" style={{ color: '#ffffff' }}>Projects</a></div>
-              <div><a href="#services" className="text-white hover:text-gray-300 transition-colors" style={{ color: '#ffffff' }}>Services</a></div>
-              <div><a href="#clients" className="text-white hover:text-gray-300 transition-colors" style={{ color: '#ffffff' }}>Clients</a></div>
-              <div><a href="#about" className="text-white hover:text-gray-300 transition-colors" style={{ color: '#ffffff' }}>About</a></div>
+              <div><a href="/projects" className="text-white hover:text-gray-300 transition-colors" style={{ color: '#ffffff' }}>Projects</a></div>
+              <div><a href="/services" className="text-white hover:text-gray-300 transition-colors" style={{ color: '#ffffff' }}>Services</a></div>
+              <div><a href="/clients" className="text-white hover:text-gray-300 transition-colors" style={{ color: '#ffffff' }}>Clients</a></div>
+              <div><a href="/about" className="text-white hover:text-gray-300 transition-colors" style={{ color: '#ffffff' }}>About</a></div>
             </div>
           </div>
         </div>
         
         {/* Bottom Bar */}
-        <div className="border-t border-gray-700 mt-8 pt-8 text-center">
+        <div className="border-t border-gray-800 mt-8 pt-8 text-center">
           <p className="text-white body-font" style={{ color: '#ffffff' }}>
             © {new Date().getFullYear()} Department of Art. All rights reserved.
           </p>

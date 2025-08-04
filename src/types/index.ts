@@ -12,9 +12,22 @@ export interface Project {
   title: string;
   description: string;
   imageUrl: string;
-  category: 'film' | 'tv' | 'commercial';
+  galleryImages?: string[];
+  category: 'film' | 'tv' | 'commercial' | 'music-video' | 'special';
+  type: string;
   year: number;
   featured: boolean;
+  client?: string;
+  credits?: {
+    director?: string;
+    productionDesigner?: string;
+    cinematographer?: string;
+  };
+  technicalDetails?: {
+    squareFeet?: number;
+    buildDuration?: string;
+    specialFeatures?: string[];
+  };
 }
 
 export interface Testimonial {

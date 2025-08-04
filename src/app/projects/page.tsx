@@ -2,6 +2,8 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
 interface ProjectData {
   id: string;
@@ -25,12 +27,12 @@ interface ProjectData {
   };
 }
 
-const Projects = () => {
+const ProjectsPage = () => {
   const [selectedProject, setSelectedProject] = useState<ProjectData | null>(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
-  const allProjects: ProjectData[] = [
+  const projects: ProjectData[] = [
     // Feature Films
     {
       id: 'echoes-tomorrow',
@@ -254,17 +256,44 @@ const Projects = () => {
     }
   }
 
-  // Show only 3 featured projects on homepage
-  const featuredProjects = allProjects.slice(0, 3)
+  const categories = ['All', 'Film Production', 'Television Series', 'Commercial Production', 'Live Events']
+  const [selectedCategory, setSelectedCategory] = useState('All')
+
+  const filteredProjects = selectedCategory === 'All' 
+    ? projects 
+    : projects.filter(p => p.category === selectedCategory)
 
   return (
-    <section id="projects" className="min-h-screen bg-black text-white py-20">
-      <div className="max-w-7xl mx-auto px-8">
-        <h2 className="text-5xl font-bold mb-12 text-center">Featured Projects</h2>
+    <div className="min-h-screen">
+      <Header />
+      <main className="relative min-h-screen text-white">
+        {/* Background gradient */}
+        <div className="fixed inset-0 bg-gradient-to-br from-gray-800 via-[#252525] to-gray-800 -z-10"></div>
+        
+        <div className="relative z-10 py-20">
+          <div className="max-w-7xl mx-auto px-8">
+        <h1 className="text-5xl font-bold mb-12 text-center">Our Work</h1>
+        
+        {/* Category Filter */}
+        <div className="flex justify-center gap-4 mb-12 flex-wrap">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setSelectedCategory(cat)}
+              className={`px-6 py-2 rounded-full transition-colors ${
+                selectedCategory === cat 
+                  ? 'bg-white text-black' 
+                  : 'bg-zinc-900 text-white hover:bg-zinc-800'
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {featuredProjects.map((project) => (
+          {filteredProjects.map((project) => (
             <div
               key={project.id}
               className="group cursor-pointer relative overflow-hidden rounded-lg bg-zinc-900"
@@ -286,16 +315,6 @@ const Projects = () => {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* View All Projects Button */}
-        <div className="text-center mt-12">
-          <a
-            href="/projects"
-            className="inline-block bg-white text-black px-8 py-4 rounded-full font-semibold hover:bg-gray-200 transition-colors duration-300"
-          >
-            View All Projects
-          </a>
         </div>
       </div>
 
@@ -430,8 +449,11 @@ const Projects = () => {
           </div>
         </div>
       )}
-    </section>
+        </div>
+      </main>
+      <Footer />
+    </div>
   )
 }
 
-export default Projects
+export default ProjectsPage
