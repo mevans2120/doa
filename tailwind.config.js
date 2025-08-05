@@ -8,9 +8,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'display': ['var(--font-keania-one)', 'Keania One', 'sans-serif'],
+        'display': ['var(--font-keania)', 'Keania One', 'sans-serif'],
         'heading': ['Helvetica', 'Arial', 'sans-serif'],
-        'body': ['Garamond', 'Times New Roman', 'serif'],
+        'body': ['var(--font-garamond)', 'Garamond', 'Times New Roman', 'serif'],
       },
       colors: {
         'doa-black': '#121212',

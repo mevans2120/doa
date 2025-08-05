@@ -1,6 +1,7 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Image from 'next/image'
+import { fonts } from '@/lib/fonts'
 
 const AboutPage = () => {
   const teamMembers = [
@@ -36,7 +37,7 @@ const AboutPage = () => {
           <div className="max-w-7xl mx-auto px-8">
         {/* Hero Section */}
         <section className="text-center mb-20 fade-in-up">
-          <h1 className="text-5xl font-bold text-white mb-6 display-font">About DOA</h1>
+          <h1 className={`${fonts.display} text-5xl font-bold text-white mb-6`}>About DOA</h1>
           <div className="text-xl heading-font text-gray-300 mb-8">
             Department of Art Productions is Portland&apos;s premier production design company,
             transforming creative visions into cinematic reality since 2008.
@@ -47,7 +48,7 @@ const AboutPage = () => {
         {/* Company Overview */}
         <section className="mb-20 grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-3xl font-semibold mb-6 display-font">Building Worlds, Telling Stories</h2>
+            <h2 className={`${fonts.display} text-3xl font-semibold mb-6`}>Building Worlds, Telling Stories</h2>
             <p className="text-gray-300 mb-4 leading-relaxed">
               Department of Art is a full service scenery shop, supporting the local film/photo community
               for the last 20 years. Set construction, custom prop building, graphics and scenic treatments
@@ -78,14 +79,14 @@ const AboutPage = () => {
         <section className="mb-20 bg-zinc-900 rounded-lg p-12">
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h3 className="text-2xl font-semibold mb-4">Our Mission</h3>
+              <h3 className={`${fonts.display} text-2xl font-semibold mb-4`}>Our Mission</h3>
               <p className="text-gray-300 leading-relaxed">
                 To deliver exceptional production design services that bring creative visions to life,
                 while fostering innovation, sustainability, and artistic excellence in everything we do.
               </p>
             </div>
             <div>
-              <h3 className="text-2xl font-semibold mb-4">Our Vision</h3>
+              <h3 className={`${fonts.display} text-2xl font-semibold mb-4`}>Our Vision</h3>
               <p className="text-gray-300 leading-relaxed">
                 To be the Pacific Northwest&apos;s most trusted production design partner, known for our
                 creativity, reliability, and commitment to pushing the boundaries of what&apos;s possible
@@ -97,7 +98,7 @@ const AboutPage = () => {
 
         {/* Team Section */}
         <section className="mb-20">
-          <h2 className="text-3xl font-semibold mb-10 text-center display-font">Leadership Team</h2>
+          <h2 className={`${fonts.display} text-3xl font-semibold mb-10 text-center`}>Leadership Team</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center">
             {teamMembers.map((member) => (
               <div key={member.name} className="text-center">
@@ -110,7 +111,7 @@ const AboutPage = () => {
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                 </div>
-                <h3 className="text-xl font-semibold mb-1">{member.name}</h3>
+                <h3 className="text-xl font-semibold mb-1 heading-font">{member.name}</h3>
                 <p className="text-gray-300 text-sm leading-relaxed mb-3">{member.bio}</p>
                 <a
                   href={member.imdbUrl}

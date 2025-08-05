@@ -3,6 +3,7 @@
 import { useState, FormEvent } from 'react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import { fonts } from '@/lib/fonts'
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -51,7 +52,7 @@ const ContactPage = () => {
           <div className="max-w-7xl mx-auto px-8">
         {/* Header Section */}
         <div className="text-center mb-16 fade-in-up">
-          <h1 className="text-5xl font-bold text-white mb-6 display-font">Contact Us</h1>
+          <h1 className={`${fonts.display} text-5xl font-bold text-white mb-6`}>Contact Us</h1>
           <div className="text-xl heading-font text-gray-300 mb-8">
             Let&apos;s Bring Your Creative Vision to Life
           </div>
@@ -61,7 +62,7 @@ const ContactPage = () => {
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
           <div>
-            <h2 className="text-3xl font-semibold mb-6 display-font">Get in Touch</h2>
+            <h2 className={`${fonts.display} text-3xl font-semibold mb-6`}>Get in Touch</h2>
             <p className="text-gray-400 mb-8">
               Ready to bring your creative vision to life? We&apos;d love to hear about your project.
               Fill out the form below and our team will get back to you within 24 hours.
@@ -155,10 +156,10 @@ const ContactPage = () => {
           <div className="space-y-8">
             {/* Contact Information */}
             <div>
-              <h2 className="text-3xl font-semibold mb-6 display-font">Visit Our Studio</h2>
+              <h2 className={`${fonts.display} text-3xl font-semibold mb-6`}>Visit Our Studio</h2>
               <div className="space-y-4 mb-8">
                 <div>
-                  <h3 className="text-lg font-medium mb-2">Address</h3>
+                  <h3 className="text-lg font-medium mb-2 heading-font">Address</h3>
                   <p className="text-gray-400">
                     Department of Art Productions<br />
                     1234 NW Industrial Way<br />
@@ -166,7 +167,7 @@ const ContactPage = () => {
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-lg font-medium mb-2">Business Hours</h3>
+                  <h3 className="text-lg font-medium mb-2 heading-font">Business Hours</h3>
                   <p className="text-gray-400">
                     Monday - Friday: 8:00 AM - 6:00 PM<br />
                     Saturday: By appointment only<br />
@@ -174,7 +175,7 @@ const ContactPage = () => {
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-lg font-medium mb-2">Contact</h3>
+                  <h3 className="text-lg font-medium mb-2 heading-font">Contact</h3>
                   <p className="text-gray-400">
                     Phone: (503) 555-0123<br />
                     Email: info@doaproductions.com
@@ -199,7 +200,7 @@ const ContactPage = () => {
 
             {/* Additional Info */}
             <div className="bg-zinc-900 rounded-lg p-6">
-              <h3 className="text-xl font-semibold mb-3">Production Inquiries</h3>
+              <h3 className="text-xl font-semibold mb-3 heading-font">Production Inquiries</h3>
               <p className="text-gray-400 mb-4">
                 For urgent production needs or after-hours support, please contact our 24/7 production hotline:
               </p>

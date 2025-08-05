@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import { fonts } from '@/lib/fonts'
 
 const ClientsPage = () => {
 
@@ -54,7 +55,7 @@ const ClientsPage = () => {
           <div className="max-w-7xl mx-auto px-8">
         {/* Header Section */}
         <div className="text-center mb-16 fade-in-up">
-          <h1 className="text-5xl font-bold text-white mb-6 display-font">Our Clients</h1>
+          <h1 className={`${fonts.display} text-5xl font-bold text-white mb-6`}>Our Clients</h1>
           <div className="text-xl heading-font text-gray-300 mb-8">
             Trusted by Leading Brands and Production Companies
           </div>
@@ -87,14 +88,14 @@ const ClientsPage = () => {
 
         {/* Featured Collaborators */}
         <section className="mb-20">
-          <h2 className="text-3xl font-semibold mb-10 text-center display-font">Featured Collaborators</h2>
+          <h2 className={`${fonts.display} text-3xl font-semibold mb-10 text-center`}>Featured Collaborators</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {collaborators.map((collaborator, index) => (
               <div
                 key={index}
                 className="bg-zinc-900 rounded-lg p-6 hover:bg-zinc-800 transition-colors duration-300"
               >
-                <h3 className="text-lg font-semibold text-center">{collaborator}</h3>
+                <h3 className="text-lg font-semibold text-center heading-font">{collaborator}</h3>
               </div>
             ))}
           </div>
