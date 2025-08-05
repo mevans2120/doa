@@ -48,7 +48,7 @@ const AboutPage = () => {
         {/* Company Overview */}
         <section className="mb-20 grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className={`${fonts.display} text-3xl font-semibold mb-6`}>Building Worlds, Telling Stories</h2>
+            <h2 className={`${fonts.display} text-3xl font-semibold mb-6`}>Portland's film & photo beating heart</h2>
             <p className="text-gray-300 mb-4 leading-relaxed">
               Department of Art is a full service scenery shop, supporting the local film/photo community
               for the last 20 years. Set construction, custom prop building, graphics and scenic treatments

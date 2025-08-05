@@ -257,13 +257,6 @@ const ProjectsPage = () => {
     }
   }
 
-  const categories = ['All', 'Film Production', 'Television Series', 'Commercial Production', 'Live Events']
-  const [selectedCategory, setSelectedCategory] = useState('All')
-
-  const filteredProjects = selectedCategory === 'All' 
-    ? projects 
-    : projects.filter(p => p.category === selectedCategory)
-
   return (
     <div className="min-h-screen">
       <Header />
@@ -278,27 +271,10 @@ const ProjectsPage = () => {
           </div>
           <div className="professional-divider max-w-md mx-auto"></div>
         </div>
-        
-        {/* Category Filter */}
-        <div className="flex justify-center gap-4 mb-12 flex-wrap">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setSelectedCategory(cat)}
-              className={`px-6 py-2 rounded-full transition-colors ${
-                selectedCategory === cat 
-                  ? 'bg-white text-black' 
-                  : 'bg-zinc-900 text-white hover:bg-zinc-800'
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project) => (
+          {projects.map((project) => (
             <div
               key={project.id}
               className="group cursor-pointer relative overflow-hidden rounded-lg bg-zinc-900 border border-zinc-800 transition-all duration-300 hover:scale-105 hover:brightness-110 hover:border-gray-400 hover:shadow-[0_8px_32px_rgba(192,192,192,0.3)]"
