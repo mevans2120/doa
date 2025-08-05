@@ -161,7 +161,7 @@ const Services = ({ limit }: ServicesProps = {}) => {
         {services.slice(0, limit || services.length).map((service, index) => (
           <div
             key={index}
-            className="bg-zinc-900 rounded-lg p-8 hover:bg-zinc-800 transition-all duration-300"
+            className="bg-zinc-900 rounded-lg p-8"
           >
             {/* Service icon */}
             <div className="text-white mb-6">
