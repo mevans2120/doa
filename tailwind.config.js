@@ -29,6 +29,8 @@ module.exports = {
         'fade-in-up': 'fadeInUp 0.6s ease-out',
         'fade-in': 'fadeIn 0.6s ease-out',
         'slide-in': 'slideIn 0.5s ease-out',
+        'gradient-x': 'gradient-shift 15s ease infinite',
+        'skull-glow': 'skull-glow 15s ease-in-out infinite',
       },
       keyframes: {
         fadeInUp: {

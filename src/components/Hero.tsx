@@ -11,13 +11,13 @@ const Hero = () => {
       <div className="absolute inset-0 bg-gradient-to-br from-gray-800 via-[#252525] to-gray-800"></div>
       
       {/* Skull SVG as featured element */}
-      <div className="absolute right-2 md:right-10 top-1/2 transform -translate-y-1/2 w-48 md:w-96 h-[250px] md:h-[500px] z-10 opacity-20 md:opacity-30">
+      <div className="absolute right-2 md:right-10 top-1/2 transform -translate-y-1/2 w-48 md:w-96 h-[250px] md:h-[500px] z-10 animate-skull-glow">
         <Image
           src="/skull.svg"
           alt="Skull"
           width={384}
           height={500}
-          className="filter brightness-0 invert opacity-50"
+          className="filter brightness-0 invert"
           style={{ filter: 'invert(75%) sepia(10%) saturate(200%) hue-rotate(180deg) brightness(95%) contrast(80%)' }}
         />
       </div>
