@@ -182,12 +182,14 @@ const Services = ({ limit }: ServicesProps = {}) => {
         ))}
       </div>
 
-      {/* View All CTA */}
-      <div className="text-center mt-16 relative z-10">
-        <a href="/services" className="view-all-cta">
-          View All Services
-        </a>
-      </div>
+      {/* View All CTA - Only show when there's a limit (i.e., not showing all services) */}
+      {limit && limit < services.length && (
+        <div className="text-center mt-16 relative z-10">
+          <a href="/services" className="view-all-cta">
+            View All Services
+          </a>
+        </div>
+      )}
 
     </section>
   )

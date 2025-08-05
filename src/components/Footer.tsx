@@ -27,26 +27,32 @@ const Footer = () => {
             </div>
           </div>
           
-          {/* Contact Information */}
+          {/* Location */}
           <div>
             <h3 className="text-xl font-semibold mb-4 text-white heading-font">
-              Contact
+              Location
             </h3>
-            <div className="space-y-2 text-white body-font">
+            <div className="space-y-3 text-white body-font">
               <div style={{ color: '#ffffff' }}>
-                <span className="font-semibold text-white" style={{ color: '#ffffff', fontFamily: 'Helvetica, Arial, sans-serif' }}>Email:</span>{' '}
-                <a href="mailto:info@departmentofart.com" className="text-white hover:text-gray-300 transition-colors" style={{ color: '#ffffff' }}>
-                  info@departmentofart.com
-                </a>
+                <p className="mb-2">
+                  Department of Art Productions<br />
+                  6500 NE Portland Hwy<br />
+                  Portland, OR 97218
+                </p>
               </div>
-              <div style={{ color: '#ffffff' }}>
-                <span className="font-semibold text-white" style={{ color: '#ffffff', fontFamily: 'Helvetica, Arial, sans-serif' }}>Phone:</span>{' '}
-                <a href="tel:+15035550123" className="text-white hover:text-gray-300 transition-colors" style={{ color: '#ffffff' }}>
-                  (503) 555-0123
+              <div>
+                <a
+                  href="https://maps.google.com/?q=6500+NE+Portland+Hwy+Portland+OR+97218"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-white hover:text-gray-300 transition-colors"
+                  style={{ color: '#ffffff' }}
+                >
+                  <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                  </svg>
+                  View on Google Maps
                 </a>
-              </div>
-              <div style={{ color: '#ffffff' }}>
-                <span className="font-semibold text-white" style={{ color: '#ffffff', fontFamily: 'Helvetica, Arial, sans-serif' }}>Location:</span> Portland, Oregon
               </div>
             </div>
           </div>
@@ -74,6 +80,7 @@ const Footer = () => {
               <div><a href="/services" className="text-white hover:text-gray-300 transition-colors" style={{ color: '#ffffff' }}>Services</a></div>
               <div><a href="/clients" className="text-white hover:text-gray-300 transition-colors" style={{ color: '#ffffff' }}>Clients</a></div>
               <div><a href="/about" className="text-white hover:text-gray-300 transition-colors" style={{ color: '#ffffff' }}>About</a></div>
+              <div><a href="/contact" className="text-white hover:text-gray-300 transition-colors" style={{ color: '#ffffff' }}>Contact</a></div>
             </div>
           </div>
         </div>

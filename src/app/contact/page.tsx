@@ -9,7 +9,6 @@ const ContactPage = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    subject: '',
     message: ''
   })
 
@@ -32,7 +31,7 @@ const ContactPage = () => {
     try {
       await new Promise(resolve => setTimeout(resolve, 1000))
       setSubmitStatus('success')
-      setFormData({ name: '', email: '', subject: '', message: '' })
+      setFormData({ name: '', email: '', message: '' })
     } catch {
       setSubmitStatus('error')
     } finally {
@@ -100,27 +99,6 @@ const ContactPage = () => {
               </div>
 
               <div>
-                <label htmlFor="subject" className="block text-sm font-medium mb-2">
-                  Subject *
-                </label>
-                <select
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 bg-zinc-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-white/20"
-                >
-                  <option value="">Select a subject</option>
-                  <option value="new-project">New Project Inquiry</option>
-                  <option value="quote">Request for Quote</option>
-                  <option value="general">General Information</option>
-                  <option value="careers">Career Opportunities</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-
-              <div>
                 <label htmlFor="message" className="block text-sm font-medium mb-2">
                   Message *
                 </label>
@@ -162,32 +140,22 @@ const ContactPage = () => {
                   <h3 className="text-lg font-medium mb-2 heading-font">Address</h3>
                   <p className="text-gray-400">
                     Department of Art Productions<br />
-                    1234 NW Industrial Way<br />
-                    Portland, OR 97210
+                    6500 NE Portland Hwy
+                            <br />
+                    Portland, OR 97218
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-lg font-medium mb-2 heading-font">Business Hours</h3>
-                  <p className="text-gray-400">
-                    Monday - Friday: 8:00 AM - 6:00 PM<br />
-                    Saturday: By appointment only<br />
-                    Sunday: Closed
-                  </p>
+               
                 </div>
-                <div>
-                  <h3 className="text-lg font-medium mb-2 heading-font">Contact</h3>
-                  <p className="text-gray-400">
-                    Phone: (503) 555-0123<br />
-                    Email: info@doaproductions.com
-                  </p>
-                </div>
+               
               </div>
             </div>
 
             {/* Google Map */}
             <div className="h-96 bg-zinc-900 rounded-lg overflow-hidden">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2793.8806749915!2d-122.69169!3d45.5538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDXCsDMzJzEzLjciTiAxMjLCsDQxJzMwLjEiVw!5e0!3m2!1sen!2sus!4v1234567890"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2794.0477544968!2d-122.59431668444!3d45.550666979102!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5495a72d8e7e9c5b%3A0x0!2s6500%20NE%20Portland%20Hwy%2C%20Portland%2C%20OR%2097218!5e0!3m2!1sen!2sus!4v1640000000000!5m2!1sen!2sus"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -196,15 +164,6 @@ const ContactPage = () => {
                 referrerPolicy="no-referrer-when-downgrade"
                 className="grayscale"
               />
-            </div>
-
-            {/* Additional Info */}
-            <div className="bg-zinc-900 rounded-lg p-6">
-              <h3 className="text-xl font-semibold mb-3 heading-font">Production Inquiries</h3>
-              <p className="text-gray-400 mb-4">
-                For urgent production needs or after-hours support, please contact our 24/7 production hotline:
-              </p>
-              <p className="text-xl font-semibold">(503) 555-0911</p>
             </div>
           </div>
         </div>
