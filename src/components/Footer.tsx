@@ -15,7 +15,7 @@ const Footer = () => {
                 height={50}
                 className="mr-3 brightness-0 invert"
               />
-              <h3 className="text-xl font-semibold text-white" style={{ color: '#ffffff', fontFamily: 'Helvetica, Arial, sans-serif' }}>
+              <h3 className="text-xl font-semibold text-white heading-font">
                 Department of Art
               </h3>
             </div>
@@ -29,7 +29,7 @@ const Footer = () => {
           
           {/* Contact Information */}
           <div>
-            <h3 className="text-xl font-semibold mb-4 text-white" style={{ color: '#ffffff', fontFamily: 'Helvetica, Arial, sans-serif' }}>
+            <h3 className="text-xl font-semibold mb-4 text-white heading-font">
               Contact
             </h3>
             <div className="space-y-2 text-white body-font">
@@ -53,7 +53,7 @@ const Footer = () => {
           
           {/* Services */}
           <div>
-            <h3 className="text-xl font-semibold mb-4 text-white" style={{ color: '#ffffff', fontFamily: 'Helvetica, Arial, sans-serif' }}>
+            <h3 className="text-xl font-semibold mb-4 text-white heading-font">
               Services
             </h3>
             <div className="space-y-2 text-white body-font">
@@ -66,7 +66,7 @@ const Footer = () => {
           
           {/* Quick Links */}
           <div>
-            <h3 className="text-xl font-semibold mb-4 text-white" style={{ color: '#ffffff', fontFamily: 'Helvetica, Arial, sans-serif' }}>
+            <h3 className="text-xl font-semibold mb-4 text-white heading-font">
               Quick Links
             </h3>
             <div className="space-y-2 text-white body-font">

@@ -1,3 +1,7 @@
+'use client'
+
+import { fonts } from '../lib/fonts'
+
 interface ServicesProps {
   limit?: number;
 }
@@ -143,7 +147,7 @@ const Services = ({ limit }: ServicesProps = {}) => {
       
       {/* Section title */}
       <div className="relative z-10 text-center mb-8 fade-in-up">
-        <h2 className="text-5xl font-bold text-white mb-6 display-font">
+        <h2 className={`${fonts.display} text-5xl font-bold text-white mb-6`}>
           Our Services
         </h2>
         <div className="text-xl heading-font text-gray-300 mb-8">
@@ -165,7 +169,7 @@ const Services = ({ limit }: ServicesProps = {}) => {
             </div>
             
             {/* Service title */}
-            <h3 className="text-2xl font-semibold mb-4 text-white text-left">
+            <h3 className={`${fonts.display} text-2xl font-semibold mb-4 text-white text-left`}>
               {service.title}
             </h3>
             

@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import { fonts } from '@/lib/fonts'
 
 interface ProjectData {
   id: string;
@@ -271,7 +272,7 @@ const ProjectsPage = () => {
           <div className="max-w-7xl mx-auto px-8">
         {/* Header Section */}
         <div className="text-center mb-12 fade-in-up">
-          <h1 className="text-5xl font-bold text-white mb-6 display-font">Our Work</h1>
+          <h1 className={`${fonts.display} text-5xl font-bold text-white mb-6`}>Our Work</h1>
           <div className="text-xl heading-font text-gray-300 mb-8">
             Showcasing Our Creative Excellence and Technical Expertise
           </div>
@@ -313,7 +314,7 @@ const ProjectsPage = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+                <h3 className={`${fonts.display} text-xl font-semibold mb-2`}>{project.title}</h3>
                 <p className="text-gray-400 text-sm mb-1">{project.type}</p>
                 <p className="text-gray-500 text-sm">{project.client} • {project.year}</p>
               </div>
@@ -399,18 +400,18 @@ const ProjectsPage = () => {
               {/* Details */}
               <div className="space-y-6">
                 <div>
-                  <h3 className="text-3xl font-bold mb-2">{selectedProject.title}</h3>
+                  <h3 className={`${fonts.display} text-3xl font-bold mb-2`}>{selectedProject.title}</h3>
                   <p className="text-gray-400">{selectedProject.type} • {selectedProject.year}</p>
                 </div>
 
                 <div>
-                  <h4 className="text-lg font-semibold mb-2">Project Overview</h4>
+                  <h4 className="text-lg font-semibold mb-2 heading-font">Project Overview</h4>
                   <p className="text-gray-300 leading-relaxed">{selectedProject.description}</p>
                 </div>
 
                 {selectedProject.credits && (
                   <div>
-                    <h4 className="text-lg font-semibold mb-2">Credits</h4>
+                    <h4 className="text-lg font-semibold mb-2 heading-font">Credits</h4>
                     <div className="space-y-1 text-gray-300">
                       {selectedProject.credits.director && (
                         <p><span className="text-gray-500">Director:</span> {selectedProject.credits.director}</p>
@@ -427,7 +428,7 @@ const ProjectsPage = () => {
 
                 {selectedProject.technicalDetails && (
                   <div>
-                    <h4 className="text-lg font-semibold mb-2">Technical Details</h4>
+                    <h4 className="text-lg font-semibold mb-2 heading-font">Technical Details</h4>
                     <div className="space-y-1 text-gray-300">
                       {selectedProject.technicalDetails.squareFeet && (
                         <p><span className="text-gray-500">Square Footage:</span> {selectedProject.technicalDetails.squareFeet.toLocaleString()} sq ft</p>
