@@ -225,11 +225,17 @@
     }
   }
 
-  /* Gradient animation utility class */
+  /* Gradient animation utility class with GPU acceleration */
   .animate-gradient {
     background-size: 200% 100%;
     animation: gradient-shift 15s ease infinite;
     will-change: background-position;
+    transform: translateZ(0); /* Force GPU layer */
+    -webkit-transform: translateZ(0);
+    backface-visibility: hidden; /* Prevent flickering */
+    -webkit-backface-visibility: hidden;
+    perspective: 1000px; /* Create 3D rendering context */
+    -webkit-perspective: 1000px;
   }
 
   /* Skull animation utility class */
@@ -238,11 +244,27 @@
     will-change: filter;
   }
 
-  /* Reduced motion support */
+  /* Enhanced reduced motion support */
   @media (prefers-reduced-motion: reduce) {
     .animate-gradient,
     .animate-skull-glow {
       animation: none;
+    }
+    
+    /* Provide static gradient fallback for header */
+    .animate-gradient {
+      background-position: 50% 50%;
+      background-size: 100% 100%;
+    }
+    
+    /* Remove all transitions for reduced motion */
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
     }
   }
 }
