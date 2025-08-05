@@ -8,19 +8,22 @@ const AboutPage = () => {
       name: 'Ben Haden',
       role: 'Founder & Creative Director',
       bio: 'With over 20 years in production design, Ben brings a unique blend of artistic vision and technical expertise to every project.',
-      image: '/Ben.jpeg'
+      image: '/Ben.jpeg',
+      imdbUrl: 'https://www.imdb.com/name/nm0370715/?ref_=nv_sr_2'
     },
     {
       name: 'Chandler Vinar',
       role: 'Head of Production',
       bio: 'Chandler oversees all production logistics, ensuring projects are delivered on time and within budget while maintaining the highest quality standards.',
-      image: '/Chandler.jpeg'
+      image: '/Chandler.jpeg',
+      imdbUrl: 'https://www.imdb.com/name/nm0898506/?ref_=nv_sr_1'
     },
     {
       name: 'Jeff Johnson',
       role: 'Technical Director',
       bio: 'Jeff leads our fabrication and technical teams, specializing in innovative construction techniques and visual effects integration.',
-      image: '/JEff.jpeg'
+      image: '/JEff.jpeg',
+      imdbUrl: 'https://www.imdb.com/name/nm3764086/?ref_=nv_sr_1'
     }
   ]
 
@@ -109,7 +112,15 @@ const AboutPage = () => {
                 </div>
                 <h3 className="text-xl font-semibold mb-1">{member.name}</h3>
                 <p className="text-gray-400 mb-3">{member.role}</p>
-                <p className="text-gray-300 text-sm leading-relaxed">{member.bio}</p>
+                <p className="text-gray-300 text-sm leading-relaxed mb-3">{member.bio}</p>
+                <a
+                  href={member.imdbUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors text-sm"
+                >
+                  View on IMDb →
+                </a>
               </div>
             ))}
           </div>
