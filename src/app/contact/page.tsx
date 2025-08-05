@@ -53,7 +53,7 @@ const ContactPage = () => {
         <div className="text-center mb-16 fade-in-up">
           <h1 className="text-5xl font-bold text-white mb-6 display-font">Contact Us</h1>
           <div className="text-xl heading-font text-gray-300 mb-8">
-            Let's Bring Your Creative Vision to Life
+            Let&apos;s Bring Your Creative Vision to Life
           </div>
           <div className="professional-divider max-w-md mx-auto"></div>
         </div>

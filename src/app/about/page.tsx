@@ -61,7 +61,7 @@ const AboutPage = () => {
               The three partners at Department of Art are all 20+ year veterans in the film industry,
               having filled every role from production designer, art director, prop master, decorator,
               lead man, and set dresser. All partners still actively work in the industry thus, DOA can
-              be seen as "one stop shopping" for productions seeking all things art department. We can
+              be seen as &quot;one stop shopping&quot; for productions seeking all things art department. We can
               provide crew for your shoot, a place for that crew to work, provide internet and office
               needs, gated parking, and trucking for any size production. And when you&apos;re done for
               the day... enjoy a cold beer in our bar and a game of pinball.
@@ -111,7 +111,6 @@ const AboutPage = () => {
                   />
                 </div>
                 <h3 className="text-xl font-semibold mb-1">{member.name}</h3>
-                <p className="text-gray-400 mb-3">{member.role}</p>
                 <p className="text-gray-300 text-sm leading-relaxed mb-3">{member.bio}</p>
                 <a
                   href={member.imdbUrl}
