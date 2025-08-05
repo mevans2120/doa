@@ -1,134 +1,207 @@
-@import url('https://fonts.googleapis.com/css2?family=Keania+One:wght@400&display=swap');
+/* Note: Google Fonts should be imported in layout.tsx using Next.js font optimization */
 @import "tailwindcss";
+@config "../../tailwind.config.js";
 
-:root {
-  --background: #252525;
-  --foreground: #ffffff;
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: 'Garamond', 'Times New Roman', serif;
-  overflow-x: hidden;
-  position: relative;
-  line-height: 1.6;
-}
-
-/* Typography Classes */
-.display-font {
-  font-family: 'Keania One', 'Arial Black', 'Helvetica', sans-serif !important;
-  font-weight: 400 !important;
-}
-
-.heading-font {
-  font-family: 'Helvetica', 'Arial', sans-serif;
-  @apply text-white;
-}
-
-.body-font {
-  font-family: 'Garamond', 'Times New Roman', serif;
-}
-
-/* Professional Button Styles */
-.professional-btn {
-  @apply text-white font-semibold uppercase tracking-wide px-6 py-3
-         transition-all duration-300 cursor-pointer no-underline inline-block;
-  font-family: 'Helvetica', 'Arial', sans-serif;
-  background-color: #c0c0c0;
-}
-
-.professional-btn:hover {
-  @apply -translate-y-0.5;
-  background-color: #a0a0a0;
-  box-shadow: 0 4px 12px rgba(192, 192, 192, 0.3);
-}
-
-.professional-btn-outline {
-  @apply bg-transparent text-white font-semibold
-         uppercase tracking-wide px-5 py-2.5 transition-all duration-300
-         cursor-pointer no-underline inline-block;
-  font-family: 'Helvetica', 'Arial', sans-serif;
-  border: 2px solid #c0c0c0;
-}
-
-.professional-btn-outline:hover {
-  @apply text-white -translate-y-0.5;
-  background-color: #c0c0c0;
-}
-
-/* Minimal View All CTA Style */
-.view-all-cta {
-  @apply font-medium uppercase tracking-wider text-sm no-underline
-         inline-flex items-center gap-2 transition-all duration-300
-         border-b border-transparent;
-  font-family: 'Helvetica', 'Arial', sans-serif;
-  color: #c0c0c0;
-}
-
-.view-all-cta:hover {
-  @apply translate-x-1;
-  color: #a0a0a0;
-  border-bottom-color: #a0a0a0;
-}
-
-.view-all-cta::after {
-  content: '→';
-  transition: transform 0.3s ease;
-}
-
-.view-all-cta:hover::after {
-  transform: translateX(2px);
-}
-
-/* Professional Card Styles - Dark mode */
-.professional-card {
-  background: rgba(40, 40, 40, 0.95);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-}
-
-
-/* Subtle animations */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
+@layer base {
+  :root {
+    /* Color System */
+    --color-background: #252525;
+    --color-foreground: #ffffff;
+    --color-accent: #c0c0c0;
+    --color-accent-hover: #a0a0a0;
+    --color-accent-light: #e0e0e0;
+    --color-card-bg: rgba(40, 40, 40, 0.95);
+    --color-border: rgba(255, 255, 255, 0.1);
+    --color-text-muted: #a0a0a0;
+    --color-dark-bg: #1a1a1a;
+    --color-dark-border: #444;
+    
+    /* Typography */
+    --font-display: var(--font-keania), 'Arial Black', 'Helvetica', sans-serif;
+    --font-heading: 'Helvetica', 'Arial', sans-serif;
+    --font-body: var(--font-garamond), 'Times New Roman', serif;
+    --font-size-sm: 14px;
+    --letter-spacing-wide: 1px;
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    --spacing-2xl: 4rem;
+    
+    /* Animation */
+    --animation-duration-fast: 300ms;
+    --animation-duration-base: 600ms;
+    --animation-easing: ease-out;
+    --animation-easing-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 12px rgba(192, 192, 192, 0.3);
+    
+    /* Border Radius */
+    --radius-sm: 0.25rem;
+    --radius-base: 0.5rem;
+    --radius-lg: 1rem;
+    
+    /* Z-index */
+    --z-base: 10;
+    --z-dropdown: 20;
+    --z-modal: 30;
+    --z-tooltip: 40;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  body {
+    background: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+    position: relative;
+    line-height: 1.6;
+  }
+
+  /* Focus styles for accessibility */
+  *:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
   }
 }
 
-.fade-in-up {
-  animation: fadeInUp 0.6s ease-out;
+@layer components {
+  /* Typography Classes */
+  .display-font {
+    font-family: var(--font-display);
+    font-weight: 400;
+  }
+
+  .heading-font {
+    font-family: var(--font-heading);
+    @apply text-white;
+  }
+
+  .body-font {
+    font-family: var(--font-body);
+  }
+
+  /* Professional Button Styles */
+  .professional-btn {
+    @apply font-heading text-white font-semibold uppercase tracking-wide px-6 py-3
+           cursor-pointer no-underline inline-block;
+    background-color: var(--color-accent);
+    will-change: transform, box-shadow;
+    transition: all var(--animation-duration-fast) var(--animation-easing);
+  }
+
+  .professional-btn:hover {
+    @apply -translate-y-0.5;
+    background-color: var(--color-accent-hover);
+    box-shadow: var(--shadow-md);
+  }
+
+  .professional-btn:focus-visible {
+    outline: 2px solid var(--color-accent-light);
+    outline-offset: 2px;
+  }
+
+  .professional-btn-outline {
+    @apply font-heading bg-transparent text-white font-semibold
+           uppercase tracking-wide px-5 py-2.5
+           cursor-pointer no-underline inline-block;
+    border: 2px solid var(--color-accent);
+    will-change: transform, background-color;
+    transition: all var(--animation-duration-fast) var(--animation-easing);
+  }
+
+  .professional-btn-outline:hover {
+    @apply text-white -translate-y-0.5;
+    background-color: var(--color-accent);
+  }
+
+  .professional-btn-outline:focus-visible {
+    outline: 2px solid var(--color-accent-light);
+    outline-offset: 2px;
+  }
+
+  /* Minimal View All CTA Style */
+  .view-all-cta {
+    @apply font-heading font-medium uppercase tracking-wider text-sm no-underline
+           inline-flex items-center gap-2
+           border-b border-transparent;
+    color: var(--color-accent);
+    transition: all var(--animation-duration-fast) var(--animation-easing);
+  }
+
+  .view-all-cta:hover {
+    @apply translate-x-1;
+    color: var(--color-accent-hover);
+    border-bottom-color: var(--color-accent-hover);
+  }
+
+  .view-all-cta::after {
+    content: '→';
+    transition: transform var(--animation-duration-fast) var(--animation-easing);
+  }
+
+  .view-all-cta:hover::after {
+    transform: translateX(2px);
+  }
+
+  .view-all-cta:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 4px;
+  }
+
+  /* Professional Card Styles - Dark mode */
+  .professional-card {
+    background: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-sm);
+  }
+
+  /* Professional section divider */
+  .professional-divider {
+    @apply h-px;
+    margin: var(--spacing-lg) 0;
+    background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+  }
+
+  /* Image wireframe styles for projects */
+  .image-wireframe {
+    @apply font-heading;
+    background: var(--color-dark-bg);
+    border: 2px dashed var(--color-dark-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-muted);
+    font-size: var(--font-size-sm);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-wide);
+    background-image:
+      linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.05) 40%, rgba(255,255,255,0.05) 60%, transparent 60%),
+      linear-gradient(-45deg, transparent 40%, rgba(255,255,255,0.05) 40%, rgba(255,255,255,0.05) 60%, transparent 60%);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
+  }
 }
 
-/* Professional section divider */
-.professional-divider {
-  @apply h-px my-8;
-  background: linear-gradient(90deg, transparent, #c0c0c0, transparent);
-}
+@layer utilities {
+  /* Animation utilities */
+  .fade-in-up {
+    animation: fadeInUp var(--animation-duration-base) var(--animation-easing);
+  }
 
-/* Image wireframe styles for projects */
-.image-wireframe {
-  background: #1a1a1a;
-  border: 2px dashed #444;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #888;
-  font-family: 'Helvetica', 'Arial', sans-serif;
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  background-image:
-    linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.05) 40%, rgba(255,255,255,0.05) 60%, transparent 60%),
-    linear-gradient(-45deg, transparent 40%, rgba(255,255,255,0.05) 40%, rgba(255,255,255,0.05) 60%, transparent 60%);
-  background-size: 20px 20px;
-  background-position: 0 0, 10px 10px;
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
-
-/* Additional utility classes can be removed as Tailwind handles these */

@@ -46,10 +46,10 @@ const Testimonials = () => {
             className="professional-card p-8 rounded-lg relative overflow-hidden group"
           >
             {/* Quote marks */}
-            <div className="text-4xl heading-font text-doa-gold opacity-30 absolute top-4 left-4 leading-none">
+            <div className="text-4xl heading-font text-doa-silver opacity-30 absolute top-4 left-4 leading-none">
               &quot;
             </div>
-            <div className="text-4xl heading-font text-doa-gold opacity-30 absolute bottom-4 right-4 leading-none rotate-180">
+            <div className="text-4xl heading-font text-doa-silver opacity-30 absolute bottom-4 right-4 leading-none rotate-180">
               &quot;
             </div>
             
@@ -61,18 +61,18 @@ const Testimonials = () => {
               </div>
               
               {/* Author info */}
-              <div className="border-t border-doa-gold/20 pt-4">
+              <div className="border-t border-doa-silver/20 pt-4">
                 <div className="heading-font text-white text-lg font-semibold mb-1">
                   {testimonial.author}
                 </div>
-                <div className="heading-font text-doa-gold text-sm">
+                <div className="heading-font text-doa-silver text-sm">
                   {testimonial.subtitle}
                 </div>
               </div>
             </div>
             
             {/* Top accent */}
-            <div className="absolute top-0 left-0 right-0 h-1 bg-doa-gold"></div>
+            <div className="absolute top-0 left-0 right-0 h-1 bg-doa-silver"></div>
           </div>
         ))}
       </div>

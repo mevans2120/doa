@@ -53,7 +53,7 @@ const Hero = () => {
       </div>
       
       {/* Subtle bottom accent */}
-      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-doa-gold to-transparent"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-doa-silver to-transparent"></div>
     </section>
   )
 }
