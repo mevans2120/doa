@@ -49,7 +49,14 @@ const ContactPage = () => {
         
         <div className="relative z-10 py-20">
           <div className="max-w-7xl mx-auto px-8">
-        <h1 className="text-5xl font-bold mb-16 text-center display-font">Contact Us</h1>
+        {/* Header Section */}
+        <div className="text-center mb-16 fade-in-up">
+          <h1 className="text-5xl font-bold text-white mb-6 display-font">Contact Us</h1>
+          <div className="text-xl heading-font text-gray-300 mb-8">
+            Let's Bring Your Creative Vision to Life
+          </div>
+          <div className="professional-divider max-w-md mx-auto"></div>
+        </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}

@@ -1,5 +1,6 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import Image from 'next/image'
 
 const AboutPage = () => {
   const teamMembers = [
@@ -7,19 +8,19 @@ const AboutPage = () => {
       name: 'Ben Haden',
       role: 'Founder & Creative Director',
       bio: 'With over 20 years in production design, Ben brings a unique blend of artistic vision and technical expertise to every project.',
-      image: '/team-ben.jpg'
+      image: '/Ben.jpeg'
     },
     {
       name: 'Chandler Vinar',
       role: 'Head of Production',
       bio: 'Chandler oversees all production logistics, ensuring projects are delivered on time and within budget while maintaining the highest quality standards.',
-      image: '/team-chandler.jpg'
+      image: '/Chandler.jpeg'
     },
     {
       name: 'Jeff Johnson',
       role: 'Technical Director',
       bio: 'Jeff leads our fabrication and technical teams, specializing in innovative construction techniques and visual effects integration.',
-      image: '/team-jeff.jpg'
+      image: '/JEff.jpeg'
     }
   ]
 
@@ -31,12 +32,13 @@ const AboutPage = () => {
         <div className="py-20">
           <div className="max-w-7xl mx-auto px-8">
         {/* Hero Section */}
-        <section className="text-center mb-20">
-          <h1 className="text-5xl font-bold mb-6 display-font">About DOA</h1>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+        <section className="text-center mb-20 fade-in-up">
+          <h1 className="text-5xl font-bold text-white mb-6 display-font">About DOA</h1>
+          <div className="text-xl heading-font text-gray-300 mb-8">
             Department of Art Productions is Portland&apos;s premier production design company,
             transforming creative visions into cinematic reality since 2008.
-          </p>
+          </div>
+          <div className="professional-divider max-w-md mx-auto"></div>
         </section>
 
         {/* Company Overview */}
@@ -44,21 +46,22 @@ const AboutPage = () => {
           <div>
             <h2 className="text-3xl font-semibold mb-6 display-font">Building Worlds, Telling Stories</h2>
             <p className="text-gray-300 mb-4 leading-relaxed">
-              Founded in the heart of Portland&apos;s creative district, DOA has grown from a small
-              art department collective to a full-service production design powerhouse. We&apos;ve had
-              the privilege of working on over 200 productions, from intimate independent films
-              to major studio blockbusters.
+              Department of Art is a full service scenery shop, supporting the local film/photo community
+              for the last 20 years. Set construction, custom prop building, graphics and scenic treatments
+              are just some of the services we offer.
             </p>
             <p className="text-gray-300 mb-4 leading-relaxed">
-              Our 50,000 square foot facility houses state-of-the-art workshops, soundstages,
-              and one of the region&apos;s largest prop and set dressing inventories. But what truly
-              sets us apart is our team – a diverse group of artists, craftspeople, and problem
-              solvers who bring passion and expertise to every project.
+              DOA also fabricates retail fixtures, professional trade show displays, and provides services
+              for special events and product launches.
             </p>
             <p className="text-gray-300 leading-relaxed">
-              We believe that great production design doesn&apos;t just support the story – it elevates
-              it. Whether we&apos;re building a dystopian future or recreating historical Portland,
-              our commitment to authenticity, creativity, and collaboration remains constant.
+              The three partners at Department of Art are all 20+ year veterans in the film industry,
+              having filled every role from production designer, art director, prop master, decorator,
+              lead man, and set dresser. All partners still actively work in the industry thus, DOA can
+              be seen as "one stop shopping" for productions seeking all things art department. We can
+              provide crew for your shoot, a place for that crew to work, provide internet and office
+              needs, gated parking, and trucking for any size production. And when you&apos;re done for
+              the day... enjoy a cold beer in our bar and a game of pinball.
             </p>
           </div>
           <div className="relative h-96 rounded-lg overflow-hidden bg-zinc-900">
@@ -74,7 +77,7 @@ const AboutPage = () => {
             <div>
               <h3 className="text-2xl font-semibold mb-4">Our Mission</h3>
               <p className="text-gray-300 leading-relaxed">
-                To deliver exceptional production design services that bring creative visions to life, 
+                To deliver exceptional production design services that bring creative visions to life,
                 while fostering innovation, sustainability, and artistic excellence in everything we do.
               </p>
             </div>
@@ -90,15 +93,19 @@ const AboutPage = () => {
         </section>
 
         {/* Team Section */}
-        <section>
+        <section className="mb-20">
           <h2 className="text-3xl font-semibold mb-10 text-center display-font">Leadership Team</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center">
             {teamMembers.map((member) => (
               <div key={member.name} className="text-center">
-                <div className="w-48 h-48 mx-auto mb-4 rounded-full overflow-hidden bg-zinc-900">
-                  <div className="w-full h-full flex items-center justify-center text-gray-600">
-                    <span>{member.name}</span>
-                  </div>
+                <div className="w-48 h-48 mx-auto mb-4 rounded-full overflow-hidden bg-zinc-900 relative">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
                 </div>
                 <h3 className="text-xl font-semibold mb-1">{member.name}</h3>
                 <p className="text-gray-400 mb-3">{member.role}</p>
@@ -107,6 +114,7 @@ const AboutPage = () => {
             ))}
           </div>
         </section>
+
           </div>
         </div>
       </main>

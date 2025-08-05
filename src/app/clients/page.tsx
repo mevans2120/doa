@@ -52,7 +52,14 @@ const ClientsPage = () => {
         
         <div className="relative z-10 py-20">
           <div className="max-w-7xl mx-auto px-8">
-        <h1 className="text-5xl font-bold mb-16 text-center display-font">Our Clients</h1>
+        {/* Header Section */}
+        <div className="text-center mb-16 fade-in-up">
+          <h1 className="text-5xl font-bold text-white mb-6 display-font">Our Clients</h1>
+          <div className="text-xl heading-font text-gray-300 mb-8">
+            Trusted by Leading Brands and Production Companies
+          </div>
+          <div className="professional-divider max-w-md mx-auto"></div>
+        </div>
 
         {/* Client Logos */}
         <section className="mb-20">

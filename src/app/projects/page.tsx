@@ -269,7 +269,14 @@ const ProjectsPage = () => {
       <main className="min-h-screen text-white bg-gradient-to-br from-gray-800 via-[#252525] to-gray-800">
         <div className="py-20">
           <div className="max-w-7xl mx-auto px-8">
-        <h1 className="text-5xl font-bold mb-12 text-center display-font">Our Work</h1>
+        {/* Header Section */}
+        <div className="text-center mb-12 fade-in-up">
+          <h1 className="text-5xl font-bold text-white mb-6 display-font">Our Work</h1>
+          <div className="text-xl heading-font text-gray-300 mb-8">
+            Showcasing Our Creative Excellence and Technical Expertise
+          </div>
+          <div className="professional-divider max-w-md mx-auto"></div>
+        </div>
         
         {/* Category Filter */}
         <div className="flex justify-center gap-4 mb-12 flex-wrap">
