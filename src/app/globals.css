@@ -204,4 +204,45 @@
       transform: translateY(0);
     }
   }
+
+  /* Gradient animation keyframes */
+  @keyframes gradient-shift {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  /* Skull brightness animation keyframes */
+  @keyframes skull-glow {
+    0%, 100% {
+      opacity: 0.2;
+    }
+    50% {
+      opacity: 0.6;
+    }
+  }
+
+  /* Gradient animation utility class */
+  .animate-gradient {
+    background-size: 200% 100%;
+    animation: gradient-shift 15s ease infinite;
+    will-change: background-position;
+  }
+
+  /* Skull animation utility class */
+  .animate-skull-glow {
+    animation: skull-glow 15s ease-in-out infinite;
+    will-change: filter;
+  }
+
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-gradient,
+    .animate-skull-glow {
+      animation: none;
+    }
+  }
 }

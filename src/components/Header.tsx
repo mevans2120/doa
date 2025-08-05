@@ -19,7 +19,7 @@ const Header = () => {
 
   return (
     <>
-      <nav className="flex justify-between items-center px-4 sm:px-6 md:px-10 py-4 md:py-6 bg-doa-black border-b border-gray-800 relative z-50">
+      <nav className="flex justify-between items-center px-4 sm:px-6 md:px-10 py-4 md:py-6 bg-gradient-to-r from-gray-900 via-[#252525] to-gray-900 bg-[length:200%_100%] animate-gradient-x backdrop-blur-sm border-b border-gray-800 relative z-50">
         {/* Logo */}
         <Link href="/" className="relative z-20 flex items-center">
           <Image
