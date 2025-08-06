@@ -18,7 +18,7 @@
     
     /* Typography */
     --font-display: var(--font-keania), 'Arial Black', 'Helvetica', sans-serif;
-    --font-heading: 'Helvetica', 'Arial', sans-serif;
+    --font-heading: var(--font-pt-sans), 'PT Sans', sans-serif;
     --font-body: var(--font-garamond), 'Times New Roman', serif;
     --font-size-sm: 14px;
     --letter-spacing-wide: 1px;

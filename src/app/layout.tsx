@@ -1,22 +1,7 @@
 import type { Metadata } from "next";
-import { Keania_One, EB_Garamond } from "next/font/google";
 import "./globals.css";
 import { FaviconManager } from "@/components/FaviconManager";
-
-// Display font
-const keaniaOne = Keania_One({
-  weight: "400",
-  variable: "--font-keania",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-// Body font (Garamond)
-const ebGaramond = EB_Garamond({
-  variable: "--font-garamond",
-  subsets: ["latin"],
-  display: "swap",
-});
+import { keaniaOne, ebGaramond, ptSans } from "@/lib/fonts";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://departmentofart.com'),
@@ -60,7 +45,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${keaniaOne.variable} ${ebGaramond.variable} antialiased`}
+        className={`${keaniaOne.variable} ${ebGaramond.variable} ${ptSans.variable} antialiased`}
       >
         <FaviconManager />
         {children}
