@@ -1,5 +1,3 @@
-import { fonts } from '../lib/fonts'
-
 const Testimonials = () => {
   const testimonials = [
     {

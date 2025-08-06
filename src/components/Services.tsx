@@ -1,7 +1,5 @@
 'use client'
 
-import { fonts } from '../lib/fonts'
-
 interface ServicesProps {
   limit?: number;
 }

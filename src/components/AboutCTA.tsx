@@ -1,5 +1,3 @@
-import { fonts } from '../lib/fonts'
-
 const AboutCTA = () => {
   return (
     <section className="py-16 px-10 bg-[#252525] relative overflow-hidden">
