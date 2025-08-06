@@ -264,7 +264,7 @@ const Projects = () => {
         <h2 className={`${fonts.display} text-5xl font-bold mb-12 text-center`}>Featured Projects</h2>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {featuredProjects.map((project) => (
             <div
               key={project.id}
