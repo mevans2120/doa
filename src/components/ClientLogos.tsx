@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import { fonts } from '../lib/fonts'
 
 const ClientLogos = () => {
   const clients = [

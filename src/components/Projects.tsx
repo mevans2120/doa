@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
-import { fonts } from '../lib/fonts'
 
 interface ProjectData {
   id: string;
