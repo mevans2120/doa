@@ -26,13 +26,13 @@ const Hero = () => {
       <div className="relative z-20 text-white max-w-4xl">
         <div className="relative z-20 fade-in-up">
           {/* Main headline */}
-          <h1 className={`${fonts.display} text-7xl sm:text-7xl md:text-8xl lg:text-9xl font-normal mb-4 md:mb-8 leading-tight text-white`}>
+          <h1 className={`${fonts.display} text-7xl sm:text-7xl md:text-8xl lg:text-9xl font-normal mb-16 md:mb-8 leading-tight text-white`}>
             <span className="block">Department of Art</span>
           </h1>
      
           
           {/* Professional description */}
-          <div className="mb-8 md:mb-12 body-font text-base md:text-lg text-gray-300 leading-relaxed max-w-2xl">
+          <div className="mb-16 md:mb-12 body-font text-base md:text-lg text-gray-300 leading-relaxed max-w-2xl">
             <p>
               We bring creative visions to life through expert craftsmanship and innovative design.
               From concept to completion, our team delivers exceptional set construction services
