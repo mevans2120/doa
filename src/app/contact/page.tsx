@@ -51,7 +51,7 @@ const ContactPage = () => {
           <div className="max-w-7xl mx-auto px-8">
         {/* Header Section */}
         <div className="text-center mb-16 fade-in-up">
-          <h1 className={`${fonts.display} text-5xl font-bold text-white mb-6`}>Contact Us</h1>
+          <h1 className="heading-font text-5xl font-bold text-white mb-6">Contact Us</h1>
           <div className="text-xl heading-font text-gray-300 mb-8">
             Let&apos;s Bring Your Creative Vision to Life
           </div>
@@ -61,7 +61,7 @@ const ContactPage = () => {
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
           <div>
-            <h2 className={`${fonts.display} text-3xl font-semibold mb-6`}>Get in Touch</h2>
+            <h2 className="heading-font text-3xl font-semibold mb-6">Get in Touch</h2>
             <p className="text-gray-400 mb-8">
               Ready to bring your creative vision to life? We&apos;d love to hear about your project.
               Fill out the form below and our team will get back to you within 24 hours.
@@ -134,7 +134,7 @@ const ContactPage = () => {
           <div className="space-y-8">
             {/* Contact Information */}
             <div>
-              <h2 className={`${fonts.display} text-3xl font-semibold mb-6`}>Visit Our Studio</h2>
+              <h2 className="heading-font text-3xl font-semibold mb-6">Visit Our Studio</h2>
               <div className="space-y-4 mb-8">
                 <div>
                   <h3 className="text-lg font-medium mb-2 heading-font">Address</h3>

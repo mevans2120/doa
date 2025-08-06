@@ -55,7 +55,7 @@ const ClientsPage = () => {
           <div className="max-w-7xl mx-auto px-8">
         {/* Header Section */}
         <div className="text-center mb-16 fade-in-up">
-          <h1 className={`${fonts.display} text-5xl font-bold text-white mb-6`}>Our Clients</h1>
+          <h1 className="heading-font text-5xl font-bold text-white mb-6">Our Clients</h1>
           <div className="text-xl heading-font text-gray-300 mb-8">
             Trusted by Leading Brands and Production Companies
           </div>
@@ -88,7 +88,7 @@ const ClientsPage = () => {
 
         {/* Featured Collaborators */}
         <section className="mb-20">
-          <h2 className={`${fonts.display} text-3xl font-semibold mb-10 text-center`}>Featured Collaborators</h2>
+          <h2 className="heading-font text-3xl font-semibold mb-10 text-center">Featured Collaborators</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {collaborators.map((collaborator, index) => (
               <div

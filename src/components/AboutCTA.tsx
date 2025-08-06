@@ -8,7 +8,7 @@ const AboutCTA = () => {
       
       {/* CTA Content */}
       <div className="relative z-10 text-center max-w-4xl mx-auto">
-        <h2 className={`${fonts.display} text-4xl font-bold text-white mb-6`}>
+        <h2 className="heading-font text-4xl font-bold text-white mb-6">
           Building Dreams, One Set at a Time
         </h2>
         <p className="text-xl text-gray-300 mb-8 leading-relaxed">

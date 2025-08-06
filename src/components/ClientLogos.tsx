@@ -36,7 +36,7 @@ const ClientLogos = () => {
       
       {/* Section title */}
       <div className="relative z-10 text-center mb-20 fade-in-up">
-        <h2 className={`${fonts.display} text-5xl font-bold text-white mb-6`}>
+        <h2 className="heading-font text-5xl font-bold text-white mb-6">
           Our Clients
         </h2>
         <div className="text-xl heading-font text-gray-300 mb-8">

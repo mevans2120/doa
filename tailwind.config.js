@@ -9,7 +9,7 @@ module.exports = {
     extend: {
       fontFamily: {
         'display': ['var(--font-keania)', 'Keania One', 'sans-serif'],
-        'heading': ['Helvetica', 'Arial', 'sans-serif'],
+        'heading': ['var(--font-pt-sans)', 'PT Sans', 'sans-serif'],
         'body': ['var(--font-garamond)', 'Garamond', 'Times New Roman', 'serif'],
       },
       colors: {

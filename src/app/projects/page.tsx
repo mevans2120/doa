@@ -265,7 +265,7 @@ const ProjectsPage = () => {
           <div className="max-w-7xl mx-auto px-8">
         {/* Header Section */}
         <div className="text-center mb-12 fade-in-up">
-          <h1 className={`${fonts.display} text-5xl font-bold text-white mb-6`}>Our Work</h1>
+          <h1 className="heading-font text-5xl font-bold text-white mb-6">Our Work</h1>
           <div className="text-xl heading-font text-gray-300 mb-8">
             Showcasing Our Creative Excellence and Technical Expertise
           </div>
@@ -290,7 +290,7 @@ const ProjectsPage = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-doa-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
               <div className="p-6">
-                <h3 className={`${fonts.display} text-xl font-semibold mb-2`}>{project.title}</h3>
+                <h3 className="heading-font text-xl font-semibold mb-2">{project.title}</h3>
                 <p className="text-gray-400 text-sm mb-1">{project.type}</p>
                 <p className="text-gray-500 text-sm">{project.client} • {project.year}</p>
               </div>
@@ -376,7 +376,7 @@ const ProjectsPage = () => {
               {/* Details */}
               <div className="space-y-6">
                 <div>
-                  <h3 className={`${fonts.display} text-3xl font-bold mb-2`}>{selectedProject.title}</h3>
+                  <h3 className="heading-font text-3xl font-bold mb-2">{selectedProject.title}</h3>
                   <p className="text-gray-400">{selectedProject.type} • {selectedProject.year}</p>
                 </div>
 
