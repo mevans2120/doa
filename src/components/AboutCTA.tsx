@@ -1,12 +1,10 @@
 const AboutCTA = () => {
   return (
-    <section className="py-16 px-10 bg-[#252525] relative overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-800 via-[#252525] to-gray-800"></div>
+    <section className="py-16 px-10 bg-black relative overflow-hidden noise-overlay paint-flecks">
       
       {/* CTA Content */}
       <div className="relative z-10 text-center max-w-4xl mx-auto">
-        <h2 className="heading-font text-4xl font-bold text-white mb-6">
+        <h2 className="bebas-font text-5xl text-white mb-6 text-outline">
           Building Dreams, One Set at a Time
         </h2>
         <p className="text-xl text-gray-300 mb-8 leading-relaxed">

@@ -31,8 +31,8 @@ const AboutPage = () => {
   return (
     <div className="min-h-screen">
       <Header />
-      <main className="min-h-screen text-white bg-gradient-to-br from-gray-800 via-[#252525] to-gray-800">
-        <div className="py-20">
+      <main className="min-h-screen text-white bg-gradient-to-br from-black via-[#252525] to-[#3b3b3b] relative noise-overlay">
+        <div className="pt-24 pb-20">
           <div className="max-w-7xl mx-auto px-8">
         {/* Hero Section */}
         <section className="text-center mb-20 fade-in-up">

@@ -42,11 +42,11 @@ const ContactPage = () => {
   return (
     <div className="min-h-screen">
       <Header />
-      <main className="relative min-h-screen text-white">
+      <main className="relative min-h-screen text-white noise-overlay">
         {/* Background gradient */}
-        <div className="fixed inset-0 bg-gradient-to-br from-gray-800 via-[#252525] to-gray-800 -z-10"></div>
+        <div className="fixed inset-0 bg-gradient-to-br from-black via-[#252525] to-[#3b3b3b] -z-10"></div>
         
-        <div className="relative z-10 py-20">
+        <div className="relative z-10 pt-24 pb-20">
           <div className="max-w-7xl mx-auto px-8">
         {/* Header Section */}
         <div className="text-center mb-16 fade-in-up">

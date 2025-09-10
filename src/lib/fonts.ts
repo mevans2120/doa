@@ -1,4 +1,4 @@
-import { Keania_One, EB_Garamond, PT_Sans } from "next/font/google";
+import { Keania_One, EB_Garamond, PT_Sans, Bebas_Neue } from "next/font/google";
 
 // Display font
 const keaniaOne = Keania_One({
@@ -23,6 +23,14 @@ const ptSans = PT_Sans({
   display: "swap",
 });
 
+// Bebas Neue font
+const bebasNeue = Bebas_Neue({
+  weight: "400",
+  variable: "--font-bebas",
+  subsets: ["latin"],
+  display: "swap",
+});
+
 export const fonts = {
   display: keaniaOne.className,
   body: ebGaramond.className,
@@ -30,4 +38,4 @@ export const fonts = {
 };
 
 // Export font instances for use in layout
-export { keaniaOne, ebGaramond, ptSans };
+export { keaniaOne, ebGaramond, ptSans, bebasNeue };

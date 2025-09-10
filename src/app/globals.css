@@ -85,6 +85,12 @@
     font-family: var(--font-body);
   }
 
+  .bebas-font {
+    font-family: var(--font-bebas);
+    font-weight: 400;
+    letter-spacing: 0.11em;
+  }
+
   /* Professional Button Styles */
   .professional-btn {
     @apply font-heading text-white font-semibold uppercase tracking-wide px-6 py-3
@@ -242,6 +248,130 @@
   .animate-skull-glow {
     animation: skull-glow 15s ease-in-out infinite;
     will-change: filter;
+  }
+
+  /* Gritty noise texture overlay */
+  .noise-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.15;
+    z-index: 1;
+    pointer-events: none;
+    background-image: 
+      repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(255,255,255,.03) 2px, rgba(255,255,255,.03) 4px),
+      repeating-linear-gradient(-45deg, transparent, transparent 2px, rgba(0,0,0,.05) 2px, rgba(0,0,0,.05) 4px);
+    filter: contrast(120%) brightness(120%);
+    mix-blend-mode: overlay;
+  }
+
+  .noise-overlay::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.4;
+    z-index: 1;
+    pointer-events: none;
+    background: 
+      repeating-conic-gradient(from 0deg at 50% 50%, rgba(0,0,0,0) 0deg, rgba(255,255,255,.01) 1deg, rgba(0,0,0,0) 2deg),
+      repeating-conic-gradient(from 45deg at 50% 50%, rgba(0,0,0,.02) 0deg, transparent 4deg);
+    background-size: 3px 3px, 5px 5px;
+    filter: contrast(200%);
+    mix-blend-mode: multiply;
+  }
+
+  /* Text outline styles */
+  .text-outline {
+    color: transparent;
+    -webkit-text-stroke: 2px white;
+    text-stroke: 2px white;
+  }
+
+  .text-outline-thin {
+    color: transparent;
+    -webkit-text-stroke: 1px white;
+    text-stroke: 1px white;
+  }
+
+  .text-outline-thick {
+    color: transparent;
+    -webkit-text-stroke: 3px white;
+    text-stroke: 3px white;
+  }
+
+  /* Outline with fill */
+  .text-outline-filled {
+    -webkit-text-stroke: 2px white;
+    text-stroke: 2px white;
+    color: black;
+  }
+
+  /* Hover effect for outline text */
+  .text-outline-hover {
+    transition: all 0.3s ease;
+    -webkit-text-stroke: 2px white;
+    text-stroke: 2px white;
+  }
+
+  .text-outline-hover:hover {
+    color: white;
+    -webkit-text-stroke: 0px;
+    text-stroke: 0px;
+  }
+
+  /* Paint flecks effect */
+  .paint-flecks::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+    background-image: 
+      radial-gradient(circle, white 2px, transparent 2px),
+      radial-gradient(circle, white 1px, transparent 1px),
+      radial-gradient(circle, rgba(255,255,255,0.9) 3px, transparent 3px);
+    background-size: 100px 100px, 150px 150px, 200px 200px;
+    background-position: 0 0, 50px 50px, 25px 75px;
+    opacity: 0.3;
+  }
+
+  .paint-flecks::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+    background: 
+      radial-gradient(4px 4px at 20% 30%, white, transparent),
+      radial-gradient(3px 3px at 60% 70%, rgba(255,255,255,0.9), transparent),
+      radial-gradient(2px 2px at 15% 40%, white, transparent),
+      radial-gradient(5px 5px at 80% 10%, rgba(255,255,255,0.8), transparent),
+      radial-gradient(3px 3px at 45% 60%, white, transparent),
+      radial-gradient(2px 2px at 70% 80%, rgba(255,255,255,0.9), transparent);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    opacity: 0.4;
+  }
+
+  @keyframes flecks-drift {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(50px, 50px);
+    }
   }
 
   /* Enhanced reduced motion support */

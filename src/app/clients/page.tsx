@@ -46,11 +46,11 @@ const ClientsPage = () => {
   return (
     <div className="min-h-screen">
       <Header />
-      <main className="relative min-h-screen text-white">
+      <main className="relative min-h-screen text-white noise-overlay">
         {/* Background gradient */}
-        <div className="fixed inset-0 bg-gradient-to-br from-gray-800 via-[#252525] to-gray-800 -z-10"></div>
+        <div className="fixed inset-0 bg-gradient-to-br from-black via-[#252525] to-[#3b3b3b] -z-10"></div>
         
-        <div className="relative z-10 py-20">
+        <div className="relative z-10 pt-24 pb-20">
           <div className="max-w-7xl mx-auto px-8">
         {/* Header Section */}
         <div className="text-center mb-16 fade-in-up">
@@ -63,23 +63,19 @@ const ClientsPage = () => {
 
         {/* Client Logos */}
         <section className="mb-20">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12">
             {clientLogos.map((client) => (
               <div
                 key={client.name}
-                className="bg-zinc-900 rounded-lg p-8 flex items-center justify-center hover:bg-zinc-800 transition-colors duration-300"
+                className="flex items-center justify-center"
               >
-                <div className="text-gray-400 text-center w-full">
-                  <div className="h-16 flex items-center justify-center mb-2 relative">
-                    <Image
-                      src={client.logo}
-                      alt={`${client.name} logo`}
-                      width={140}
-                      height={60}
-                      className="object-contain filter brightness-0 invert opacity-70 hover:opacity-100 transition-opacity duration-300"
-                    />
-                  </div>
-                </div>
+                <Image
+                  src={client.logo}
+                  alt={`${client.name} logo`}
+                  width={140}
+                  height={60}
+                  className="object-contain filter brightness-0 invert opacity-70 hover:opacity-100 transition-opacity duration-300"
+                />
               </div>
             ))}
           </div>
@@ -88,13 +84,13 @@ const ClientsPage = () => {
         {/* Featured Collaborators */}
         <section className="mb-20">
           <h2 className="heading-font text-3xl font-semibold mb-10 text-center">Featured Collaborators</h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {collaborators.map((collaborator, index) => (
               <div
                 key={index}
-                className="bg-zinc-900 rounded-lg p-6 hover:bg-zinc-800 transition-colors duration-300"
+                className="text-center"
               >
-                <h3 className="text-lg font-semibold text-center heading-font">{collaborator}</h3>
+                <h3 className="text-lg font-semibold heading-font text-white hover:opacity-80 transition-opacity">{collaborator}</h3>
               </div>
             ))}
           </div>
