@@ -29,13 +29,11 @@ const ClientLogos = () => {
   ]
 
   return (
-    <section className="py-24 px-10 bg-[#252525] relative overflow-hidden" id="clients">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-800 via-[#252525] to-gray-800"></div>
+    <section className="py-24 px-10 bg-black relative overflow-hidden noise-overlay paint-flecks" id="clients">
       
       {/* Section title */}
       <div className="relative z-10 text-center mb-20 fade-in-up">
-        <h2 className="heading-font text-5xl font-bold text-white mb-6">
+        <h2 className="bebas-font text-6xl text-white mb-6 text-outline">
           Our Clients
         </h2>
         <div className="text-xl heading-font text-gray-300 mb-8">
@@ -45,25 +43,19 @@ const ClientLogos = () => {
       </div>
       
       {/* Client grid */}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 max-w-7xl mx-auto relative z-10">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 max-w-7xl mx-auto relative z-10">
         {clients.map((client, index) => (
           <div
             key={index}
-            className="professional-card p-6 text-center relative overflow-hidden rounded-lg"
+            className="flex items-center justify-center"
           >
-            {/* Client logo */}
-            <div className="w-full h-20 flex items-center justify-center relative">
-              <Image
-                src={client.logo}
-                alt={`${client.name} logo`}
-                width={140}
-                height={70}
-                className="object-contain filter brightness-0 invert opacity-80 group-hover:opacity-100 transition-opacity duration-300"
-              />
-            </div>
-            
-            {/* Top accent */}
-            <div className="absolute top-0 left-0 right-0 h-1 bg-doa-silver"></div>
+            <Image
+              src={client.logo}
+              alt={`${client.name} logo`}
+              width={140}
+              height={70}
+              className="object-contain filter brightness-0 invert opacity-70 hover:opacity-100 transition-opacity duration-300"
+            />
           </div>
         ))}
       </div>

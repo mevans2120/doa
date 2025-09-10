@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { FaviconManager } from "@/components/FaviconManager";
-import { keaniaOne, ebGaramond, ptSans } from "@/lib/fonts";
+import { keaniaOne, ebGaramond, ptSans, bebasNeue } from "@/lib/fonts";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://departmentofart.com'),
@@ -43,9 +43,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="overflow-x-hidden">
       <body
-        className={`${keaniaOne.variable} ${ebGaramond.variable} ${ptSans.variable} antialiased`}
+        className={`${keaniaOne.variable} ${ebGaramond.variable} ${ptSans.variable} ${bebasNeue.variable} antialiased overflow-x-hidden`}
       >
         <FaviconManager />
         {children}

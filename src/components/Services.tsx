@@ -139,13 +139,11 @@ const Services = ({ limit }: ServicesProps = {}) => {
   ]
 
   return (
-    <section className="pt-7 pb-24 px-10 bg-[#252525] relative overflow-hidden" id="services" role="region">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-800 via-[#252525] to-gray-800"></div>
+    <section className="pt-16 pb-24 px-10 bg-black relative overflow-hidden noise-overlay paint-flecks" id="services" role="region">
       
       {/* Section title */}
       <div className="relative z-10 text-center mb-8 fade-in-up">
-        <h2 className="heading-font text-5xl font-bold text-white mb-6">
+        <h2 className="bebas-font text-6xl text-white mb-6 text-outline">
           Our Services
         </h2>
         <div className="text-xl heading-font text-gray-300 mb-8">

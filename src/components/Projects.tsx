@@ -258,9 +258,9 @@ const Projects = () => {
   const featuredProjects = allProjects.slice(0, 3)
 
   return (
-    <section id="projects" className="bg-doa-black text-white pt-20 pb-24">
+    <section id="projects" className="bg-doa-black text-white pt-[72px] pb-24">
       <div className="max-w-7xl mx-auto px-8">
-        <h2 className="heading-font text-5xl font-bold mb-12 text-center">Featured Projects</h2>
+        <h2 className="bebas-font text-6xl mb-12 text-center text-outline">Our Work</h2>
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
