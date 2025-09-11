@@ -144,12 +144,8 @@ const Services = ({ limit }: ServicesProps = {}) => {
       {/* Section title */}
       <div className="relative z-10 text-center mb-8 fade-in-up">
         <h2 className="bebas-font text-6xl text-white mb-6 text-outline">
-          Our Services
+          What We Do
         </h2>
-        <div className="text-xl heading-font text-gray-300 mb-8">
-          Comprehensive Set Construction & Design Solutions
-        </div>
-        <div className="professional-divider max-w-md mx-auto"></div>
       </div>
       
       {/* Services grid */}
