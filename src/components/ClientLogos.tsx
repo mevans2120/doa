@@ -36,10 +36,6 @@ const ClientLogos = () => {
         <h2 className="bebas-font text-6xl text-white mb-6 text-outline">
           Our Clients
         </h2>
-        <div className="text-xl heading-font text-gray-300 mb-8">
-          Partnering Together in Creative Excellence
-        </div>
-        <div className="professional-divider max-w-md mx-auto"></div>
       </div>
       
       {/* Client grid */}

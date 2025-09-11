@@ -30,10 +30,6 @@ const Testimonials = () => {
         <h2 className="bebas-font text-6xl text-white mb-6 text-outline">
           Client Testimonials
         </h2>
-        <div className="text-xl heading-font text-gray-300 mb-8">
-          What its like to work with us
-        </div>
-        <div className="professional-divider max-w-md mx-auto"></div>
       </div>
       
       {/* Testimonials */}
