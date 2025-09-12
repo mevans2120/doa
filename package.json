@@ -8,17 +8,24 @@
     "start": "next start",
     "lint": "next lint",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "migrate:sanity": "tsx scripts/migrate-to-sanity.ts",
+    "migrate:images": "tsx scripts/migrate-images.ts"
   },
   "dependencies": {
+    "@sanity/image-url": "^1.2.0",
+    "@sanity/vision": "^4.8.1",
     "clsx": "^2.1.1",
     "next": "15.3.3",
+    "next-sanity": "^11.1.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "sanity": "^4.8.1",
     "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@sanity/client": "^7.11.1",
     "@tailwindcss/postcss": "^4",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
@@ -28,11 +35,14 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "autoprefixer": "^10.4.21",
+    "dotenv": "^17.2.2",
     "eslint": "^9",
     "eslint-config-next": "15.3.3",
     "jest": "^30.0.0",
     "jest-environment-jsdom": "^30.0.0",
+    "nanoid": "^5.1.5",
     "tailwindcss": "^4",
+    "tsx": "^4.20.5",
     "typescript": "^5"
   }
 }

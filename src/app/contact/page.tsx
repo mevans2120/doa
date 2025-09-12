@@ -44,13 +44,13 @@ const ContactPage = () => {
       <Header />
       <main className="relative min-h-screen text-white noise-overlay">
         {/* Background gradient */}
-        <div className="fixed inset-0 bg-gradient-to-br from-black via-[#252525] to-[#3b3b3b] -z-10"></div>
+        <div className="fixed inset-0 bg-black -z-10"></div>
         
         <div className="relative z-10 pt-24 pb-20">
           <div className="max-w-7xl mx-auto px-8">
         {/* Header Section */}
         <div className="text-center mb-16 fade-in-up">
-          <h1 className="heading-font text-5xl font-bold text-white mb-6">Contact Us</h1>
+          <h1 className="page-title">Contact Us</h1>
           <div className="text-xl heading-font text-gray-300 mb-8">
             Let&apos;s Bring Your Creative Vision to Life
           </div>

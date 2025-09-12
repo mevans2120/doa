@@ -1,4 +1,6 @@
 import Image from 'next/image'
+import Link from 'next/link'
+import EKGDivider from './EKGDivider'
 
 const Footer = () => {
   return (
@@ -15,8 +17,8 @@ const Footer = () => {
                 height={50}
                 className="mr-3 brightness-0 invert"
               />
-              <h3 className="text-xl font-semibold text-white heading-font">
-                Department of Art
+              <h3 className="bebas-font text-xl text-white text-outline whitespace-nowrap">
+                DEPARTMENT OF ART
               </h3>
             </div>
             <p className="text-white body-font mb-4" style={{ color: '#ffffff' }}>
@@ -76,17 +78,25 @@ const Footer = () => {
               Quick Links
             </h3>
             <div className="space-y-2 text-white body-font">
-              <div><a href="/projects" className="text-white hover:text-gray-300 transition-colors" style={{ color: '#ffffff' }}>Projects</a></div>
-              <div><a href="/services" className="text-white hover:text-gray-300 transition-colors" style={{ color: '#ffffff' }}>Services</a></div>
-              <div><a href="/clients" className="text-white hover:text-gray-300 transition-colors" style={{ color: '#ffffff' }}>Clients</a></div>
-              <div><a href="/about" className="text-white hover:text-gray-300 transition-colors" style={{ color: '#ffffff' }}>About</a></div>
-              <div><a href="/contact" className="text-white hover:text-gray-300 transition-colors" style={{ color: '#ffffff' }}>Contact</a></div>
+              <div><Link href="/" className="text-white hover:text-gray-300 transition-colors" style={{ color: '#ffffff' }}>Home</Link></div>
+              <div><Link href="/projects" className="text-white hover:text-gray-300 transition-colors" style={{ color: '#ffffff' }}>Our Work</Link></div>
+              <div><Link href="/services" className="text-white hover:text-gray-300 transition-colors" style={{ color: '#ffffff' }}>What We Do</Link></div>
+              <div><Link href="/clients" className="text-white hover:text-gray-300 transition-colors" style={{ color: '#ffffff' }}>Our Clients</Link></div>
+              <div><Link href="/about" className="text-white hover:text-gray-300 transition-colors" style={{ color: '#ffffff' }}>About</Link></div>
+              <div><Link href="/contact" className="text-white hover:text-gray-300 transition-colors" style={{ color: '#ffffff' }}>Contact</Link></div>
             </div>
           </div>
         </div>
         
+        {/* EKG Divider - positioned to overlay content */}
+        <div className="relative h-20 -mt-8">
+          <div className="absolute inset-0 z-50">
+            <EKGDivider />
+          </div>
+        </div>
+        
         {/* Bottom Bar */}
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center">
+        <div className="text-center pb-4">
           <p className="text-white body-font" style={{ color: '#ffffff' }}>
             © {new Date().getFullYear()} Department of Art. All rights reserved.
           </p>
