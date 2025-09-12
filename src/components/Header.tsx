@@ -90,7 +90,7 @@ const Header = () => {
               isActive('/projects') ? '[text-shadow:_0_0_25px_rgba(255,255,255,1)]' : 'hover:[text-shadow:_0_0_25px_rgba(255,255,255,1)]'
             }`}
           >
-            Projects
+            Our Work
           </Link>
           <Link
             href="/services"
@@ -99,7 +99,7 @@ const Header = () => {
               isActive('/services') ? '[text-shadow:_0_0_25px_rgba(255,255,255,1)]' : 'hover:[text-shadow:_0_0_25px_rgba(255,255,255,1)]'
             }`}
           >
-            Services
+            What We Do
           </Link>
           <Link
             href="/clients"
@@ -108,7 +108,7 @@ const Header = () => {
               isActive('/clients') ? '[text-shadow:_0_0_25px_rgba(255,255,255,1)]' : 'hover:[text-shadow:_0_0_25px_rgba(255,255,255,1)]'
             }`}
           >
-            Clients
+            Our Clients
           </Link>
           <Link
             href="/about"

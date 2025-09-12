@@ -1,0 +1,111 @@
+import { groq } from 'next-sanity'
+
+// Project queries
+export const projectsQuery = groq`*[_type == "project"] | order(order asc, _createdAt desc) {
+  _id,
+  title,
+  slug,
+  client,
+  category,
+  type,
+  mainImage,
+  gallery,
+  description,
+  featured,
+  year,
+  credits,
+  technicalDetails
+}`
+
+export const featuredProjectsQuery = groq`*[_type == "project" && featured == true] | order(order asc) [0...6] {
+  _id,
+  title,
+  slug,
+  client,
+  category,
+  type,
+  mainImage,
+  description,
+  year
+}`
+
+export const projectDetailQuery = groq`*[_type == "project" && slug.current == $slug][0] {
+  _id,
+  title,
+  slug,
+  client,
+  category,
+  type,
+  mainImage,
+  gallery,
+  description,
+  year,
+  credits,
+  technicalDetails
+}`
+
+// Client queries
+export const clientsQuery = groq`*[_type == "client"] | order(order asc, name asc) {
+  _id,
+  name,
+  logo,
+  logoWhite,
+  website,
+  featured
+}`
+
+export const featuredClientsQuery = groq`*[_type == "client" && featured == true] | order(order asc) [0...12] {
+  _id,
+  name,
+  logo,
+  logoWhite
+}`
+
+// Testimonial queries
+export const testimonialsQuery = groq`*[_type == "testimonial"] | order(order asc, _createdAt desc) {
+  _id,
+  quote,
+  author,
+  role,
+  company,
+  featured
+}`
+
+export const featuredTestimonialsQuery = groq`*[_type == "testimonial" && featured == true] | order(order asc) [0...3] {
+  _id,
+  quote,
+  author,
+  role,
+  company
+}`
+
+// Service queries
+export const servicesQuery = groq`*[_type == "service"] | order(order asc, _createdAt desc) {
+  _id,
+  title,
+  slug,
+  shortDescription,
+  icon
+}`
+
+// Team member queries
+export const teamMembersQuery = groq`*[_type == "teamMember"] | order(order asc, _createdAt desc) {
+  _id,
+  name,
+  role,
+  bio,
+  photo,
+  imdbUrl
+}`
+
+// Site settings query
+export const siteSettingsQuery = groq`*[_type == "siteSettings"][0] {
+  title,
+  description,
+  heroTitle,
+  heroSubtitle,
+  contactEmail,
+  contactPhone,
+  address,
+  socialMedia
+}`

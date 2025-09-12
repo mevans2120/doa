@@ -139,7 +139,7 @@ const Services = ({ limit }: ServicesProps = {}) => {
   ]
 
   return (
-    <section className="pt-16 pb-24 px-10 bg-black relative overflow-hidden noise-overlay paint-flecks" id="services" role="region">
+    <section className="pt-32 pb-24 px-10 bg-black relative overflow-hidden noise-overlay paint-flecks" id="services" role="region">
       
       {/* Section title */}
       <div className="relative z-10 text-center mb-8 fade-in-up">
