@@ -71,8 +71,9 @@ export const testimonialsQuery = groq`*[_type == "testimonial"] | order(order as
   featured
 }`
 
-export const featuredTestimonialsQuery = groq`*[_type == "testimonial" && featured == true] | order(order asc) [0...3] {
+export const featuredTestimonialsQuery = groq`*[_type == "testimonial" && featured == true] | order(order asc) [0...4] {
   _id,
+  title,
   quote,
   author,
   role,
@@ -108,4 +109,12 @@ export const siteSettingsQuery = groq`*[_type == "siteSettings"][0] {
   contactPhone,
   address,
   socialMedia
+}`
+
+// Homepage settings query
+export const homepageSettingsQuery = groq`*[_type == "homepageSettings"][0] {
+  heroSection,
+  sectionTitles,
+  aboutCTA,
+  seo
 }`

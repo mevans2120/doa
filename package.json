@@ -10,7 +10,8 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "migrate:sanity": "tsx scripts/migrate-to-sanity.ts",
-    "migrate:images": "tsx scripts/migrate-images.ts"
+    "migrate:images": "tsx scripts/migrate-images.ts",
+    "migrate:services": "tsx scripts/migrate-services.ts"
   },
   "dependencies": {
     "@sanity/image-url": "^1.2.0",

@@ -6,6 +6,13 @@ export default defineType({
   type: 'document',
   fields: [
     defineField({
+      name: 'title',
+      title: 'Title',
+      type: 'string',
+      description: 'Brief title for the testimonial',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
       name: 'quote',
       title: 'Quote',
       type: 'text',
@@ -45,8 +52,15 @@ export default defineType({
   ],
   preview: {
     select: {
-      title: 'author',
-      subtitle: 'company',
+      title: 'title',
+      subtitle: 'author',
+      company: 'company',
+    },
+    prepare({title, subtitle, company}) {
+      return {
+        title: title || 'Untitled Testimonial',
+        subtitle: company ? `${subtitle} - ${company}` : subtitle,
+      }
     },
   },
 })
