@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { client } from '../../sanity/lib/client'
 import { urlFor } from '../../sanity/lib/image'
 import { featuredProjectsQuery } from '../../sanity/lib/queries'
+import { useHomepage } from '@/contexts/HomepageContext'
 
 interface ProjectData {
   _id: string;
@@ -30,11 +31,14 @@ interface ProjectData {
 }
 
 const Projects = () => {
+  const { settings } = useHomepage()
   const [selectedProject, setSelectedProject] = useState<ProjectData | null>(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [projects, setProjects] = useState<ProjectData[]>([])
   const [loading, setLoading] = useState(true)
+  
+  const sectionTitle = settings.sectionTitles?.featuredProjects || 'FEATURED PROJECTS'
 
   useEffect(() => {
     const fetchProjects = async () => {
@@ -95,7 +99,7 @@ const Projects = () => {
       <section className="py-20 bg-doa-black text-white">
         <div className="max-w-7xl mx-auto px-8">
           <div className="text-center mb-12">
-            <h2 className="bebas-font text-6xl text-white mb-6 text-outline">FEATURED PROJECTS</h2>
+            <h2 className="bebas-font text-6xl text-white mb-6 text-outline">{sectionTitle}</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[1, 2, 3, 4, 5, 6].map((i) => (
@@ -112,7 +116,7 @@ const Projects = () => {
       <section className="py-20 bg-doa-black text-white">
         <div className="max-w-7xl mx-auto px-8">
           <div className="text-center mb-12">
-            <h2 className="bebas-font text-6xl text-white mb-6 text-outline">FEATURED PROJECTS</h2>
+            <h2 className="bebas-font text-6xl text-white mb-6 text-outline">{sectionTitle}</h2>
           </div>
           <p className="text-gray-400">No projects available at the moment.</p>
         </div>

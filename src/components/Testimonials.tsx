@@ -3,9 +3,11 @@
 import { useState, useEffect } from 'react'
 import { client } from '../../sanity/lib/client'
 import { featuredTestimonialsQuery } from '../../sanity/lib/queries'
+import { useHomepage } from '@/contexts/HomepageContext'
 
 interface Testimonial {
   _id: string;
+  title?: string;
   quote: string;
   author: string;
   role?: string;
@@ -13,8 +15,11 @@ interface Testimonial {
 }
 
 const Testimonials = () => {
+  const { settings } = useHomepage()
   const [testimonials, setTestimonials] = useState<Testimonial[]>([])
   const [loading, setLoading] = useState(true)
+  
+  const sectionTitle = settings.sectionTitles?.testimonials || 'CLIENT TESTIMONIALS'
 
   useEffect(() => {
     const fetchTestimonials = async () => {
@@ -108,7 +113,7 @@ const Testimonials = () => {
     return (
       <section className="py-24 px-10 bg-black relative overflow-hidden noise-overlay paint-flecks">
         <div className="relative z-10 text-center mb-20">
-          <h2 className="bebas-font text-6xl text-white mb-6 text-outline">Client Testimonials</h2>
+          <h2 className="bebas-font text-6xl text-white mb-6 text-outline">{sectionTitle}</h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto relative z-10">
           {[1, 2, 3, 4].map((i) => (
@@ -129,7 +134,7 @@ const Testimonials = () => {
       {/* Section title */}
       <div className="relative z-10 text-center mb-20 fade-in-up">
         <h2 className="bebas-font text-6xl text-white mb-6 text-outline">
-          Client Testimonials
+          {sectionTitle}
         </h2>
       </div>
       
@@ -150,6 +155,13 @@ const Testimonials = () => {
             
             {/* Review content */}
             <div className="relative z-10 pt-8">
+              {/* Title */}
+              {testimonial.title && (
+                <div className="heading-font text-xl text-white font-bold mb-4">
+                  {testimonial.title}
+                </div>
+              )}
+              
               {/* Quote */}
               <div className="text-lg body-font text-gray-200 leading-relaxed mb-6 italic">
                 {testimonial.quote}

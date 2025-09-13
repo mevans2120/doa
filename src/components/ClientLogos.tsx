@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { client } from '../../sanity/lib/client'
 import { urlFor } from '../../sanity/lib/image'
 import { featuredClientsQuery } from '../../sanity/lib/queries'
+import { useHomepage } from '@/contexts/HomepageContext'
 
 interface Client {
   _id: string;
@@ -14,8 +15,11 @@ interface Client {
 }
 
 const ClientLogos = () => {
+  const { settings } = useHomepage()
   const [clients, setClients] = useState<Client[]>([])
   const [loading, setLoading] = useState(true)
+  
+  const sectionTitle = settings.sectionTitles?.ourClients || 'OUR CLIENTS'
 
   useEffect(() => {
     const fetchClients = async () => {
@@ -68,7 +72,7 @@ const ClientLogos = () => {
     return (
       <section className="py-24 px-10 bg-black relative overflow-hidden noise-overlay paint-flecks" id="clients">
         <div className="relative z-10 text-center mb-20">
-          <h2 className="bebas-font text-6xl text-white mb-6 text-outline">Our Clients</h2>
+          <h2 className="bebas-font text-6xl text-white mb-6 text-outline">{sectionTitle}</h2>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 max-w-7xl mx-auto relative z-10">
           {[1, 2, 3, 4, 5, 6].map((i) => (
@@ -85,7 +89,7 @@ const ClientLogos = () => {
       {/* Section title */}
       <div className="relative z-10 text-center mb-20 fade-in-up">
         <h2 className="bebas-font text-6xl text-white mb-6 text-outline">
-          Our Clients
+          {sectionTitle}
         </h2>
       </div>
       
