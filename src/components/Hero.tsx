@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 const Hero = () => {
   return (
-    <section role="banner" className="relative min-h-[80vh] md:min-h-[60vh] lg:min-h-[64vh] bg-[#252525] flex items-center justify-center px-6 md:px-10 pt-16 noise-overlay">
+    <section role="banner" className="relative min-h-[100vh] min-h-[100dvh] md:min-h-[60vh] lg:min-h-[64vh] bg-[#252525] flex items-center justify-center px-6 md:px-10 pt-16 noise-overlay">
       {/* Subtle background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#710000] via-[#252525] to-black"></div>
       
