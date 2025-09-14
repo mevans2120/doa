@@ -6,7 +6,9 @@ import Footer from '@/components/Footer'
 import Image from 'next/image'
 import { client } from '../../../sanity/lib/client'
 import { urlFor } from '../../../sanity/lib/image'
-import { teamMembersQuery } from '../../../sanity/lib/queries'
+import { teamMembersQuery, aboutPageQuery } from '../../../sanity/lib/queries'
+import { PortableText } from '@portabletext/react'
+import type { TypedObject } from '@portabletext/types'
 
 interface TeamMember {
   _id: string
@@ -17,24 +19,50 @@ interface TeamMember {
   imdbUrl?: string
 }
 
+interface AboutPageContent {
+  title?: string
+  tagline?: string
+  heroTitle?: string
+  companyOverview?: TypedObject[]
+  companyImage?: { _type: string; asset: { _ref: string; _type: string } }
+  missionTitle?: string
+  missionText?: string
+  visionTitle?: string
+  visionText?: string
+  storyTitle?: string
+  storyContent?: TypedObject[]
+  storyImage?: { _type: string; asset: { _ref: string; _type: string } }
+  teamSectionTitle?: string
+  seo?: {
+    metaTitle?: string
+    metaDescription?: string
+  }
+}
+
 const AboutPage = () => {
   const [teamMembers, setTeamMembers] = useState<TeamMember[]>([])
+  const [pageContent, setPageContent] = useState<AboutPageContent | null>(null)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    const fetchTeamMembers = async () => {
+    const fetchData = async () => {
       try {
-        const data = await client.fetch<TeamMember[]>(teamMembersQuery)
-        setTeamMembers(data)
+        const [teamData, pageData] = await Promise.all([
+          client.fetch<TeamMember[]>(teamMembersQuery),
+          client.fetch<AboutPageContent>(aboutPageQuery)
+        ])
+        setTeamMembers(teamData || [])
+        setPageContent(pageData)
       } catch (error) {
-        console.error('Error fetching team members:', error)
+        console.error('Error fetching data:', error)
         setTeamMembers([])
+        setPageContent(null)
       } finally {
         setLoading(false)
       }
     }
 
-    fetchTeamMembers()
+    fetchData()
   }, [])
 
   const getPhotoUrl = (photo: { _type: string; asset: { _ref: string; _type: string } } | undefined) => {
@@ -54,69 +82,101 @@ const AboutPage = () => {
         <div className="pt-24 pb-20">
           <div className="max-w-7xl mx-auto px-8">
         {/* Hero Section */}
-        <section className="text-center mb-20 fade-in-up">
-          <h1 className="page-title">About DOA</h1>
-          <div className="text-xl heading-font text-gray-300 mb-8">
-            Department of Art Productions is Portland&apos;s premier production design company,
-            transforming creative visions into cinematic reality since 2008.
-          </div>
-          <div className="professional-divider max-w-md mx-auto"></div>
-        </section>
+        {pageContent && (
+          <section className="text-center mb-20 fade-in-up">
+            <h1 className="page-title">{pageContent.title}</h1>
+            <div className="text-xl heading-font text-gray-300 mb-8">
+              {pageContent.tagline}
+            </div>
+            <div className="professional-divider max-w-md mx-auto"></div>
+          </section>
+        )}
 
         {/* Company Overview */}
-        <section className="mb-20 grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 className="heading-font text-3xl font-semibold mb-6">Portland&apos;s film & photo beating heart</h2>
-            <p className="text-gray-300 mb-4 leading-relaxed">
-              Department of Art is a full service scenery shop, supporting the local film/photo community
-              for the last 20 years. Set construction, custom prop building, graphics and scenic treatments
-              are just some of the services we offer.
-            </p>
-            <p className="text-gray-300 mb-4 leading-relaxed">
-              DOA also fabricates retail fixtures, professional trade show displays, and provides services
-              for special events and product launches.
-            </p>
-            <p className="text-gray-300 leading-relaxed">
-              The three partners at Department of Art are all 20+ year veterans in the film industry,
-              having filled every role from production designer, art director, prop master, decorator,
-              lead man, and set dresser. All partners still actively work in the industry thus, DOA can
-              be seen as &quot;one stop shopping&quot; for productions seeking all things art department. We can
-              provide crew for your shoot, a place for that crew to work, provide internet and office
-              needs, gated parking, and trucking for any size production. And when you&apos;re done for
-              the day... enjoy a cold beer in our bar and a game of pinball.
-            </p>
-          </div>
-          <div className="relative h-96 rounded-lg overflow-hidden bg-zinc-900">
-            <div className="absolute inset-0 flex items-center justify-center text-gray-600">
-              <span>Company Image</span>
+        {pageContent && (
+          <section className="mb-20 grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="heading-font text-3xl font-semibold mb-6">
+                {pageContent.heroTitle}
+              </h2>
+              {pageContent.companyOverview && (
+                <div className="text-gray-300 space-y-4 leading-relaxed">
+                  <PortableText value={pageContent.companyOverview} />
+                </div>
+              )}
             </div>
-          </div>
-        </section>
+            <div className="relative h-96 rounded-lg overflow-hidden bg-zinc-900">
+              {pageContent.companyImage ? (
+                <Image
+                  src={urlFor(pageContent.companyImage).url()}
+                  alt="Department of Art workspace"
+                  fill
+                  className="object-cover"
+                />
+              ) : (
+                <div className="absolute inset-0 flex items-center justify-center text-gray-600">
+                  <span>Company Image</span>
+                </div>
+              )}
+            </div>
+          </section>
+        )}
 
         {/* Mission & Vision */}
-        <section className="mb-20 bg-zinc-900 rounded-lg p-12">
-          <div className="grid md:grid-cols-2 gap-12">
-            <div>
-              <h3 className="heading-font text-2xl font-semibold mb-4">Our Mission</h3>
-              <p className="text-gray-300 leading-relaxed">
-                To deliver exceptional production design services that bring creative visions to life,
-                while fostering innovation, sustainability, and artistic excellence in everything we do.
-              </p>
+        {pageContent && (
+          <section className="mb-20 bg-zinc-900 rounded-lg p-12">
+            <div className="grid md:grid-cols-2 gap-12">
+              <div>
+                <h3 className="heading-font text-2xl font-semibold mb-4">
+                  {pageContent.missionTitle}
+                </h3>
+                <p className="text-gray-300 leading-relaxed">
+                  {pageContent.missionText}
+                </p>
+              </div>
+              <div>
+                <h3 className="heading-font text-2xl font-semibold mb-4">
+                  {pageContent.visionTitle}
+                </h3>
+                <p className="text-gray-300 leading-relaxed">
+                  {pageContent.visionText}
+                </p>
+              </div>
             </div>
-            <div>
-              <h3 className="heading-font text-2xl font-semibold mb-4">Our Vision</h3>
-              <p className="text-gray-300 leading-relaxed">
-                To be the Pacific Northwest&apos;s most trusted production design partner, known for our
-                creativity, reliability, and commitment to pushing the boundaries of what&apos;s possible
-                in visual storytelling.
-              </p>
+          </section>
+        )}
+
+        {/* Our Story Section */}
+        {(pageContent?.storyTitle || pageContent?.storyContent) && (
+          <section className="mb-20 grid md:grid-cols-2 gap-12 items-center">
+            {pageContent?.storyImage && (
+              <div className="relative h-96 rounded-lg overflow-hidden bg-zinc-900 order-2 md:order-1">
+                <Image
+                  src={urlFor(pageContent.storyImage).url()}
+                  alt="Our Story"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            )}
+            <div className="order-1 md:order-2">
+              <h2 className="heading-font text-3xl font-semibold mb-6">
+                {pageContent?.storyTitle || 'Our Story'}
+              </h2>
+              {pageContent?.storyContent && (
+                <div className="text-gray-300 space-y-4 leading-relaxed">
+                  <PortableText value={pageContent.storyContent} />
+                </div>
+              )}
             </div>
-          </div>
-        </section>
+          </section>
+        )}
 
         {/* Team Section */}
         <section className="mb-20">
-          <h2 className="heading-font text-3xl font-semibold mb-10 text-center">Leadership Team</h2>
+          <h2 className="heading-font text-3xl font-semibold mb-10 text-center">
+            {pageContent?.teamSectionTitle || 'Leadership Team'}
+          </h2>
           {loading ? (
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center">
               {[1, 2, 3].map((i) => (

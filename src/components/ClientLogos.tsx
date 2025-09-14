@@ -25,7 +25,11 @@ const ClientLogos = () => {
     const fetchClients = async () => {
       try {
         const data = await client.fetch<Client[]>(featuredClientsQuery)
-        setClients(data.slice(0, 6)) // Show only first 6 clients
+        if (data && Array.isArray(data)) {
+          setClients(data.slice(0, 6)) // Show only first 6 clients
+        } else {
+          throw new Error('Invalid data format')
+        }
       } catch (error) {
         console.error('Error fetching clients:', error)
         // Fallback to hardcoded clients if Sanity fetch fails

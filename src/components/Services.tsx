@@ -35,7 +35,7 @@ const Services = ({ limit }: ServicesProps = {}) => {
           : '*[_type == "service"] | order(order asc)'
         
         const data = await client.fetch<Service[]>(query)
-        setServices(data)
+        setServices(data || [])
       } catch (error) {
         console.error('Error fetching services:', error)
         // Fallback to empty array if fetch fails

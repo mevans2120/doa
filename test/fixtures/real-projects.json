@@ -1,0 +1,175 @@
+[
+  {
+    "_createdAt": "2025-09-12T18:07:49Z",
+    "_id": "project-echoes-tomorrow",
+    "_rev": "3QHWfcrjWjKANIfgARsuvO",
+    "_type": "project",
+    "_updatedAt": "2025-09-12T21:38:30Z",
+    "category": "Film Production",
+    "client": "Paramount Pictures",
+    "credits": {
+      "cinematographer": "Lisa Park",
+      "director": "Michael Rodriguez",
+      "productionDesigner": "Sarah Chen"
+    },
+    "description": "Transformed 20,000 sq ft warehouse into a sprawling dystopian cityscape featuring practical weather effects, modular building facades, and fully-functional infrastructure. Collaborated with Oscar-nominated production designer Sarah Chen to create a believable post-climate-disaster Portland.",
+    "featured": true,
+    "gallery": [
+      {
+        "_key": "BX5VqKrM4sD2",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-399921a5902d46fbc9d5a1079d893481247916a0-600x450-jpg",
+          "_type": "reference"
+        }
+      },
+      {
+        "_key": "0gQl7j4cBXOJ",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-64f07602e6495ab1bdbfc4a2986005643f6719cb-600x450-jpg",
+          "_type": "reference"
+        }
+      },
+      {
+        "_key": "ZTljhJmg6V7c",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-4c7b083f77da0e0bee34f84f5efc4cfa92e3e0fc-600x394-png",
+          "_type": "reference"
+        }
+      }
+    ],
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-399921a5902d46fbc9d5a1079d893481247916a0-600x450-jpg",
+        "_type": "reference"
+      }
+    },
+    "order": 1,
+    "slug": {
+      "current": "echoes-tomorrow"
+    },
+    "technicalDetails": {
+      "buildDuration": "12 weeks",
+      "specialFeatures": [
+        "Rain towers",
+        "Modular facades",
+        "Practical debris effects"
+      ],
+      "squareFeet": 20000
+    },
+    "title": "Echoes of Tomorrow",
+    "type": "Dystopian Sci-Fi Feature",
+    "year": 2024
+  },
+  {
+    "_createdAt": "2025-09-12T18:07:49Z",
+    "_id": "project-last-station",
+    "_rev": "3QHWfcrjWjKANIfgARsuyM",
+    "_type": "project",
+    "_updatedAt": "2025-09-12T21:38:33Z",
+    "category": "Film Production",
+    "client": "A24 Films",
+    "description": "Constructed an abandoned subway station complete with decaying infrastructure, atmospheric lighting rigs, and period-accurate signage. The build included functional track sections and a full-scale train car interior designed for 360-degree filming.",
+    "featured": true,
+    "gallery": [
+      {
+        "_key": "Vmo07TwKjUZB",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-d00cd6d6eee24d298c859b4889fd0dde26352fed-600x449-png",
+          "_type": "reference"
+        }
+      },
+      {
+        "_key": "XEK4076Rb9G6",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-35520616306ae5b434fed7647a3f47890d1ab0e5-464x600-jpg",
+          "_type": "reference"
+        }
+      }
+    ],
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-d00cd6d6eee24d298c859b4889fd0dde26352fed-600x449-png",
+        "_type": "reference"
+      }
+    },
+    "order": 2,
+    "slug": {
+      "current": "last-station"
+    },
+    "technicalDetails": {
+      "buildDuration": "10 weeks",
+      "specialFeatures": [
+        "Functional track system",
+        "Atmospheric effects",
+        "Period signage"
+      ],
+      "squareFeet": 15000
+    },
+    "title": "The Last Station",
+    "type": "Post-Apocalyptic Drama",
+    "year": 2024
+  },
+  {
+    "_createdAt": "2025-09-12T18:07:49Z",
+    "_id": "project-neon-nights",
+    "_rev": "3QHWfcrjWjKANIfgARsv5m",
+    "_type": "project",
+    "_updatedAt": "2025-09-12T21:38:34Z",
+    "category": "Film Production",
+    "client": "Warner Bros.",
+    "credits": {
+      "director": "Akira Tanaka",
+      "productionDesigner": "Marcus Webb"
+    },
+    "description": "Built a three-story cyberpunk marketplace with integrated LED displays, practical neon signage, and modular vendor stalls. Features included rain-slicked surfaces, steam effects, and breakaway elements for stunt sequences.",
+    "featured": true,
+    "gallery": [
+      {
+        "_key": "zvJd7ZdDEpog",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-41f99d277eef5392dbc3d8cbff2223cfc44c8173-600x440-jpg",
+          "_type": "reference"
+        }
+      },
+      {
+        "_key": "C-W-e0z7BzHt",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-083b1ecdfc2ef4dcce5cb9b992b8569579ed8fce-600x464-jpg",
+          "_type": "reference"
+        }
+      }
+    ],
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-41f99d277eef5392dbc3d8cbff2223cfc44c8173-600x440-jpg",
+        "_type": "reference"
+      }
+    },
+    "order": 3,
+    "slug": {
+      "current": "neon-nights"
+    },
+    "technicalDetails": {
+      "buildDuration": "14 weeks",
+      "specialFeatures": [
+        "LED integration",
+        "Breakaway elements",
+        "Water effects"
+      ],
+      "squareFeet": 25000
+    },
+    "title": "Neon Nights",
+    "type": "Cyberpunk Action",
+    "year": 2023
+  }
+]

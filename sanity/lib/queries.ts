@@ -103,11 +103,14 @@ export const teamMembersQuery = groq`*[_type == "teamMember"] | order(order asc,
 export const siteSettingsQuery = groq`*[_type == "siteSettings"][0] {
   title,
   description,
+  seo,
   heroTitle,
   heroSubtitle,
   contactEmail,
   contactPhone,
   address,
+  footer,
+  navigation,
   socialMedia
 }`
 
@@ -116,5 +119,23 @@ export const homepageSettingsQuery = groq`*[_type == "homepageSettings"][0] {
   heroSection,
   sectionTitles,
   aboutCTA,
+  seo
+}`
+
+// About page query
+export const aboutPageQuery = groq`*[_type == "aboutPage"][0] {
+  title,
+  tagline,
+  heroTitle,
+  companyOverview,
+  companyImage,
+  missionTitle,
+  missionText,
+  visionTitle,
+  visionText,
+  storyTitle,
+  storyContent,
+  storyImage,
+  teamSectionTitle,
   seo
 }`
