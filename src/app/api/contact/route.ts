@@ -4,8 +4,8 @@ import { render } from '@react-email/render'
 import ContactFormEmail from '@/emails/ContactFormEmail'
 import ContactFormAutoReply from '@/emails/ContactFormAutoReply'
 
-// Initialize Resend with API key
-const resend = new Resend(process.env.RESEND_API_KEY)
+// Initialize Resend with API key (only if available)
+const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null
 
 // Rate limiting: Store submission timestamps by IP
 const submissionTimestamps = new Map<string, number[]>()
@@ -42,6 +42,19 @@ function getRateLimitStatus(ip: string): { allowed: boolean; retryAfter?: number
 
 export async function POST(req: NextRequest) {
   try {
+    // Check if Resend is configured
+    if (!resend) {
+      console.log('Resend not configured - contact form submissions will not be sent via email')
+      return NextResponse.json(
+        { 
+          success: true,
+          message: 'Form submission received (email service not configured)',
+          warning: 'Email notifications are currently disabled'
+        },
+        { status: 200 }
+      )
+    }
+    
     // Get client IP for rate limiting
     const ip = req.headers.get('x-forwarded-for') || 
                req.headers.get('x-real-ip') || 
