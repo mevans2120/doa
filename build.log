@@ -1,0 +1,47 @@
+
+> doa-website@0.1.0 build
+> next build
+
+   ▲ Next.js 15.3.3
+   - Environments: .env.local
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 7.0s
+   Linting and checking validity of types ...
+   Collecting page data ...
+Sanity config - ProjectId: vc89ievx Dataset: production
+Sanity config - ProjectId: vc89ievx Dataset: production
+Sanity config - ProjectId: vc89ievx Dataset: production
+Sanity config - ProjectId: vc89ievx Dataset: production
+Sanity config - ProjectId: vc89ievx Dataset: production
+Sanity config - ProjectId: vc89ievx Dataset: production
+   Generating static pages (0/11) ...
+Sanity config - ProjectId: vc89ievx Dataset: production
+Sanity config - ProjectId: vc89ievx Dataset: production
+   Generating static pages (2/11) 
+   Generating static pages (5/11) 
+   Generating static pages (8/11) 
+ ✓ Generating static pages (11/11)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                 Size  First Load JS
+┌ ○ /                                    6.71 kB         161 kB
+├ ○ /_not-found                            990 B         103 kB
+├ ○ /about                               4.38 kB         159 kB
+├ ƒ /api/contact                           149 B         102 kB
+├ ○ /clients                             1.45 kB         156 kB
+├ ○ /contact                             1.88 kB         153 kB
+├ ○ /projects                            2.59 kB         157 kB
+├ ○ /services                            2.53 kB         154 kB
+├ ƒ /studio/[[...tool]]                  1.48 MB        1.63 MB
+└ ○ /test-font                             149 B         102 kB
++ First Load JS shared by all             102 kB
+  ├ chunks/1684-ca4aa264ce4d157c.js      46.2 kB
+  ├ chunks/4bd1b696-979a7f9183e6ff82.js  53.2 kB
+  └ other shared chunks (total)          2.45 kB
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+
