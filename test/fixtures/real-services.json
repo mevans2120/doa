@@ -1,0 +1,162 @@
+[
+  {
+    "_createdAt": "2025-09-13T23:27:11Z",
+    "_id": "3QHWfcrjWjKANIfgAScDMk",
+    "_rev": "3QHWfcrjWjKANIfgAScDLG",
+    "_type": "service",
+    "_updatedAt": "2025-09-13T23:27:11Z",
+    "category": "specialty",
+    "featured": false,
+    "iconType": "display",
+    "order": 4,
+    "shortDescription": "Eye-catching trade show booths and displays that make your brand stand out.",
+    "slug": {
+      "current": "trade-show-displays"
+    },
+    "title": "Trade Show Displays"
+  },
+  {
+    "_createdAt": "2025-09-13T23:27:14Z",
+    "_id": "3QHWfcrjWjKANIfgAScDRC",
+    "_rev": "3QHWfcrjWjKANIfgAScDPi",
+    "_type": "service",
+    "_updatedAt": "2025-09-13T23:27:14Z",
+    "category": "rentals",
+    "featured": false,
+    "iconType": "truck",
+    "order": 7,
+    "shortDescription": "Specialized equipment for moving and handling large set pieces and production materials.",
+    "slug": {
+      "current": "materials-handling-equipment"
+    },
+    "title": "Materials Handling Equipment"
+  },
+  {
+    "_createdAt": "2025-09-13T23:27:15Z",
+    "_id": "3QHWfcrjWjKANIfgAScDVe",
+    "_rev": "3QHWfcrjWjKANIfgAScDUA",
+    "_type": "service",
+    "_updatedAt": "2025-09-13T23:27:15Z",
+    "category": "production",
+    "featured": false,
+    "iconType": "users",
+    "order": 8,
+    "shortDescription": "Experienced art department professionals for productions of any size.",
+    "slug": {
+      "current": "art-department-crew"
+    },
+    "title": "Art Department Crew"
+  },
+  {
+    "_createdAt": "2025-09-13T23:27:17Z",
+    "_id": "3QHWfcrjWjKANIfgAScDa6",
+    "_rev": "3QHWfcrjWjKANIfgAScDYc",
+    "_type": "service",
+    "_updatedAt": "2025-09-13T23:27:17Z",
+    "category": "rentals",
+    "featured": false,
+    "iconType": "globe",
+    "order": 10,
+    "shortDescription": "Production office spaces with high-speed internet and meeting rooms.",
+    "slug": {
+      "current": "office-internet-rental"
+    },
+    "title": "Office/Internet Rental"
+  },
+  {
+    "_createdAt": "2025-09-13T23:27:18Z",
+    "_id": "3QHWfcrjWjKANIfgAScDeY",
+    "_rev": "3QHWfcrjWjKANIfgAScDd4",
+    "_type": "service",
+    "_updatedAt": "2025-09-13T23:27:18Z",
+    "category": "rentals",
+    "featured": false,
+    "iconType": "truck",
+    "order": 11,
+    "shortDescription": "Production vehicles and transportation solutions for equipment and materials.",
+    "slug": {
+      "current": "truck-rental-supplies"
+    },
+    "title": "Truck Rental and Supplies"
+  },
+  {
+    "_createdAt": "2025-09-13T23:27:07Z",
+    "_id": "Ayz0qkvWb6walzY5raE3Dc",
+    "_rev": "Ayz0qkvWb6walzY5raE39d",
+    "_type": "service",
+    "_updatedAt": "2025-09-13T23:27:07Z",
+    "category": "design",
+    "featured": true,
+    "iconType": "brush",
+    "order": 0,
+    "shortDescription": "Professional 3D renderings and visualizations that bring your concepts to life before construction begins.",
+    "slug": {
+      "current": "graphic-renderings"
+    },
+    "title": "Graphic Renderings"
+  },
+  {
+    "_createdAt": "2025-09-13T23:27:13Z",
+    "_id": "Ayz0qkvWb6walzY5raE3vR",
+    "_rev": "Ayz0qkvWb6walzY5raE3rS",
+    "_type": "service",
+    "_updatedAt": "2025-09-13T23:27:13Z",
+    "category": "specialty",
+    "featured": false,
+    "iconType": "box",
+    "order": 6,
+    "shortDescription": "Professional crating and packaging solutions for safe transport of valuable sets and props.",
+    "slug": {
+      "current": "crating-services"
+    },
+    "title": "Crating Services"
+  },
+  {
+    "_createdAt": "2025-09-13T23:27:20Z",
+    "_id": "Ayz0qkvWb6walzY5raE559",
+    "_rev": "Ayz0qkvWb6walzY5raE51A",
+    "_type": "service",
+    "_updatedAt": "2025-09-13T23:27:20Z",
+    "category": "specialty",
+    "featured": false,
+    "iconType": "lightning",
+    "order": 12,
+    "shortDescription": "Special effects equipment and supplies for creating memorable production moments.",
+    "slug": {
+      "current": "fx-supplies-rentals"
+    },
+    "title": "F/X Supplies and Rentals"
+  },
+  {
+    "_createdAt": "2025-09-13T23:27:08Z",
+    "_id": "xmMccSfAt5D3mH0Q8fvpYZ",
+    "_rev": "xmMccSfAt5D3mH0Q8fvpUj",
+    "_type": "service",
+    "_updatedAt": "2025-09-13T23:27:08Z",
+    "category": "production",
+    "featured": true,
+    "iconType": "building",
+    "order": 1,
+    "shortDescription": "Expert set building services from concept to completion, creating immersive environments for any production.",
+    "slug": {
+      "current": "set-construction"
+    },
+    "title": "Set Construction"
+  },
+  {
+    "_createdAt": "2025-09-13T23:27:09Z",
+    "_id": "xmMccSfAt5D3mH0Q8fvpzR",
+    "_rev": "xmMccSfAt5D3mH0Q8fvpvb",
+    "_type": "service",
+    "_updatedAt": "2025-09-13T23:27:09Z",
+    "category": "production",
+    "featured": true,
+    "iconType": "paint",
+    "order": 2,
+    "shortDescription": "Specialized scenic painting and finishing techniques that add authentic texture and atmosphere to your sets.",
+    "slug": {
+      "current": "scenic-treatments"
+    },
+    "title": "Scenic Treatments"
+  }
+]

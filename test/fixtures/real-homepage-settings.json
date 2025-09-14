@@ -1,0 +1,29 @@
+{
+  "_createdAt": "2025-09-12T18:07:48Z",
+  "_id": "homepage-settings",
+  "_rev": "Ayz0qkvWb6walzY5rXOBJe",
+  "_type": "homepageSettings",
+  "_updatedAt": "2025-09-12T18:07:48Z",
+  "heroSection": {
+    "mainTitle": "Production Design & Set Construction",
+    "subtitle": "Creating immersive environments for film, television, and commercial productions in the Pacific Northwest.",
+    "showLogo": true
+  },
+  "sectionTitles": {
+    "featuredProjects": "FEATURED PROJECTS",
+    "whatWeDo": "WHAT WE DO",
+    "ourClients": "OUR CLIENTS",
+    "testimonials": "CLIENT TESTIMONIALS",
+    "aboutCTA": "Ready to Create Something Extraordinary?"
+  },
+  "aboutCTA": {
+    "heading": "Ready to Create Something Extraordinary?",
+    "description": "Let's bring your vision to life with professional set construction and production design services.",
+    "buttonText": "Start Your Project",
+    "buttonLink": "/contact"
+  },
+  "seo": {
+    "metaTitle": "DOA - Production Design & Set Construction",
+    "metaDescription": "Professional production design and set construction services for film, television, and commercial productions in Portland, Oregon and the Pacific Northwest."
+  }
+}

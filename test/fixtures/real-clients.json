@@ -1,0 +1,132 @@
+[
+  {
+    "_createdAt": "2025-09-12T18:07:50Z",
+    "_id": "client-adidas",
+    "_rev": "3QHWfcrjWjKANIfgARbpzW",
+    "_type": "client",
+    "_updatedAt": "2025-09-12T18:15:12Z",
+    "featured": true,
+    "logo": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-84ced8874c7bb4d3bf7e19acb5904145e8bb788d-725x500-svg",
+        "_type": "reference"
+      }
+    },
+    "logoWhite": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-84ced8874c7bb4d3bf7e19acb5904145e8bb788d-725x500-svg",
+        "_type": "reference"
+      }
+    },
+    "name": "Adidas Media",
+    "order": 6
+  },
+  {
+    "_createdAt": "2025-09-12T18:07:50Z",
+    "_id": "client-amazon",
+    "_rev": "3QHWfcrjWjKANIfgARbpRO",
+    "_type": "client",
+    "_updatedAt": "2025-09-12T18:15:04Z",
+    "featured": true,
+    "logo": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-4f68393dd2b6b847d8a83c0e2a2bbee4cf35d580-603x182-svg",
+        "_type": "reference"
+      }
+    },
+    "logoWhite": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-4f68393dd2b6b847d8a83c0e2a2bbee4cf35d580-603x182-svg",
+        "_type": "reference"
+      }
+    },
+    "name": "Amazon Studios",
+    "order": 2
+  },
+  {
+    "_createdAt": "2025-09-12T18:07:50Z",
+    "_id": "client-columbia",
+    "_rev": "3QHWfcrjWjKANIfgARbqRi",
+    "_type": "client",
+    "_updatedAt": "2025-09-12T18:15:14Z",
+    "featured": true,
+    "logo": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-a567eb103fd09243ddde000a54b903f21899b5e2-160x29-svg",
+        "_type": "reference"
+      }
+    },
+    "logoWhite": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-a567eb103fd09243ddde000a54b903f21899b5e2-160x29-svg",
+        "_type": "reference"
+      }
+    },
+    "name": "Columbia Pictures",
+    "order": 8
+  },
+  {
+    "_createdAt": "2025-09-12T18:07:50Z",
+    "_id": "client-intel",
+    "_rev": "Ayz0qkvWb6walzY5rXOBEe",
+    "_type": "client",
+    "_updatedAt": "2025-09-12T18:07:50Z",
+    "featured": true,
+    "name": "Intel Studios",
+    "order": 7
+  },
+  {
+    "_createdAt": "2025-09-12T18:07:52Z",
+    "_id": "client-jeldwen",
+    "_rev": "xmMccSfAt5D3mH0Q8d73Ux",
+    "_type": "client",
+    "_updatedAt": "2025-09-12T18:15:24Z",
+    "featured": true,
+    "logo": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-2327d13214ffbd18c17de6588b7ce6d4cb03a64a-152x43-svg",
+        "_type": "reference"
+      }
+    },
+    "logoWhite": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-2327d13214ffbd18c17de6588b7ce6d4cb03a64a-152x43-svg",
+        "_type": "reference"
+      }
+    },
+    "name": "JELD-WEN Media",
+    "order": 12
+  },
+  {
+    "_createdAt": "2025-09-12T18:07:52Z",
+    "_id": "client-keen",
+    "_rev": "3QHWfcrjWjKANIfgARbrP4",
+    "_type": "client",
+    "_updatedAt": "2025-09-12T18:15:22Z",
+    "featured": true,
+    "logo": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-ab3e7b24fd9b1c7d119a645ea299e107c67c8311-2500x900-svg",
+        "_type": "reference"
+      }
+    },
+    "logoWhite": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-ab3e7b24fd9b1c7d119a645ea299e107c67c8311-2500x900-svg",
+        "_type": "reference"
+      }
+    },
+    "name": "Keen Productions",
+    "order": 11
+  }
+]

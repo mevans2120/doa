@@ -44,7 +44,7 @@ const Projects = () => {
     const fetchProjects = async () => {
       try {
         const data = await client.fetch<ProjectData[]>(featuredProjectsQuery)
-        setProjects(data)
+        setProjects(data || [])
       } catch (error) {
         console.error('Error fetching projects:', error)
         // Fallback to empty array if fetch fails

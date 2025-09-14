@@ -5,6 +5,7 @@ import service from './service'
 import teamMember from './teamMember'
 import siteSettings from './siteSettings'
 import homepageSettings from './homepageSettings'
+import { aboutPage } from './aboutPage'
 
 export const schemaTypes = [
   project,
@@ -14,4 +15,5 @@ export const schemaTypes = [
   teamMember,
   siteSettings,
   homepageSettings,
+  aboutPage,
 ]

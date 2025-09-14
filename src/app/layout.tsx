@@ -2,40 +2,23 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { FaviconManager } from "@/components/FaviconManager";
 import { keaniaOne, ebGaramond, ptSans, bebasNeue } from "@/lib/fonts";
+import { getSiteMetadata } from "@/lib/metadata";
+import { SiteSettingsProvider } from "@/contexts/SiteSettingsContext";
 
-export const metadata: Metadata = {
-  metadataBase: new URL('https://departmentofart.com'),
-  title: "Department of Art",
-  description: "Professional set construction services for the entertainment industry",
-  icons: {
-    icon: '/skull.svg',
-    shortcut: '/skull.svg',
-    apple: '/skull.svg',
-  },
-  manifest: '/manifest.json',
-  openGraph: {
-    title: "Department of Art",
-    description: "Professional set construction services for the entertainment industry",
-    url: 'https://departmentofart.com',
-    siteName: 'Department of Art',
-    images: [
-      {
-        url: '/social-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'Department of Art - Professional Set Construction',
-      }
-    ],
-    locale: 'en_US',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Department of Art',
-    description: 'Professional set construction services for the entertainment industry',
-    images: ['/social-image.png'],
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const metadata = await getSiteMetadata();
+  
+  // Add favicon configuration to the metadata
+  return {
+    ...metadata,
+    icons: {
+      icon: '/skull.svg',
+      shortcut: '/skull.svg',
+      apple: '/skull.svg',
+    },
+    manifest: '/manifest.json',
+  };
+}
 
 export default function RootLayout({
   children,
@@ -48,7 +31,9 @@ export default function RootLayout({
         className={`${keaniaOne.variable} ${ebGaramond.variable} ${ptSans.variable} ${bebasNeue.variable} antialiased overflow-x-hidden`}
       >
         <FaviconManager />
-        {children}
+        <SiteSettingsProvider>
+          {children}
+        </SiteSettingsProvider>
       </body>
     </html>
   );
