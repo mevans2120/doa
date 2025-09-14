@@ -17,7 +17,7 @@ const Footer = () => {
                 height={50}
                 className="mr-3 brightness-0 invert"
               />
-              <h3 className="bebas-font text-xl text-white text-outline whitespace-nowrap">
+              <h3 className="bebas-font text-xl text-white text-outline-thin whitespace-nowrap">
                 DEPARTMENT OF ART
               </h3>
             </div>
