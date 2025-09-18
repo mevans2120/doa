@@ -74,12 +74,6 @@ export default defineType({
           type: 'string',
           initialValue: 'Client Testimonials',
         }),
-        defineField({
-          name: 'aboutCTA',
-          title: 'About CTA Title',
-          type: 'string',
-          initialValue: 'Ready to Create Something Extraordinary?',
-        }),
       ],
     }),
     
@@ -113,36 +107,6 @@ export default defineType({
           title: 'Button Link',
           type: 'string',
           initialValue: '/about',
-        }),
-      ],
-    }),
-    
-    // SEO Settings
-    defineField({
-      name: 'seo',
-      title: 'SEO Settings',
-      type: 'object',
-      fields: [
-        defineField({
-          name: 'metaTitle',
-          title: 'Meta Title',
-          type: 'string',
-          description: 'Title for search engines',
-          validation: Rule => Rule.max(60),
-        }),
-        defineField({
-          name: 'metaDescription',
-          title: 'Meta Description',
-          type: 'text',
-          rows: 3,
-          description: 'Description for search engines',
-          validation: Rule => Rule.max(160),
-        }),
-        defineField({
-          name: 'ogImage',
-          title: 'Open Graph Image',
-          type: 'image',
-          description: 'Image for social media sharing',
         }),
       ],
     }),

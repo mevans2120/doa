@@ -14,8 +14,6 @@ interface SiteSettings {
     socialImage?: { _type: string; asset: { _ref: string; _type: string } }
     twitterCard?: string
   }
-  heroTitle?: string
-  heroSubtitle?: string
   contactEmail?: string
   contactPhone?: string
   address?: {
