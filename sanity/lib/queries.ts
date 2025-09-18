@@ -51,17 +51,39 @@ export const projectDetailQuery = groq`*[_type == "project" && slug.current == $
 export const clientsQuery = groq`*[_type == "client"] | order(order asc, name asc) {
   _id,
   name,
+  type,
+  logo,
+  logoWhite,
+  website,
+  featured,
+  featuredOnHomepage
+}`
+
+export const featuredClientsQuery = groq`*[_type == "client" && featuredOnHomepage == true] | order(order asc) [0...12] {
+  _id,
+  name,
+  type,
+  logo,
+  logoWhite
+}`
+
+// Separate queries for clients and collaborators
+export const regularClientsQuery = groq`*[_type == "client" && type == "client"] | order(order asc, name asc) {
+  _id,
+  name,
   logo,
   logoWhite,
   website,
   featured
 }`
 
-export const featuredClientsQuery = groq`*[_type == "client" && featured == true] | order(order asc) [0...12] {
+export const collaboratorsQuery = groq`*[_type == "client" && type == "collaborator"] | order(order asc, name asc) {
   _id,
   name,
   logo,
-  logoWhite
+  logoWhite,
+  website,
+  featured
 }`
 
 // Testimonial queries
