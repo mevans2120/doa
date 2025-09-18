@@ -142,3 +142,12 @@ export const aboutPageQuery = groq`*[_type == "aboutPage"][0] {
   teamSectionTitle,
   seo
 }`
+
+// Contact page query
+export const contactPageQuery = groq`*[_type == "contactPage"][0] {
+  title,
+  hero,
+  contactForm,
+  studioInfo,
+  seo
+}`
