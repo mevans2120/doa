@@ -3,6 +3,8 @@ import { Resend } from 'resend'
 import { render } from '@react-email/render'
 import ContactFormEmail from '@/emails/ContactFormEmail'
 import ContactFormAutoReply from '@/emails/ContactFormAutoReply'
+import { client } from '../../../../sanity/lib/client'
+import { emailSettingsQuery } from '../../../../sanity/lib/queries'
 
 // Initialize Resend with API key (only if available)
 const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null
@@ -103,28 +105,39 @@ export async function POST(req: NextRequest) {
       )
     }
     
-    // Get email addresses from environment variables
-    const fromEmail = process.env.RESEND_FROM_EMAIL || 'contact@departmentofart.com'
-    const toEmail = process.env.CONTACT_FORM_TO_EMAIL || 'info@departmentofart.com'
+    // Fetch email settings from CMS
+    let emailSettings
+    try {
+      emailSettings = await client.fetch(emailSettingsQuery)
+    } catch (error) {
+      console.error('Failed to fetch email settings from CMS:', error)
+    }
     
-    // Render email HTML
-    const adminEmailHtml = await render(ContactFormEmail({ name, email, message }))
-    const autoReplyHtml = await render(ContactFormAutoReply({ name }))
+    // Get email addresses from CMS or fall back to environment variables
+    const fromEmail = emailSettings?.adminNotification?.fromEmail || process.env.RESEND_FROM_EMAIL || 'contact@departmentofart.com'
+    const toEmail = emailSettings?.adminNotification?.toEmail || process.env.CONTACT_FORM_TO_EMAIL || 'info@departmentofart.com'
+    const fromName = emailSettings?.adminNotification?.fromName || 'DOA Contact Form'
+    
+    // Render email HTML with CMS data
+    const adminEmailHtml = await render(ContactFormEmail({ name, email, message, emailSettings }))
+    const autoReplyHtml = await render(ContactFormAutoReply({ name, emailSettings }))
     
     // Send email to admin
+    const subjectPrefix = emailSettings?.adminNotification?.subjectPrefix || 'New Contact Form Submission'
     const adminEmailResult = await resend.emails.send({
-      from: `DOA Contact Form <${fromEmail}>`,
+      from: `${fromName} <${fromEmail}>`,
       to: toEmail,
-      subject: `New Contact Form Submission from ${name}`,
+      subject: `${subjectPrefix} from ${name}`,
       replyTo: email,
       html: adminEmailHtml,
     })
     
     // Send auto-reply to user
+    const autoReplySubject = emailSettings?.autoReply?.subject || 'Thank you for contacting Department of Art'
     const autoReplyResult = await resend.emails.send({
       from: `Department of Art <${fromEmail}>`,
       to: email,
-      subject: 'Thank you for contacting Department of Art',
+      subject: autoReplySubject,
       html: autoReplyHtml,
     })
     
