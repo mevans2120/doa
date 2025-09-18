@@ -107,7 +107,7 @@ export default defineType({
     prepare(selection) {
       const { title, subtitle, order, featured } = selection
       return {
-        title: `${order}. ${title}`,
+        title: featured ? `⭐ ${order}. ${title}` : `${order}. ${title}`,
         subtitle: `${subtitle || 'Uncategorized'}${featured ? ' • Featured' : ''}`,
       }
     },
