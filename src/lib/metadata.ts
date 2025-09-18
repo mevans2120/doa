@@ -12,7 +12,7 @@ export async function getSiteMetadata(): Promise<Metadata> {
     const siteUrl = settings?.seo?.siteUrl || 'https://departmentofart.com'
     
     // Generate image URL if social image exists
-    let socialImageUrl = '/social-image.png'
+    let socialImageUrl = '/doa-logo.png' // Using existing DOA logo as fallback
     if (settings?.seo?.socialImage) {
       try {
         socialImageUrl = urlFor(settings.seo.socialImage).width(1200).height(630).url()

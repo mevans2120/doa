@@ -64,21 +64,6 @@ export default defineType({
       ],
     }),
     
-    // Hero Content
-    defineField({
-      name: 'heroTitle',
-      title: 'Hero Title',
-      type: 'string',
-      description: 'Main headline on homepage',
-    }),
-    defineField({
-      name: 'heroSubtitle',
-      title: 'Hero Subtitle',
-      type: 'text',
-      rows: 2,
-      description: 'Subheading on homepage',
-    }),
-    
     // Contact Information
     defineField({
       name: 'contactEmail',
