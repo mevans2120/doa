@@ -117,7 +117,7 @@ const ClientLogos = () => {
       
       {/* View All CTA */}
       <div className="text-center mt-16 relative z-10">
-        <a href="/our-clients" className="view-all-cta">
+        <a href="/clients" className="view-all-cta">
           View All Clients
         </a>
       </div>
