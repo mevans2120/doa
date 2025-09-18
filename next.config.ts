@@ -12,8 +12,6 @@ const nextConfig: NextConfig = {
   },
   // Enable strict mode for better performance
   reactStrictMode: true,
-  // Optimize production builds
-  swcMinify: true,
   // Optimize CSS
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
