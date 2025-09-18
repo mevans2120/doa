@@ -12,6 +12,21 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: 'type',
+      title: 'Type',
+      type: 'string',
+      description: 'Is this a client or collaborator?',
+      options: {
+        list: [
+          { title: 'Client', value: 'client' },
+          { title: 'Collaborator', value: 'collaborator' }
+        ],
+        layout: 'radio'
+      },
+      validation: (Rule) => Rule.required(),
+      initialValue: 'client',
+    }),
+    defineField({
       name: 'logo',
       title: 'Logo',
       type: 'image',
@@ -30,9 +45,16 @@ export default defineType({
     }),
     defineField({
       name: 'featured',
-      title: 'Featured',
+      title: 'Featured on Clients Page',
       type: 'boolean',
-      description: 'Show this client prominently',
+      description: 'Show this client prominently on the clients page',
+      initialValue: false,
+    }),
+    defineField({
+      name: 'featuredOnHomepage',
+      title: 'Featured on Homepage',
+      type: 'boolean',
+      description: 'Show this client on the homepage',
       initialValue: false,
     }),
     defineField({
@@ -46,15 +68,22 @@ export default defineType({
     select: {
       title: 'name',
       media: 'logo',
+      type: 'type',
       featured: 'featured',
+      featuredOnHomepage: 'featuredOnHomepage',
       website: 'website',
     },
     prepare(selection) {
-      const {title, featured, website} = selection
+      const {title, type, featured, featuredOnHomepage, website} = selection
+      const badges = []
+      if (featuredOnHomepage) badges.push('🏠')
+      if (featured) badges.push('⭐')
+      const typeLabel = type === 'collaborator' ? 'Collaborator' : 'Client'
+      
       return {
         ...selection,
-        title: featured ? `⭐ ${title}` : title,
-        subtitle: website ? `${website}${featured ? ' • Featured' : ''}` : (featured ? 'Featured' : ''),
+        title: `${badges.join(' ')} ${title}`.trim(),
+        subtitle: `${typeLabel}${website ? ` • ${website}` : ''}`,
       }
     },
   },

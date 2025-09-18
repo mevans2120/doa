@@ -6,57 +6,44 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { client } from '../../../sanity/lib/client'
 import { urlFor } from '../../../sanity/lib/image'
-import { clientsQuery } from '../../../sanity/lib/queries'
+import { regularClientsQuery, collaboratorsQuery } from '../../../sanity/lib/queries'
 
 interface ClientData {
   _id: string
   name: string
+  type?: 'client' | 'collaborator'
   logo?: { _type: string; asset: { _ref: string; _type: string } }
   logoWhite?: { _type: string; asset: { _ref: string; _type: string } }
   website?: string
   featured?: boolean
+  featuredOnHomepage?: boolean
 }
 
 const ClientsPage = () => {
   const [clients, setClients] = useState<ClientData[]>([])
+  const [collaborators, setCollaborators] = useState<ClientData[]>([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    const fetchClients = async () => {
+    const fetchClientsAndCollaborators = async () => {
       try {
-        const data = await client.fetch<ClientData[]>(clientsQuery)
-        setClients(data)
+        const [clientsData, collaboratorsData] = await Promise.all([
+          client.fetch<ClientData[]>(regularClientsQuery),
+          client.fetch<ClientData[]>(collaboratorsQuery)
+        ])
+        setClients(clientsData)
+        setCollaborators(collaboratorsData)
       } catch (error) {
         console.error('Error fetching clients:', error)
         setClients([])
+        setCollaborators([])
       } finally {
         setLoading(false)
       }
     }
 
-    fetchClients()
+    fetchClientsAndCollaborators()
   }, [])
-
-  const collaborators = [
-    'HAPPYLUCKY INC',
-    'ANONYMOUS CONTENT',
-    'R2C GROUP',
-    'WEIDEN AND KENNEDY',
-    'C.M.D.',
-    'BOB INDUSTRIES',
-    'HOUSE SPECIAL',
-    'CB&S',
-    'MJZ',
-    'FARM LEAGUE',
-    'KAMP GRIZZLY',
-    'UBER CONTENT',
-    'R/WEST',
-    'SOCKEYE',
-    'REVERY',
-    'NORTH',
-    'AFTER ALL',
-    'FOODCHAIN FILMS'
-  ]
 
   const getLogoUrl = (logo: { _type: string; asset: { _ref: string; _type: string } } | undefined) => {
     if (!logo) return null
@@ -154,19 +141,51 @@ const ClientsPage = () => {
         </section>
 
         {/* Featured Collaborators */}
-        <section className="mb-20">
-          <h2 className="section-title">Featured Collaborators</h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-            {collaborators.map((collaborator, index) => (
-              <div
-                key={index}
-                className="text-center"
-              >
-                <h3 className="text-lg font-semibold heading-font text-white hover:opacity-80 transition-opacity">{collaborator}</h3>
-              </div>
-            ))}
-          </div>
-        </section>
+        {collaborators.length > 0 && (
+          <section className="mb-20">
+            <h2 className="section-title">Featured Collaborators</h2>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+              {collaborators.map((collaborator) => {
+                const logoUrl = getLogoUrl(collaborator.logoWhite || collaborator.logo)
+                
+                return (
+                  <div key={collaborator._id} className="flex items-center justify-center">
+                    {logoUrl ? (
+                      collaborator.website ? (
+                        <a 
+                          href={collaborator.website}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="group"
+                        >
+                          <Image
+                            src={logoUrl}
+                            alt={`${collaborator.name} logo`}
+                            width={140}
+                            height={60}
+                            className="object-contain filter brightness-0 invert opacity-70 group-hover:opacity-100 transition-opacity duration-300"
+                          />
+                        </a>
+                      ) : (
+                        <Image
+                          src={logoUrl}
+                          alt={`${collaborator.name} logo`}
+                          width={140}
+                          height={60}
+                          className="object-contain filter brightness-0 invert opacity-70 hover:opacity-100 transition-opacity duration-300"
+                        />
+                      )
+                    ) : (
+                      <div className="text-center">
+                        <h3 className="text-lg font-semibold heading-font text-white hover:opacity-80 transition-opacity">{collaborator.name}</h3>
+                      </div>
+                    )}
+                  </div>
+                )
+              })}
+            </div>
+          </section>
+        )}
 
           </div>
         </div>
