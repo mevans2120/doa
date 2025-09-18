@@ -116,12 +116,14 @@ export default defineType({
       title: 'title',
       client: 'client',
       media: 'mainImage',
+      featured: 'featured',
     },
     prepare(selection) {
-      const {title, client} = selection
+      const {title, client, featured} = selection
       return {
         ...selection,
-        subtitle: client,
+        title: featured ? `⭐ ${title}` : title,
+        subtitle: client ? `${client}${featured ? ' • Featured' : ''}` : (featured ? 'Featured' : ''),
       }
     },
   },

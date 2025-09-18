@@ -46,6 +46,16 @@ export default defineType({
     select: {
       title: 'name',
       media: 'logo',
+      featured: 'featured',
+      website: 'website',
+    },
+    prepare(selection) {
+      const {title, featured, website} = selection
+      return {
+        ...selection,
+        title: featured ? `⭐ ${title}` : title,
+        subtitle: website ? `${website}${featured ? ' • Featured' : ''}` : (featured ? 'Featured' : ''),
+      }
     },
   },
 })
