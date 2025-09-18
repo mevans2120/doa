@@ -1,5 +1,8 @@
 import { groq } from 'next-sanity'
 
+// Email Settings query
+export const emailSettingsQuery = groq`*[_type == "emailSettings"][0]`
+
 // Project queries
 export const projectsQuery = groq`*[_type == "project"] | order(order asc, _createdAt desc) {
   _id,
