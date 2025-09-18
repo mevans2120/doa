@@ -136,7 +136,7 @@ describe('ClientLogos with CMS', () => {
     await waitFor(() => {
       const ctaLink = screen.getByText('View All Clients')
       expect(ctaLink).toBeInTheDocument()
-      expect(ctaLink).toHaveAttribute('href', '/our-clients')
+      expect(ctaLink).toHaveAttribute('href', '/clients')
     })
   })
 
