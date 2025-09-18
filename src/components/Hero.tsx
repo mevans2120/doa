@@ -27,6 +27,7 @@ const Hero = () => {
                 height={300}
                 className="brightness-0 invert w-[340px] sm:w-[440px] md:w-[560px] lg:w-[680px] h-auto"
                 priority
+                fetchPriority="high"
               />
             </div>
           )}

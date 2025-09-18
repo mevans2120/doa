@@ -363,53 +363,16 @@
     text-stroke: 1.5px white;
   }
 
-  /* Paint flecks effect */
+  /* Paint flecks effect - disabled per client request */
+  /* Keeping the class for backwards compatibility but with no visual effect */
   .paint-flecks::before {
     content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-    pointer-events: none;
-    background-image: 
-      radial-gradient(circle, white 2px, transparent 2px),
-      radial-gradient(circle, white 1px, transparent 1px),
-      radial-gradient(circle, rgba(255,255,255,0.9) 3px, transparent 3px);
-    background-size: 100px 100px, 150px 150px, 200px 200px;
-    background-position: 0 0, 50px 50px, 25px 75px;
-    opacity: 0.3;
+    display: none;
   }
 
   .paint-flecks::after {
     content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-    pointer-events: none;
-    background: 
-      radial-gradient(4px 4px at 20% 30%, white, transparent),
-      radial-gradient(3px 3px at 60% 70%, rgba(255,255,255,0.9), transparent),
-      radial-gradient(2px 2px at 15% 40%, white, transparent),
-      radial-gradient(5px 5px at 80% 10%, rgba(255,255,255,0.8), transparent),
-      radial-gradient(3px 3px at 45% 60%, white, transparent),
-      radial-gradient(2px 2px at 70% 80%, rgba(255,255,255,0.9), transparent);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    opacity: 0.4;
-  }
-
-  @keyframes flecks-drift {
-    0% {
-      transform: translate(0, 0);
-    }
-    100% {
-      transform: translate(50px, 50px);
-    }
+    display: none;
   }
 
   /* Enhanced reduced motion support */
