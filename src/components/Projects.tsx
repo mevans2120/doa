@@ -162,6 +162,13 @@ const Projects = () => {
             </div>
           ))}
         </div>
+
+        {/* View All CTA */}
+        <div className="text-center mt-16">
+          <a href="/projects" className="view-all-cta">
+            View All Projects
+          </a>
+        </div>
       </div>
 
       {/* Modal */}
