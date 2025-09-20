@@ -22,7 +22,7 @@ export const client = createClient({
   projectId: projectId === '' || !/^[a-z0-9-]+$/.test(projectId) ? 'vc89ievx' : projectId,
   dataset: dataset === '' ? 'production' : dataset,
   apiVersion: '2024-01-01',
-  useCdn: true, // Always use CDN for faster performance
+  useCdn: true, // Re-enabled CDN for faster performance
   perspective: 'published',
   token: undefined, // Don't use token for public queries to avoid CORS issues
   stega: {
