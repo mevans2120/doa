@@ -10,13 +10,16 @@ const Hero = () => {
   const subtitle = settings.heroSection?.subtitle || 'DEPARTMENT OF ART'
 
   return (
-    <section role="banner" className="relative min-h-[90vh] min-h-[90dvh] md:min-h-[60vh] lg:min-h-[64vh] bg-[#252525] flex items-center justify-center px-6 md:px-10 pt-16 noise-overlay">
-      {/* Subtle background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#710000] via-[#252525] to-black"></div>
+    <section role="banner" className="relative min-h-[90vh] min-h-[90dvh] md:min-h-[60vh] lg:min-h-[64vh] bg-[#252525] flex items-center justify-center px-6 md:px-10 pt-16 overflow-hidden">
+      {/* Animated background gradient - moves opposite to navigation for complementary effect */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#710000] via-[#252525] to-black bg-[length:200%_200%] animate-gradient-x-reverse"></div>
+
+      {/* Noise overlay */}
+      <div className="absolute inset-0 noise-overlay z-10"></div>
       
       {/* Hero content - Centered */}
       <div className="relative z-20 text-white text-center pt-16 md:pt-20 lg:pt-24">
-        <div className="relative z-20 fade-in-up">
+        <div className="relative z-20">
           {/* DOA Logo - Now the hero element */}
           {showLogo && (
             <div className="mb-0 flex justify-center">

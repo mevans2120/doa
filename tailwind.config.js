@@ -29,8 +29,10 @@ module.exports = {
         'fade-in-up': 'fadeInUp 0.6s ease-out',
         'fade-in': 'fadeIn 0.6s ease-out',
         'slide-in': 'slideIn 0.5s ease-out',
-        'gradient-x': 'gradient-shift 15s ease infinite',
+        'gradient-x': 'gradient-shift 20s ease infinite',
+        'gradient-x-reverse': 'gradient-shift-reverse 20s ease infinite',
         'skull-glow': 'skull-glow 15s ease-in-out infinite',
+        'hero-pulse': 'hero-pulse 8s ease-in-out infinite',
       },
       keyframes: {
         fadeInUp: {
@@ -59,6 +61,38 @@ module.exports = {
           'to': {
             transform: 'translateX(0)',
             opacity: '1'
+          }
+        },
+        'gradient-shift': {
+          '0%, 100%': {
+            'background-position': '0% 50%'
+          },
+          '50%': {
+            'background-position': '100% 50%'
+          }
+        },
+        'gradient-shift-reverse': {
+          '0%, 100%': {
+            'background-position': '100% 50%'
+          },
+          '50%': {
+            'background-position': '0% 50%'
+          }
+        },
+        'skull-glow': {
+          '0%, 100%': {
+            opacity: '0.2',
+          },
+          '50%': {
+            opacity: '0.6',
+          }
+        },
+        'hero-pulse': {
+          '0%, 100%': {
+            transform: 'scale(1.15)'
+          },
+          '50%': {
+            transform: 'scale(1)'
           }
         }
       },
