@@ -127,7 +127,7 @@ const Footer = () => {
         {/* EKG Divider - positioned to overlay content */}
         <div className="relative h-20 -mt-8">
           <div className="absolute inset-0 z-50">
-            <EKGDivider />
+            <EKGDivider color="red" />
           </div>
         </div>
         

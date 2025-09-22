@@ -1,12 +1,19 @@
-const EKGDivider = () => {
+interface EKGDividerProps {
+  color?: 'default' | 'red';
+}
+
+const EKGDivider = ({ color = 'default' }: EKGDividerProps = {}) => {
+  const gradientId = color === 'red' ? 'ekgGradientRed' : 'ekgGradient';
+  const strokeColor = color === 'red' ? '#ff0000' : '#c0c0c0';
+
   return (
     <svg className="w-full h-full overflow-visible" preserveAspectRatio="none" viewBox="0 0 1200 160">
       <defs>
-        <linearGradient id="ekgGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <linearGradient id={gradientId} x1="0%" y1="0%" x2="100%" y2="0%">
           <stop offset="0%" stopColor="transparent" />
-          <stop offset="20%" stopColor="#c0c0c0" stopOpacity="0.4" />
-          <stop offset="50%" stopColor="#c0c0c0" stopOpacity="0.8" />
-          <stop offset="80%" stopColor="#c0c0c0" stopOpacity="0.4" />
+          <stop offset="20%" stopColor={strokeColor} stopOpacity="0.4" />
+          <stop offset="50%" stopColor={strokeColor} stopOpacity="0.8" />
+          <stop offset="80%" stopColor={strokeColor} stopOpacity="0.4" />
           <stop offset="100%" stopColor="transparent" />
         </linearGradient>
       </defs>
@@ -37,8 +44,8 @@ const EKGDivider = () => {
            L 710,80
            L 800,80
            L 1200,80" 
-        fill="none" 
-        stroke="url(#ekgGradient)" 
+        fill="none"
+        stroke={`url(#${gradientId})`}
         strokeWidth="1"
         opacity="0.5"
       />

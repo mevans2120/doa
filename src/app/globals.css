@@ -195,6 +195,30 @@
 }
 
 @layer utilities {
+  /* Vertical stripe pattern overlay */
+  .red-stripes-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 40px,
+      rgba(255, 0, 0, 0.15) 40px,
+      rgba(255, 0, 0, 0.15) 41px,
+      transparent 41px,
+      transparent 60px,
+      rgba(255, 0, 0, 0.1) 60px,
+      rgba(255, 0, 0, 0.1) 60.5px,
+      transparent 60.5px,
+      transparent 100px
+    );
+    pointer-events: none;
+    z-index: 5;
+  }
+
   /* Animation utilities */
   .fade-in-up {
     animation: fadeInUp var(--animation-duration-base) var(--animation-easing);

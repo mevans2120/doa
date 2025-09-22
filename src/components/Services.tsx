@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { client } from '../../sanity/lib/client'
 import { useHomepage } from '@/contexts/HomepageContext'
 import { ServiceIcons } from './ServiceIcons'
+import ViewfinderCorners from './ViewfinderCorners'
 
 interface ServicesProps {
   limit?: number;
@@ -57,7 +58,7 @@ const Services = ({ limit }: ServicesProps = {}) => {
 
   if (loading) {
     return (
-      <section className="pt-32 pb-24 px-10 bg-black relative overflow-hidden noise-overlay paint-flecks" id="services" role="region">
+      <section className="pt-32 pb-24 px-10 bg-black relative overflow-hidden noise-overlay paint-flecks " id="services" role="region">
         <div className="relative z-10 text-center mb-8">
           <h2 className="bebas-font text-6xl text-white mb-6 text-outline">{sectionTitle}</h2>
         </div>
@@ -72,7 +73,7 @@ const Services = ({ limit }: ServicesProps = {}) => {
 
   if (services.length === 0) {
     return (
-      <section className="pt-32 pb-24 px-10 bg-black relative overflow-hidden noise-overlay paint-flecks" id="services" role="region">
+      <section className="pt-32 pb-24 px-10 bg-black relative overflow-hidden noise-overlay paint-flecks " id="services" role="region">
         <div className="relative z-10 text-center mb-8">
           <h2 className="bebas-font text-6xl text-white mb-6 text-outline">{sectionTitle}</h2>
         </div>
@@ -82,8 +83,11 @@ const Services = ({ limit }: ServicesProps = {}) => {
   }
 
   return (
-    <section className="pt-32 pb-24 px-10 bg-black relative overflow-hidden noise-overlay paint-flecks" id="services" role="region">
-      
+    <section className="pt-32 pb-24 px-10 bg-black relative overflow-hidden noise-overlay paint-flecks " id="services" role="region">
+
+      {/* Viewfinder corners - top left, bottom right */}
+      <ViewfinderCorners pattern="left-right" />
+
       {/* Section title */}
       <div className="relative z-10 text-center mb-8 fade-in-up">
         <h2 className="bebas-font text-6xl text-white mb-6 text-outline">

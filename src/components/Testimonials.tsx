@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { client } from '../../sanity/lib/client'
 import { featuredTestimonialsQuery } from '../../sanity/lib/queries'
 import { useHomepage } from '@/contexts/HomepageContext'
+import ViewfinderCorners from './ViewfinderCorners'
 
 interface Testimonial {
   _id: string;
@@ -111,7 +112,7 @@ const Testimonials = () => {
 
   if (loading) {
     return (
-      <section className="py-24 px-10 bg-black relative overflow-hidden noise-overlay paint-flecks">
+      <section className="py-24 px-10 bg-black relative overflow-hidden noise-overlay paint-flecks ">
         <div className="relative z-10 text-center mb-20">
           <h2 className="bebas-font text-6xl text-white mb-6 text-outline">{sectionTitle}</h2>
         </div>
@@ -129,8 +130,11 @@ const Testimonials = () => {
   }
 
   return (
-    <section className="py-24 px-10 bg-black relative overflow-hidden noise-overlay paint-flecks">
-      
+    <section className="py-24 px-10 bg-black relative overflow-hidden noise-overlay paint-flecks ">
+
+      {/* Viewfinder corners - top left, bottom right */}
+      <ViewfinderCorners pattern="left-right" />
+
       {/* Section title */}
       <div className="relative z-10 text-center mb-20 fade-in-up">
         <h2 className="bebas-font text-6xl text-white mb-6 text-outline">

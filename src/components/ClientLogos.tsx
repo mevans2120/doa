@@ -6,6 +6,7 @@ import { client } from '../../sanity/lib/client'
 import { urlFor } from '../../sanity/lib/image'
 import { featuredClientsQuery } from '../../sanity/lib/queries'
 import { useHomepage } from '@/contexts/HomepageContext'
+import ViewfinderCorners from './ViewfinderCorners'
 
 interface Client {
   _id: string;
@@ -89,7 +90,10 @@ const ClientLogos = () => {
 
   return (
     <section className="py-24 px-10 bg-black relative overflow-hidden noise-overlay paint-flecks" id="clients">
-      
+
+      {/* Viewfinder corners - top left, bottom right */}
+      <ViewfinderCorners pattern="left-right" />
+
       {/* Section title */}
       <div className="relative z-10 text-center mb-20 fade-in-up">
         <h2 className="bebas-font text-6xl text-white mb-6 text-outline">
