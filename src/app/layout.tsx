@@ -4,6 +4,7 @@ import { FaviconManager } from "@/components/FaviconManager";
 import { keaniaOne, ebGaramond, ptSans, bebasNeue } from "@/lib/fonts";
 import { getSiteMetadata } from "@/lib/metadata";
 import { SiteSettingsProvider } from "@/contexts/SiteSettingsContext";
+import { Analytics } from "@vercel/analytics/next";
 
 export async function generateMetadata(): Promise<Metadata> {
   const metadata = await getSiteMetadata();
@@ -50,6 +51,7 @@ export default function RootLayout({
         <SiteSettingsProvider>
           {children}
         </SiteSettingsProvider>
+        <Analytics />
       </body>
     </html>
   );
