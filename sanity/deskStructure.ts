@@ -1,5 +1,3 @@
-'use client'
-
 import {StructureBuilder} from 'sanity/structure'
 
 export const structure = (S: StructureBuilder) =>
