@@ -155,9 +155,7 @@ const Projects = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-doa-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
               <div className="p-6">
-                <h3 className="heading-font text-xl font-semibold mb-2">{project.title}</h3>
-                <p className="text-gray-400 text-sm mb-1">{project.type}</p>
-                <p className="text-gray-500 text-sm">{project.client} • {project.year}</p>
+                <h3 className="heading-font text-xl font-semibold">{project.title}</h3>
               </div>
             </div>
           ))}
@@ -261,55 +259,13 @@ const Projects = () => {
               {/* Details */}
               <div className="space-y-6">
                 <div>
-                  <h3 className="heading-font text-3xl font-bold mb-2">{selectedProject.title}</h3>
-                  <p className="text-gray-400">{selectedProject.type} • {selectedProject.year}</p>
+                  <h3 className="heading-font text-3xl font-bold mb-4">{selectedProject.title}</h3>
                 </div>
 
                 <div>
                   <h4 className="text-lg font-semibold mb-2 heading-font">Project Overview</h4>
                   <p className="text-gray-300 leading-relaxed">{selectedProject.description}</p>
                 </div>
-
-                {selectedProject.credits && (
-                  <div>
-                    <h4 className="text-lg font-semibold mb-2 heading-font">Credits</h4>
-                    <div className="space-y-1 text-gray-300">
-                      {selectedProject.credits.director && (
-                        <p><span className="text-gray-500">Director:</span> {selectedProject.credits.director}</p>
-                      )}
-                      {selectedProject.credits.productionDesigner && (
-                        <p><span className="text-gray-500">Production Designer:</span> {selectedProject.credits.productionDesigner}</p>
-                      )}
-                      {selectedProject.credits.cinematographer && (
-                        <p><span className="text-gray-500">Cinematographer:</span> {selectedProject.credits.cinematographer}</p>
-                      )}
-                    </div>
-                  </div>
-                )}
-
-                {selectedProject.technicalDetails && (
-                  <div>
-                    <h4 className="text-lg font-semibold mb-2 heading-font">Technical Details</h4>
-                    <div className="space-y-1 text-gray-300">
-                      {selectedProject.technicalDetails.squareFeet && (
-                        <p><span className="text-gray-500">Square Footage:</span> {selectedProject.technicalDetails.squareFeet.toLocaleString()} sq ft</p>
-                      )}
-                      {selectedProject.technicalDetails.buildDuration && (
-                        <p><span className="text-gray-500">Build Duration:</span> {selectedProject.technicalDetails.buildDuration}</p>
-                      )}
-                      {selectedProject.technicalDetails.specialFeatures && (
-                        <div>
-                          <span className="text-gray-500">Special Features:</span>
-                          <ul className="list-disc list-inside mt-1 ml-4">
-                            {selectedProject.technicalDetails.specialFeatures.map((feature, idx) => (
-                              <li key={idx}>{feature}</li>
-                            ))}
-                          </ul>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                )}
               </div>
             </div>
           </div>

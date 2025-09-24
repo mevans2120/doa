@@ -33,8 +33,6 @@ interface ProjectData {
 
 const ProjectsPage = () => {
   const [projects, setProjects] = useState<ProjectData[]>([])
-  const [filteredProjects, setFilteredProjects] = useState<ProjectData[]>([])
-  const [selectedCategory, setSelectedCategory] = useState<string>('All')
   const [selectedProject, setSelectedProject] = useState<ProjectData | null>(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
@@ -46,11 +44,9 @@ const ProjectsPage = () => {
       try {
         const data = await client.fetch<ProjectData[]>(projectsQuery)
         setProjects(data)
-        setFilteredProjects(data)
       } catch (error) {
         console.error('Error fetching projects:', error)
         setProjects([])
-        setFilteredProjects([])
       } finally {
         setLoading(false)
       }
@@ -58,18 +54,6 @@ const ProjectsPage = () => {
 
     fetchProjects()
   }, [])
-
-  // Get unique categories
-  const categories = ['All', ...Array.from(new Set(projects.map(p => p.category).filter(Boolean)))]
-
-  // Filter projects by category
-  useEffect(() => {
-    if (selectedCategory === 'All') {
-      setFilteredProjects(projects)
-    } else {
-      setFilteredProjects(projects.filter(p => p.category === selectedCategory))
-    }
-  }, [selectedCategory, projects])
 
   const openModal = (project: ProjectData) => {
     setSelectedProject(project)
@@ -147,31 +131,14 @@ const ProjectsPage = () => {
               <div className="professional-divider max-w-md mx-auto"></div>
             </div>
 
-            {/* Category Filter */}
-            <div className="flex flex-wrap justify-center gap-4 mb-12">
-              {categories.map((category) => (
-                <button
-                  key={category}
-                  onClick={() => setSelectedCategory(category)}
-                  className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 ${
-                    selectedCategory === category
-                      ? 'bg-white text-black'
-                      : 'bg-zinc-800 text-white hover:bg-zinc-700'
-                  }`}
-                >
-                  {category}
-                </button>
-              ))}
-            </div>
-
             {/* Projects Grid */}
-            {filteredProjects.length === 0 ? (
+            {projects.length === 0 ? (
               <div className="text-center py-12">
-                <p className="text-gray-400 text-lg">No projects found in this category.</p>
+                <p className="text-gray-400 text-lg">No projects available.</p>
               </div>
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {filteredProjects.map((project) => (
+                {projects.map((project) => (
                   <div
                     key={project._id}
                     className="group cursor-pointer relative overflow-hidden rounded-lg bg-zinc-900 border border-zinc-800 transition-all duration-300 hover:scale-105 hover:brightness-110 hover:border-gray-400 hover:shadow-[0_8px_32px_rgba(192,192,192,0.3)]"
@@ -194,9 +161,7 @@ const ProjectsPage = () => {
                       <div className="absolute inset-0 bg-gradient-to-t from-doa-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </div>
                     <div className="p-6">
-                      <h3 className="heading-font text-xl font-semibold mb-2">{project.title}</h3>
-                      <p className="text-gray-400 text-sm mb-1">{project.type}</p>
-                      <p className="text-gray-500 text-sm">{project.client} • {project.year}</p>
+                      <h3 className="heading-font text-xl font-semibold">{project.title}</h3>
                     </div>
                   </div>
                 ))}
@@ -294,55 +259,13 @@ const ProjectsPage = () => {
                   {/* Details */}
                   <div className="space-y-6">
                     <div>
-                      <h3 className="heading-font text-3xl font-bold mb-2">{selectedProject.title}</h3>
-                      <p className="text-gray-400">{selectedProject.type} • {selectedProject.year}</p>
+                      <h3 className="heading-font text-3xl font-bold mb-4">{selectedProject.title}</h3>
                     </div>
 
                     <div>
                       <h4 className="text-lg font-semibold mb-2 heading-font">Project Overview</h4>
                       <p className="text-gray-300 leading-relaxed">{selectedProject.description}</p>
                     </div>
-
-                    {selectedProject.credits && (
-                      <div>
-                        <h4 className="text-lg font-semibold mb-2 heading-font">Credits</h4>
-                        <div className="space-y-1 text-gray-300">
-                          {selectedProject.credits.director && (
-                            <p><span className="text-gray-500">Director:</span> {selectedProject.credits.director}</p>
-                          )}
-                          {selectedProject.credits.productionDesigner && (
-                            <p><span className="text-gray-500">Production Designer:</span> {selectedProject.credits.productionDesigner}</p>
-                          )}
-                          {selectedProject.credits.cinematographer && (
-                            <p><span className="text-gray-500">Cinematographer:</span> {selectedProject.credits.cinematographer}</p>
-                          )}
-                        </div>
-                      </div>
-                    )}
-
-                    {selectedProject.technicalDetails && (
-                      <div>
-                        <h4 className="text-lg font-semibold mb-2 heading-font">Technical Details</h4>
-                        <div className="space-y-1 text-gray-300">
-                          {selectedProject.technicalDetails.squareFeet && (
-                            <p><span className="text-gray-500">Square Footage:</span> {selectedProject.technicalDetails.squareFeet.toLocaleString()} sq ft</p>
-                          )}
-                          {selectedProject.technicalDetails.buildDuration && (
-                            <p><span className="text-gray-500">Build Duration:</span> {selectedProject.technicalDetails.buildDuration}</p>
-                          )}
-                          {selectedProject.technicalDetails.specialFeatures && (
-                            <div>
-                              <span className="text-gray-500">Special Features:</span>
-                              <ul className="list-disc list-inside mt-1 ml-4">
-                                {selectedProject.technicalDetails.specialFeatures.map((feature, idx) => (
-                                  <li key={idx}>{feature}</li>
-                                ))}
-                              </ul>
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                    )}
                   </div>
                 </div>
               </div>
