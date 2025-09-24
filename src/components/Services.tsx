@@ -8,6 +8,10 @@ import ViewfinderCorners from './ViewfinderCorners'
 
 interface ServicesProps {
   limit?: number;
+  pageData?: {
+    pageTitle?: string;
+  };
+  services?: Service[];
 }
 
 interface Service {
@@ -21,20 +25,28 @@ interface Service {
   featured?: boolean;
 }
 
-const Services = ({ limit }: ServicesProps = {}) => {
+const Services = ({ limit, pageData, services: propServices }: ServicesProps = {}) => {
   const { settings } = useHomepage()
-  const sectionTitle = settings.sectionTitles?.whatWeDo || 'WHAT WE DO'
-  
+  const sectionTitle = pageData?.pageTitle || settings.sectionTitles?.whatWeDo || 'WHAT WE DO'
+
   const [services, setServices] = useState<Service[]>([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
+    // If services are passed as props, use them directly
+    if (propServices) {
+      setServices(propServices)
+      setLoading(false)
+      return
+    }
+
+    // Otherwise fetch them
     const fetchServices = async () => {
       try {
-        const query = limit 
+        const query = limit
           ? `*[_type == "service" && featured == true] | order(order asc) [0...${limit}]`
           : '*[_type == "service"] | order(order asc)'
-        
+
         const data = await client.fetch<Service[]>(query)
         setServices(data || [])
       } catch (error) {
@@ -47,7 +59,7 @@ const Services = ({ limit }: ServicesProps = {}) => {
     }
 
     fetchServices()
-  }, [limit])
+  }, [limit, propServices])
 
   const getIcon = (iconType: string | undefined) => {
     if (!iconType || !ServiceIcons[iconType]) {

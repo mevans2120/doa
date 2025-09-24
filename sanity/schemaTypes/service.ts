@@ -12,29 +12,12 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug',
-      options: {
-        source: 'title',
-        maxLength: 96,
-      },
-      validation: (Rule) => Rule.required(),
-    }),
-    defineField({
       name: 'shortDescription',
       title: 'Short Description',
       type: 'text',
       rows: 3,
       description: 'Brief description for service cards (max 200 characters)',
       validation: (Rule) => Rule.required().max(200),
-    }),
-    defineField({
-      name: 'fullDescription',
-      title: 'Full Description',
-      type: 'array',
-      of: [{type: 'block'}],
-      description: 'Detailed service description for individual service pages',
     }),
     defineField({
       name: 'iconType',
@@ -61,20 +44,6 @@ export default defineType({
       initialValue: 'tools',
     }),
     defineField({
-      name: 'category',
-      title: 'Category',
-      type: 'string',
-      options: {
-        list: [
-          { title: 'Production Services', value: 'production' },
-          { title: 'Design & Visualization', value: 'design' },
-          { title: 'Fabrication', value: 'fabrication' },
-          { title: 'Rentals', value: 'rentals' },
-          { title: 'Specialty Services', value: 'specialty' },
-        ],
-      },
-    }),
-    defineField({
       name: 'order',
       title: 'Display Order',
       type: 'number',
@@ -89,26 +58,18 @@ export default defineType({
       description: 'Show this service on the homepage',
       initialValue: false,
     }),
-    defineField({
-      name: 'gallery',
-      title: 'Service Gallery',
-      type: 'array',
-      of: [{ type: 'image', options: { hotspot: true } }],
-      description: 'Images showcasing this service',
-    }),
   ],
   preview: {
     select: {
       title: 'title',
-      subtitle: 'category',
       order: 'order',
       featured: 'featured',
     },
     prepare(selection) {
-      const { title, subtitle, order, featured } = selection
+      const { title, order, featured } = selection
       return {
         title: featured ? `⭐ ${order}. ${title}` : `${order}. ${title}`,
-        subtitle: `${subtitle || 'Uncategorized'}${featured ? ' • Featured' : ''}`,
+        subtitle: featured ? 'Featured' : '',
       }
     },
   },

@@ -7,13 +7,12 @@ export default defineType({
   fields: [
     defineField({
       name: 'title',
-      title: 'Internal Title',
+      title: 'Title',
       type: 'string',
-      description: 'This is just for internal reference',
-      initialValue: 'Contact Page Settings',
-      readOnly: true,
+      hidden: () => true,
+      initialValue: 'Contact Page',
     }),
-    
+
     // Hero Section
     defineField({
       name: 'hero',
@@ -217,9 +216,10 @@ export default defineType({
     select: {
       title: 'title',
     },
-    prepare() {
+    prepare(selection) {
+      const {title} = selection
       return {
-        title: 'Contact Page',
+        title: title || 'Contact Page',
         subtitle: 'Manage contact page content and settings',
       }
     },

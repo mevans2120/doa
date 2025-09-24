@@ -12,40 +12,9 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug',
-      options: {
-        source: 'title',
-        maxLength: 96,
-      },
-      validation: (Rule) => Rule.required(),
-    }),
-    defineField({
       name: 'client',
       title: 'Client',
       type: 'string',
-    }),
-    defineField({
-      name: 'category',
-      title: 'Category',
-      type: 'string',
-      options: {
-        list: [
-          {title: 'Film Production', value: 'Film Production'},
-          {title: 'Television Series', value: 'Television Series'},
-          {title: 'Commercial Production', value: 'Commercial Production'},
-          {title: 'Live Events', value: 'Live Events'},
-          {title: 'Music Video', value: 'Music Video'},
-          {title: 'Other', value: 'Other'},
-        ],
-      },
-    }),
-    defineField({
-      name: 'type',
-      title: 'Project Type',
-      type: 'string',
-      description: 'E.g., Dystopian Sci-Fi Feature, Business Thriller, etc.',
     }),
     defineField({
       name: 'featured',
@@ -78,31 +47,6 @@ export default defineType({
       name: 'year',
       title: 'Year',
       type: 'number',
-    }),
-    defineField({
-      name: 'credits',
-      title: 'Credits',
-      type: 'object',
-      fields: [
-        {name: 'director', type: 'string', title: 'Director'},
-        {name: 'productionDesigner', type: 'string', title: 'Production Designer'},
-        {name: 'cinematographer', type: 'string', title: 'Cinematographer'},
-      ],
-    }),
-    defineField({
-      name: 'technicalDetails',
-      title: 'Technical Details',
-      type: 'object',
-      fields: [
-        {name: 'squareFeet', type: 'number', title: 'Square Feet'},
-        {name: 'buildDuration', type: 'string', title: 'Build Duration'},
-        {
-          name: 'specialFeatures',
-          type: 'array',
-          title: 'Special Features',
-          of: [{type: 'string'}],
-        },
-      ],
     }),
     defineField({
       name: 'order',

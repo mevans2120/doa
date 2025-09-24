@@ -7,44 +7,31 @@ export const emailSettingsQuery = groq`*[_type == "emailSettings"][0]`
 export const projectsQuery = groq`*[_type == "project"] | order(order asc, _createdAt desc) {
   _id,
   title,
-  slug,
   client,
-  category,
-  type,
   mainImage,
   gallery,
   description,
   featured,
-  year,
-  credits,
-  technicalDetails
+  year
 }`
 
 export const featuredProjectsQuery = groq`*[_type == "project" && featured == true] | order(order asc) [0...6] {
   _id,
   title,
-  slug,
   client,
-  category,
-  type,
   mainImage,
   description,
   year
 }`
 
-export const projectDetailQuery = groq`*[_type == "project" && slug.current == $slug][0] {
+export const projectDetailQuery = groq`*[_type == "project" && _id == $id][0] {
   _id,
   title,
-  slug,
   client,
-  category,
-  type,
   mainImage,
   gallery,
   description,
-  year,
-  credits,
-  technicalDetails
+  year
 }`
 
 // Client queries
@@ -109,9 +96,22 @@ export const featuredTestimonialsQuery = groq`*[_type == "testimonial" && featur
 export const servicesQuery = groq`*[_type == "service"] | order(order asc, _createdAt desc) {
   _id,
   title,
-  slug,
   shortDescription,
-  icon
+  iconType,
+  featured
+}`
+
+// Services page query
+export const servicesPageQuery = groq`*[_type == "servicesPage"][0] {
+  pageTitle,
+  seo
+}`
+
+// Projects page query
+export const projectsPageQuery = groq`*[_type == "projectsPage"][0] {
+  pageTitle,
+  pageDescription,
+  seo
 }`
 
 // Team member queries

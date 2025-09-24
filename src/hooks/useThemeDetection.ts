@@ -1,3 +1,5 @@
+'use client';
+
 import { useEffect, useState } from 'react';
 
 type Theme = 'light' | 'dark';
@@ -7,18 +9,8 @@ type Theme = 'light' | 'dark';
  * @returns {Theme} The current theme ('light' or 'dark')
  */
 export function useThemeDetection(): Theme {
-  // Initialize state with the current theme preference
-  const [theme, setTheme] = useState<Theme>(() => {
-    // Check if we're on the client side
-    if (typeof window === 'undefined') {
-      return 'light'; // Default to light theme during SSR
-    }
-
-    // Check the current color scheme preference
-    return window.matchMedia('(prefers-color-scheme: dark)').matches
-      ? 'dark'
-      : 'light';
-  });
+  // Initialize state with a default value
+  const [theme, setTheme] = useState<Theme>('light');
 
   useEffect(() => {
     // Create media query for dark mode

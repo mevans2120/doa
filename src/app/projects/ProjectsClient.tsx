@@ -1,11 +1,8 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Image from 'next/image'
-import { client } from '../../sanity/lib/client'
-import { urlFor } from '../../sanity/lib/image'
-import { featuredProjectsQuery } from '../../sanity/lib/queries'
-import { useHomepage } from '@/contexts/HomepageContext'
+import { urlFor } from '../../../sanity/lib/image'
 
 interface ProjectData {
   _id: string;
@@ -17,32 +14,16 @@ interface ProjectData {
   year?: number;
 }
 
-const Projects = () => {
-  const { settings } = useHomepage()
+interface ProjectsClientProps {
+  pageTitle: string;
+  pageDescription: string;
+  projects: ProjectData[];
+}
+
+const ProjectsClient = ({ pageTitle, pageDescription, projects }: ProjectsClientProps) => {
   const [selectedProject, setSelectedProject] = useState<ProjectData | null>(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
-  const [projects, setProjects] = useState<ProjectData[]>([])
-  const [loading, setLoading] = useState(true)
-  
-  const sectionTitle = settings.sectionTitles?.featuredProjects || 'FEATURED PROJECTS'
-
-  useEffect(() => {
-    const fetchProjects = async () => {
-      try {
-        const data = await client.fetch<ProjectData[]>(featuredProjectsQuery)
-        setProjects(data || [])
-      } catch (error) {
-        console.error('Error fetching projects:', error)
-        // Fallback to empty array if fetch fails
-        setProjects([])
-      } finally {
-        setLoading(false)
-      }
-    }
-
-    fetchProjects()
-  }, [])
 
   const openModal = (project: ProjectData) => {
     setSelectedProject(project)
@@ -58,7 +39,7 @@ const Projects = () => {
 
   const nextImage = () => {
     if (selectedProject?.gallery && selectedProject.gallery.length > 0) {
-      setCurrentImageIndex((prev) => 
+      setCurrentImageIndex((prev) =>
         (prev + 1) % selectedProject.gallery!.length
       )
     }
@@ -66,7 +47,7 @@ const Projects = () => {
 
   const prevImage = () => {
     if (selectedProject?.gallery && selectedProject.gallery.length > 0) {
-      setCurrentImageIndex((prev) => 
+      setCurrentImageIndex((prev) =>
         prev === 0 ? selectedProject.gallery!.length - 1 : prev - 1
       )
     }
@@ -81,85 +62,60 @@ const Projects = () => {
     }
   }
 
-  if (loading) {
-    return (
-      <section className="py-20 bg-doa-black text-white">
-        <div className="max-w-7xl mx-auto px-8">
-          <div className="text-center mb-12">
-            <h2 className="bebas-font text-6xl text-white mb-6 text-outline">{sectionTitle}</h2>
+  return (
+    <div className="pt-24 pb-20">
+      <div className="max-w-7xl mx-auto px-8">
+        {/* Header Section */}
+        <div className="text-center mb-12 fade-in-up">
+          <h1 className="page-title">{pageTitle}</h1>
+          <div className="text-xl heading-font text-gray-300 mb-8">
+            {pageDescription}
           </div>
+          <div className="professional-divider max-w-md mx-auto"></div>
+        </div>
+
+        {/* Projects Grid */}
+        {projects.length === 0 ? (
+          <div className="text-center py-12">
+            <p className="text-gray-400 text-lg">No projects available.</p>
+          </div>
+        ) : (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[1, 2, 3, 4, 5, 6].map((i) => (
-              <div key={i} className="bg-zinc-900 rounded-lg h-96 animate-pulse" />
+            {projects.map((project) => (
+              <div
+                key={project._id}
+                className="group cursor-pointer relative overflow-hidden rounded-lg bg-zinc-900 border border-zinc-800 transition-all duration-300 hover:scale-105 hover:brightness-110 hover:border-gray-400 hover:shadow-[0_8px_32px_rgba(192,192,192,0.3)]"
+                onClick={() => openModal(project)}
+              >
+                <div className="aspect-[4/3] relative overflow-hidden">
+                  {project.mainImage ? (
+                    <Image
+                      src={getImageUrl(project.mainImage)}
+                      alt={project.title}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-zinc-800 flex items-center justify-center">
+                      <span className="text-gray-600">No image available</span>
+                    </div>
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-doa-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+                <div className="p-6">
+                  <h3 className="heading-font text-xl font-semibold">{project.title}</h3>
+                </div>
+              </div>
             ))}
           </div>
-        </div>
-      </section>
-    )
-  }
-
-  if (projects.length === 0) {
-    return (
-      <section className="py-20 bg-doa-black text-white">
-        <div className="max-w-7xl mx-auto px-8">
-          <div className="text-center mb-12">
-            <h2 className="bebas-font text-6xl text-white mb-6 text-outline">{sectionTitle}</h2>
-          </div>
-          <p className="text-gray-400">No projects available at the moment.</p>
-        </div>
-      </section>
-    )
-  }
-
-  return (
-    <section className="py-20 bg-doa-black text-white">
-      <div className="max-w-7xl mx-auto px-8">
-        <div className="text-center mb-12 fade-in-up">
-          <h2 className="bebas-font text-6xl text-white mb-6 text-outline">FEATURED PROJECTS</h2>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {projects.map((project) => (
-            <div
-              key={project._id}
-              className="group cursor-pointer relative overflow-hidden rounded-lg bg-zinc-900 border border-zinc-800 transition-all duration-300 hover:scale-105 hover:brightness-110 hover:border-gray-400 hover:shadow-[0_8px_32px_rgba(192,192,192,0.3)]"
-              onClick={() => openModal(project)}
-            >
-              <div className="aspect-[4/3] relative overflow-hidden">
-                {project.mainImage ? (
-                  <Image
-                    src={getImageUrl(project.mainImage)}
-                    alt={project.title}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
-                ) : (
-                  <div className="w-full h-full bg-zinc-800 flex items-center justify-center">
-                    <span className="text-gray-600">No image available</span>
-                  </div>
-                )}
-                <div className="absolute inset-0 bg-gradient-to-t from-doa-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </div>
-              <div className="p-6">
-                <h3 className="heading-font text-xl font-semibold">{project.title}</h3>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* View All CTA */}
-        <div className="text-center mt-16">
-          <a href="/projects" className="view-all-cta">
-            View All Projects
-          </a>
-        </div>
+        )}
       </div>
 
       {/* Modal */}
       {isModalOpen && selectedProject && (
         <div className="fixed inset-0 bg-doa-black/90 z-50 flex items-center justify-center p-4" onClick={closeModal}>
-          <div 
+          <div
             className="bg-zinc-900 rounded-lg max-w-6xl max-h-[90vh] overflow-y-auto relative"
             onClick={(e) => e.stopPropagation()}
           >
@@ -218,7 +174,7 @@ const Projects = () => {
                     />
                   </div>
                 ) : null}
-                
+
                 {/* Thumbnail strip */}
                 {selectedProject.gallery && selectedProject.gallery.length > 1 && (
                   <div className="flex gap-2 overflow-x-auto">
@@ -258,8 +214,8 @@ const Projects = () => {
           </div>
         </div>
       )}
-    </section>
+    </div>
   )
 }
 
-export default Projects
+export default ProjectsClient

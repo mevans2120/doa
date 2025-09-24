@@ -8,6 +8,8 @@ import homepageSettings from './homepageSettings'
 import { aboutPage } from './aboutPage'
 import emailSettings from './emailSettings'
 import contactPage from './contactPage'
+import servicesPage from './servicesPage'
+import projectsPage from './projectsPage'
 
 export const schemaTypes = [
   project,
@@ -20,4 +22,6 @@ export const schemaTypes = [
   aboutPage,
   emailSettings,
   contactPage,
+  servicesPage,
+  projectsPage,
 ]
