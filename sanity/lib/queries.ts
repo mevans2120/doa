@@ -135,8 +135,7 @@ export const siteSettingsQuery = groq`*[_type == "siteSettings"][0] {
   contactPhone,
   address,
   footer,
-  navigation,
-  socialMedia
+  navigation
 }`
 
 // Homepage settings query

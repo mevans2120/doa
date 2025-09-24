@@ -192,20 +192,6 @@ export default defineType({
         }),
       ],
     }),
-    
-    // Social Media
-    defineField({
-      name: 'socialMedia',
-      title: 'Social Media',
-      type: 'object',
-      fields: [
-        {name: 'instagram', type: 'url', title: 'Instagram'},
-        {name: 'linkedin', type: 'url', title: 'LinkedIn'},
-        {name: 'vimeo', type: 'url', title: 'Vimeo'},
-        {name: 'facebook', type: 'url', title: 'Facebook'},
-        {name: 'twitter', type: 'url', title: 'Twitter'},
-      ],
-    }),
   ],
   preview: {
     select: {

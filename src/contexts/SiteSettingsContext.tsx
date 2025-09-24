@@ -38,13 +38,6 @@ interface SiteSettings {
     about?: string
     contact?: string
   }
-  socialMedia?: {
-    instagram?: string
-    linkedin?: string
-    vimeo?: string
-    facebook?: string
-    twitter?: string
-  }
 }
 
 interface SiteSettingsContextType {
