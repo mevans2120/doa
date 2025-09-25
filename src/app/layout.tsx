@@ -9,15 +9,10 @@ import { Analytics } from "@vercel/analytics/next";
 
 export async function generateMetadata(): Promise<Metadata> {
   const metadata = await getSiteMetadata();
-  
-  // Add favicon configuration to the metadata
+
+  // Don't set static favicon here - let FaviconManager handle it dynamically
   return {
     ...metadata,
-    icons: {
-      icon: '/skull.svg',
-      shortcut: '/skull.svg',
-      apple: '/skull.svg',
-    },
     manifest: '/manifest.json',
   };
 }

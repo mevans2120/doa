@@ -14,7 +14,7 @@ export function FaviconManager() {
     // Define favicon paths for each theme
     const faviconPaths = {
       light: '/skull.svg',
-      dark: '/skull-white.svg'
+      dark: '/skull-white.svg'  // Original white skull for dark mode
     };
 
     // Get the appropriate favicon path based on current theme
@@ -22,41 +22,29 @@ export function FaviconManager() {
 
     // Update all favicon link elements
     const updateFavicons = () => {
-      // Update standard favicon
-      const iconLink = document.querySelector<HTMLLinkElement>('link[rel="icon"]');
-      if (iconLink) {
-        iconLink.href = faviconPath;
-      } else {
-        // Create icon link if it doesn't exist
-        const newIconLink = document.createElement('link');
-        newIconLink.rel = 'icon';
-        newIconLink.href = faviconPath;
-        document.head.appendChild(newIconLink);
-      }
+      // Remove any existing favicon links
+      const existingIcons = document.querySelectorAll('link[rel="icon"], link[rel="shortcut icon"], link[rel="apple-touch-icon"]');
+      existingIcons.forEach(link => link.remove());
 
-      // Update shortcut icon (for older browsers)
-      const shortcutLink = document.querySelector<HTMLLinkElement>('link[rel="shortcut icon"]');
-      if (shortcutLink) {
-        shortcutLink.href = faviconPath;
-      } else {
-        // Create shortcut icon link if it doesn't exist
-        const newShortcutLink = document.createElement('link');
-        newShortcutLink.rel = 'shortcut icon';
-        newShortcutLink.href = faviconPath;
-        document.head.appendChild(newShortcutLink);
-      }
+      // Create new favicon link
+      const newIconLink = document.createElement('link');
+      newIconLink.rel = 'icon';
+      newIconLink.type = 'image/svg+xml';
+      newIconLink.href = faviconPath;
+      document.head.appendChild(newIconLink);
 
-      // Update Apple touch icon
-      const appleTouchIcon = document.querySelector<HTMLLinkElement>('link[rel="apple-touch-icon"]');
-      if (appleTouchIcon) {
-        appleTouchIcon.href = faviconPath;
-      } else {
-        // Create Apple touch icon link if it doesn't exist
-        const newAppleTouchIcon = document.createElement('link');
-        newAppleTouchIcon.rel = 'apple-touch-icon';
-        newAppleTouchIcon.href = faviconPath;
-        document.head.appendChild(newAppleTouchIcon);
-      }
+      // Create shortcut icon for older browsers
+      const newShortcutLink = document.createElement('link');
+      newShortcutLink.rel = 'shortcut icon';
+      newShortcutLink.type = 'image/svg+xml';
+      newShortcutLink.href = faviconPath;
+      document.head.appendChild(newShortcutLink);
+
+      // Create Apple touch icon
+      const newAppleTouchIcon = document.createElement('link');
+      newAppleTouchIcon.rel = 'apple-touch-icon';
+      newAppleTouchIcon.href = faviconPath;
+      document.head.appendChild(newAppleTouchIcon);
 
       // Log theme change for debugging
       console.log(`Favicon updated to ${theme} mode: ${faviconPath}`);
