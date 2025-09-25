@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { FaviconManager } from "@/components/FaviconManager";
+import { ConsoleSuppress } from "@/components/ConsoleSuppress";
 import { keaniaOne, ebGaramond, ptSans, bebasNeue } from "@/lib/fonts";
 import { getSiteMetadata } from "@/lib/metadata";
 import { SiteSettingsProvider } from "@/contexts/SiteSettingsContext";
@@ -48,6 +49,7 @@ export default function RootLayout({
         className={`${keaniaOne.variable} ${ebGaramond.variable} ${ptSans.variable} ${bebasNeue.variable} antialiased overflow-x-hidden`}
       >
         <FaviconManager />
+        <ConsoleSuppress />
         <SiteSettingsProvider>
           {children}
         </SiteSettingsProvider>
