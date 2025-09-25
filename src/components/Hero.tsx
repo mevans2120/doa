@@ -10,7 +10,7 @@ const Hero = () => {
   const subtitle = settings.heroSection?.subtitle || 'DEPARTMENT OF ART'
 
   return (
-    <section role="banner" className="relative min-h-[90vh] min-h-[90dvh] md:min-h-[60vh] lg:min-h-[64vh] bg-[#252525] flex items-center justify-center px-6 md:px-10 pt-16 overflow-hidden">
+    <section role="banner" className="relative min-h-[90vh] min-h-[90dvh] md:min-h-[60vh] lg:min-h-[64vh] bg-[#252525] flex items-center justify-center px-6 md:px-10 pt-16 overflow-visible">
       {/* Animated background gradient - moves opposite to navigation for complementary effect */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#710000] via-[#252525] to-black bg-[length:200%_200%] animate-gradient-x-reverse"></div>
 
