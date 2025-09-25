@@ -96,7 +96,7 @@
     @apply font-heading text-white font-semibold uppercase tracking-wide px-6 py-3
            cursor-pointer no-underline inline-block;
     background-color: var(--color-accent);
-    will-change: transform, box-shadow;
+    /* will-change removed - apply dynamically when needed */
     transition: all var(--animation-duration-fast) var(--animation-easing);
   }
 
@@ -116,7 +116,7 @@
            uppercase tracking-wide px-5 py-2.5
            cursor-pointer no-underline inline-block;
     border: 2px solid var(--color-accent);
-    will-change: transform, background-color;
+    /* will-change removed - apply dynamically when needed */
     transition: all var(--animation-duration-fast) var(--animation-easing);
   }
 
@@ -245,21 +245,13 @@
     }
   }
 
-  /* Skull brightness animation keyframes */
-  @keyframes skull-glow {
-    0%, 100% {
-      opacity: 0.2;
-    }
-    50% {
-      opacity: 0.6;
-    }
-  }
+  /* Skull animation removed - no longer needed */
 
   /* Gradient animation utility class with GPU acceleration */
   .animate-gradient {
     background-size: 200% 100%;
     animation: gradient-shift 15s ease infinite;
-    will-change: background-position;
+    /* will-change removed - apply dynamically when needed */
     transform: translateZ(0); /* Force GPU layer */
     -webkit-transform: translateZ(0);
     backface-visibility: hidden; /* Prevent flickering */
@@ -268,66 +260,11 @@
     -webkit-perspective: 1000px;
   }
 
-  /* Skull animation utility class */
-  .animate-skull-glow {
-    animation: skull-glow 15s ease-in-out infinite;
-    will-change: filter;
-  }
+  /* Skull animation class removed - no longer needed */
 
-  /* Hero gradient expand/contract animation */
-  @keyframes hero-gradient {
-    0% {
-      transform: scale(1.2);
-    }
-    50% {
-      transform: scale(1);
-    }
-    100% {
-      transform: scale(1.2);
-    }
-  }
+  /* Hero gradient animation removed - unused */
 
-  .animate-hero-gradient {
-    animation: hero-gradient 8s ease-in-out infinite;
-    transform-origin: center center;
-    will-change: transform;
-  }
-
-  /* Gritty noise texture overlay */
-  .noise-overlay::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    opacity: 0.15;
-    z-index: 1;
-    pointer-events: none;
-    background-image: 
-      repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(255,255,255,.03) 2px, rgba(255,255,255,.03) 4px),
-      repeating-linear-gradient(-45deg, transparent, transparent 2px, rgba(0,0,0,.05) 2px, rgba(0,0,0,.05) 4px);
-    filter: contrast(120%) brightness(120%);
-    mix-blend-mode: overlay;
-  }
-
-  .noise-overlay::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    opacity: 0.4;
-    z-index: 1;
-    pointer-events: none;
-    background: 
-      repeating-conic-gradient(from 0deg at 50% 50%, rgba(0,0,0,0) 0deg, rgba(255,255,255,.01) 1deg, rgba(0,0,0,0) 2deg),
-      repeating-conic-gradient(from 45deg at 50% 50%, rgba(0,0,0,.02) 0deg, transparent 4deg);
-    background-size: 3px 3px, 5px 5px;
-    filter: contrast(200%);
-    mix-blend-mode: multiply;
-  }
+  /* Noise overlay removed for performance */
 
   /* Text outline styles */
   .text-outline {
@@ -420,9 +357,8 @@
 
   /* Enhanced reduced motion support */
   @media (prefers-reduced-motion: reduce) {
-    .animate-gradient,
-    .animate-skull-glow,
-    .animate-hero-gradient {
+    .animate-gradient {
+    /* removed unused animations */
       animation: none;
     }
     

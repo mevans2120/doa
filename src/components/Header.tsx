@@ -1,12 +1,14 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isAnimationPaused, setIsAnimationPaused] = useState(false)
+  const navRef = useRef<HTMLElement>(null)
   const pathname = usePathname()
 
   const toggleMenu = () => {
@@ -17,6 +19,25 @@ const Header = () => {
     return pathname === path
   }
 
+  // Pause animation when header is out of viewport
+  useEffect(() => {
+    const nav = navRef.current
+    if (!nav) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsAnimationPaused(!entry.isIntersecting)
+      },
+      { threshold: 0 }
+    )
+
+    observer.observe(nav)
+
+    return () => {
+      observer.disconnect()
+    }
+  }, [])
+
   // Close menu on ESC key
   useEffect(() => {
     const handleEsc = (event: KeyboardEvent) => {
@@ -24,7 +45,7 @@ const Header = () => {
         setIsMenuOpen(false)
       }
     }
-    
+
     if (isMenuOpen) {
       document.addEventListener('keydown', handleEsc)
       // Prevent body scroll when menu is open
@@ -41,7 +62,9 @@ const Header = () => {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 flex justify-between items-center px-4 sm:px-6 md:px-10 py-2 md:py-3 bg-gradient-to-r from-[#710000] via-[#252525] to-black bg-[length:200%_100%] animate-gradient-x backdrop-blur-sm border-b border-gray-800 z-[100] noise-overlay">
+      <nav
+        ref={navRef}
+        className={`fixed top-0 left-0 right-0 flex justify-between items-center px-4 sm:px-6 md:px-10 py-2 md:py-3 bg-gradient-to-r from-[#710000] via-[#252525] to-black bg-[length:200%_100%] backdrop-blur-sm border-b border-gray-800 z-[100] noise-overlay ${isAnimationPaused ? '' : 'animate-gradient-x'}`}>
         {/* Skull Logo */}
         <Link href="/" className="relative z-20 flex items-center">
           <Image

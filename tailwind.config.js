@@ -31,7 +31,6 @@ module.exports = {
         'slide-in': 'slideIn 0.5s ease-out',
         'gradient-x': 'gradient-shift 20s ease infinite',
         'gradient-x-reverse': 'gradient-shift-reverse 20s ease infinite',
-        'skull-glow': 'skull-glow 15s ease-in-out infinite',
         'hero-pulse': 'hero-pulse 8s ease-in-out infinite',
       },
       keyframes: {
@@ -77,14 +76,6 @@ module.exports = {
           },
           '50%': {
             'background-position': '0% 50%'
-          }
-        },
-        'skull-glow': {
-          '0%, 100%': {
-            opacity: '0.2',
-          },
-          '50%': {
-            opacity: '0.6',
           }
         },
         'hero-pulse': {
