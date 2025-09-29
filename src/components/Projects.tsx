@@ -25,7 +25,7 @@ const Projects = () => {
   const [projects, setProjects] = useState<ProjectData[]>([])
   const [loading, setLoading] = useState(true)
   
-  const sectionTitle = settings.sectionTitles?.featuredProjects || 'FEATURED PROJECTS'
+  const sectionTitle = settings.sectionTitles?.featuredProjects || ''
 
   useEffect(() => {
     const fetchProjects = async () => {

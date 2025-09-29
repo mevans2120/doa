@@ -55,16 +55,8 @@ export const HomepageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         }
       } catch (error) {
         console.error('Error fetching homepage settings:', error)
-        // Use default values if fetch fails
-        setSettings({
-          sectionTitles: {
-            featuredProjects: 'FEATURED PROJECTS',
-            whatWeDo: 'WHAT WE DO',
-            ourClients: 'Our Clients',
-            testimonials: 'Client Testimonials',
-            aboutCTA: 'Ready to Create Something Extraordinary?',
-          },
-        })
+        // No fallback values - CMS data only
+        setSettings({})
       } finally {
         setLoading(false)
       }

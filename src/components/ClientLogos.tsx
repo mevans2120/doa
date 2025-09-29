@@ -20,7 +20,7 @@ const ClientLogos = () => {
   const [clients, setClients] = useState<Client[]>([])
   const [loading, setLoading] = useState(true)
   
-  const sectionTitle = settings.sectionTitles?.ourClients || 'OUR CLIENTS'
+  const sectionTitle = settings.sectionTitles?.ourClients || ''
 
   useEffect(() => {
     const fetchClients = async () => {

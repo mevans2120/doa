@@ -1,7 +1,7 @@
 import { groq } from 'next-sanity'
 
-// Email Settings query
-export const emailSettingsQuery = groq`*[_type == "emailSettings"][0]`
+// Email Settings query - get the most recently updated one
+export const emailSettingsQuery = groq`*[_type == "emailSettings"] | order(_updatedAt desc)[0]`
 
 // Project queries
 export const projectsQuery = groq`*[_type == "project"] | order(order asc, _createdAt desc) {
@@ -101,14 +101,14 @@ export const servicesQuery = groq`*[_type == "service"] | order(order asc, _crea
   featured
 }`
 
-// Services page query
-export const servicesPageQuery = groq`*[_type == "servicesPage"][0] {
+// Services page query - get the most recently updated one
+export const servicesPageQuery = groq`*[_type == "servicesPage"] | order(_updatedAt desc)[0] {
   pageTitle,
   seo
 }`
 
-// Projects page query
-export const projectsPageQuery = groq`*[_type == "projectsPage"][0] {
+// Projects page query - get the most recently updated one
+export const projectsPageQuery = groq`*[_type == "projectsPage"] | order(_updatedAt desc)[0] {
   pageTitle,
   pageDescription,
   seo
@@ -124,8 +124,8 @@ export const teamMembersQuery = groq`*[_type == "teamMember"] | order(order asc,
   imdbUrl
 }`
 
-// Site settings query
-export const siteSettingsQuery = groq`*[_type == "siteSettings"][0] {
+// Site settings query - get the most recently updated one
+export const siteSettingsQuery = groq`*[_type == "siteSettings"] | order(_updatedAt desc)[0] {
   title,
   description,
   seo,
@@ -138,16 +138,16 @@ export const siteSettingsQuery = groq`*[_type == "siteSettings"][0] {
   navigation
 }`
 
-// Homepage settings query
-export const homepageSettingsQuery = groq`*[_type == "homepageSettings"][0] {
+// Homepage settings query - get the most recently updated one
+export const homepageSettingsQuery = groq`*[_type == "homepageSettings"] | order(_updatedAt desc)[0] {
   heroSection,
   sectionTitles,
   aboutCTA,
   seo
 }`
 
-// About page query
-export const aboutPageQuery = groq`*[_type == "aboutPage"][0] {
+// About page query - get the most recently updated one
+export const aboutPageQuery = groq`*[_type == "aboutPage"] | order(_updatedAt desc)[0] {
   title,
   tagline,
   heroTitle,
@@ -164,8 +164,8 @@ export const aboutPageQuery = groq`*[_type == "aboutPage"][0] {
   seo
 }`
 
-// Contact page query
-export const contactPageQuery = groq`*[_type == "contactPage"][0] {
+// Contact page query - get the most recently updated one
+export const contactPageQuery = groq`*[_type == "contactPage"] | order(_updatedAt desc)[0] {
   title,
   hero,
   contactForm,

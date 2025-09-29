@@ -27,7 +27,7 @@ interface Service {
 
 const Services = ({ limit, pageData, services: propServices }: ServicesProps = {}) => {
   const { settings } = useHomepage()
-  const sectionTitle = pageData?.pageTitle || settings.sectionTitles?.whatWeDo || 'WHAT WE DO'
+  const sectionTitle = pageData?.pageTitle || settings.sectionTitles?.whatWeDo || ''
 
   const [services, setServices] = useState<Service[]>([])
   const [loading, setLoading] = useState(true)

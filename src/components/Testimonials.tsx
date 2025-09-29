@@ -20,7 +20,7 @@ const Testimonials = () => {
   const [testimonials, setTestimonials] = useState<Testimonial[]>([])
   const [loading, setLoading] = useState(true)
   
-  const sectionTitle = settings.sectionTitles?.testimonials || 'CLIENT TESTIMONIALS'
+  const sectionTitle = settings.sectionTitles?.testimonials || ''
 
   useEffect(() => {
     const fetchTestimonials = async () => {

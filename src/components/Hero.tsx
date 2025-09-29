@@ -7,7 +7,7 @@ const Hero = () => {
   const { settings } = useHomepage()
   
   const showLogo = settings.heroSection?.showLogo !== false
-  const subtitle = settings.heroSection?.subtitle || 'DEPARTMENT OF ART'
+  const subtitle = settings.heroSection?.subtitle || ''
 
   return (
     <section role="banner" className="relative min-h-[90vh] min-h-[90dvh] md:min-h-[60vh] lg:min-h-[64vh] bg-[#252525] flex items-center justify-center px-6 md:px-10 pt-16 overflow-visible">
