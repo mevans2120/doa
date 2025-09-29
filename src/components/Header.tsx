@@ -38,7 +38,7 @@ const Header = () => {
     }
   }, [])
 
-  // Close menu on ESC key
+  // Close menu on ESC key and handle body scroll
   useEffect(() => {
     const handleEsc = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
@@ -48,15 +48,29 @@ const Header = () => {
 
     if (isMenuOpen) {
       document.addEventListener('keydown', handleEsc)
-      // Prevent body scroll when menu is open
+      // Prevent body scroll when menu is open - also prevent iOS rubber band scrolling
       document.body.style.overflow = 'hidden'
+      document.body.style.position = 'fixed'
+      document.body.style.width = '100%'
+      document.body.style.top = `-${window.scrollY}px`
     } else {
-      document.body.style.overflow = 'unset'
+      // Restore scroll position
+      const scrollY = document.body.style.top
+      document.body.style.overflow = ''
+      document.body.style.position = ''
+      document.body.style.width = ''
+      document.body.style.top = ''
+      if (scrollY) {
+        window.scrollTo(0, parseInt(scrollY || '0') * -1)
+      }
     }
 
     return () => {
       document.removeEventListener('keydown', handleEsc)
-      document.body.style.overflow = 'unset'
+      document.body.style.overflow = ''
+      document.body.style.position = ''
+      document.body.style.width = ''
+      document.body.style.top = ''
     }
   }, [isMenuOpen])
 
@@ -76,27 +90,30 @@ const Header = () => {
           />
         </Link>
 
-        {/* Hamburger menu button - Now visible on all screen sizes */}
-        <button
-          onClick={toggleMenu}
-          className="relative z-50 w-8 h-8 flex flex-col justify-center items-center group"
-          aria-label="Toggle menu"
-        >
-          <span className={`block w-5 h-0.5 bg-white transition-all duration-300 group-hover:w-6 ${isMenuOpen ? 'rotate-45 translate-y-1' : ''}`} />
-          <span className={`block w-5 h-0.5 bg-white my-0.5 transition-all duration-300 group-hover:w-6 ${isMenuOpen ? 'opacity-0' : ''}`} />
-          <span className={`block w-5 h-0.5 bg-white transition-all duration-300 group-hover:w-6 ${isMenuOpen ? '-rotate-45 -translate-y-1' : ''}`} />
-        </button>
+        {/* Spacer for the hamburger button */}
+        <div className="w-8 h-8" />
       </nav>
 
+      {/* Hamburger menu button - Separate from nav for proper z-indexing */}
+      <button
+        onClick={toggleMenu}
+        className="fixed top-2 md:top-3 right-4 sm:right-6 md:right-10 z-[202] w-8 h-8 flex flex-col justify-center items-center group"
+        aria-label="Toggle menu"
+      >
+        <span className={`block w-5 h-0.5 bg-white transition-all duration-300 group-hover:w-6 ${isMenuOpen ? 'rotate-45 translate-y-1' : ''}`} />
+        <span className={`block w-5 h-0.5 bg-white my-0.5 transition-all duration-300 group-hover:w-6 ${isMenuOpen ? 'opacity-0' : ''}`} />
+        <span className={`block w-5 h-0.5 bg-white transition-all duration-300 group-hover:w-6 ${isMenuOpen ? '-rotate-45 -translate-y-1' : ''}`} />
+      </button>
+
       {/* Navigation Menu Overlay */}
-      <div 
-        className={`fixed inset-0 bg-black/50 backdrop-blur-sm z-40 transition-opacity duration-300 ${isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
+      <div
+        className={`fixed inset-0 bg-black/50 backdrop-blur-sm z-[149] transition-opacity duration-300 ${isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
         onClick={() => setIsMenuOpen(false)}
       />
-      
+
       {/* Navigation Menu Panel */}
-      <div className={`fixed right-0 top-0 h-full w-full sm:w-80 bg-gradient-to-b from-[#710000] via-[#1a1a1a] to-black z-40 transition-transform duration-300 ease-in-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-        <div className="flex flex-col items-center justify-center h-full">
+      <div className={`fixed right-0 top-0 h-full w-full sm:w-80 bg-gradient-to-b from-[#710000] via-[#1a1a1a] to-black z-[150] transition-transform duration-300 ease-in-out overflow-hidden ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+        <div className="flex flex-col items-center justify-center h-full relative">
           <Link
             href="/"
             onClick={() => setIsMenuOpen(false)}
