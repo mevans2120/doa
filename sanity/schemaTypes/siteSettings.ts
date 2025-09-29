@@ -112,6 +112,14 @@ export default defineType({
         }),
       ],
     }),
+    defineField({
+      name: 'businessHours',
+      title: 'Business Hours',
+      type: 'text',
+      rows: 2,
+      description: 'Business hours displayed on contact page',
+      initialValue: 'Monday - Friday: 8:00 AM - 6:00 PM\nWeekends: By Appointment',
+    }),
     
     // Footer Content
     defineField({

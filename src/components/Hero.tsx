@@ -22,7 +22,7 @@ const Hero = () => {
         <div className="relative z-20">
           {/* DOA Logo - Now the hero element */}
           {showLogo && (
-            <div className="mb-0 flex justify-center">
+            <div className="mb-0 flex justify-center opacity-0 animate-hero-fade-in">
               <Image
                 src="/doa-logo.png"
                 alt="Department of Art Logo"
@@ -36,7 +36,7 @@ const Hero = () => {
           )}
           
           {/* Department of Art text below logo - Curved */}
-          <div className="-mt-10">
+          <div className="-mt-10 opacity-0 animate-hero-fade-in-delay-1">
             <svg viewBox="0 0 900 150" className="w-full max-w-6xl mx-auto h-[220px] sm:h-[280px] md:h-[340px] lg:h-[400px]">
               <defs>
                 <path id="curve" d="M 50,100 Q 450,20 850,100" />
@@ -52,7 +52,7 @@ const Hero = () => {
       </div>
       
       {/* Sine wave bottom accent */}
-      <svg className="absolute -bottom-10 left-0 right-0 w-full h-32 overflow-visible z-50" preserveAspectRatio="none" viewBox="0 0 1200 160">
+      <svg className="absolute -bottom-10 left-0 right-0 w-full h-32 overflow-visible z-50 opacity-0 animate-hero-fade-in-delay-2" preserveAspectRatio="none" viewBox="0 0 1200 160">
         <defs>
           <linearGradient id="waveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
             <stop offset="0%" stopColor="transparent" />

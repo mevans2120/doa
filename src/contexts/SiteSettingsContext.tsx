@@ -24,6 +24,7 @@ interface SiteSettings {
     zip?: string
     googleMapsUrl?: string
   }
+  businessHours?: string
   footer?: {
     companyDescription?: string
     tagline?: string

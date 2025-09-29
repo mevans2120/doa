@@ -134,6 +134,7 @@ export const siteSettingsQuery = groq`*[_type == "siteSettings"] | order(_update
   contactEmail,
   contactPhone,
   address,
+  businessHours,
   footer,
   navigation
 }`

@@ -4,12 +4,24 @@ import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
+import { useSiteSettings } from '@/contexts/SiteSettingsContext'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isAnimationPaused, setIsAnimationPaused] = useState(false)
   const navRef = useRef<HTMLElement>(null)
   const pathname = usePathname()
+  const { settings } = useSiteSettings()
+
+  // Use CMS navigation labels with fallbacks
+  const navLabels = {
+    home: settings.navigation?.home || 'Home',
+    projects: settings.navigation?.projects || 'Our Work',
+    services: settings.navigation?.services || 'What We Do',
+    clients: settings.navigation?.clients || 'Our Clients',
+    about: settings.navigation?.about || 'About',
+    contact: settings.navigation?.contact || 'Contact'
+  }
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -121,7 +133,7 @@ const Header = () => {
               isActive('/') ? '[text-shadow:_0_0_25px_rgba(255,255,255,1)]' : 'hover:[text-shadow:_0_0_25px_rgba(255,255,255,1)]'
             }`}
           >
-            Home
+            {navLabels.home}
           </Link>
           <Link
             href="/projects"
@@ -130,7 +142,7 @@ const Header = () => {
               isActive('/projects') ? '[text-shadow:_0_0_25px_rgba(255,255,255,1)]' : 'hover:[text-shadow:_0_0_25px_rgba(255,255,255,1)]'
             }`}
           >
-            Our Work
+            {navLabels.projects}
           </Link>
           <Link
             href="/services"
@@ -139,7 +151,7 @@ const Header = () => {
               isActive('/services') ? '[text-shadow:_0_0_25px_rgba(255,255,255,1)]' : 'hover:[text-shadow:_0_0_25px_rgba(255,255,255,1)]'
             }`}
           >
-            What We Do
+            {navLabels.services}
           </Link>
           <Link
             href="/clients"
@@ -148,7 +160,7 @@ const Header = () => {
               isActive('/clients') ? '[text-shadow:_0_0_25px_rgba(255,255,255,1)]' : 'hover:[text-shadow:_0_0_25px_rgba(255,255,255,1)]'
             }`}
           >
-            Our Clients
+            {navLabels.clients}
           </Link>
           <Link
             href="/about"
@@ -157,7 +169,7 @@ const Header = () => {
               isActive('/about') ? '[text-shadow:_0_0_25px_rgba(255,255,255,1)]' : 'hover:[text-shadow:_0_0_25px_rgba(255,255,255,1)]'
             }`}
           >
-            About
+            {navLabels.about}
           </Link>
           <Link
             href="/contact"
@@ -166,7 +178,7 @@ const Header = () => {
               isActive('/contact') ? '[text-shadow:_0_0_25px_rgba(255,255,255,1)]' : 'hover:[text-shadow:_0_0_25px_rgba(255,255,255,1)]'
             }`}
           >
-            Contact
+            {navLabels.contact}
           </Link>
         </div>
       </div>

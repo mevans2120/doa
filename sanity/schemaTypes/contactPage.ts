@@ -103,6 +103,7 @@ export default defineType({
       name: 'studioInfo',
       title: 'Studio Information',
       type: 'object',
+      description: 'Contact details (address, phone, email) are pulled from Site Settings. Configure page-specific labels and display options here.',
       fields: [
         defineField({
           name: 'heading',
@@ -117,46 +118,16 @@ export default defineType({
           initialValue: 'Address',
         }),
         defineField({
-          name: 'companyName',
-          title: 'Company Name',
-          type: 'string',
-          initialValue: 'Department of Art Productions',
-        }),
-        defineField({
-          name: 'streetAddress',
-          title: 'Street Address',
-          type: 'string',
-          initialValue: '6500 NE Portland Hwy',
-        }),
-        defineField({
-          name: 'cityStateZip',
-          title: 'City, State, ZIP',
-          type: 'string',
-          initialValue: 'Portland, OR 97218',
-        }),
-        defineField({
           name: 'phoneLabel',
           title: 'Phone Label',
           type: 'string',
           initialValue: 'Phone',
         }),
         defineField({
-          name: 'phoneNumber',
-          title: 'Phone Number',
-          type: 'string',
-          initialValue: '(503) 555-0100',
-        }),
-        defineField({
           name: 'emailLabel',
           title: 'Email Label',
           type: 'string',
           initialValue: 'Email',
-        }),
-        defineField({
-          name: 'emailAddress',
-          title: 'Email Address',
-          type: 'string',
-          initialValue: 'info@departmentofart.com',
         }),
         defineField({
           name: 'hoursLabel',
@@ -166,16 +137,16 @@ export default defineType({
         }),
         defineField({
           name: 'hoursText',
-          title: 'Hours Text',
+          title: 'Hours Text (Optional Override)',
           type: 'text',
           rows: 2,
-          initialValue: 'Monday - Friday: 8:00 AM - 6:00 PM\nWeekends: By Appointment',
+          description: 'Leave empty to use business hours from Site Settings. Fill this to override with custom hours for the contact page.',
         }),
         defineField({
           name: 'googleMapsUrl',
           title: 'Google Maps Embed URL',
           type: 'url',
-          description: 'The full embed URL from Google Maps',
+          description: 'The full embed URL from Google Maps (override the default from Site Settings if needed)',
           initialValue: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2794.0477544968!2d-122.59431668444!3d45.550666979102!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5495a72d8e7e9c5b%3A0x0!2s6500%20NE%20Portland%20Hwy%2C%20Portland%2C%20OR%2097218!5e0!3m2!1sen!2sus!4v1640000000000!5m2!1sen!2sus',
         }),
         defineField({

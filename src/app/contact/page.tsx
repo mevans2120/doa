@@ -4,7 +4,7 @@ import { useState, useEffect, FormEvent } from 'react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { client } from '../../../sanity/lib/client'
-import { contactPageQuery } from '../../../sanity/lib/queries'
+import { contactPageQuery, siteSettingsQuery } from '../../../sanity/lib/queries'
 
 interface ContactPageData {
   hero?: {
@@ -25,13 +25,8 @@ interface ContactPageData {
   studioInfo?: {
     heading?: string
     addressLabel?: string
-    companyName?: string
-    streetAddress?: string
-    cityStateZip?: string
     phoneLabel?: string
-    phoneNumber?: string
     emailLabel?: string
-    emailAddress?: string
     hoursLabel?: string
     hoursText?: string
     googleMapsUrl?: string
@@ -41,6 +36,20 @@ interface ContactPageData {
     metaTitle?: string
     metaDescription?: string
   }
+}
+
+interface SiteSettings {
+  contactEmail?: string
+  contactPhone?: string
+  address?: {
+    companyName?: string
+    street?: string
+    city?: string
+    state?: string
+    zip?: string
+    googleMapsUrl?: string
+  }
+  businessHours?: string
 }
 
 const ContactPage = () => {
@@ -53,14 +62,19 @@ const ContactPage = () => {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
   const [pageData, setPageData] = useState<ContactPageData | null>(null)
+  const [siteSettings, setSiteSettings] = useState<SiteSettings | null>(null)
 
   useEffect(() => {
     const fetchPageData = async () => {
       try {
-        const data = await client.fetch(contactPageQuery)
-        setPageData(data)
+        const [contactData, settingsData] = await Promise.all([
+          client.fetch(contactPageQuery),
+          client.fetch(siteSettingsQuery)
+        ])
+        setPageData(contactData)
+        setSiteSettings(settingsData)
       } catch (error) {
-        console.error('Error fetching contact page data:', error)
+        console.error('Error fetching page data:', error)
       }
     }
     fetchPageData()
@@ -204,27 +218,29 @@ const ContactPage = () => {
                 <div>
                   <h3 className="text-lg font-medium mb-2 heading-font">{pageData?.studioInfo?.addressLabel || 'Address'}</h3>
                   <p className="text-gray-400">
-                    {pageData?.studioInfo?.companyName || 'Department of Art Productions'}<br />
-                    {pageData?.studioInfo?.streetAddress || '6500 NE Portland Hwy'}<br />
-                    {pageData?.studioInfo?.cityStateZip || 'Portland, OR 97218'}
+                    {siteSettings?.address?.companyName && <>{siteSettings.address.companyName}<br /></>}
+                    {siteSettings?.address?.street && <>{siteSettings.address.street}<br /></>}
+                    {siteSettings?.address?.city && siteSettings?.address?.state && siteSettings?.address?.zip && (
+                      <>{siteSettings.address.city}, {siteSettings.address.state} {siteSettings.address.zip}</>
+                    )}
                   </p>
                 </div>
-                {pageData?.studioInfo?.phoneNumber && (
+                {siteSettings?.contactPhone && (
                   <div>
                     <h3 className="text-lg font-medium mb-2 heading-font">{pageData?.studioInfo?.phoneLabel || 'Phone'}</h3>
-                    <p className="text-gray-400">{pageData?.studioInfo?.phoneNumber}</p>
+                    <p className="text-gray-400">{siteSettings.contactPhone}</p>
                   </div>
                 )}
-                {pageData?.studioInfo?.emailAddress && (
+                {siteSettings?.contactEmail && (
                   <div>
                     <h3 className="text-lg font-medium mb-2 heading-font">{pageData?.studioInfo?.emailLabel || 'Email'}</h3>
-                    <p className="text-gray-400">{pageData?.studioInfo?.emailAddress}</p>
+                    <p className="text-gray-400">{siteSettings.contactEmail}</p>
                   </div>
                 )}
-                {pageData?.studioInfo?.hoursText && (
+                {(pageData?.studioInfo?.hoursText || siteSettings?.businessHours) && (
                   <div>
                     <h3 className="text-lg font-medium mb-2 heading-font">{pageData?.studioInfo?.hoursLabel || 'Business Hours'}</h3>
-                    <p className="text-gray-400 whitespace-pre-line">{pageData?.studioInfo?.hoursText}</p>
+                    <p className="text-gray-400 whitespace-pre-line">{pageData?.studioInfo?.hoursText || siteSettings?.businessHours}</p>
                   </div>
                 )}
               </div>
@@ -234,7 +250,7 @@ const ContactPage = () => {
             {pageData?.studioInfo?.showMap !== false && (
               <div className="h-96 bg-zinc-900 rounded-lg overflow-hidden">
                 <iframe
-                  src={pageData?.studioInfo?.googleMapsUrl || "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2794.0477544968!2d-122.59431668444!3d45.550666979102!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5495a72d8e7e9c5b%3A0x0!2s6500%20NE%20Portland%20Hwy%2C%20Portland%2C%20OR%2097218!5e0!3m2!1sen!2sus!4v1640000000000!5m2!1sen!2sus"}
+                  src={pageData?.studioInfo?.googleMapsUrl || siteSettings?.address?.googleMapsUrl || ""}
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}

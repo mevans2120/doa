@@ -130,11 +130,13 @@ export default defineType({
       name: 'footer',
       title: 'Email Footer',
       type: 'object',
+      description: 'Footer contact information for emails. NOTE: These should match the values in Site Settings for consistency.',
       fields: [
         defineField({
           name: 'contactInfo',
           title: 'Contact Information',
           type: 'object',
+          description: 'Keep these synchronized with Site Settings for consistency across the website',
           fields: [
             defineField({
               name: 'phone',

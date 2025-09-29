@@ -115,7 +115,7 @@ const Projects = () => {
     <section className="py-20 bg-doa-black text-white">
       <div className="max-w-7xl mx-auto px-8">
         <div className="text-center mb-12 fade-in-up">
-          <h2 className="bebas-font text-6xl text-white mb-6 text-outline">FEATURED PROJECTS</h2>
+          <h2 className="bebas-font text-6xl text-white mb-6 text-outline">{sectionTitle}</h2>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
