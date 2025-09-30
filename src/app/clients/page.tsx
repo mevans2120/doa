@@ -59,7 +59,7 @@ const ClientsPage = () => {
     return (
       <div className="min-h-screen">
         <Header />
-        <main className="relative min-h-screen text-white noise-overlay">
+        <main className="relative min-h-screen text-white">
           <div className="fixed inset-0 bg-black -z-10"></div>
           <div className="relative z-10 pt-24 pb-20">
             <div className="max-w-7xl mx-auto px-8">
@@ -83,7 +83,7 @@ const ClientsPage = () => {
   return (
     <div className="min-h-screen">
       <Header />
-      <main className="relative min-h-screen text-white noise-overlay">
+      <main className="relative min-h-screen text-white">
         {/* Background gradient */}
         <div className="fixed inset-0 bg-black -z-10"></div>
         

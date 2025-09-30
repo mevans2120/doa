@@ -70,7 +70,7 @@ const Services = ({ limit, pageData, services: propServices }: ServicesProps = {
 
   if (loading) {
     return (
-      <section className="pt-32 pb-24 px-10 bg-black relative overflow-hidden noise-overlay paint-flecks " id="services" role="region">
+      <section className="pt-32 pb-24 px-10 bg-black relative overflow-hidden paint-flecks " id="services" role="region">
         <div className="relative z-10 text-center mb-8">
           <h2 className="bebas-font text-6xl text-white mb-6 text-outline">{sectionTitle}</h2>
         </div>
@@ -85,7 +85,7 @@ const Services = ({ limit, pageData, services: propServices }: ServicesProps = {
 
   if (services.length === 0) {
     return (
-      <section className="pt-32 pb-24 px-10 bg-black relative overflow-hidden noise-overlay paint-flecks " id="services" role="region">
+      <section className="pt-32 pb-24 px-10 bg-black relative overflow-hidden paint-flecks " id="services" role="region">
         <div className="relative z-10 text-center mb-8">
           <h2 className="bebas-font text-6xl text-white mb-6 text-outline">{sectionTitle}</h2>
         </div>
@@ -95,7 +95,7 @@ const Services = ({ limit, pageData, services: propServices }: ServicesProps = {
   }
 
   return (
-    <section className="pt-32 pb-24 px-10 bg-black relative overflow-hidden noise-overlay paint-flecks " id="services" role="region">
+    <section className="pt-32 pb-24 px-10 bg-black relative overflow-hidden paint-flecks " id="services" role="region">
 
       {/* Viewfinder corners - top left, bottom right */}
       <ViewfinderCorners pattern="left-right" />

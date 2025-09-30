@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen bg-black flex items-center justify-center px-6 relative overflow-hidden noise-overlay">
+    <div className="min-h-screen bg-black flex items-center justify-center px-6 relative overflow-hidden">
       {/* Background gradient effect */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#710000] via-[#252525] to-black opacity-50"></div>
       

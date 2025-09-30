@@ -123,7 +123,7 @@ const ContactPage = () => {
   return (
     <div className="min-h-screen">
       <Header />
-      <main className="relative min-h-screen text-white noise-overlay">
+      <main className="relative min-h-screen text-white">
         {/* Background gradient */}
         <div className="fixed inset-0 bg-black -z-10"></div>
         

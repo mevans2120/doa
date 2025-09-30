@@ -90,7 +90,7 @@ const Header = () => {
     <>
       <nav
         ref={navRef}
-        className={`fixed top-0 left-0 right-0 flex justify-between items-center px-4 sm:px-6 md:px-10 py-2 md:py-3 bg-gradient-to-r from-[#710000] via-[#252525] to-black bg-[length:200%_100%] backdrop-blur-sm border-b border-gray-800 z-[100] noise-overlay ${isAnimationPaused ? '' : 'animate-gradient-x'}`}>
+        className={`fixed top-0 left-0 right-0 flex justify-between items-center px-4 sm:px-6 md:px-10 py-2 md:py-3 bg-gradient-to-r from-[#710000] via-[#252525] to-black bg-[length:200%_100%] backdrop-blur-sm border-b border-gray-800 z-[100] ${isAnimationPaused ? '' : 'animate-gradient-x'}`}>
         {/* Skull Logo */}
         <Link href="/" className="relative z-20 flex items-center">
           <Image

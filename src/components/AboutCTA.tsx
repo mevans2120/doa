@@ -11,7 +11,7 @@ const AboutCTA = () => {
   const buttonLink = settings.aboutCTA?.buttonLink || '/about'
 
   return (
-    <section className="py-16 px-10 bg-black relative noise-overlay paint-flecks">
+    <section className="py-16 px-10 bg-black relative paint-flecks">
 
       {/* CTA Content */}
       <div className="relative z-10 text-center max-w-4xl mx-auto">

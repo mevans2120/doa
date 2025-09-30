@@ -112,7 +112,7 @@ const Testimonials = () => {
 
   if (loading) {
     return (
-      <section className="py-24 px-10 bg-black relative overflow-hidden noise-overlay paint-flecks ">
+      <section className="py-24 px-10 bg-black relative overflow-hidden paint-flecks ">
         <div className="relative z-10 text-center mb-20">
           <h2 className="bebas-font text-6xl text-white mb-6 text-outline">{sectionTitle}</h2>
         </div>
@@ -130,7 +130,7 @@ const Testimonials = () => {
   }
 
   return (
-    <section className="py-24 px-10 bg-black relative overflow-hidden noise-overlay paint-flecks ">
+    <section className="py-24 px-10 bg-black relative overflow-hidden paint-flecks ">
 
       {/* Viewfinder corners - top left, bottom right */}
       <ViewfinderCorners pattern="left-right" />

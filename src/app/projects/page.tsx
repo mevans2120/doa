@@ -42,7 +42,7 @@ const ProjectsPage = async () => {
   return (
     <div className="min-h-screen">
       <Header />
-      <main className="min-h-screen text-white bg-black relative noise-overlay">
+      <main className="min-h-screen text-white bg-black relative">
         <ProjectsClient
           pageTitle={pageData.pageTitle || 'Our Work'}
           pageDescription={pageData.pageDescription || 'Showcasing Our Creative Excellence and Technical Expertise'}

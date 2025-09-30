@@ -14,8 +14,6 @@ const Hero = () => {
       {/* Animated background gradient - moves opposite to navigation for complementary effect */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#710000] via-[#252525] to-black bg-[length:200%_200%] animate-gradient-x-reverse"></div>
 
-      {/* Noise overlay */}
-      <div className="absolute inset-0 noise-overlay z-10"></div>
       
       {/* Hero content - Centered */}
       <div className="relative z-20 text-white text-center pt-16 md:pt-20 lg:pt-24">

@@ -28,7 +28,7 @@ const Footer = () => {
   }
 
   return (
-    <footer className="bg-black text-white py-12 relative noise-overlay paint-flecks">
+    <footer className="bg-black text-white py-12 relative paint-flecks">
       <div className="px-8 lg:px-16 xl:px-24">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-16 lg:gap-20 xl:gap-24">
           {/* Logo and Company Info */}

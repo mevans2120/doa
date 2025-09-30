@@ -78,7 +78,7 @@ const AboutPage = () => {
   return (
     <div className="min-h-screen">
       <Header />
-      <main className="min-h-screen text-white bg-black relative noise-overlay">
+      <main className="min-h-screen text-white bg-black relative">
         <div className="pt-24 pb-20">
           <div className="max-w-7xl mx-auto px-8">
         {/* Hero Section */}
