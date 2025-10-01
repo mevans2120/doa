@@ -1,0 +1,41 @@
+[
+  {
+    "_createdAt": "2025-09-12T18:07:54Z",
+    "_id": "testimonial-1",
+    "_rev": "Ayz0qkvWb6walzY5rXODo0",
+    "_type": "testimonial",
+    "_updatedAt": "2025-09-12T18:07:54Z",
+    "author": "Sarah Chen",
+    "company": "Paramount Pictures",
+    "featured": true,
+    "order": 1,
+    "quote": "DOA's attention to detail and creative problem-solving transformed our vision into reality. Their team built an entire dystopian city block that looked absolutely authentic on camera.",
+    "role": "Production Designer"
+  },
+  {
+    "_createdAt": "2025-09-12T18:07:54Z",
+    "_id": "testimonial-2",
+    "_rev": "Ayz0qkvWb6walzY5rXODo0",
+    "_type": "testimonial",
+    "_updatedAt": "2025-09-12T18:07:54Z",
+    "author": "Michael Rodriguez",
+    "company": "Netflix",
+    "featured": true,
+    "order": 2,
+    "quote": "Working with Department of Art was a game-changer for our production. They delivered beyond our expectations, on time and within budget.",
+    "role": "Director"
+  },
+  {
+    "_createdAt": "2025-09-12T18:07:54Z",
+    "_id": "testimonial-3",
+    "_rev": "Ayz0qkvWb6walzY5rXODo0",
+    "_type": "testimonial",
+    "_updatedAt": "2025-09-12T18:07:54Z",
+    "author": "Lisa Park",
+    "company": "A24 Films",
+    "featured": true,
+    "order": 3,
+    "quote": "The team at DOA brings an unmatched level of professionalism and creativity. They're our go-to for any production design needs in the Pacific Northwest.",
+    "role": "Executive Producer"
+  }
+]

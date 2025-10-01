@@ -1,0 +1,381 @@
+/* Note: Google Fonts should be imported in layout.tsx using Next.js font optimization */
+@import "tailwindcss";
+@config "../../tailwind.config.js";
+
+@layer base {
+  :root {
+    /* Color System */
+    --color-background: #252525;
+    --color-foreground: #ffffff;
+    --color-accent: #c0c0c0;
+    --color-accent-hover: #a0a0a0;
+    --color-accent-light: #e0e0e0;
+    --color-card-bg: rgba(40, 40, 40, 0.95);
+    --color-border: rgba(255, 255, 255, 0.1);
+    --color-text-muted: #a0a0a0;
+    --color-dark-bg: #1a1a1a;
+    --color-dark-border: #444;
+    
+    /* Typography */
+    --font-display: var(--font-keania), 'Arial Black', 'Helvetica', sans-serif;
+    --font-heading: var(--font-pt-sans), 'PT Sans', sans-serif;
+    --font-body: var(--font-garamond), 'Times New Roman', serif;
+    --font-size-sm: 14px;
+    --letter-spacing-wide: 1px;
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    --spacing-2xl: 4rem;
+    
+    /* Animation */
+    --animation-duration-fast: 300ms;
+    --animation-duration-base: 600ms;
+    --animation-easing: ease-out;
+    --animation-easing-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 12px rgba(192, 192, 192, 0.3);
+    
+    /* Border Radius */
+    --radius-sm: 0.25rem;
+    --radius-base: 0.5rem;
+    --radius-lg: 1rem;
+    
+    /* Z-index */
+    --z-base: 10;
+    --z-dropdown: 20;
+    --z-modal: 30;
+    --z-tooltip: 40;
+  }
+
+  body {
+    background: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+    position: relative;
+    line-height: 1.6;
+  }
+
+  /* Focus styles for accessibility */
+  *:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  /* Typography Classes */
+  .display-font {
+    font-family: var(--font-display);
+    font-weight: 400;
+  }
+
+  .heading-font {
+    font-family: var(--font-heading);
+    @apply text-white;
+  }
+
+  .body-font {
+    font-family: var(--font-body);
+  }
+
+  .bebas-font {
+    font-family: var(--font-bebas);
+    font-weight: 400;
+    letter-spacing: 0.11em;
+  }
+
+  /* Professional Button Styles */
+  .professional-btn {
+    @apply font-heading text-white font-semibold uppercase tracking-wide px-6 py-3
+           cursor-pointer no-underline inline-block;
+    background-color: var(--color-accent);
+    /* will-change removed - apply dynamically when needed */
+    transition: all var(--animation-duration-fast) var(--animation-easing);
+  }
+
+  .professional-btn:hover {
+    @apply -translate-y-0.5;
+    background-color: var(--color-accent-hover);
+    box-shadow: var(--shadow-md);
+  }
+
+  .professional-btn:focus-visible {
+    outline: 2px solid var(--color-accent-light);
+    outline-offset: 2px;
+  }
+
+  .professional-btn-outline {
+    @apply font-heading bg-transparent text-white font-semibold
+           uppercase tracking-wide px-5 py-2.5
+           cursor-pointer no-underline inline-block;
+    border: 2px solid var(--color-accent);
+    /* will-change removed - apply dynamically when needed */
+    transition: all var(--animation-duration-fast) var(--animation-easing);
+  }
+
+  .professional-btn-outline:hover {
+    @apply text-white -translate-y-0.5;
+    background-color: var(--color-accent);
+  }
+
+  .professional-btn-outline:focus-visible {
+    outline: 2px solid var(--color-accent-light);
+    outline-offset: 2px;
+  }
+
+  /* Minimal View All CTA Style */
+  .view-all-cta {
+    @apply font-heading font-medium uppercase tracking-wider text-sm no-underline
+           inline-flex items-center gap-2
+           border-b border-transparent;
+    color: var(--color-accent);
+    transition: all var(--animation-duration-fast) var(--animation-easing);
+  }
+
+  .view-all-cta:hover {
+    @apply translate-x-1;
+    color: var(--color-accent-hover);
+    border-bottom-color: var(--color-accent-hover);
+  }
+
+  .view-all-cta::after {
+    content: '→';
+    transition: transform var(--animation-duration-fast) var(--animation-easing);
+  }
+
+  .view-all-cta:hover::after {
+    transform: translateX(2px);
+  }
+
+  .view-all-cta:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 4px;
+  }
+
+  /* Professional Card Styles - Dark mode */
+  .professional-card {
+    background: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-sm);
+  }
+
+  /* Professional section divider */
+  .professional-divider {
+    @apply h-px;
+    margin: var(--spacing-lg) 0;
+    background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+  }
+
+  /* Image wireframe styles for projects */
+  .image-wireframe {
+    @apply font-heading;
+    background: var(--color-dark-bg);
+    border: 2px dashed var(--color-dark-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-muted);
+    font-size: var(--font-size-sm);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-wide);
+    background-image:
+      linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.05) 40%, rgba(255,255,255,0.05) 60%, transparent 60%),
+      linear-gradient(-45deg, transparent 40%, rgba(255,255,255,0.05) 40%, rgba(255,255,255,0.05) 60%, transparent 60%);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
+  }
+}
+
+@layer utilities {
+  /* Vertical stripe pattern overlay */
+  .red-stripes-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 40px,
+      rgba(255, 0, 0, 0.15) 40px,
+      rgba(255, 0, 0, 0.15) 41px,
+      transparent 41px,
+      transparent 60px,
+      rgba(255, 0, 0, 0.1) 60px,
+      rgba(255, 0, 0, 0.1) 60.5px,
+      transparent 60.5px,
+      transparent 100px
+    );
+    pointer-events: none;
+    z-index: 5;
+  }
+
+  /* Animation utilities */
+  .fade-in-up {
+    animation: fadeInUp var(--animation-duration-base) var(--animation-easing);
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Gradient animation keyframes */
+  @keyframes gradient-shift {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  /* Skull animation removed - no longer needed */
+
+  /* Gradient animation utility class with GPU acceleration */
+  .animate-gradient {
+    background-size: 200% 100%;
+    animation: gradient-shift 15s ease infinite;
+    /* will-change removed - apply dynamically when needed */
+    transform: translateZ(0); /* Force GPU layer */
+    -webkit-transform: translateZ(0);
+    backface-visibility: hidden; /* Prevent flickering */
+    -webkit-backface-visibility: hidden;
+    perspective: 1000px; /* Create 3D rendering context */
+    -webkit-perspective: 1000px;
+  }
+
+  /* Skull animation class removed - no longer needed */
+
+  /* Hero gradient animation removed - unused */
+
+  /* Noise overlay removed for performance */
+
+  /* Text outline styles */
+  .text-outline {
+    color: transparent;
+    -webkit-text-stroke: 2px white;
+    text-stroke: 2px white;
+  }
+
+  .text-outline-thin {
+    color: transparent;
+    -webkit-text-stroke: 1px white;
+    text-stroke: 1px white;
+  }
+
+  .text-outline-thick {
+    color: transparent;
+    -webkit-text-stroke: 3px white;
+    text-stroke: 3px white;
+  }
+
+  /* Outline with fill */
+  .text-outline-filled {
+    -webkit-text-stroke: 2px white;
+    text-stroke: 2px white;
+    color: black;
+  }
+
+  /* Hover effect for outline text */
+  .text-outline-hover {
+    transition: all 0.3s ease;
+    -webkit-text-stroke: 2px white;
+    text-stroke: 2px white;
+  }
+
+  .text-outline-hover:hover {
+    color: white;
+    -webkit-text-stroke: 0px;
+    text-stroke: 0px;
+  }
+  
+  /* Reusable page and section title styles */
+  /* H1 - Main page titles */
+  .page-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.75rem; /* text-6xl */
+    line-height: 1;
+    margin-bottom: 1.5rem; /* mb-6 */
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 2px white;
+    text-stroke: 2px white;
+  }
+  
+  /* H2 - Section titles */
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem; /* text-5xl */
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 2.5rem; /* mb-10 */
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 2px white;
+    text-stroke: 2px white;
+  }
+  
+  /* H3 - Subsection titles */
+  .subsection-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.25rem; /* text-4xl */
+    line-height: 1;
+    margin-bottom: 1.5rem; /* mb-6 */
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1.5px white;
+    text-stroke: 1.5px white;
+  }
+
+  /* Paint flecks effect - disabled per client request */
+  /* Keeping the class for backwards compatibility but with no visual effect */
+  .paint-flecks::before {
+    content: '';
+    display: none;
+  }
+
+  .paint-flecks::after {
+    content: '';
+    display: none;
+  }
+
+  /* Enhanced reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-gradient {
+    /* removed unused animations */
+      animation: none;
+    }
+    
+    /* Provide static gradient fallback for header */
+    .animate-gradient {
+      background-position: 50% 50%;
+      background-size: 100% 100%;
+    }
+    
+    /* Remove all transitions for reduced motion */
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}

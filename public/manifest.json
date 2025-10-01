@@ -1,0 +1,37 @@
+{
+  "name": "Department of Art",
+  "short_name": "DOA",
+  "description": "Professional set construction services for the entertainment industry",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#252525",
+  "background_color": "#252525",
+  "icons": [
+    {
+      "src": "/skull.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/skull.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/skull-white.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any",
+      "media": "(prefers-color-scheme: dark)"
+    },
+    {
+      "src": "/skull-white.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable",
+      "media": "(prefers-color-scheme: dark)"
+    }
+  ]
+}

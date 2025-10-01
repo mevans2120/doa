@@ -1,0 +1,30 @@
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dark background circle for visibility in dark mode -->
+  <circle cx="64" cy="64" r="60" fill="#1a1a1a" opacity="0.9"/>
+
+  <!-- Simple white skull icon -->
+  <g transform="translate(64, 64)">
+    <!-- Skull outline -->
+    <path d="
+      M -20,-25
+      C -20,-35 -15,-40 0,-40
+      C 15,-40 20,-35 20,-25
+      L 20,-5
+      C 20,5 15,10 0,10
+      C -15,10 -20,5 -20,-5
+      Z
+    " fill="white"/>
+
+    <!-- Eye sockets -->
+    <circle cx="-8" cy="-15" r="6" fill="#1a1a1a"/>
+    <circle cx="8" cy="-15" r="6" fill="#1a1a1a"/>
+
+    <!-- Nose -->
+    <path d="M -3,-5 L 0,-10 L 3,-5 L 0,0 Z" fill="#1a1a1a"/>
+
+    <!-- Teeth -->
+    <rect x="-2" y="2" width="4" height="6" fill="#1a1a1a"/>
+    <rect x="-8" y="2" width="4" height="6" fill="#1a1a1a"/>
+    <rect x="4" y="2" width="4" height="6" fill="#1a1a1a"/>
+  </g>
+</svg>

@@ -1,0 +1,55 @@
+import type { Metadata } from "next";
+import "./globals.css";
+import { FaviconManager } from "@/components/FaviconManager";
+import { ConsoleSuppress } from "@/components/ConsoleSuppress";
+import { keaniaOne, ebGaramond, ptSans, bebasNeue } from "@/lib/fonts";
+import { getSiteMetadata } from "@/lib/metadata";
+import { SiteSettingsProvider } from "@/contexts/SiteSettingsContext";
+import { Analytics } from "@vercel/analytics/next";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const metadata = await getSiteMetadata();
+
+  // Don't set static favicon here - let FaviconManager handle it dynamically
+  return {
+    ...metadata,
+    manifest: '/manifest.json',
+  };
+}
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en" className="overflow-x-hidden">
+      <head>
+        {/* Preload critical resources */}
+        <link 
+          rel="preload" 
+          as="image" 
+          href="/doa-logo.png" 
+          fetchPriority="high"
+        />
+        
+        {/* DNS prefetch for external domains */}
+        <link rel="dns-prefetch" href="https://cdn.sanity.io" />
+        
+        {/* Preconnect to Vercel's CDN */}
+        <link rel="preconnect" href="https://vercel.app" />
+        <link rel="preconnect" href="https://doa-sable.vercel.app" crossOrigin="anonymous" />
+      </head>
+      <body
+        className={`${keaniaOne.variable} ${ebGaramond.variable} ${ptSans.variable} ${bebasNeue.variable} antialiased overflow-x-hidden`}
+      >
+        <FaviconManager />
+        <ConsoleSuppress />
+        <SiteSettingsProvider>
+          {children}
+        </SiteSettingsProvider>
+        <Analytics />
+      </body>
+    </html>
+  );
+}
