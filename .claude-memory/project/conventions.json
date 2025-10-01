@@ -1,0 +1,38 @@
+{
+  "codeStyle": {
+    "verbosity": "concise",
+    "comments": "minimal, only for complex logic",
+    "testing": "comprehensive with unit, integration, and e2e tests"
+  },
+  "git": {
+    "commitFormat": "type: description",
+    "branchStrategy": "feature branches"
+  },
+  "naming": {
+    "functions": "camelCase",
+    "components": "PascalCase",
+    "files": {
+      "components": "PascalCase.tsx",
+      "utils": "kebab-case.ts",
+      "pages": "kebab-case"
+    }
+  },
+  "structure": {
+    "components": "src/components/",
+    "pages": "src/app/",
+    "hooks": "src/hooks/",
+    "contexts": "src/contexts/",
+    "utils": "src/lib/",
+    "types": "src/types/",
+    "tests": "__tests__/ directories alongside code"
+  },
+  "testing": {
+    "pattern": "*.test.tsx or *.test.ts",
+    "cms": "*.cms.test.tsx for CMS integration tests",
+    "e2e": "tests/ directory for Playwright tests"
+  },
+  "styling": {
+    "approach": "Tailwind utility classes with styled-components for complex components",
+    "responsive": "mobile-first"
+  }
+}

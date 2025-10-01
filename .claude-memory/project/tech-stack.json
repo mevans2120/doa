@@ -1,0 +1,29 @@
+{
+  "framework": "Next.js 15",
+  "language": "TypeScript",
+  "runtime": "React 19",
+  "styling": {
+    "framework": "Tailwind CSS 4",
+    "components": "styled-components"
+  },
+  "cms": {
+    "type": "Sanity CMS",
+    "vision": "@sanity/vision",
+    "imageUrl": "@sanity/image-url"
+  },
+  "email": {
+    "service": "Resend",
+    "templates": "@react-email/components"
+  },
+  "testing": {
+    "unit": "Jest",
+    "integration": "Testing Library",
+    "e2e": "Playwright",
+    "mocking": "MSW"
+  },
+  "analytics": "@vercel/analytics",
+  "hosting": "Vercel",
+  "bundler": "Turbopack",
+  "packageManager": "npm",
+  "lastUpdated": "2025-09-30T00:00:00Z"
+}
