@@ -1,0 +1,14 @@
+{
+  "sessionId": "YYYY-MM-DD-timeofday",
+  "startedAt": "YYYY-MM-DDTHH:mm:ssZ",
+  "currentTask": {
+    "feature": "What you're working on",
+    "files": ["file1.ts", "file2.tsx"],
+    "progress": "in_progress",
+    "nextSteps": ["Step 1", "Step 2"]
+  },
+  "activeBugs": [],
+  "recentChanges": [],
+  "contextNotes": [],
+  "expiresAt": "YYYY-MM-DDTHH:mm:ssZ"
+}

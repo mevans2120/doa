@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Claude Memory (local session/pattern data - not committed)
+.claude-memory/session/
+.claude-memory/patterns/
+# Keep project-level memories tracked
+# .claude-memory/project/

@@ -15,7 +15,13 @@
     "test:all": "npm test && npm run test:e2e",
     "migrate:sanity": "tsx scripts/migrate-to-sanity.ts",
     "migrate:images": "tsx scripts/migrate-images.ts",
-    "migrate:services": "tsx scripts/migrate-services.ts"
+    "migrate:services": "tsx scripts/migrate-services.ts",
+    "session:start": "bash scripts/session-start.sh",
+    "session:end": "bash scripts/session-end.sh",
+    "memory:show": "node scripts/memory-utils.js show",
+    "memory:note": "node scripts/memory-utils.js note",
+    "memory:patterns": "node scripts/memory-utils.js patterns",
+    "memory:tech": "node scripts/memory-utils.js tech-stack"
   },
   "dependencies": {
     "@portabletext/react": "^4.0.3",
