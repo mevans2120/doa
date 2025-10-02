@@ -181,3 +181,5 @@ Required environment variables are in `.env.local`:
 ---
 
 *For memory system details, see `.claude-memory/README.md` and `memory-bank/SESSION_CHECKLIST.md`*
+
+*For git workflow and commit procedures, see `memory-bank/GIT_WORKFLOW.md`*
