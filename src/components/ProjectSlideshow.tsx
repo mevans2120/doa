@@ -124,6 +124,18 @@ const ProjectSlideshow = ({ projectTitle, images }: ProjectSlideshowProps) => {
           />
         </div>
 
+        {/* Invisible Navigation Arrows - Preserve functionality */}
+        <button
+          onClick={goToPrevious}
+          className="absolute left-0 top-0 w-1/3 h-full opacity-0 cursor-pointer"
+          aria-label="Previous image"
+        />
+
+        <button
+          onClick={goToNext}
+          className="absolute right-0 top-0 w-1/3 h-full opacity-0 cursor-pointer"
+          aria-label="Next image"
+        />
       </div>
 
       {/* Dot Indicators - Bottom Center */}
