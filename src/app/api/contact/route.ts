@@ -148,7 +148,7 @@ export async function POST(req: NextRequest) {
     
     // Return success response
     return NextResponse.json(
-      { 
+      {
         success: true,
         message: 'Your message has been sent successfully!',
         data: {
@@ -156,7 +156,14 @@ export async function POST(req: NextRequest) {
           autoReplyId: autoReplyResult.data?.id,
         }
       },
-      { status: 200 }
+      {
+        status: 200,
+        headers: {
+          'Access-Control-Allow-Origin': process.env.NEXT_PUBLIC_SITE_URL || 'https://doa-sable.vercel.app',
+          'Access-Control-Allow-Methods': 'POST',
+          'Access-Control-Allow-Headers': 'Content-Type',
+        }
+      }
     )
     
   } catch (error) {
@@ -179,14 +186,3 @@ export async function POST(req: NextRequest) {
   }
 }
 
-// Handle OPTIONS request for CORS
-export async function OPTIONS() {
-  return new NextResponse(null, {
-    status: 200,
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'POST, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type',
-    },
-  })
-}
