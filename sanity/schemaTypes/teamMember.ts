@@ -26,10 +26,8 @@ export default defineType({
     defineField({
       name: 'photo',
       title: 'Photo',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
+      type: 'responsiveImage',
+      description: 'Will be displayed in portrait (4:5) for team member cards',
     }),
     defineField({
       name: 'imdbUrl',

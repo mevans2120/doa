@@ -33,10 +33,8 @@ export const aboutPage = defineType({
     defineField({
       name: 'companyImage',
       title: 'Company Image',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
+      type: 'responsiveImage',
+      description: 'Will be displayed in landscape (16:9) format',
     }),
     defineField({
       name: 'missionTitle',
@@ -72,10 +70,8 @@ export const aboutPage = defineType({
     defineField({
       name: 'storyImage',
       title: 'Story Section Image',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
+      type: 'responsiveImage',
+      description: 'Will be displayed in landscape (16:9) format',
     }),
     defineField({
       name: 'teamSectionTitle',

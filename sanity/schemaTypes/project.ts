@@ -26,16 +26,15 @@ export default defineType({
     defineField({
       name: 'mainImage',
       title: 'Main Image',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
+      type: 'responsiveImage',
+      description: 'Will be displayed in landscape (16:9) on project pages',
     }),
     defineField({
       name: 'gallery',
       title: 'Gallery Images',
       type: 'array',
-      of: [{type: 'image', options: {hotspot: true}}],
+      of: [{type: 'responsiveImage'}],
+      description: 'Gallery images can be mixed landscape and portrait',
     }),
     defineField({
       name: 'description',

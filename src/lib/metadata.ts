@@ -1,7 +1,24 @@
 import { Metadata } from 'next'
 import { client } from '../../sanity/lib/client'
 import { siteSettingsQuery } from '../../sanity/lib/queries'
-import { urlFor } from '../../sanity/lib/image'
+import { urlForWithOptions } from '../../sanity/lib/image'
+import type { SanityResponsiveImage } from '@/types/sanity'
+
+/**
+ * Generate Open Graph image URL for social sharing
+ * Uses standard 1200x630 dimensions (1.91:1 aspect ratio) for optimal social media display
+ *
+ * @param image - Sanity image object with hotspot data
+ * @returns Optimized image URL for Open Graph metadata
+ */
+export function getOgImageUrl(image: SanityResponsiveImage): string {
+  return urlForWithOptions(image, {
+    width: 1200,
+    height: 630,
+    quality: 90,
+    auto: 'format',
+  }).url()
+}
 
 export async function getSiteMetadata(): Promise<Metadata> {
   try {
@@ -15,7 +32,7 @@ export async function getSiteMetadata(): Promise<Metadata> {
     let socialImageUrl = '/doa-logo.png' // Using existing DOA logo as fallback
     if (settings?.seo?.socialImage) {
       try {
-        socialImageUrl = urlFor(settings.seo.socialImage).width(1200).height(630).url()
+        socialImageUrl = getOgImageUrl(settings.seo.socialImage)
       } catch {
         // Fallback to default if image processing fails
       }

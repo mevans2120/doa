@@ -1,13 +1,14 @@
 'use client'
 
 import ProjectSlideshow from '@/components/ProjectSlideshow'
+import type { SanityResponsiveImage } from '@/types/sanity'
 
 interface ProjectData {
   _id: string;
   title: string;
   description: string;
-  mainImage?: { _type: string; asset: { _ref: string; _type: string } };
-  gallery?: Array<{ _type: string; asset: { _ref: string; _type: string }; _key?: string }>;
+  mainImage?: SanityResponsiveImage;
+  gallery?: Array<SanityResponsiveImage>;
   client?: string;
   year?: number;
 }

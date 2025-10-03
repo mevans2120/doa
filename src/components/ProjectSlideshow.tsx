@@ -2,27 +2,35 @@
 
 import { useState, useEffect, useCallback } from 'react'
 import Image from 'next/image'
-import { urlFor } from '../../sanity/lib/image'
-
-interface ImageType {
-  _type: string
-  asset: { _ref: string; _type: string }
-  _key?: string
-}
+import { urlForWithOptions } from '../../sanity/lib/image'
+import type { SanityResponsiveImage } from '@/types/sanity'
 
 interface ProjectSlideshowProps {
   projectTitle: string
-  images: ImageType[]
+  images: SanityResponsiveImage[]
 }
 
 const ProjectSlideshow = ({ projectTitle, images }: ProjectSlideshowProps) => {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isTransitioning, setIsTransitioning] = useState(false)
 
-  const getImageUrl = (image: ImageType, width = 1600) => {
+  /**
+   * Generate image URL with automatic orientation detection
+   * Uses portrait (4:5) for vertical images, landscape (16:9) for horizontal
+   */
+  const getImageUrl = (image: SanityResponsiveImage, width = 1600) => {
     if (!image) return '/placeholder.jpg'
     try {
-      return urlFor(image).width(width).url()
+      // Detect if image is portrait based on aspect ratio
+      const isPortrait = image.asset?.metadata?.dimensions?.aspectRatio &&
+                         image.asset.metadata.dimensions.aspectRatio < 1
+
+      return urlForWithOptions(image, {
+        width,
+        aspectRatio: isPortrait ? '4:5' : '16:9',
+        quality: 85,
+        auto: 'format',
+      }).url()
     } catch {
       return '/placeholder.jpg'
     }
@@ -91,7 +99,7 @@ const ProjectSlideshow = ({ projectTitle, images }: ProjectSlideshowProps) => {
         <div className="aspect-[16/9] relative">
           <Image
             src={getImageUrl(images[0], 1600)}
-            alt={`${projectTitle} - Image`}
+            alt={images[0]?.alt || `${projectTitle} - Image`}
             fill
             className="object-cover"
             sizes="(max-width: 768px) 100vw, 1400px"
@@ -114,7 +122,7 @@ const ProjectSlideshow = ({ projectTitle, images }: ProjectSlideshowProps) => {
         <div className="aspect-[16/9] relative">
           <Image
             src={getImageUrl(images[currentIndex], 1600)}
-            alt={`${projectTitle} - Image ${currentIndex + 1}`}
+            alt={images[currentIndex]?.alt || `${projectTitle} - Image ${currentIndex + 1}`}
             fill
             className={`object-cover transition-opacity duration-300 ${
               isTransitioning ? 'opacity-0' : 'opacity-100'
@@ -171,7 +179,7 @@ const ProjectSlideshow = ({ projectTitle, images }: ProjectSlideshowProps) => {
             >
               <Image
                 src={getImageUrl(image, 200)}
-                alt={`${projectTitle} - Thumbnail ${index + 1}`}
+                alt={image?.alt || `${projectTitle} - Thumbnail ${index + 1}`}
                 fill
                 className="object-cover"
                 sizes="200px"

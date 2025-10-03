@@ -3,16 +3,17 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { client } from '../../sanity/lib/client'
-import { urlFor } from '../../sanity/lib/image'
+import { squareImage } from '../../sanity/lib/image'
 import { featuredClientsQuery } from '../../sanity/lib/queries'
 import { useHomepage } from '@/contexts/HomepageContext'
 import ViewfinderCorners from './ViewfinderCorners'
+import type { SanityResponsiveImage } from '@/types/sanity'
 
 interface Client {
   _id: string;
   name: string;
-  logo?: { _type: string; asset: { _ref: string; _type: string } };
-  logoWhite?: { _type: string; asset: { _ref: string; _type: string } };
+  logo?: SanityResponsiveImage;
+  logoWhite?: SanityResponsiveImage;
 }
 
 const ClientLogos = () => {
@@ -65,9 +66,10 @@ const ClientLogos = () => {
       }
       return logoMap[client.name] || '/placeholder-logo.svg'
     }
-    
+
     try {
-      return urlFor(logo).width(280).height(140).url()
+      // Use squareImage for consistent 1:1 aspect ratio logos
+      return squareImage(logo, 200).url()
     } catch {
       return '/placeholder-logo.svg'
     }
@@ -110,9 +112,9 @@ const ClientLogos = () => {
           >
             <Image
               src={getLogoUrl(client)}
-              alt={`${client.name} logo`}
+              alt={(client.logo?.alt || client.logoWhite?.alt) || `${client.name} logo`}
               width={140}
-              height={70}
+              height={140}
               className="object-contain filter brightness-0 invert opacity-70 hover:opacity-100 transition-opacity duration-300"
             />
           </div>

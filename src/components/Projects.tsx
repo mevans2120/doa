@@ -3,16 +3,17 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { client } from '../../sanity/lib/client'
-import { urlFor } from '../../sanity/lib/image'
+import { landscapeImage } from '../../sanity/lib/image'
 import { featuredProjectsQuery } from '../../sanity/lib/queries'
 import { useHomepage } from '@/contexts/HomepageContext'
+import type { SanityResponsiveImage } from '@/types/sanity'
 
 interface ProjectData {
   _id: string;
   title: string;
   description: string;
-  mainImage?: { _type: string; asset: { _ref: string; _type: string } };
-  gallery?: Array<{ _type: string; asset: { _ref: string; _type: string }; _key?: string }>;
+  mainImage?: SanityResponsiveImage;
+  gallery?: Array<SanityResponsiveImage>;
   client?: string;
   year?: number;
 }
@@ -72,10 +73,10 @@ const Projects = () => {
     }
   }
 
-  const getImageUrl = (image: { _type: string; asset: { _ref: string; _type: string } } | undefined) => {
+  const getImageUrl = (image: SanityResponsiveImage | undefined, width = 800) => {
     if (!image) return '/placeholder.jpg'
     try {
-      return urlFor(image).width(800).height(600).url()
+      return landscapeImage(image, width).url()
     } catch {
       return '/placeholder.jpg'
     }
@@ -125,11 +126,11 @@ const Projects = () => {
               className="group cursor-pointer relative overflow-hidden rounded-lg bg-zinc-900 border border-zinc-800 transition-all duration-300 hover:scale-105 hover:brightness-110 hover:border-gray-400 hover:shadow-[0_8px_32px_rgba(192,192,192,0.3)]"
               onClick={() => openModal(project)}
             >
-              <div className="aspect-[4/3] relative overflow-hidden">
+              <div className="aspect-[16/9] relative overflow-hidden">
                 {project.mainImage ? (
                   <Image
-                    src={getImageUrl(project.mainImage)}
-                    alt={project.title}
+                    src={getImageUrl(project.mainImage, 800)}
+                    alt={project.mainImage.alt || project.title}
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -177,10 +178,10 @@ const Projects = () => {
               <div className="space-y-4">
                 {selectedProject.gallery && selectedProject.gallery.length > 0 ? (
                   <div className="relative">
-                    <div className="aspect-[4/3] relative rounded-lg overflow-hidden">
+                    <div className="aspect-[16/9] relative rounded-lg overflow-hidden">
                       <Image
-                        src={getImageUrl(selectedProject.gallery[currentImageIndex])}
-                        alt={`${selectedProject.title} - Image ${currentImageIndex + 1}`}
+                        src={getImageUrl(selectedProject.gallery[currentImageIndex], 1200)}
+                        alt={selectedProject.gallery[currentImageIndex]?.alt || `${selectedProject.title} - Image ${currentImageIndex + 1}`}
                         fill
                         className="object-cover"
                         sizes="(max-width: 768px) 100vw, 50vw"
@@ -208,10 +209,10 @@ const Projects = () => {
                     )}
                   </div>
                 ) : selectedProject.mainImage ? (
-                  <div className="aspect-[4/3] relative rounded-lg overflow-hidden">
+                  <div className="aspect-[16/9] relative rounded-lg overflow-hidden">
                     <Image
-                      src={getImageUrl(selectedProject.mainImage)}
-                      alt={selectedProject.title}
+                      src={getImageUrl(selectedProject.mainImage, 1200)}
+                      alt={selectedProject.mainImage.alt || selectedProject.title}
                       fill
                       className="object-cover"
                       sizes="(max-width: 768px) 100vw, 50vw"
@@ -231,8 +232,8 @@ const Projects = () => {
                         }`}
                       >
                         <Image
-                          src={getImageUrl(img)}
-                          alt={`Thumbnail ${idx + 1}`}
+                          src={getImageUrl(img, 200)}
+                          alt={img.alt || `Thumbnail ${idx + 1}`}
                           fill
                           className="object-cover"
                           sizes="80px"

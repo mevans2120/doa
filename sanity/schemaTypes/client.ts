@@ -29,14 +29,14 @@ export default defineType({
     defineField({
       name: 'logo',
       title: 'Logo',
-      type: 'image',
-      description: 'Client logo (for light backgrounds)',
+      type: 'responsiveImage',
+      description: 'Client logo for light backgrounds - will be displayed as square (1:1)',
     }),
     defineField({
       name: 'logoWhite',
       title: 'Logo (White)',
-      type: 'image',
-      description: 'White version of logo for dark backgrounds',
+      type: 'responsiveImage',
+      description: 'White version of logo for dark backgrounds - will be displayed as square (1:1)',
     }),
     defineField({
       name: 'website',

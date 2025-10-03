@@ -11,7 +11,14 @@ import contactPage from './contactPage'
 import servicesPage from './servicesPage'
 import projectsPage from './projectsPage'
 
+// Objects
+import responsiveImage from './objects/responsiveImage'
+
 export const schemaTypes = [
+  // Objects first
+  responsiveImage,
+
+  // Then documents
   project,
   client,
   testimonial,

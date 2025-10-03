@@ -5,17 +5,18 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Image from 'next/image'
 import { client } from '../../../sanity/lib/client'
-import { urlFor } from '../../../sanity/lib/image'
+import { portraitImage, urlFor } from '../../../sanity/lib/image'
 import { teamMembersQuery, aboutPageQuery } from '../../../sanity/lib/queries'
 import { PortableText } from '@portabletext/react'
 import type { TypedObject } from '@portabletext/types'
+import type { SanityResponsiveImage } from '@/types/sanity'
 
 interface TeamMember {
   _id: string
   name: string
   role: string
   bio: string
-  photo?: { _type: string; asset: { _ref: string; _type: string } }
+  photo?: SanityResponsiveImage
   imdbUrl?: string
 }
 
@@ -24,14 +25,14 @@ interface AboutPageContent {
   tagline?: string
   heroTitle?: string
   companyOverview?: TypedObject[]
-  companyImage?: { _type: string; asset: { _ref: string; _type: string } }
+  companyImage?: SanityResponsiveImage
   missionTitle?: string
   missionText?: string
   visionTitle?: string
   visionText?: string
   storyTitle?: string
   storyContent?: TypedObject[]
-  storyImage?: { _type: string; asset: { _ref: string; _type: string } }
+  storyImage?: SanityResponsiveImage
   teamSectionTitle?: string
   seo?: {
     metaTitle?: string
@@ -65,10 +66,11 @@ const AboutPage = () => {
     fetchData()
   }, [])
 
-  const getPhotoUrl = (photo: { _type: string; asset: { _ref: string; _type: string } } | undefined) => {
+  const getPhotoUrl = (photo: SanityResponsiveImage | undefined) => {
     if (!photo) return null
     try {
-      return urlFor(photo).width(400).height(400).url()
+      // Use portraitImage for team member photos (4:5 aspect ratio)
+      return portraitImage(photo, 400).url()
     } catch {
       return null
     }
@@ -197,7 +199,7 @@ const AboutPage = () => {
                       {photoUrl ? (
                         <Image
                           src={photoUrl}
-                          alt={member.name}
+                          alt={member.photo?.alt || member.name}
                           fill
                           className="object-cover"
                           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

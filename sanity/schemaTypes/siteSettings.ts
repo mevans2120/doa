@@ -44,10 +44,8 @@ export default defineType({
         defineField({
           name: 'socialImage',
           title: 'Default Social Share Image',
-          type: 'image',
-          options: {
-            hotspot: true,
-          },
+          type: 'responsiveImage',
+          description: 'Will be displayed in landscape format (1200x630 for social media)',
         }),
         defineField({
           name: 'twitterCard',
