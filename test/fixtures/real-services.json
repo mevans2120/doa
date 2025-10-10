@@ -9,7 +9,22 @@
     "featured": false,
     "iconType": "display",
     "order": 4,
-    "shortDescription": "Eye-catching trade show booths and displays that make your brand stand out.",
+    "shortDescription": [
+      {
+        "_key": "desc-service-0",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "desc-service-0-span",
+            "_type": "span",
+            "marks": [],
+            "text": "Eye-catching trade show booths and displays that make your brand stand out."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
     "slug": {
       "current": "trade-show-displays"
     },
@@ -25,7 +40,22 @@
     "featured": false,
     "iconType": "truck",
     "order": 7,
-    "shortDescription": "Specialized equipment for moving and handling large set pieces and production materials.",
+    "shortDescription": [
+      {
+        "_key": "desc-service-1",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "desc-service-1-span",
+            "_type": "span",
+            "marks": [],
+            "text": "Specialized equipment for moving and handling large set pieces and production materials."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
     "slug": {
       "current": "materials-handling-equipment"
     },
@@ -41,7 +71,22 @@
     "featured": false,
     "iconType": "users",
     "order": 8,
-    "shortDescription": "Experienced art department professionals for productions of any size.",
+    "shortDescription": [
+      {
+        "_key": "desc-service-2",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "desc-service-2-span",
+            "_type": "span",
+            "marks": [],
+            "text": "Experienced art department professionals for productions of any size."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
     "slug": {
       "current": "art-department-crew"
     },
@@ -57,7 +102,22 @@
     "featured": false,
     "iconType": "globe",
     "order": 10,
-    "shortDescription": "Production office spaces with high-speed internet and meeting rooms.",
+    "shortDescription": [
+      {
+        "_key": "desc-service-3",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "desc-service-3-span",
+            "_type": "span",
+            "marks": [],
+            "text": "Production office spaces with high-speed internet and meeting rooms."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
     "slug": {
       "current": "office-internet-rental"
     },
@@ -73,7 +133,22 @@
     "featured": false,
     "iconType": "truck",
     "order": 11,
-    "shortDescription": "Production vehicles and transportation solutions for equipment and materials.",
+    "shortDescription": [
+      {
+        "_key": "desc-service-4",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "desc-service-4-span",
+            "_type": "span",
+            "marks": [],
+            "text": "Production vehicles and transportation solutions for equipment and materials."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
     "slug": {
       "current": "truck-rental-supplies"
     },
@@ -89,7 +164,22 @@
     "featured": true,
     "iconType": "brush",
     "order": 0,
-    "shortDescription": "Professional 3D renderings and visualizations that bring your concepts to life before construction begins.",
+    "shortDescription": [
+      {
+        "_key": "desc-service-5",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "desc-service-5-span",
+            "_type": "span",
+            "marks": [],
+            "text": "Professional 3D renderings and visualizations that bring your concepts to life before construction begins."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
     "slug": {
       "current": "graphic-renderings"
     },
@@ -105,7 +195,22 @@
     "featured": false,
     "iconType": "box",
     "order": 6,
-    "shortDescription": "Professional crating and packaging solutions for safe transport of valuable sets and props.",
+    "shortDescription": [
+      {
+        "_key": "desc-service-6",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "desc-service-6-span",
+            "_type": "span",
+            "marks": [],
+            "text": "Professional crating and packaging solutions for safe transport of valuable sets and props."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
     "slug": {
       "current": "crating-services"
     },
@@ -121,7 +226,22 @@
     "featured": false,
     "iconType": "lightning",
     "order": 12,
-    "shortDescription": "Special effects equipment and supplies for creating memorable production moments.",
+    "shortDescription": [
+      {
+        "_key": "desc-service-7",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "desc-service-7-span",
+            "_type": "span",
+            "marks": [],
+            "text": "Special effects equipment and supplies for creating memorable production moments."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
     "slug": {
       "current": "fx-supplies-rentals"
     },
@@ -137,7 +257,22 @@
     "featured": true,
     "iconType": "building",
     "order": 1,
-    "shortDescription": "Expert set building services from concept to completion, creating immersive environments for any production.",
+    "shortDescription": [
+      {
+        "_key": "desc-service-8",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "desc-service-8-span",
+            "_type": "span",
+            "marks": [],
+            "text": "Expert set building services from concept to completion, creating immersive environments for any production."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
     "slug": {
       "current": "set-construction"
     },
@@ -153,7 +288,22 @@
     "featured": true,
     "iconType": "paint",
     "order": 2,
-    "shortDescription": "Specialized scenic painting and finishing techniques that add authentic texture and atmosphere to your sets.",
+    "shortDescription": [
+      {
+        "_key": "desc-service-9",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "desc-service-9-span",
+            "_type": "span",
+            "marks": [],
+            "text": "Specialized scenic painting and finishing techniques that add authentic texture and atmosphere to your sets."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
     "slug": {
       "current": "scenic-treatments"
     },

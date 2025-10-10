@@ -15,8 +15,8 @@ export default defineType({
     defineField({
       name: 'quote',
       title: 'Quote',
-      type: 'text',
-      rows: 3,
+      type: 'bodyText',
+      description: 'Testimonial quote with optional formatting (bold, italic, links)',
       validation: (Rule) => Rule.required(),
     }),
     defineField({

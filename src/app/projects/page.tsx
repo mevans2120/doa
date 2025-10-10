@@ -5,6 +5,9 @@ import { client } from '../../../sanity/lib/client'
 import { projectsQuery, projectsPageQuery } from '../../../sanity/lib/queries'
 import type { Metadata } from 'next'
 
+// Revalidate every 5 minutes as fallback (webhooks will trigger instant updates)
+export const revalidate = 300
+
 interface ProjectsPageData {
   pageTitle?: string
   pageDescription?: string

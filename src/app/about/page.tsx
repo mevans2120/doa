@@ -10,12 +10,13 @@ import { teamMembersQuery, aboutPageQuery } from '../../../sanity/lib/queries'
 import { PortableText } from '@portabletext/react'
 import type { TypedObject } from '@portabletext/types'
 import type { SanityResponsiveImage } from '@/types/sanity'
+import RichText from '@/components/RichText'
 
 interface TeamMember {
   _id: string
   name: string
   role: string
-  bio: string
+  bio: TypedObject | TypedObject[]
   photo?: SanityResponsiveImage
   imdbUrl?: string
 }
@@ -27,9 +28,9 @@ interface AboutPageContent {
   companyOverview?: TypedObject[]
   companyImage?: SanityResponsiveImage
   missionTitle?: string
-  missionText?: string
+  missionText?: TypedObject | TypedObject[]
   visionTitle?: string
-  visionText?: string
+  visionText?: TypedObject | TypedObject[]
   storyTitle?: string
   storyContent?: TypedObject[]
   storyImage?: SanityResponsiveImage
@@ -132,17 +133,17 @@ const AboutPage = () => {
                 <h3 className="heading-font text-2xl font-semibold mb-4">
                   {pageContent.missionTitle}
                 </h3>
-                <p className="text-gray-300 leading-relaxed">
-                  {pageContent.missionText}
-                </p>
+                <div className="leading-relaxed">
+                  {pageContent.missionText && <RichText value={pageContent.missionText} />}
+                </div>
               </div>
               <div>
                 <h3 className="heading-font text-2xl font-semibold mb-4">
                   {pageContent.visionTitle}
                 </h3>
-                <p className="text-gray-300 leading-relaxed">
-                  {pageContent.visionText}
-                </p>
+                <div className="leading-relaxed">
+                  {pageContent.visionText && <RichText value={pageContent.visionText} />}
+                </div>
               </div>
             </div>
           </section>
@@ -212,7 +213,9 @@ const AboutPage = () => {
                     </div>
                     <h3 className="text-xl font-semibold mb-1 heading-font">{member.name}</h3>
                     <p className="text-gray-400 text-sm mb-2">{member.role}</p>
-                    <p className="text-gray-300 text-sm leading-relaxed mb-3">{member.bio}</p>
+                    <div className="text-sm leading-relaxed mb-3">
+                      <RichText value={member.bio} />
+                    </div>
                     {member.imdbUrl && (
                       <a
                         href={member.imdbUrl}

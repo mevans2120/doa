@@ -92,9 +92,8 @@ export default defineType({
         defineField({
           name: 'description',
           title: 'Description',
-          type: 'text',
-          rows: 3,
-          initialValue: 'With over 20 years of experience in film and television production design, Department of Art brings your creative vision to life with unmatched craftsmanship and artistic excellence.',
+          type: 'bodyText',
+          description: 'CTA description with optional formatting',
         }),
         defineField({
           name: 'buttonText',

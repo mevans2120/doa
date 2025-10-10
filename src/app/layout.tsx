@@ -7,6 +7,9 @@ import { getSiteMetadata } from "@/lib/metadata";
 import { SiteSettingsProvider } from "@/contexts/SiteSettingsContext";
 import { Analytics } from "@vercel/analytics/next";
 
+// Revalidate every 5 minutes as fallback (webhooks will trigger instant updates)
+export const revalidate = 300
+
 export async function generateMetadata(): Promise<Metadata> {
   const metadata = await getSiteMetadata();
 

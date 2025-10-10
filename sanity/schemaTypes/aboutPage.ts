@@ -26,9 +26,8 @@ export const aboutPage = defineType({
     defineField({
       name: 'companyOverview',
       title: 'Company Overview',
-      type: 'array',
-      of: [{ type: 'block' }],
-      description: 'Main company description',
+      type: 'richBodyText',
+      description: 'Main company description with formatting and lists',
     }),
     defineField({
       name: 'companyImage',
@@ -44,7 +43,8 @@ export const aboutPage = defineType({
     defineField({
       name: 'missionText',
       title: 'Mission Text',
-      type: 'text',
+      type: 'bodyText',
+      description: 'Mission statement with optional formatting',
     }),
     defineField({
       name: 'visionTitle',
@@ -54,7 +54,8 @@ export const aboutPage = defineType({
     defineField({
       name: 'visionText',
       title: 'Vision Text',
-      type: 'text',
+      type: 'bodyText',
+      description: 'Vision statement with optional formatting',
     }),
     defineField({
       name: 'storyTitle',
@@ -64,8 +65,8 @@ export const aboutPage = defineType({
     defineField({
       name: 'storyContent',
       title: 'Our Story Content',
-      type: 'array',
-      of: [{ type: 'block' }],
+      type: 'richBodyText',
+      description: 'Company story with formatting and lists',
     }),
     defineField({
       name: 'storyImage',

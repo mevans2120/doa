@@ -14,10 +14,22 @@ export default defineType({
     defineField({
       name: 'shortDescription',
       title: 'Short Description',
-      type: 'text',
-      rows: 3,
-      description: 'Brief description for service cards (max 200 characters)',
-      validation: (Rule) => Rule.required().max(200),
+      type: 'bodyText',
+      description: 'Brief description with optional formatting (max 200 characters total)',
+      validation: (Rule) => Rule.required().custom((value) => {
+        if (!value) return true
+        // Calculate total text length from all blocks
+        const textLength = value.reduce((acc: number, block: any) => {
+          if (block._type === 'block' && block.children) {
+            return acc + block.children.reduce((sum: number, child: any) => {
+              return sum + (child.text?.length || 0)
+            }, 0)
+          }
+          return acc
+        }, 0)
+
+        return textLength <= 200 || 'Description must be 200 characters or less'
+      }),
     }),
     defineField({
       name: 'iconType',

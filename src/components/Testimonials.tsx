@@ -5,11 +5,13 @@ import { client } from '../../sanity/lib/client'
 import { featuredTestimonialsQuery } from '../../sanity/lib/queries'
 import { useHomepage } from '@/contexts/HomepageContext'
 import ViewfinderCorners from './ViewfinderCorners'
+import type { TypedObject } from '@portabletext/types'
+import RichText from './RichText'
 
 interface Testimonial {
   _id: string;
   title?: string;
-  quote: string;
+  quote: TypedObject | TypedObject[];
   author: string;
   role?: string;
   company?: string;
@@ -30,32 +32,32 @@ const Testimonials = () => {
         if (data && data.length > 0) {
           setTestimonials(data.slice(0, 4)) // Show max 4 testimonials
         } else {
-          // Fallback testimonials
+          // Fallback testimonials (Portable Text format)
           setTestimonials([
             {
               _id: '1',
-              quote: "Department of Art delivered exceptional craftsmanship and creative vision for our feature film. Their attention to detail and professional approach made our production successful.",
+              quote: [{ _type: 'block', _key: 'block1', style: 'normal', children: [{ _type: 'span', _key: 'span1', text: "Department of Art delivered exceptional craftsmanship and creative vision for our feature film. Their attention to detail and professional approach made our production successful." }] }],
               author: "Dr Doom",
               role: "Producer",
               company: "Cascade Films",
             },
             {
               _id: '2',
-              quote: "Working with DOA was a game-changer for our series. They understood our vision perfectly and brought it to life with remarkable skill. Highly recommended.",
+              quote: [{ _type: 'block', _key: 'block2', style: 'normal', children: [{ _type: 'span', _key: 'span2', text: "Working with DOA was a game-changer for our series. They understood our vision perfectly and brought it to life with remarkable skill. Highly recommended." }] }],
               author: "Michael Chen",
               role: "Director",
               company: "Northwest Media",
             },
             {
               _id: '3',
-              quote: "The team at DOA exceeded our expectations with their innovative approach and technical expertise. They transformed our concept into a stunning visual experience that captivated our audience.",
+              quote: [{ _type: 'block', _key: 'block3', style: 'normal', children: [{ _type: 'span', _key: 'span3', text: "The team at DOA exceeded our expectations with their innovative approach and technical expertise. They transformed our concept into a stunning visual experience that captivated our audience." }] }],
               author: "Sarah Rodriguez",
               role: "Creative Director",
               company: "Stellar Productions",
             },
             {
               _id: '4',
-              quote: "DOA's collaborative spirit and artistic excellence made them the perfect partner for our project. Their ability to adapt and deliver under tight deadlines was truly impressive.",
+              quote: [{ _type: 'block', _key: 'block4', style: 'normal', children: [{ _type: 'span', _key: 'span4', text: "DOA's collaborative spirit and artistic excellence made them the perfect partner for our project. Their ability to adapt and deliver under tight deadlines was truly impressive." }] }],
               author: "James Thompson",
               role: "Executive Producer",
               company: "Horizon Studios",
@@ -64,32 +66,32 @@ const Testimonials = () => {
         }
       } catch (error) {
         console.error('Error fetching testimonials:', error)
-        // Use fallback testimonials
+        // Use fallback testimonials (Portable Text format)
         setTestimonials([
           {
             _id: '1',
-            quote: "Department of Art delivered exceptional craftsmanship and creative vision for our feature film. Their attention to detail and professional approach made our production successful.",
+            quote: [{ _type: 'block', _key: 'block1', style: 'normal', children: [{ _type: 'span', _key: 'span1', text: "Department of Art delivered exceptional craftsmanship and creative vision for our feature film. Their attention to detail and professional approach made our production successful." }] }],
             author: "Dr Doom",
             role: "Producer",
             company: "Cascade Films",
           },
           {
             _id: '2',
-            quote: "Working with DOA was a game-changer for our series. They understood our vision perfectly and brought it to life with remarkable skill. Highly recommended.",
+            quote: [{ _type: 'block', _key: 'block2', style: 'normal', children: [{ _type: 'span', _key: 'span2', text: "Working with DOA was a game-changer for our series. They understood our vision perfectly and brought it to life with remarkable skill. Highly recommended." }] }],
             author: "Michael Chen",
             role: "Director",
             company: "Northwest Media",
           },
           {
             _id: '3',
-            quote: "The team at DOA exceeded our expectations with their innovative approach and technical expertise. They transformed our concept into a stunning visual experience that captivated our audience.",
+            quote: [{ _type: 'block', _key: 'block3', style: 'normal', children: [{ _type: 'span', _key: 'span3', text: "The team at DOA exceeded our expectations with their innovative approach and technical expertise. They transformed our concept into a stunning visual experience that captivated our audience." }] }],
             author: "Sarah Rodriguez",
             role: "Creative Director",
             company: "Stellar Productions",
           },
           {
             _id: '4',
-            quote: "DOA's collaborative spirit and artistic excellence made them the perfect partner for our project. Their ability to adapt and deliver under tight deadlines was truly impressive.",
+            quote: [{ _type: 'block', _key: 'block4', style: 'normal', children: [{ _type: 'span', _key: 'span4', text: "DOA's collaborative spirit and artistic excellence made them the perfect partner for our project. Their ability to adapt and deliver under tight deadlines was truly impressive." }] }],
             author: "James Thompson",
             role: "Executive Producer",
             company: "Horizon Studios",
@@ -167,8 +169,8 @@ const Testimonials = () => {
               )}
               
               {/* Quote */}
-              <div className="text-lg body-font text-gray-200 leading-relaxed mb-6 italic">
-                {testimonial.quote}
+              <div className="text-lg body-font leading-relaxed mb-6 italic">
+                <RichText value={testimonial.quote} />
               </div>
               
               {/* Author info */}

@@ -39,8 +39,8 @@ export default defineType({
     defineField({
       name: 'description',
       title: 'Description',
-      type: 'text',
-      rows: 4,
+      type: 'bodyText',
+      description: 'Project overview with optional formatting (bold, italic, links)',
     }),
     defineField({
       name: 'year',

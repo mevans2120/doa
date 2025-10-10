@@ -7,11 +7,13 @@ import { landscapeImage } from '../../sanity/lib/image'
 import { featuredProjectsQuery } from '../../sanity/lib/queries'
 import { useHomepage } from '@/contexts/HomepageContext'
 import type { SanityResponsiveImage } from '@/types/sanity'
+import type { TypedObject } from '@portabletext/types'
+import RichText from './RichText'
 
 interface ProjectData {
   _id: string;
   title: string;
-  description: string;
+  description: TypedObject | TypedObject[];
   mainImage?: SanityResponsiveImage;
   gallery?: Array<SanityResponsiveImage>;
   client?: string;
@@ -252,7 +254,7 @@ const Projects = () => {
 
                 <div>
                   <h4 className="text-lg font-semibold mb-2 heading-font">Project Overview</h4>
-                  <p className="text-gray-300 leading-relaxed">{selectedProject.description}</p>
+                  <RichText value={selectedProject.description} />
                 </div>
               </div>
             </div>

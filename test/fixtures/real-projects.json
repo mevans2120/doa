@@ -12,7 +12,22 @@
       "director": "Michael Rodriguez",
       "productionDesigner": "Sarah Chen"
     },
-    "description": "Transformed 20,000 sq ft warehouse into a sprawling dystopian cityscape featuring practical weather effects, modular building facades, and fully-functional infrastructure. Collaborated with Oscar-nominated production designer Sarah Chen to create a believable post-climate-disaster Portland.",
+    "description": [
+      {
+        "_key": "desc1",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span1",
+            "_type": "span",
+            "marks": [],
+            "text": "Transformed 20,000 sq ft warehouse into a sprawling dystopian cityscape featuring practical weather effects, modular building facades, and fully-functional infrastructure. Collaborated with Oscar-nominated production designer Sarah Chen to create a believable post-climate-disaster Portland."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
     "featured": true,
     "gallery": [
       {
@@ -72,7 +87,22 @@
     "_updatedAt": "2025-09-12T21:38:33Z",
     "category": "Film Production",
     "client": "A24 Films",
-    "description": "Constructed an abandoned subway station complete with decaying infrastructure, atmospheric lighting rigs, and period-accurate signage. The build included functional track sections and a full-scale train car interior designed for 360-degree filming.",
+    "description": [
+      {
+        "_key": "desc2",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span2",
+            "_type": "span",
+            "marks": [],
+            "text": "Constructed an abandoned subway station complete with decaying infrastructure, atmospheric lighting rigs, and period-accurate signage. The build included functional track sections and a full-scale train car interior designed for 360-degree filming."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
     "featured": true,
     "gallery": [
       {
@@ -128,7 +158,22 @@
       "director": "Akira Tanaka",
       "productionDesigner": "Marcus Webb"
     },
-    "description": "Built a three-story cyberpunk marketplace with integrated LED displays, practical neon signage, and modular vendor stalls. Features included rain-slicked surfaces, steam effects, and breakaway elements for stunt sequences.",
+    "description": [
+      {
+        "_key": "desc3",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span3",
+            "_type": "span",
+            "marks": [],
+            "text": "Built a three-story cyberpunk marketplace with integrated LED displays, practical neon signage, and modular vendor stalls. Features included rain-slicked surfaces, steam effects, and breakaway elements for stunt sequences."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
     "featured": true,
     "gallery": [
       {

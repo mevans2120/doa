@@ -92,7 +92,7 @@ export interface Project {
   client?: string
   mainImage?: SanityResponsiveImage
   gallery?: SanityResponsiveImage[]
-  description?: string
+  description?: PortableTextBlock[]
   year?: number
   category?: string
   type?: string
@@ -120,7 +120,7 @@ export interface TeamMember {
   _type: 'teamMember'
   name: string
   role?: string
-  bio?: string
+  bio?: PortableTextBlock[]
   photo?: SanityResponsiveImage
   imdbUrl?: string
   linkedinUrl?: string
@@ -156,7 +156,7 @@ export interface Testimonial {
   name: string
   role?: string
   company?: string
-  quote: string
+  quote: PortableTextBlock[]
   photo?: SanityResponsiveImage
   rating?: number
   order?: number
@@ -172,7 +172,7 @@ export interface Service {
   _id: string
   _type: 'service'
   title: string
-  description?: string
+  description?: PortableTextBlock[]
   icon?: SanityResponsiveImage
   features?: string[]
   order?: number

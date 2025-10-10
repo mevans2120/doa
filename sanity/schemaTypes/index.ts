@@ -13,10 +13,13 @@ import projectsPage from './projectsPage'
 
 // Objects
 import responsiveImage from './objects/responsiveImage'
+import { bodyText, richBodyText } from './objects/bodyText'
 
 export const schemaTypes = [
   // Objects first
   responsiveImage,
+  bodyText,
+  richBodyText,
 
   // Then documents
   project,

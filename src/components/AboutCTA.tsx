@@ -1,12 +1,14 @@
 'use client'
 
 import { useHomepage } from '@/contexts/HomepageContext'
+import type { TypedObject } from '@portabletext/types'
+import RichText from './RichText'
 
 const AboutCTA = () => {
   const { settings } = useHomepage()
 
   const heading = settings.aboutCTA?.heading || ''
-  const description = settings.aboutCTA?.description || ''
+  const description = settings.aboutCTA?.description as TypedObject | TypedObject[] | undefined
   const buttonText = settings.aboutCTA?.buttonText || ''
   const buttonLink = settings.aboutCTA?.buttonLink || '/about'
 
@@ -18,9 +20,9 @@ const AboutCTA = () => {
         <h2 className="bebas-font text-4xl sm:text-5xl md:text-6xl text-white mb-6 text-outline">
           {heading}
         </h2>
-        <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-          {description}
-        </p>
+        <div className="text-xl mb-8 leading-relaxed">
+          {description && <RichText value={description} />}
+        </div>
 
         {/* CTA Button */}
         <a href={buttonLink} className="view-all-cta">

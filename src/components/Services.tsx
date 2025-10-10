@@ -5,6 +5,8 @@ import { client } from '../../sanity/lib/client'
 import { useHomepage } from '@/contexts/HomepageContext'
 import { ServiceIcons } from './ServiceIcons'
 import ViewfinderCorners from './ViewfinderCorners'
+import type { TypedObject } from '@portabletext/types'
+import RichText from './RichText'
 
 interface ServicesProps {
   limit?: number;
@@ -18,7 +20,7 @@ interface Service {
   _id: string;
   title: string;
   slug?: { current: string };
-  shortDescription: string;
+  shortDescription: TypedObject | TypedObject[];
   iconType?: string;
   category?: string;
   order: number;
@@ -123,11 +125,11 @@ const Services = ({ limit, pageData, services: propServices }: ServicesProps = {
             <h3 className="heading-font text-2xl font-semibold mb-4 text-white text-left">
               {service.title}
             </h3>
-            
+
             {/* Service description */}
-            <p className="text-gray-400 leading-relaxed text-left">
-              {service.shortDescription}
-            </p>
+            <div className="text-left">
+              <RichText value={service.shortDescription} />
+            </div>
             
           </div>
         ))}

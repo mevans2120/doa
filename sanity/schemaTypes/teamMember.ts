@@ -20,8 +20,8 @@ export default defineType({
     defineField({
       name: 'bio',
       title: 'Bio',
-      type: 'text',
-      rows: 3,
+      type: 'bodyText',
+      description: 'Team member bio with optional formatting (bold, italic, links)',
     }),
     defineField({
       name: 'photo',

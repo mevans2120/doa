@@ -9,7 +9,22 @@
     "company": "Paramount Pictures",
     "featured": true,
     "order": 1,
-    "quote": "DOA's attention to detail and creative problem-solving transformed our vision into reality. Their team built an entire dystopian city block that looked absolutely authentic on camera.",
+    "quote": [
+      {
+        "_key": "quote-0",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "quote-0-span",
+            "_type": "span",
+            "marks": [],
+            "text": "DOA's attention to detail and creative problem-solving transformed our vision into reality. Their team built an entire dystopian city block that looked absolutely authentic on camera."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
     "role": "Production Designer"
   },
   {
@@ -22,7 +37,22 @@
     "company": "Netflix",
     "featured": true,
     "order": 2,
-    "quote": "Working with Department of Art was a game-changer for our production. They delivered beyond our expectations, on time and within budget.",
+    "quote": [
+      {
+        "_key": "quote-1",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "quote-1-span",
+            "_type": "span",
+            "marks": [],
+            "text": "Working with Department of Art was a game-changer for our production. They delivered beyond our expectations, on time and within budget."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
     "role": "Director"
   },
   {
@@ -35,7 +65,22 @@
     "company": "A24 Films",
     "featured": true,
     "order": 3,
-    "quote": "The team at DOA brings an unmatched level of professionalism and creativity. They're our go-to for any production design needs in the Pacific Northwest.",
+    "quote": [
+      {
+        "_key": "quote-2",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "quote-2-span",
+            "_type": "span",
+            "marks": [],
+            "text": "The team at DOA brings an unmatched level of professionalism and creativity. They're our go-to for any production design needs in the Pacific Northwest."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
     "role": "Executive Producer"
   }
 ]
