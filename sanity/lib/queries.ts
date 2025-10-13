@@ -8,8 +8,30 @@ export const projectsQuery = groq`*[_type == "project"] | order(order asc, _crea
   _id,
   title,
   client,
-  mainImage,
-  gallery,
+  mainImage {
+    asset-> {
+      _id,
+      url,
+      metadata {
+        dimensions,
+        lqip
+      }
+    },
+    hotspot,
+    alt
+  },
+  gallery[] {
+    asset-> {
+      _id,
+      url,
+      metadata {
+        dimensions,
+        lqip
+      }
+    },
+    hotspot,
+    alt
+  },
   description,
   featured,
   year
@@ -19,7 +41,18 @@ export const featuredProjectsQuery = groq`*[_type == "project" && featured == tr
   _id,
   title,
   client,
-  mainImage,
+  mainImage {
+    asset-> {
+      _id,
+      url,
+      metadata {
+        dimensions,
+        lqip
+      }
+    },
+    hotspot,
+    alt
+  },
   description,
   year
 }`
@@ -28,8 +61,30 @@ export const projectDetailQuery = groq`*[_type == "project" && _id == $id][0] {
   _id,
   title,
   client,
-  mainImage,
-  gallery,
+  mainImage {
+    asset-> {
+      _id,
+      url,
+      metadata {
+        dimensions,
+        lqip
+      }
+    },
+    hotspot,
+    alt
+  },
+  gallery[] {
+    asset-> {
+      _id,
+      url,
+      metadata {
+        dimensions,
+        lqip
+      }
+    },
+    hotspot,
+    alt
+  },
   description,
   year
 }`
