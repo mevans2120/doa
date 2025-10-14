@@ -43,35 +43,32 @@ function sanitizeEmailForLogging(email: string): string {
 const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null
 
 // Rate limiting: Store submission timestamps by IP
+// Note: In serverless, this Map is ephemeral and resets between cold starts
+// For production, consider using Redis or a database for persistent rate limiting
 const submissionTimestamps = new Map<string, number[]>()
-
-// Clean up old timestamps every hour
-setInterval(() => {
-  const oneHourAgo = Date.now() - 3600000
-  for (const [ip, timestamps] of submissionTimestamps.entries()) {
-    const filtered = timestamps.filter(t => t > oneHourAgo)
-    if (filtered.length === 0) {
-      submissionTimestamps.delete(ip)
-    } else {
-      submissionTimestamps.set(ip, filtered)
-    }
-  }
-}, 3600000)
 
 function getRateLimitStatus(ip: string): { allowed: boolean; retryAfter?: number } {
   const now = Date.now()
   const oneHourAgo = now - 3600000
-  
+
+  // Get timestamps and filter out old ones (inline cleanup)
   const timestamps = submissionTimestamps.get(ip) || []
   const recentSubmissions = timestamps.filter(t => t > oneHourAgo)
-  
+
+  // Update the map with cleaned timestamps
+  if (recentSubmissions.length > 0) {
+    submissionTimestamps.set(ip, recentSubmissions)
+  } else {
+    submissionTimestamps.delete(ip)
+  }
+
   // Allow max 5 submissions per hour per IP
   if (recentSubmissions.length >= 5) {
     const oldestTimestamp = recentSubmissions[0]
     const retryAfter = Math.ceil((oldestTimestamp + 3600000 - now) / 1000)
     return { allowed: false, retryAfter }
   }
-  
+
   return { allowed: true }
 }
 
