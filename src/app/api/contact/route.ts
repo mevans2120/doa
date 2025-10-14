@@ -6,6 +6,39 @@ import ContactFormAutoReply from '@/emails/ContactFormAutoReply'
 import { client } from '../../../../sanity/lib/client'
 import { emailSettingsQuery } from '../../../../sanity/lib/queries'
 
+// Logging utility for contact form operations
+function logContactFormEvent(
+  level: 'info' | 'warn' | 'error',
+  message: string,
+  data?: Record<string, unknown>
+) {
+  const timestamp = new Date().toISOString()
+  const logData = {
+    timestamp,
+    level,
+    message,
+    ...data,
+  }
+
+  if (level === 'error') {
+    console.error('[ContactForm:Error]', logData)
+  } else if (level === 'warn') {
+    console.warn('[ContactForm:Warning]', logData)
+  } else {
+    console.log('[ContactForm:Info]', logData)
+  }
+
+  // TODO: Send to external logging service (Sentry, LogRocket, etc.)
+  // if (process.env.NODE_ENV === 'production') {
+  //   // sendToLoggingService(logData)
+  // }
+}
+
+// Sanitize email for logging (hide most of the local part)
+function sanitizeEmailForLogging(email: string): string {
+  return email.replace(/(?<=.{2}).*(?=@)/, '***')
+}
+
 // Initialize Resend with API key (only if available)
 const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null
 
@@ -46,7 +79,10 @@ export async function POST(req: NextRequest) {
   try {
     // Check if Resend is configured
     if (!resend) {
-      console.log('Resend not configured - contact form submissions will not be sent via email')
+      const ip = req.headers.get('x-forwarded-for') ||
+                 req.headers.get('x-real-ip') ||
+                 'unknown'
+      logContactFormEvent('warn', 'Resend not configured', { ip })
       return NextResponse.json(
         { 
           success: true,
@@ -109,8 +145,11 @@ export async function POST(req: NextRequest) {
     let emailSettings
     try {
       emailSettings = await client.fetch(emailSettingsQuery)
+      logContactFormEvent('info', 'Email settings loaded from CMS')
     } catch (error) {
-      console.error('Failed to fetch email settings from CMS:', error)
+      logContactFormEvent('error', 'Failed to fetch email settings from CMS', {
+        error: error instanceof Error ? error.message : 'Unknown error'
+      })
     }
     
     // Get email addresses from CMS or fall back to environment variables
@@ -119,9 +158,14 @@ export async function POST(req: NextRequest) {
     const fromName = emailSettings?.adminNotification?.fromName || 'DOA Contact Form'
     
     // Render email HTML with CMS data
+    logContactFormEvent('info', 'Rendering email templates', {
+      from: fromEmail,
+      toAdmin: toEmail,
+      toUser: sanitizeEmailForLogging(email)
+    })
     const adminEmailHtml = await render(ContactFormEmail({ name, email, message, emailSettings }))
     const autoReplyHtml = await render(ContactFormAutoReply({ name, emailSettings }))
-    
+
     // Send email to admin
     const subjectPrefix = emailSettings?.adminNotification?.subjectPrefix || 'New Contact Form Submission'
     const adminEmailResult = await resend.emails.send({
@@ -131,7 +175,30 @@ export async function POST(req: NextRequest) {
       replyTo: email,
       html: adminEmailHtml,
     })
-    
+
+    // Check for admin email errors (CRITICAL - must succeed)
+    if (adminEmailResult.error) {
+      logContactFormEvent('error', 'Failed to send admin notification email', {
+        error: adminEmailResult.error,
+        from: fromEmail,
+        to: toEmail,
+        formData: { name, email: sanitizeEmailForLogging(email) }
+      })
+
+      return NextResponse.json(
+        {
+          error: 'Failed to send notification email. Please try again or contact us directly.',
+          details: process.env.NODE_ENV === 'development' ? adminEmailResult.error.message : undefined
+        },
+        { status: 500 }
+      )
+    }
+
+    logContactFormEvent('info', 'Admin notification email sent successfully', {
+      emailId: adminEmailResult.data?.id,
+      to: toEmail
+    })
+
     // Send auto-reply to user
     const autoReplySubject = emailSettings?.autoReply?.subject || 'Thank you for contacting Department of Art'
     const autoReplyResult = await resend.emails.send({
@@ -140,12 +207,26 @@ export async function POST(req: NextRequest) {
       subject: autoReplySubject,
       html: autoReplyHtml,
     })
-    
+
+    // Check for auto-reply errors (NON-BLOCKING - don't fail if this fails)
+    if (autoReplyResult.error) {
+      logContactFormEvent('error', 'Failed to send auto-reply email (non-blocking)', {
+        error: autoReplyResult.error,
+        to: sanitizeEmailForLogging(email)
+      })
+      // Don't fail the request - admin email succeeded
+    } else {
+      logContactFormEvent('info', 'Auto-reply email sent successfully', {
+        emailId: autoReplyResult.data?.id,
+        to: sanitizeEmailForLogging(email)
+      })
+    }
+
     // Record submission for rate limiting
     const timestamps = submissionTimestamps.get(ip) || []
     timestamps.push(Date.now())
     submissionTimestamps.set(ip, timestamps)
-    
+
     // Return success response
     return NextResponse.json(
       {
@@ -153,7 +234,7 @@ export async function POST(req: NextRequest) {
         message: 'Your message has been sent successfully!',
         data: {
           adminEmailId: adminEmailResult.data?.id,
-          autoReplyId: autoReplyResult.data?.id,
+          autoReplyId: autoReplyResult.data?.id || null,
         }
       },
       {
@@ -167,8 +248,18 @@ export async function POST(req: NextRequest) {
     )
     
   } catch (error) {
-    console.error('Contact form submission error:', error)
-    
+    const ip = req.headers.get('x-forwarded-for') ||
+               req.headers.get('x-real-ip') ||
+               'unknown'
+
+    logContactFormEvent('error', 'Contact form submission error', {
+      error: error instanceof Error ? {
+        message: error.message,
+        stack: error.stack,
+      } : error,
+      ip,
+    })
+
     // Check if it's a Resend API error
     if (error instanceof Error) {
       if (error.message.includes('API key')) {
@@ -178,7 +269,7 @@ export async function POST(req: NextRequest) {
         )
       }
     }
-    
+
     return NextResponse.json(
       { error: 'Failed to send message. Please try again later.' },
       { status: 500 }
