@@ -194,3 +194,67 @@ export function squareImage(source: SanityImageSource, width = 400) {
     auto: 'format',
   })
 }
+
+/**
+ * Get Sanity image source for use with custom Next.js loader
+ *
+ * Returns the raw Sanity image object that can be passed to
+ * the custom sanityImageLoader. The loader will handle URL generation.
+ *
+ * @param source - Sanity image object
+ * @returns Sanity image source (unmodified)
+ *
+ * @example
+ * ```tsx
+ * import { sanityImageLoader } from '@/sanity/lib/sanityImageLoader'
+ * import { getImageSource } from '@/sanity/lib/image'
+ *
+ * <Image
+ *   src={getImageSource(project.mainImage)}
+ *   loader={sanityImageLoader}
+ *   fill
+ *   sizes="(max-width: 768px) 100vw, 1400px"
+ * />
+ * ```
+ */
+export function getImageSource(source: SanityImageSource): string {
+  // Return the image asset reference or full URL
+  // The loader will handle URL generation
+  if (!source) return '/placeholder.jpg'
+
+  try {
+    // Generate base URL without width/height constraints
+    // The custom loader will add appropriate width later
+    return builder.image(source).url()
+  } catch {
+    return '/placeholder.jpg'
+  }
+}
+
+/**
+ * Alternative: Get Sanity image reference string
+ *
+ * Returns just the image reference (e.g., "image-abc123-1920x1080-jpg")
+ * which the loader can use to build URLs on-demand.
+ *
+ * @param source - Sanity image object
+ * @returns Image reference string
+ */
+export function getImageReference(source: SanityImageSource): string {
+  if (!source) return '/placeholder.jpg'
+
+  try {
+    // Check if source has asset._ref
+    if (typeof source === 'object' && 'asset' in source) {
+      const asset = source.asset as { _ref?: string }
+      if (asset._ref) {
+        return asset._ref
+      }
+    }
+
+    // Fallback to generating URL
+    return builder.image(source).url()
+  } catch {
+    return '/placeholder.jpg'
+  }
+}

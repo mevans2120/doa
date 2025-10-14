@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react'
 import Image from 'next/image'
-import { urlForWithOptions } from '../../sanity/lib/image'
+import { getImageSource } from '../../sanity/lib/image'
 import type { SanityResponsiveImage } from '@/types/sanity'
 
 interface ProjectSlideshowProps {
@@ -10,49 +10,36 @@ interface ProjectSlideshowProps {
   images: SanityResponsiveImage[]
 }
 
+/**
+ * Calculate the effective aspect ratio of an image accounting for crop data
+ *
+ * When an image has crop metadata, the displayed aspect ratio differs from
+ * the original image dimensions. This function calculates the correct ratio.
+ */
+function getEffectiveAspectRatio(image: SanityResponsiveImage): number {
+  const originalAspectRatio = image.asset?.metadata?.dimensions?.aspectRatio || 16 / 9
+
+  // If no crop data, return original aspect ratio
+  if (!image.crop) {
+    return originalAspectRatio
+  }
+
+  // Crop values are normalized (0-1) representing how much to crop from each edge
+  const { top = 0, bottom = 0, left = 0, right = 0 } = image.crop
+
+  // Calculate remaining width and height after cropping
+  const remainingWidthRatio = 1 - left - right
+  const remainingHeightRatio = 1 - top - bottom
+
+  // Adjust aspect ratio based on crop
+  // New aspect ratio = (original width * width ratio) / (original height * height ratio)
+  // Which simplifies to: original aspect ratio * (width ratio / height ratio)
+  return originalAspectRatio * (remainingWidthRatio / remainingHeightRatio)
+}
+
 const ProjectSlideshow = ({ projectTitle, images }: ProjectSlideshowProps) => {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isTransitioning, setIsTransitioning] = useState(false)
-
-  /**
-   * Generate image URL for main slideshow with aspect ratio cropping
-   * Uses portrait (4:5) for vertical images, landscape (16:9) for horizontal
-   */
-  const getMainImageUrl = (image: SanityResponsiveImage, width = 1600) => {
-    if (!image) return '/placeholder.jpg'
-    try {
-      // Detect if image is portrait based on aspect ratio
-      const isPortrait = image.asset?.metadata?.dimensions?.aspectRatio &&
-                         image.asset.metadata.dimensions.aspectRatio < 1
-
-      return urlForWithOptions(image, {
-        width,
-        aspectRatio: isPortrait ? '4:5' : '16:9',
-        quality: 85,
-        auto: 'format',
-      }).url()
-    } catch {
-      return '/placeholder.jpg'
-    }
-  }
-
-  /**
-   * Generate image URL for thumbnails WITHOUT aspect ratio cropping
-   * Returns original proportions to work with object-contain
-   */
-  const getThumbnailUrl = (image: SanityResponsiveImage, width = 200) => {
-    if (!image) return '/placeholder.jpg'
-    try {
-      return urlForWithOptions(image, {
-        width,
-        aspectRatio: 'original',
-        quality: 85,
-        auto: 'format',
-      }).url()
-    } catch {
-      return '/placeholder.jpg'
-    }
-  }
 
   const goToSlide = useCallback((index: number) => {
     if (isTransitioning) return
@@ -112,21 +99,27 @@ const ProjectSlideshow = ({ projectTitle, images }: ProjectSlideshowProps) => {
 
   // Single image - no slideshow needed
   if (images.length === 1) {
+    const aspectRatio = getEffectiveAspectRatio(images[0])
+
     return (
       <div className="relative rounded-lg overflow-hidden border border-zinc-800 hover:border-gray-400 transition-all duration-300 hover:shadow-[0_8px_32px_rgba(192,192,192,0.3)]">
-        <div className="aspect-[16/9] relative">
+        <div className="relative bg-black" style={{ aspectRatio }}>
           <Image
-            src={getMainImageUrl(images[0], 1600)}
+            src={getImageSource(images[0])}
             alt={images[0]?.alt || `${projectTitle} - Image`}
             fill
-            className="object-cover"
+            className="object-contain"
             sizes="(max-width: 768px) 100vw, 1400px"
             priority
+            quality={85}
           />
         </div>
       </div>
     )
   }
+
+  // Get aspect ratio of current image for dynamic container sizing
+  const currentAspectRatio = getEffectiveAspectRatio(images[currentIndex])
 
   return (
     <div className="relative group">
@@ -137,16 +130,17 @@ const ProjectSlideshow = ({ projectTitle, images }: ProjectSlideshowProps) => {
         onTouchMove={onTouchMove}
         onTouchEnd={onTouchEnd}
       >
-        <div className="aspect-[16/9] relative">
+        <div className="relative bg-black" style={{ aspectRatio: currentAspectRatio }}>
           <Image
-            src={getMainImageUrl(images[currentIndex], 1600)}
+            src={getImageSource(images[currentIndex])}
             alt={images[currentIndex]?.alt || `${projectTitle} - Image ${currentIndex + 1}`}
             fill
-            className={`object-cover transition-opacity duration-300 ${
+            className={`object-contain transition-opacity duration-300 ${
               isTransitioning ? 'opacity-0' : 'opacity-100'
             }`}
             sizes="(max-width: 768px) 100vw, 1400px"
             priority={currentIndex === 0}
+            quality={85}
           />
         </div>
 
@@ -184,26 +178,33 @@ const ProjectSlideshow = ({ projectTitle, images }: ProjectSlideshowProps) => {
       {/* Thumbnail Preview - Shows on larger screens for all projects with multiple images */}
       {images.length > 1 && (
         <div className="hidden lg:grid grid-cols-6 gap-2 mt-4">
-          {images.map((image, index) => (
-            <button
-              key={index}
-              onClick={() => goToSlide(index)}
-              className={`relative aspect-video rounded overflow-hidden border-2 transition-all duration-300 bg-black ${
-                index === currentIndex
-                  ? 'border-gray-400 scale-105 shadow-[0_4px_16px_rgba(192,192,192,0.3)]'
-                  : 'border-zinc-800 hover:border-gray-600 opacity-60 hover:opacity-100'
-              }`}
-              aria-label={`Thumbnail ${index + 1}`}
-            >
-              <Image
-                src={getThumbnailUrl(image, 200)}
-                alt={image?.alt || `${projectTitle} - Thumbnail ${index + 1}`}
-                fill
-                className="object-contain"
-                sizes="200px"
-              />
-            </button>
-          ))}
+          {images.map((image, index) => {
+            // Get aspect ratio accounting for crop data
+            const aspectRatio = getEffectiveAspectRatio(image)
+
+            return (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`relative rounded overflow-hidden border-2 transition-all duration-300 bg-black ${
+                  index === currentIndex
+                    ? 'border-gray-400 scale-105 shadow-[0_4px_16px_rgba(192,192,192,0.3)]'
+                    : 'border-zinc-800 hover:border-gray-600 opacity-60 hover:opacity-100'
+                }`}
+                style={{ aspectRatio }}
+                aria-label={`Thumbnail ${index + 1}`}
+              >
+                <Image
+                  src={getImageSource(image)}
+                  alt={image?.alt || `${projectTitle} - Thumbnail ${index + 1}`}
+                  fill
+                  className="object-contain"
+                  sizes="200px"
+                  quality={85}
+                />
+              </button>
+            )
+          })}
         </div>
       )}
     </div>
