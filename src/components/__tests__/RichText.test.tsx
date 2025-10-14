@@ -114,7 +114,7 @@ describe('RichText', () => {
   })
 
   it('handles null content gracefully', () => {
-    const { container } = render(<RichText value={null as any} />)
+    const { container } = render(<RichText value={null as unknown as Parameters<typeof RichText>[0]['value']} />)
     expect(container.firstChild).toBeNull()
   })
 

@@ -18,6 +18,8 @@ export default defineType({
       description: 'Brief description with optional formatting (max 200 characters total)',
       validation: (Rule) => Rule.required().custom((value) => {
         if (!value) return true
+        // Check if value is an array
+        if (!Array.isArray(value)) return true
         // Calculate total text length from all blocks
         const textLength = value.reduce((acc: number, block: any) => {
           if (block._type === 'block' && block.children) {
