@@ -15,6 +15,7 @@ interface ContactFormEmailProps {
   email: string
   message: string
   emailSettings?: Record<string, unknown>
+  siteSettings?: Record<string, unknown>
 }
 
 export const ContactFormEmail = ({

@@ -4,7 +4,7 @@ import { render } from '@react-email/render'
 import ContactFormEmail from '@/emails/ContactFormEmail'
 import ContactFormAutoReply from '@/emails/ContactFormAutoReply'
 import { client } from '../../../../sanity/lib/client'
-import { emailSettingsQuery } from '../../../../sanity/lib/queries'
+import { emailSettingsQuery, siteSettingsQuery } from '../../../../sanity/lib/queries'
 
 // Initialize Resend with API key (only if available)
 const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null
@@ -105,22 +105,25 @@ export async function POST(req: NextRequest) {
       )
     }
 
-    // Fetch email settings from CMS
-    let emailSettings
+    // Fetch email settings and site settings from CMS
+    let emailSettings, siteSettings
     try {
-      emailSettings = await client.fetch(emailSettingsQuery)
+      [emailSettings, siteSettings] = await Promise.all([
+        client.fetch(emailSettingsQuery),
+        client.fetch(siteSettingsQuery)
+      ])
     } catch (error) {
-      console.error('Failed to fetch email settings from CMS:', error)
+      console.error('Failed to fetch settings from CMS:', error)
     }
 
-    // Get email addresses from CMS or fall back to environment variables
-    const fromEmail = emailSettings?.adminNotification?.fromEmail || process.env.RESEND_FROM_EMAIL || 'contact@departmentofart.com'
-    const toEmail = emailSettings?.adminNotification?.toEmail || process.env.CONTACT_FORM_TO_EMAIL || 'info@departmentofart.com'
-    const fromName = emailSettings?.adminNotification?.fromName || 'DOA Contact Form'
+    // Get email addresses from environment variables only (removed from CMS)
+    const fromEmail = process.env.RESEND_FROM_EMAIL || 'contact@departmentofart.com'
+    const toEmail = process.env.CONTACT_FORM_TO_EMAIL || 'info@departmentofart.com'
+    const fromName = 'DOA Contact Form'
 
-    // Render email HTML with CMS data
-    const adminEmailHtml = await render(ContactFormEmail({ name, email, message, emailSettings }))
-    const autoReplyHtml = await render(ContactFormAutoReply({ name, emailSettings }))
+    // Render email HTML with CMS data and site settings
+    const adminEmailHtml = await render(ContactFormEmail({ name, email, message, emailSettings, siteSettings }))
+    const autoReplyHtml = await render(ContactFormAutoReply({ name, emailSettings, siteSettings }))
 
     // Send email to admin
     const subjectPrefix = emailSettings?.adminNotification?.subjectPrefix || 'New Contact Form Submission'

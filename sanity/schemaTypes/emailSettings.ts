@@ -102,51 +102,26 @@ export default defineType({
       ],
     }),
     
-    // Email Footer Settings
+    // Email Footer Settings (simplified - using Site Settings for contact info)
     defineField({
       name: 'footer',
-      title: 'Email Footer',
+      title: 'Email Footer Settings',
       type: 'object',
-      description: 'Footer contact information for emails. NOTE: These should match the values in Site Settings for consistency.',
+      description: 'Footer configuration for emails. Contact information is pulled from Site Settings.',
       fields: [
         defineField({
-          name: 'contactInfo',
-          title: 'Contact Information',
-          type: 'object',
-          description: 'Keep these synchronized with Site Settings for consistency across the website',
-          fields: [
-            defineField({
-              name: 'phone',
-              title: 'Phone Number',
-              type: 'string',
-              initialValue: '(503) 555-0100',
-            }),
-            defineField({
-              name: 'email',
-              title: 'Email',
-              type: 'email',
-              initialValue: 'info@departmentofart.com',
-            }),
-            defineField({
-              name: 'website',
-              title: 'Website URL',
-              type: 'url',
-              initialValue: 'https://departmentofart.com',
-            }),
-            defineField({
-              name: 'address',
-              title: 'Address',
-              type: 'text',
-              rows: 2,
-              initialValue: 'Department of Art Productions\n6500 NE Portland Hwy\nPortland, OR 97218',
-            }),
-          ],
+          name: 'showContactInfo',
+          title: 'Show Contact Information',
+          type: 'boolean',
+          description: 'Display contact information from Site Settings in email footer',
+          initialValue: true,
         }),
         defineField({
-          name: 'tagline',
-          title: 'Company Tagline',
-          type: 'string',
-          initialValue: 'Build • Destroy',
+          name: 'additionalText',
+          title: 'Additional Footer Text',
+          type: 'text',
+          rows: 2,
+          description: 'Optional additional text to include in email footer',
         }),
       ],
     }),

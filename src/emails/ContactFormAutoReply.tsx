@@ -24,13 +24,26 @@ interface ContactFormAutoReplyProps {
       signature?: string
     }
     footer?: {
-      contactInfo?: {
-        phone?: string
-        email?: string
-        website?: string
-        address?: string
-      }
+      showContactInfo?: boolean
+      additionalText?: string
+    }
+  }
+  siteSettings?: {
+    contactEmail?: string
+    contactPhone?: string
+    address?: {
+      companyName?: string
+      street?: string
+      city?: string
+      state?: string
+      zip?: string
+      googleMapsUrl?: string
+    }
+    footer?: {
       tagline?: string
+    }
+    seo?: {
+      siteUrl?: string
     }
   }
 }
@@ -38,11 +51,12 @@ interface ContactFormAutoReplyProps {
 export const ContactFormAutoReply = ({
   name,
   emailSettings,
+  siteSettings,
 }: ContactFormAutoReplyProps) => {
   // Use CMS data or fall back to defaults
   const settings = emailSettings?.autoReply || {}
   const footer = emailSettings?.footer || {}
-  
+
   const greeting = settings.greeting || 'Hi'
   const mainMessage = settings.mainMessage || 'Thank you for reaching out to Department of Art. We\'ve received your message and appreciate your interest in our services.'
   const responseTime = settings.responseTime || 'Our team will review your inquiry and get back to you within 24-48 hours. If your project requires immediate attention, please feel free to call us directly.'
@@ -56,14 +70,27 @@ export const ContactFormAutoReply = ({
   ]
   const closingMessage = settings.closingMessage || 'We look forward to discussing how we can bring your creative vision to life with our expertise in production design and set construction.'
   const signature = settings.signature || 'Best regards,\nThe Department of Art Team'
-  
-  // Footer contact info
-  const contactInfo = footer.contactInfo || {}
-  const phone = contactInfo.phone || '(503) 555-0100'
-  const email = contactInfo.email || 'info@departmentofart.com'
-  const website = contactInfo.website || 'https://departmentofart.com'
-  const address = contactInfo.address || 'Department of Art Productions\n6500 NE Portland Hwy\nPortland, OR 97218'
-  const tagline = footer.tagline || 'Build • Destroy'
+
+  // Use site settings for contact info
+  const phone = siteSettings?.contactPhone || '(503) 555-0100'
+  const email = siteSettings?.contactEmail || 'info@departmentofart.com'
+  const website = siteSettings?.seo?.siteUrl || 'https://departmentofart.com'
+
+  // Format address from site settings
+  const formatAddress = () => {
+    if (!siteSettings?.address) {
+      return 'Department of Art Productions\n6500 NE Portland Hwy\nPortland, OR 97218'
+    }
+    const { companyName, street, city, state, zip } = siteSettings.address
+    const parts = []
+    if (companyName) parts.push(companyName)
+    if (street) parts.push(street)
+    if (city && state && zip) parts.push(`${city}, ${state} ${zip}`)
+    return parts.join('\n')
+  }
+
+  const address = formatAddress()
+  const tagline = siteSettings?.footer?.tagline || 'Build • Destroy'
 
   const previewText = 'Thank you for contacting Department of Art'
 
@@ -74,7 +101,7 @@ export const ContactFormAutoReply = ({
       <Body style={main}>
         <Container style={container}>
           <Heading style={h1}>Thank You for Contacting Us</Heading>
-          
+
           <Section style={section}>
             <Text style={paragraph}>
               {greeting} {name},
@@ -113,33 +140,40 @@ export const ContactFormAutoReply = ({
             </Text>
           </Section>
 
-          <Section style={footerStyle}>
-            <Heading style={h3}>Contact Information</Heading>
-            <Text style={footerText}>
-              <strong>Phone:</strong> {phone}
-            </Text>
-            <Text style={footerText}>
-              <strong>Email:</strong> {email}
-            </Text>
-            <Text style={footerText}>
-              <strong>Website:</strong>{' '}
-              <Link href={website} style={link}>
-                {website}
-              </Link>
-            </Text>
-            <Text style={footerText}>
-              <strong>Address:</strong><br />
-              {address.split('\n').map((line: string, index: number) => (
-                <span key={index}>
-                  {line}
-                  {index < address.split('\n').length - 1 && <br />}
-                </span>
-              ))}
-            </Text>
-            <Text style={taglineStyle}>
-              {tagline}
-            </Text>
-          </Section>
+          {footer.showContactInfo !== false && (
+            <Section style={footerStyle}>
+              <Heading style={h3}>Contact Information</Heading>
+              <Text style={footerText}>
+                <strong>Phone:</strong> {phone}
+              </Text>
+              <Text style={footerText}>
+                <strong>Email:</strong> {email}
+              </Text>
+              <Text style={footerText}>
+                <strong>Website:</strong>{' '}
+                <Link href={website} style={link}>
+                  {website}
+                </Link>
+              </Text>
+              <Text style={footerText}>
+                <strong>Address:</strong><br />
+                {address.split('\n').map((line: string, index: number) => (
+                  <span key={index}>
+                    {line}
+                    {index < address.split('\n').length - 1 && <br />}
+                  </span>
+                ))}
+              </Text>
+              <Text style={taglineStyle}>
+                {tagline}
+              </Text>
+              {footer.additionalText && (
+                <Text style={footerText}>
+                  {footer.additionalText}
+                </Text>
+              )}
+            </Section>
+          )}
         </Container>
       </Body>
     </Html>
