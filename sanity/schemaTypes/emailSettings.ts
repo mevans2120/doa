@@ -90,7 +90,7 @@ export default defineType({
       name: 'adminNotification',
       title: 'Admin Notification Email',
       type: 'object',
-      description: 'Email sent to admin when a contact form is submitted',
+      description: 'Email sent to admin when a contact form is submitted. Email routing (from/to addresses) is configured via environment variables.',
       fields: [
         defineField({
           name: 'subjectPrefix',
@@ -98,29 +98,6 @@ export default defineType({
           type: 'string',
           description: 'Will be followed by "from [Name]"',
           initialValue: 'New Contact Form Submission',
-        }),
-        defineField({
-          name: 'toEmail',
-          title: 'Send To Email',
-          type: 'email',
-          validation: Rule => Rule.required(),
-          description: 'Email address where form submissions should be sent',
-          initialValue: 'info@departmentofart.com',
-        }),
-        defineField({
-          name: 'fromEmail',
-          title: 'From Email',
-          type: 'email',
-          validation: Rule => Rule.required(),
-          description: 'Email address that appears as the sender',
-          initialValue: 'contact@departmentofart.com',
-        }),
-        defineField({
-          name: 'fromName',
-          title: 'From Name',
-          type: 'string',
-          description: 'Name that appears as the sender',
-          initialValue: 'DOA Contact Form',
         }),
       ],
     }),

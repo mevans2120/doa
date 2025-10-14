@@ -152,10 +152,11 @@ export async function POST(req: NextRequest) {
       })
     }
     
-    // Get email addresses from CMS or fall back to environment variables
-    const fromEmail = emailSettings?.adminNotification?.fromEmail || process.env.RESEND_FROM_EMAIL || 'contact@departmentofart.com'
-    const toEmail = emailSettings?.adminNotification?.toEmail || process.env.CONTACT_FORM_TO_EMAIL || 'info@departmentofart.com'
-    const fromName = emailSettings?.adminNotification?.fromName || 'DOA Contact Form'
+    // Email routing is configured via environment variables
+    // CMS only controls email content/copy, not routing
+    const fromEmail = process.env.RESEND_FROM_EMAIL || 'onboarding@resend.dev'
+    const toEmail = process.env.CONTACT_FORM_TO_EMAIL || 'info@departmentofart.com'
+    const fromName = 'DOA Contact Form'
     
     // Render email HTML with CMS data
     logContactFormEvent('info', 'Rendering email templates', {
