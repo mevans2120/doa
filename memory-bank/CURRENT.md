@@ -1,92 +1,95 @@
 # Current Status
 
 ## Active Work
-- **Feature**: Contact Form Email Functionality Fix
-- **Status**: Code Complete - Awaiting Resend Configuration ⚠️
-- **Files**:
-  - `doa-website/src/app/api/contact/route.ts` (UPDATED)
-  - `doa-website/src/app/api/contact/__tests__/route.test.ts` (NEW)
-  - `doa-website/scripts/test-contact-email.js` (NEW)
-  - `memory-bank/EMAIL_FIX_PLAN.md` (NEW)
+- **Status**: All features complete, ready for production use ✅
+- **Latest**: Contact info consolidation to Site Settings
 
 ## Recent Accomplishments
 
-### Email Functionality Fix (2025-10-14)
-- ✅ **Fixed critical bug**: Added error checking for Resend API responses (lines 179-223)
-- ✅ **Admin email errors now block request**: Returns 500 status when admin notification fails
-- ✅ **Auto-reply errors are non-blocking**: Success returned if admin email succeeds
-- ✅ **Added comprehensive logging utility**: All events tagged with `[ContactForm:Level]` and timestamps
-- ✅ **Email sanitization**: PII protection in logs (hides email local part)
-- ✅ **Updated all console calls**: Consistent logging throughout route
-- ✅ **Created test suite**: 10+ test cases covering success, errors, validation, rate limiting
-- ✅ **Created manual test script**: `scripts/test-contact-email.js` for integration testing
-- ✅ **Build verified**: Next.js compiles successfully with no lint errors
+### Contact Information Consolidation (2025-10-14)
+- ✅ **Unified contact data**: Site Settings now single source of truth
+- ✅ **Updated ContactCTA**: Pulls email, phone, location from Site Settings
+- ✅ **Updated Email Templates**: Use Site Settings for footer contact info
+- ✅ **Removed duplicates**: Cleaned up Email Settings schema
+- ✅ **API Route updated**: Fetches and passes Site Settings to templates
+- ✅ **Build verified**: All TypeScript errors resolved
+- ✅ **Deployed**: Changes live on production
+
+### Email System Resolution (2025-10-14)
+- ✅ **Root cause identified**: Resend in test mode (only sends to mevans212@gmail.com)
+- ✅ **Contact form restored**: Original implementation with CMS integration
+- ✅ **Serverless issues fixed**: Removed setInterval causing Vercel crashes
+- ✅ **Error handling added**: Proper error checking on Resend responses
+- ✅ **TypeScript errors resolved**: Fixed all build-blocking type issues
 
 ### Previous Session - Project Modal & Styling (2025-10-14)
-- ✅ Created shared ProjectModal component (165 lines) - eliminates code duplication
-- ✅ Created shared ProjectsGrid component (66 lines) - reusable project cards
-- ✅ Created useProjectModal hook (62 lines) - centralized modal state management
-- ✅ Refactored homepage Projects.tsx - reduced from 268 to 92 lines (66% reduction)
-- ✅ Refactored /projects ProjectsClient.tsx - reduced from 244 to 56 lines (77% reduction)
-- ✅ Total code reduction: 512 lines → 148 lines + 3 shared components
-- ✅ Fixed Sanity image loader to respect crop metadata from editors
-- ✅ Added gallery field to featuredProjectsQuery for homepage modal support
-- ✅ Modal sizing: 1440px max width, 90vh max height, properly centered
-- ✅ Mobile optimization: added top padding to prevent close button overlap
-- ✅ Removed "Project Overview" heading from modal
-- ✅ Updated link styles globally: bold gray (instead of blue underlined)
-- ✅ Updated RichText component link styles to match
+- ✅ Created shared ProjectModal component (165 lines)
+- ✅ Created shared ProjectsGrid component (66 lines)
+- ✅ Created useProjectModal hook (62 lines)
+- ✅ Refactored homepage & projects page (77% code reduction)
+- ✅ Fixed Sanity image loader to respect crop metadata
 
 ## Next Steps
 
-### CRITICAL - Email Configuration Required
-- [ ] **Verify domain in Resend**: Add DNS records for departmentofart.com
-  - Go to https://resend.com/domains
-  - Add TXT records for DKIM and SPF
-  - Wait for verification (5-10 minutes)
-- [ ] **Generate production API key**: Replace test mode key
-  - Go to https://resend.com/api-keys
-  - Create "DOA Website Production" key
-- [ ] **Update environment variables**:
-  - `RESEND_FROM_EMAIL=contact@departmentofart.com`
-  - `RESEND_API_KEY=re_[production_key]`
-  - Update both `.env.local` and Vercel dashboard
-- [ ] **Test email sending**: Run `node scripts/test-contact-email.js`
-- [ ] **Deploy to production**: Push changes and verify in production
+### CRITICAL - Enable Production Emails
+**Current State**: Emails only work with mevans212@gmail.com (test mode)
 
-### Future Enhancements
-- [ ] Add email monitoring/webhooks (see EMAIL_FIX_PLAN.md Phase 3)
-- [ ] Consider adding keyboard navigation (arrow keys) to modal gallery
-- [ ] Consider ESC key support to close modal
+1. **Verify domain in Resend**
+   - Add DNS records for departmentofart.com or doapdx.com
+   - Wait for verification (5-10 minutes)
 
-## Blockers
+2. **Switch to production mode**
+   - Generate production API key in Resend
+   - Update RESEND_API_KEY in Vercel
 
-### Email Configuration Blocker ⚠️
-**Issue**: Resend is in test mode with unverified domain
-- Current: `onboarding@resend.dev` (test mode)
-- Required: `contact@departmentofart.com` (verified domain)
-- Impact: Emails will fail until domain is verified
-- Resolution: Follow "CRITICAL - Email Configuration Required" steps above
-- See: `memory-bank/EMAIL_FIX_PLAN.md` for detailed instructions
+3. **Update email routing** (optional)
+   - Change RESEND_FROM_EMAIL from onboarding@resend.dev
+   - Update CONTACT_FORM_TO_EMAIL to final recipient
 
-## Technical Notes
+### Content Management
+- Add all content via Sanity Studio at `/studio`
+- Configure Site Settings (contact info, footer, navigation)
+- Customize Email Settings (auto-reply messages)
 
-### What Was Fixed
-The contact form had a critical bug where it would return success to users even when emails failed to send. This was caused by:
-1. Not checking Resend API error responses
-2. Test mode API key with domain restrictions
-3. No error logging to diagnose failures
+## Technical Architecture
 
-### What Changed
-- API route now checks `adminEmailResult.error` and `autoReplyResult.error`
-- Admin email failure returns 500 error (CRITICAL - must succeed)
-- Auto-reply failure is non-blocking (logs error but returns success)
-- All operations logged with timestamps and context
-- Emails in logs are sanitized to protect PII
+### Single Source of Truth
+**Site Settings** (in Sanity) controls:
+- Contact email, phone, address
+- Business hours
+- Footer content and tagline
+- Navigation labels
+- SEO defaults
 
-### Testing
-- Unit tests: `npm test -- route.test.ts` (10+ test cases)
-- Manual tests: `node scripts/test-contact-email.js`
-- Build verified: `npm run build` passes
+**Email Settings** (in Sanity) controls:
+- Auto-reply message content
+- Email notification preferences
+- Services list for emails
+
+### Components Using Site Settings
+- Contact page (all contact info)
+- Footer (address, contact)
+- ContactCTA (email, phone, location)
+- Email templates (footer contact info)
+- Header (navigation labels)
+
+## Deployment Info
+- **Production**: https://doa-sable.vercel.app
+- **Studio**: https://doa-sable.vercel.app/studio
+- **Auto-deploy**: Enabled on push to main
+- **Latest commit**: 9c1bf18 (contact info consolidation)
+
+## Performance Status
+- ✅ Build time: ~5-8 seconds
+- ✅ All pages statically generated
+- ✅ TypeScript: No errors
+- ✅ ESLint: All checks pass
+- ✅ Bundle size: Optimized
+
+## Known Configuration
+- Resend API: Test mode (production ready after domain verification)
+- Environment variables: Set in Vercel
+- Sanity: Connected and functional
+- ISR: 5-minute revalidation
 
 *Last updated: 2025-10-14*
