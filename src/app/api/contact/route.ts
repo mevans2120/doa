@@ -3,12 +3,27 @@ import { Resend } from 'resend'
 import { render } from '@react-email/render'
 import ContactFormEmail from '@/emails/ContactFormEmail'
 import ContactFormAutoReply from '@/emails/ContactFormAutoReply'
+import { client } from '../../../../sanity/lib/client'
+import { emailSettingsQuery } from '../../../../sanity/lib/queries'
 
-// Initialize Resend with API key (with fallback if not configured)
+// Initialize Resend with API key (only if available)
 const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null
 
-// Simple rate limiting (ephemeral, resets on cold starts)
+// Rate limiting: Store submission timestamps by IP
 const submissionTimestamps = new Map<string, number[]>()
+
+// Clean up old timestamps every hour
+setInterval(() => {
+  const oneHourAgo = Date.now() - 3600000
+  for (const [ip, timestamps] of submissionTimestamps.entries()) {
+    const filtered = timestamps.filter(t => t > oneHourAgo)
+    if (filtered.length === 0) {
+      submissionTimestamps.delete(ip)
+    } else {
+      submissionTimestamps.set(ip, filtered)
+    }
+  }
+}, 3600000)
 
 function getRateLimitStatus(ip: string): { allowed: boolean; retryAfter?: number } {
   const now = Date.now()
@@ -16,13 +31,6 @@ function getRateLimitStatus(ip: string): { allowed: boolean; retryAfter?: number
 
   const timestamps = submissionTimestamps.get(ip) || []
   const recentSubmissions = timestamps.filter(t => t > oneHourAgo)
-
-  // Clean up inline
-  if (recentSubmissions.length > 0) {
-    submissionTimestamps.set(ip, recentSubmissions)
-  } else {
-    submissionTimestamps.delete(ip)
-  }
 
   // Allow max 5 submissions per hour per IP
   if (recentSubmissions.length >= 5) {
@@ -38,7 +46,7 @@ export async function POST(req: NextRequest) {
   try {
     // Check if Resend is configured
     if (!resend) {
-      console.log('Resend not configured, returning fallback response')
+      console.log('Resend not configured - contact form submissions will not be sent via email')
       return NextResponse.json(
         {
           success: true,
@@ -97,43 +105,41 @@ export async function POST(req: NextRequest) {
       )
     }
 
-    // Get email addresses from environment variables
-    const fromEmail = process.env.RESEND_FROM_EMAIL || 'onboarding@resend.dev'
-    const toEmail = process.env.CONTACT_FORM_TO_EMAIL || 'info@departmentofart.com'
+    // Fetch email settings from CMS
+    let emailSettings
+    try {
+      emailSettings = await client.fetch(emailSettingsQuery)
+    } catch (error) {
+      console.error('Failed to fetch email settings from CMS:', error)
+    }
 
-    // Render email HTML
-    const adminEmailHtml = await render(ContactFormEmail({ name, email, message }))
-    const autoReplyHtml = await render(ContactFormAutoReply({ name }))
+    // Get email addresses from CMS or fall back to environment variables
+    const fromEmail = emailSettings?.adminNotification?.fromEmail || process.env.RESEND_FROM_EMAIL || 'contact@departmentofart.com'
+    const toEmail = emailSettings?.adminNotification?.toEmail || process.env.CONTACT_FORM_TO_EMAIL || 'info@departmentofart.com'
+    const fromName = emailSettings?.adminNotification?.fromName || 'DOA Contact Form'
+
+    // Render email HTML with CMS data
+    const adminEmailHtml = await render(ContactFormEmail({ name, email, message, emailSettings }))
+    const autoReplyHtml = await render(ContactFormAutoReply({ name, emailSettings }))
 
     // Send email to admin
+    const subjectPrefix = emailSettings?.adminNotification?.subjectPrefix || 'New Contact Form Submission'
     const adminEmailResult = await resend.emails.send({
-      from: `DOA Contact Form <${fromEmail}>`,
+      from: `${fromName} <${fromEmail}>`,
       to: toEmail,
-      subject: `New Contact Form Submission from ${name}`,
+      subject: `${subjectPrefix} from ${name}`,
       replyTo: email,
       html: adminEmailHtml,
     })
 
-    // Check if admin email failed
-    if (adminEmailResult.error) {
-      console.error('Admin email failed:', adminEmailResult.error)
-      return NextResponse.json(
-        { error: 'Failed to send notification email. Please try again.' },
-        { status: 500 }
-      )
-    }
-
-    // Send auto-reply to user (non-blocking - don't fail if this fails)
+    // Send auto-reply to user
+    const autoReplySubject = emailSettings?.autoReply?.subject || 'Thank you for contacting Department of Art'
     const autoReplyResult = await resend.emails.send({
       from: `Department of Art <${fromEmail}>`,
       to: email,
-      subject: 'Thank you for contacting Department of Art',
+      subject: autoReplySubject,
       html: autoReplyHtml,
     })
-
-    if (autoReplyResult.error) {
-      console.error('Auto-reply failed (non-blocking):', autoReplyResult.error)
-    }
 
     // Record submission for rate limiting
     const timestamps = submissionTimestamps.get(ip) || []
@@ -147,10 +153,17 @@ export async function POST(req: NextRequest) {
         message: 'Your message has been sent successfully!',
         data: {
           adminEmailId: adminEmailResult.data?.id,
-          autoReplyId: autoReplyResult.data?.id || null,
+          autoReplyId: autoReplyResult.data?.id,
         }
       },
-      { status: 200 }
+      {
+        status: 200,
+        headers: {
+          'Access-Control-Allow-Origin': process.env.NEXT_PUBLIC_SITE_URL || 'https://doa-sable.vercel.app',
+          'Access-Control-Allow-Methods': 'POST',
+          'Access-Control-Allow-Headers': 'Content-Type',
+        }
+      }
     )
 
   } catch (error) {
@@ -171,16 +184,4 @@ export async function POST(req: NextRequest) {
       { status: 500 }
     )
   }
-}
-
-// Handle OPTIONS request for CORS
-export async function OPTIONS() {
-  return new NextResponse(null, {
-    status: 200,
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'POST, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type',
-    },
-  })
 }
