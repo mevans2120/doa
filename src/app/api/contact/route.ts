@@ -1,10 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
 import { render } from '@react-email/render'
-import ContactFormEmail from '@/emails/ContactFormEmail'
-import ContactFormAutoReply from '@/emails/ContactFormAutoReply'
+import ContactFormEmail from '../../../emails/ContactFormEmail'
+import ContactFormAutoReply from '../../../emails/ContactFormAutoReply'
 import { client } from '../../../../sanity/lib/client'
 import { emailSettingsQuery } from '../../../../sanity/lib/queries'
+
+// Debug: Log when module loads
+console.log('[ContactForm] Module loading - timestamp:', new Date().toISOString())
 
 // Logging utility for contact form operations
 function logContactFormEvent(
