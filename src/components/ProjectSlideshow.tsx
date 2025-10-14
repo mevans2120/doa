@@ -15,10 +15,10 @@ const ProjectSlideshow = ({ projectTitle, images }: ProjectSlideshowProps) => {
   const [isTransitioning, setIsTransitioning] = useState(false)
 
   /**
-   * Generate image URL with automatic orientation detection
+   * Generate image URL for main slideshow with aspect ratio cropping
    * Uses portrait (4:5) for vertical images, landscape (16:9) for horizontal
    */
-  const getImageUrl = (image: SanityResponsiveImage, width = 1600) => {
+  const getMainImageUrl = (image: SanityResponsiveImage, width = 1600) => {
     if (!image) return '/placeholder.jpg'
     try {
       // Detect if image is portrait based on aspect ratio
@@ -28,6 +28,24 @@ const ProjectSlideshow = ({ projectTitle, images }: ProjectSlideshowProps) => {
       return urlForWithOptions(image, {
         width,
         aspectRatio: isPortrait ? '4:5' : '16:9',
+        quality: 85,
+        auto: 'format',
+      }).url()
+    } catch {
+      return '/placeholder.jpg'
+    }
+  }
+
+  /**
+   * Generate image URL for thumbnails WITHOUT aspect ratio cropping
+   * Returns original proportions to work with object-contain
+   */
+  const getThumbnailUrl = (image: SanityResponsiveImage, width = 200) => {
+    if (!image) return '/placeholder.jpg'
+    try {
+      return urlForWithOptions(image, {
+        width,
+        aspectRatio: 'original',
         quality: 85,
         auto: 'format',
       }).url()
@@ -98,7 +116,7 @@ const ProjectSlideshow = ({ projectTitle, images }: ProjectSlideshowProps) => {
       <div className="relative rounded-lg overflow-hidden border border-zinc-800 hover:border-gray-400 transition-all duration-300 hover:shadow-[0_8px_32px_rgba(192,192,192,0.3)]">
         <div className="aspect-[16/9] relative">
           <Image
-            src={getImageUrl(images[0], 1600)}
+            src={getMainImageUrl(images[0], 1600)}
             alt={images[0]?.alt || `${projectTitle} - Image`}
             fill
             className="object-cover"
@@ -121,7 +139,7 @@ const ProjectSlideshow = ({ projectTitle, images }: ProjectSlideshowProps) => {
       >
         <div className="aspect-[16/9] relative">
           <Image
-            src={getImageUrl(images[currentIndex], 1600)}
+            src={getMainImageUrl(images[currentIndex], 1600)}
             alt={images[currentIndex]?.alt || `${projectTitle} - Image ${currentIndex + 1}`}
             fill
             className={`object-cover transition-opacity duration-300 ${
@@ -170,7 +188,7 @@ const ProjectSlideshow = ({ projectTitle, images }: ProjectSlideshowProps) => {
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`relative aspect-video rounded overflow-hidden border-2 transition-all duration-300 ${
+              className={`relative aspect-video rounded overflow-hidden border-2 transition-all duration-300 bg-black ${
                 index === currentIndex
                   ? 'border-gray-400 scale-105 shadow-[0_4px_16px_rgba(192,192,192,0.3)]'
                   : 'border-zinc-800 hover:border-gray-600 opacity-60 hover:opacity-100'
@@ -178,10 +196,10 @@ const ProjectSlideshow = ({ projectTitle, images }: ProjectSlideshowProps) => {
               aria-label={`Thumbnail ${index + 1}`}
             >
               <Image
-                src={getImageUrl(image, 200)}
+                src={getThumbnailUrl(image, 200)}
                 alt={image?.alt || `${projectTitle} - Thumbnail ${index + 1}`}
                 fill
-                className="object-cover"
+                className="object-contain"
                 sizes="200px"
               />
             </button>

@@ -41,7 +41,7 @@ const RichText = ({ value, className = '' }: RichTextProps) => {
         </em>
       ),
 
-      // Links: Muted blue with subtle hover effect
+      // Links: Bold gray with subtle hover effect
       link: ({ children, value }) => {
         const href = value?.href || '#'
         const isExternal = href.startsWith('http')
@@ -51,7 +51,7 @@ const RichText = ({ value, className = '' }: RichTextProps) => {
             href={href}
             target={isExternal ? '_blank' : undefined}
             rel={isExternal ? 'noopener noreferrer' : undefined}
-            className="text-blue-400 hover:text-blue-300 underline-offset-2 decoration-1 hover:underline transition-colors duration-200"
+            className="text-gray-500 hover:text-gray-400 font-semibold transition-colors duration-200"
           >
             {children}
           </a>

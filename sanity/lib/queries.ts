@@ -18,6 +18,7 @@ export const projectsQuery = groq`*[_type == "project"] | order(order asc, _crea
       }
     },
     hotspot,
+    crop,
     alt
   },
   gallery[] {
@@ -30,6 +31,7 @@ export const projectsQuery = groq`*[_type == "project"] | order(order asc, _crea
       }
     },
     hotspot,
+    crop,
     alt
   },
   description,
@@ -51,6 +53,20 @@ export const featuredProjectsQuery = groq`*[_type == "project" && featured == tr
       }
     },
     hotspot,
+    crop,
+    alt
+  },
+  gallery[] {
+    asset-> {
+      _id,
+      url,
+      metadata {
+        dimensions,
+        lqip
+      }
+    },
+    hotspot,
+    crop,
     alt
   },
   description,
@@ -71,6 +87,7 @@ export const projectDetailQuery = groq`*[_type == "project" && _id == $id][0] {
       }
     },
     hotspot,
+    crop,
     alt
   },
   gallery[] {
@@ -83,6 +100,7 @@ export const projectDetailQuery = groq`*[_type == "project" && _id == $id][0] {
       }
     },
     hotspot,
+    crop,
     alt
   },
   description,
