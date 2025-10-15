@@ -11,27 +11,56 @@ import { apiLogger as logger } from '@/lib/logger'
 const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null
 
 // Rate limiting: Store submission timestamps by IP
+// In serverless, this resets on cold starts but that's acceptable for basic protection
 const submissionTimestamps = new Map<string, number[]>()
+const MAX_MAP_SIZE = 1000 // Prevent memory leaks by limiting map size
 
-// Clean up old timestamps every hour
-setInterval(() => {
-  const oneHourAgo = Date.now() - 3600000
-  for (const [ip, timestamps] of submissionTimestamps.entries()) {
-    const filtered = timestamps.filter(t => t > oneHourAgo)
-    if (filtered.length === 0) {
-      submissionTimestamps.delete(ip)
-    } else {
-      submissionTimestamps.set(ip, filtered)
+function cleanupOldEntries(): void {
+  // Only clean if map is getting large
+  if (submissionTimestamps.size > MAX_MAP_SIZE / 2) {
+    const now = Date.now()
+    const oneHourAgo = now - 3600000
+
+    // Remove old entries
+    for (const [ip, timestamps] of submissionTimestamps.entries()) {
+      const recent = timestamps.filter(t => t > oneHourAgo)
+      if (recent.length === 0) {
+        submissionTimestamps.delete(ip)
+      }
+    }
+
+    // If still too large, remove oldest entries
+    if (submissionTimestamps.size > MAX_MAP_SIZE) {
+      const entries = Array.from(submissionTimestamps.entries())
+      entries.sort((a, b) => Math.max(...b[1]) - Math.max(...a[1]))
+      // Keep only the most recent entries
+      submissionTimestamps.clear()
+      entries.slice(0, MAX_MAP_SIZE / 2).forEach(([ip, timestamps]) => {
+        submissionTimestamps.set(ip, timestamps)
+      })
     }
   }
-}, 3600000)
+}
 
 function getRateLimitStatus(ip: string): { allowed: boolean; retryAfter?: number } {
   const now = Date.now()
   const oneHourAgo = now - 3600000
 
+  // Periodically clean up to prevent memory leaks
+  cleanupOldEntries()
+
+  // Get timestamps and clean old ones inline (no setInterval needed)
   const timestamps = submissionTimestamps.get(ip) || []
   const recentSubmissions = timestamps.filter(t => t > oneHourAgo)
+
+  // Update with only recent timestamps
+  if (recentSubmissions.length !== timestamps.length) {
+    if (recentSubmissions.length === 0) {
+      submissionTimestamps.delete(ip)
+    } else {
+      submissionTimestamps.set(ip, recentSubmissions)
+    }
+  }
 
   // Allow max 5 submissions per hour per IP
   if (recentSubmissions.length >= 5) {
