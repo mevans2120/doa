@@ -112,9 +112,9 @@ const Header = () => {
         className="fixed top-2 md:top-3 right-4 sm:right-6 md:right-10 z-[202] w-8 h-8 flex flex-col justify-center items-center group"
         aria-label="Toggle menu"
       >
-        <span className={`block w-5 h-0.5 bg-white transition-all duration-300 group-hover:w-6 ${isMenuOpen ? 'rotate-45 translate-y-1' : ''}`} />
-        <span className={`block w-5 h-0.5 bg-white my-0.5 transition-all duration-300 group-hover:w-6 ${isMenuOpen ? 'opacity-0' : ''}`} />
-        <span className={`block w-5 h-0.5 bg-white transition-all duration-300 group-hover:w-6 ${isMenuOpen ? '-rotate-45 -translate-y-1' : ''}`} />
+        <span className={`block w-5 h-0.5 bg-white transition-all duration-300 group-hover:w-6 ${isMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`} />
+        <span className={`block w-5 h-0.5 bg-white my-1 transition-all duration-300 group-hover:w-6 ${isMenuOpen ? 'opacity-0' : ''}`} />
+        <span className={`block w-5 h-0.5 bg-white transition-all duration-300 group-hover:w-6 ${isMenuOpen ? '-rotate-45 -translate-y-1.5' : ''}`} />
       </button>
 
       {/* Navigation Menu Overlay */}
