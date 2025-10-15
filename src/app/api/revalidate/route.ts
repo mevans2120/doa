@@ -1,6 +1,7 @@
 import { revalidatePath } from 'next/cache'
 import { NextRequest, NextResponse } from 'next/server'
 import crypto from 'crypto'
+import { apiLogger as logger } from '@/lib/logger'
 
 // Rate limiting store (in production, use Redis or similar)
 const rateLimit = new Map<string, { count: number; resetTime: number }>()
@@ -27,7 +28,7 @@ export async function POST(request: NextRequest) {
     const body = await request.text()
 
     if (!signature || !verifySignature(body, signature)) {
-      console.error('Invalid webhook signature')
+      logger.error('Invalid webhook signature')
       return NextResponse.json(
         { error: 'Invalid signature' },
         { status: 401 }
@@ -37,7 +38,7 @@ export async function POST(request: NextRequest) {
     // 2. Rate limiting
     const ip = request.headers.get('x-forwarded-for') || 'unknown'
     if (isRateLimited(ip)) {
-      console.error('Rate limit exceeded for IP:', ip)
+      logger.error('Rate limit exceeded for IP:', ip)
       return NextResponse.json(
         { error: 'Rate limit exceeded' },
         { status: 429 }
@@ -49,7 +50,7 @@ export async function POST(request: NextRequest) {
     const documentType = payload._type || payload.result?._type
 
     if (!documentType) {
-      console.error('No document type in webhook payload')
+      logger.error('No document type in webhook payload')
       return NextResponse.json(
         { error: 'Invalid payload' },
         { status: 400 }
@@ -60,7 +61,7 @@ export async function POST(request: NextRequest) {
     const routes = ROUTE_MAP[documentType] || []
 
     if (routes.length === 0) {
-      console.warn(`No routes configured for document type: ${documentType}`)
+      logger.warn(`No routes configured for document type: ${documentType}`)
       return NextResponse.json({
         success: true,
         message: `No routes to revalidate for ${documentType}`,
@@ -73,9 +74,9 @@ export async function POST(request: NextRequest) {
       try {
         revalidatePath(route)
         revalidated.push(route)
-        console.log(`✓ Revalidated: ${route}`)
+        logger.info(`✓ Revalidated: ${route}`)
       } catch (error) {
-        console.error(`✗ Failed to revalidate ${route}:`, error)
+        logger.error(`✗ Failed to revalidate ${route}:`, error)
       }
     }
 
@@ -88,7 +89,7 @@ export async function POST(request: NextRequest) {
     })
 
   } catch (error) {
-    console.error('Webhook error:', error)
+    logger.error('Webhook error:', error)
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }
@@ -101,7 +102,7 @@ function verifySignature(body: string, signature: string): boolean {
   const secret = process.env.SANITY_WEBHOOK_SECRET
 
   if (!secret) {
-    console.error('SANITY_WEBHOOK_SECRET not configured')
+    logger.error('SANITY_WEBHOOK_SECRET not configured')
     return false
   }
 

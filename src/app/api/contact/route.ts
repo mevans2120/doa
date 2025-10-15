@@ -5,6 +5,7 @@ import ContactFormEmail from '@/emails/ContactFormEmail'
 import ContactFormAutoReply from '@/emails/ContactFormAutoReply'
 import { client } from '../../../../sanity/lib/client'
 import { emailSettingsQuery, siteSettingsQuery } from '../../../../sanity/lib/queries'
+import { apiLogger as logger } from '@/lib/logger'
 
 // Initialize Resend with API key (only if available)
 const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null
@@ -46,7 +47,7 @@ export async function POST(req: NextRequest) {
   try {
     // Check if Resend is configured
     if (!resend) {
-      console.log('Resend not configured - contact form submissions will not be sent via email')
+      logger.warn('Resend not configured - contact form submissions will not be sent via email')
       return NextResponse.json(
         {
           success: true,
@@ -113,7 +114,7 @@ export async function POST(req: NextRequest) {
         client.fetch(siteSettingsQuery)
       ])
     } catch (error) {
-      console.error('Failed to fetch settings from CMS:', error)
+      logger.error('Failed to fetch settings from CMS:', error)
     }
 
     // Get email addresses from environment variables only (removed from CMS)
@@ -170,7 +171,7 @@ export async function POST(req: NextRequest) {
     )
 
   } catch (error) {
-    console.error('Contact form submission error:', error)
+    logger.error('Contact form submission error:', error)
 
     // Check if it's a Resend API error
     if (error instanceof Error) {
