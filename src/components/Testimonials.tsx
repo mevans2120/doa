@@ -149,7 +149,7 @@ const Testimonials = () => {
         {testimonials.map((testimonial) => (
           <div
             key={testimonial._id}
-            className="professional-card p-8 rounded-lg relative overflow-hidden group"
+            className="professional-card p-8 rounded-lg relative overflow-hidden group flex flex-col min-h-[320px]"
           >
             {/* Quote marks */}
             <div className="text-4xl heading-font text-doa-silver opacity-30 absolute top-4 left-4 leading-none">
@@ -158,23 +158,23 @@ const Testimonials = () => {
             <div className="text-4xl heading-font text-doa-silver opacity-30 absolute bottom-4 right-4 leading-none rotate-180">
               &quot;
             </div>
-            
+
             {/* Review content */}
-            <div className="relative z-10 pt-8">
+            <div className="relative z-10 pt-8 flex flex-col flex-grow">
               {/* Title */}
               {testimonial.title && (
                 <div className="heading-font text-xl text-white font-bold mb-4">
                   {testimonial.title}
                 </div>
               )}
-              
-              {/* Quote */}
-              <div className="text-lg body-font leading-relaxed mb-6 italic">
+
+              {/* Quote - flex-grow to push author to bottom */}
+              <div className="text-lg body-font leading-relaxed mb-6 italic flex-grow">
                 <RichText value={testimonial.quote} />
               </div>
-              
-              {/* Author info */}
-              <div className="border-t border-doa-silver/20 pt-4">
+
+              {/* Author info - always at bottom */}
+              <div className="border-t border-doa-silver/20 pt-4 mt-auto">
                 <div className="heading-font text-white text-lg font-semibold mb-1">
                   {testimonial.author}
                 </div>
@@ -183,7 +183,7 @@ const Testimonials = () => {
                 </div>
               </div>
             </div>
-            
+
             {/* Top accent */}
             <div className="absolute top-0 left-0 right-0 h-1 bg-doa-silver"></div>
           </div>
