@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { FaviconManager } from "@/components/FaviconManager";
 import { ConsoleSuppress } from "@/components/ConsoleSuppress";
-import { keaniaOne, ebGaramond, ptSans, bebasNeue } from "@/lib/fonts";
+import { ebGaramond, ptSans, bebasNeue } from "@/lib/fonts";
 import { getSiteMetadata } from "@/lib/metadata";
 import { SiteSettingsProvider } from "@/contexts/SiteSettingsContext";
 import { Analytics } from "@vercel/analytics/next";
@@ -44,7 +44,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://doa-sable.vercel.app" crossOrigin="anonymous" />
       </head>
       <body
-        className={`${keaniaOne.variable} ${ebGaramond.variable} ${ptSans.variable} ${bebasNeue.variable} antialiased overflow-x-hidden`}
+        className={`${ebGaramond.variable} ${ptSans.variable} ${bebasNeue.variable} antialiased overflow-x-hidden`}
       >
         <FaviconManager />
         <ConsoleSuppress />

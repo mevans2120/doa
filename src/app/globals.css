@@ -17,7 +17,6 @@
     --color-dark-border: #444;
     
     /* Typography */
-    --font-display: var(--font-keania), 'Arial Black', 'Helvetica', sans-serif;
     --font-heading: var(--font-pt-sans), 'PT Sans', sans-serif;
     --font-body: var(--font-garamond), 'Times New Roman', serif;
     --font-size-sm: 14px;
@@ -83,11 +82,6 @@
 
 @layer components {
   /* Typography Classes */
-  .display-font {
-    font-family: var(--font-display);
-    font-weight: 400;
-  }
-
   .heading-font {
     font-family: var(--font-heading);
     @apply text-white;
