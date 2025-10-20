@@ -1,18 +1,5 @@
-'use client'
-
-import { useState, useEffect } from 'react'
-import { client } from '../../sanity/lib/client'
-import { useHomepage } from '@/contexts/HomepageContext'
 import { ServiceIcons } from './ServiceIcons'
 import ViewfinderCorners from './ViewfinderCorners'
-
-interface ServicesProps {
-  limit?: number;
-  pageData?: {
-    pageTitle?: string;
-  };
-  services?: Service[];
-}
 
 interface Service {
   _id: string;
@@ -25,42 +12,13 @@ interface Service {
   featured?: boolean;
 }
 
-const Services = ({ limit, pageData, services: propServices }: ServicesProps = {}) => {
-  const { settings } = useHomepage()
-  const sectionTitle = pageData?.pageTitle || settings.sectionTitles?.whatWeDo || ''
+interface ServicesProps {
+  services: Service[]
+  sectionTitle: string
+  limit?: number;
+}
 
-  const [services, setServices] = useState<Service[]>([])
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    // If services are passed as props, use them directly
-    if (propServices) {
-      setServices(propServices)
-      setLoading(false)
-      return
-    }
-
-    // Otherwise fetch them
-    const fetchServices = async () => {
-      try {
-        const query = limit
-          ? `*[_type == "service" && featured == true] | order(order asc) [0...${limit}]`
-          : '*[_type == "service"] | order(order asc)'
-
-        const data = await client.fetch<Service[]>(query)
-        setServices(data || [])
-      } catch (error) {
-        console.error('Error fetching services:', error)
-        // Fallback to empty array if fetch fails
-        setServices([])
-      } finally {
-        setLoading(false)
-      }
-    }
-
-    fetchServices()
-  }, [limit, propServices])
-
+const Services = ({ services, sectionTitle, limit }: ServicesProps) => {
   const getIcon = (iconType: string | undefined) => {
     if (!iconType || !ServiceIcons[iconType]) {
       return ServiceIcons['tools'] // Default icon
@@ -68,22 +26,10 @@ const Services = ({ limit, pageData, services: propServices }: ServicesProps = {
     return ServiceIcons[iconType]
   }
 
-  if (loading) {
-    return (
-      <section className="pt-32 pb-24 px-10 bg-black relative overflow-hidden paint-flecks " id="services" role="region">
-        <div className="relative z-10 text-center mb-8">
-          <h2 className="bebas-font text-6xl text-white mb-6 text-outline">{sectionTitle}</h2>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 max-w-7xl mx-auto relative z-10">
-          {[1, 2, 3, 4].map((i) => (
-            <div key={i} className="bg-zinc-900 rounded-lg p-8 h-48 animate-pulse" />
-          ))}
-        </div>
-      </section>
-    )
-  }
+  // Apply limit if specified
+  const displayServices = limit ? services.slice(0, limit) : services
 
-  if (services.length === 0) {
+  if (displayServices.length === 0) {
     return (
       <section className="pt-32 pb-24 px-10 bg-black relative overflow-hidden paint-flecks " id="services" role="region">
         <div className="relative z-10 text-center mb-8">
@@ -106,10 +52,10 @@ const Services = ({ limit, pageData, services: propServices }: ServicesProps = {
           {sectionTitle}
         </h2>
       </div>
-      
+
       {/* Services grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 max-w-7xl mx-auto relative z-10">
-        {services.map((service) => (
+        {displayServices.map((service) => (
           <div
             key={service._id}
             className="bg-zinc-900 rounded-lg p-8"
@@ -118,17 +64,17 @@ const Services = ({ limit, pageData, services: propServices }: ServicesProps = {
             <div className="text-white mb-6">
               {getIcon(service.iconType)}
             </div>
-            
+
             {/* Service title */}
             <h3 className="heading-font text-2xl font-semibold mb-4 text-white text-left">
               {service.title}
             </h3>
-            
+
             {/* Service description */}
             <p className="text-gray-400 leading-relaxed text-left">
               {service.shortDescription}
             </p>
-            
+
           </div>
         ))}
       </div>
