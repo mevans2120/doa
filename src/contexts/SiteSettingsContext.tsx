@@ -3,6 +3,8 @@
 import { createContext, useContext, useState, useEffect } from 'react'
 import { client } from '../../sanity/lib/client'
 import { siteSettingsQuery } from '../../sanity/lib/queries'
+import { toPlainText } from '@portabletext/toolkit'
+import type { TypedObject } from '@portabletext/types'
 
 interface SiteSettings {
   title?: string
@@ -55,11 +57,37 @@ export function SiteSettingsProvider({ children }: { children: React.ReactNode }
   const [settings, setSettings] = useState<SiteSettings>({})
   const [loading, setLoading] = useState(true)
 
+  // Helper function to convert Portable Text to plain string
+  const toPlainString = (value: unknown): string => {
+    if (typeof value === 'string') return value
+    if (Array.isArray(value)) {
+      try {
+        return toPlainText(value as TypedObject[])
+      } catch {
+        return ''
+      }
+    }
+    return ''
+  }
+
   useEffect(() => {
     const fetchSettings = async () => {
       try {
         const data = await client.fetch<SiteSettings>(siteSettingsQuery)
-        setSettings(data || {})
+
+        // Convert any Portable Text fields to plain strings
+        const sanitizedData = data ? {
+          ...data,
+          businessHours: toPlainString(data.businessHours),
+          footer: data.footer ? {
+            ...data.footer,
+            companyDescription: toPlainString(data.footer.companyDescription),
+            tagline: toPlainString(data.footer.tagline),
+            copyrightText: toPlainString(data.footer.copyrightText),
+          } : undefined
+        } : {}
+
+        setSettings(sanitizedData)
       } catch (error) {
         console.error('Error fetching site settings:', error)
       } finally {

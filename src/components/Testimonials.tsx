@@ -1,130 +1,25 @@
-'use client'
-
-import { useState, useEffect } from 'react'
-import { client } from '../../sanity/lib/client'
-import { featuredTestimonialsQuery } from '../../sanity/lib/queries'
-import { useHomepage } from '@/contexts/HomepageContext'
 import ViewfinderCorners from './ViewfinderCorners'
-import type { TypedObject } from '@portabletext/types'
-import RichText from './RichText'
 
 interface Testimonial {
   _id: string;
   title?: string;
-  quote: TypedObject | TypedObject[];
+  quote: string;
   author: string;
   role?: string;
   company?: string;
 }
 
-const Testimonials = () => {
-  const { settings } = useHomepage()
-  const [testimonials, setTestimonials] = useState<Testimonial[]>([])
-  const [loading, setLoading] = useState(true)
-  
-  const sectionTitle = settings.sectionTitles?.testimonials || ''
+interface TestimonialsProps {
+  testimonials: Testimonial[]
+  sectionTitle: string
+}
 
-  useEffect(() => {
-    const fetchTestimonials = async () => {
-      try {
-        const data = await client.fetch<Testimonial[]>(featuredTestimonialsQuery)
-        // If we get testimonials from Sanity, use them; otherwise use fallback
-        if (data && data.length > 0) {
-          setTestimonials(data.slice(0, 4)) // Show max 4 testimonials
-        } else {
-          // Fallback testimonials (Portable Text format)
-          setTestimonials([
-            {
-              _id: '1',
-              quote: [{ _type: 'block', _key: 'block1', style: 'normal', children: [{ _type: 'span', _key: 'span1', text: "Department of Art delivered exceptional craftsmanship and creative vision for our feature film. Their attention to detail and professional approach made our production successful." }] }] as unknown as TypedObject[],
-              author: "Dr Doom",
-              role: "Producer",
-              company: "Cascade Films",
-            },
-            {
-              _id: '2',
-              quote: [{ _type: 'block', _key: 'block2', style: 'normal', children: [{ _type: 'span', _key: 'span2', text: "Working with DOA was a game-changer for our series. They understood our vision perfectly and brought it to life with remarkable skill. Highly recommended." }] }] as unknown as TypedObject[],
-              author: "Michael Chen",
-              role: "Director",
-              company: "Northwest Media",
-            },
-            {
-              _id: '3',
-              quote: [{ _type: 'block', _key: 'block3', style: 'normal', children: [{ _type: 'span', _key: 'span3', text: "The team at DOA exceeded our expectations with their innovative approach and technical expertise. They transformed our concept into a stunning visual experience that captivated our audience." }] }] as unknown as TypedObject[],
-              author: "Sarah Rodriguez",
-              role: "Creative Director",
-              company: "Stellar Productions",
-            },
-            {
-              _id: '4',
-              quote: [{ _type: 'block', _key: 'block4', style: 'normal', children: [{ _type: 'span', _key: 'span4', text: "DOA's collaborative spirit and artistic excellence made them the perfect partner for our project. Their ability to adapt and deliver under tight deadlines was truly impressive." }] }] as unknown as TypedObject[],
-              author: "James Thompson",
-              role: "Executive Producer",
-              company: "Horizon Studios",
-            }
-          ])
-        }
-      } catch (error) {
-        console.error('Error fetching testimonials:', error)
-        // Use fallback testimonials (Portable Text format)
-        setTestimonials([
-          {
-            _id: '1',
-            quote: [{ _type: 'block', _key: 'block1', style: 'normal', children: [{ _type: 'span', _key: 'span1', text: "Department of Art delivered exceptional craftsmanship and creative vision for our feature film. Their attention to detail and professional approach made our production successful." }] }] as unknown as TypedObject[],
-            author: "Dr Doom",
-            role: "Producer",
-            company: "Cascade Films",
-          },
-          {
-            _id: '2',
-            quote: [{ _type: 'block', _key: 'block2', style: 'normal', children: [{ _type: 'span', _key: 'span2', text: "Working with DOA was a game-changer for our series. They understood our vision perfectly and brought it to life with remarkable skill. Highly recommended." }] }] as unknown as TypedObject[],
-            author: "Michael Chen",
-            role: "Director",
-            company: "Northwest Media",
-          },
-          {
-            _id: '3',
-            quote: [{ _type: 'block', _key: 'block3', style: 'normal', children: [{ _type: 'span', _key: 'span3', text: "The team at DOA exceeded our expectations with their innovative approach and technical expertise. They transformed our concept into a stunning visual experience that captivated our audience." }] }] as unknown as TypedObject[],
-            author: "Sarah Rodriguez",
-            role: "Creative Director",
-            company: "Stellar Productions",
-          },
-          {
-            _id: '4',
-            quote: [{ _type: 'block', _key: 'block4', style: 'normal', children: [{ _type: 'span', _key: 'span4', text: "DOA's collaborative spirit and artistic excellence made them the perfect partner for our project. Their ability to adapt and deliver under tight deadlines was truly impressive." }] }] as unknown as TypedObject[],
-            author: "James Thompson",
-            role: "Executive Producer",
-            company: "Horizon Studios",
-          }
-        ])
-      } finally {
-        setLoading(false)
-      }
-    }
-
-    fetchTestimonials()
-  }, [])
-
+const Testimonials = ({ testimonials, sectionTitle }: TestimonialsProps) => {
   const getSubtitle = (testimonial: Testimonial) => {
     const parts = []
     if (testimonial.role) parts.push(testimonial.role)
     if (testimonial.company) parts.push(testimonial.company)
     return parts.join(', ')
-  }
-
-  if (loading) {
-    return (
-      <section className="py-24 px-10 bg-black relative overflow-hidden paint-flecks ">
-        <div className="relative z-10 text-center mb-20">
-          <h2 className="bebas-font text-6xl text-white mb-6 text-outline">{sectionTitle}</h2>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto relative z-10">
-          {[1, 2, 3, 4].map((i) => (
-            <div key={i} className="professional-card p-8 rounded-lg h-48 animate-pulse" />
-          ))}
-        </div>
-      </section>
-    )
   }
 
   if (testimonials.length === 0) {
@@ -143,13 +38,13 @@ const Testimonials = () => {
           {sectionTitle}
         </h2>
       </div>
-      
+
       {/* Testimonials */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto relative z-10">
         {testimonials.map((testimonial) => (
           <div
             key={testimonial._id}
-            className="professional-card p-8 rounded-lg relative overflow-hidden group flex flex-col min-h-[320px]"
+            className="professional-card p-8 rounded-lg relative overflow-hidden group"
           >
             {/* Quote marks */}
             <div className="text-4xl heading-font text-doa-silver opacity-30 absolute top-4 left-4 leading-none">
@@ -160,7 +55,7 @@ const Testimonials = () => {
             </div>
 
             {/* Review content */}
-            <div className="relative z-10 pt-8 flex flex-col flex-grow">
+            <div className="relative z-10 pt-8">
               {/* Title */}
               {testimonial.title && (
                 <div className="heading-font text-xl text-white font-bold mb-4">
@@ -168,13 +63,13 @@ const Testimonials = () => {
                 </div>
               )}
 
-              {/* Quote - flex-grow to push author to bottom */}
-              <div className="text-lg body-font leading-relaxed mb-6 italic flex-grow">
-                <RichText value={testimonial.quote} />
+              {/* Quote */}
+              <div className="text-lg body-font text-gray-200 leading-relaxed mb-6 italic">
+                {testimonial.quote}
               </div>
 
-              {/* Author info - always at bottom */}
-              <div className="border-t border-doa-silver/20 pt-4 mt-auto">
+              {/* Author info */}
+              <div className="border-t border-doa-silver/20 pt-4">
                 <div className="heading-font text-white text-lg font-semibold mb-1">
                   {testimonial.author}
                 </div>
@@ -189,7 +84,7 @@ const Testimonials = () => {
           </div>
         ))}
       </div>
-      
+
     </section>
   )
 }

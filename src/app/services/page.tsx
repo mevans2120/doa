@@ -44,8 +44,8 @@ const ServicesPage = async () => {
       <Header />
       <main className="flex-grow">
         <Services
-          pageData={pageData}
           services={services}
+          sectionTitle={pageData?.pageTitle || 'OUR SERVICES'}
         />
       </main>
       <Footer />

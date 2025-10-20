@@ -214,9 +214,17 @@ export const siteSettingsQuery = groq`*[_type == "siteSettings"] | order(_update
 
 // Homepage settings query - get the most recently updated one
 export const homepageSettingsQuery = groq`*[_type == "homepageSettings"] | order(_updatedAt desc)[0] {
-  heroSection,
+  heroSection {
+    showLogo,
+    subtitle
+  },
   sectionTitles,
-  aboutCTA,
+  aboutCTA {
+    heading,
+    description,
+    buttonText,
+    buttonLink
+  },
   seo
 }`
 
