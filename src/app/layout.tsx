@@ -41,8 +41,8 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 
         {/* Preconnect to Sanity CDN - CRITICAL for LCP */}
-        <link rel="preconnect" href="https://cdn.sanity.io" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="https://cdn.sanity.io" />
+        <link rel="preconnect" href="https://vc89ievx.apicdn.sanity.io" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://vc89ievx.apicdn.sanity.io" />
 
         {/* Preconnect to Vercel's CDN */}
         <link rel="preconnect" href="https://vercel.app" />
