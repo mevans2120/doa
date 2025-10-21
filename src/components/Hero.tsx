@@ -12,7 +12,7 @@ const Hero = ({ settings }: HeroProps) => {
   const subtitle = settings?.heroSection?.subtitle || ''
 
   return (
-    <section role="banner" className="relative min-h-[90vh] min-h-[90dvh] md:min-h-[60vh] lg:min-h-[64vh] bg-[#252525] flex items-center justify-center px-6 md:px-10 pt-16 overflow-visible">
+    <section role="banner" className="relative h-[95vh] bg-[#252525] flex items-center justify-center px-6 md:px-10 overflow-visible">
       {/* Animated background gradient - moves opposite to navigation for complementary effect */}
       <div
         className="absolute inset-0 bg-gradient-to-br from-[#710000] via-[#252525] to-black bg-[length:200%_200%] animate-gradient-x-reverse"
@@ -21,7 +21,7 @@ const Hero = ({ settings }: HeroProps) => {
 
       
       {/* Hero content - Centered */}
-      <div className="relative z-20 text-white text-center pt-16 md:pt-20 lg:pt-24">
+      <div className="relative z-20 text-white text-center">
         <div className="relative z-20">
           {/* DOA Logo - Now the hero element */}
           {showLogo && (
@@ -61,7 +61,7 @@ const Hero = ({ settings }: HeroProps) => {
                   alt="Department of Art Logo"
                   width="1400"
                   height="570"
-                  className="brightness-0 invert w-[340px] sm:w-[440px] md:w-[560px] lg:w-[680px] h-auto"
+                  className="brightness-0 invert w-[50vw] sm:w-[45vw] md:w-[35vw] lg:w-[30vw] max-w-[680px] h-auto"
                   fetchPriority="high"
                 />
               </picture>
@@ -70,7 +70,7 @@ const Hero = ({ settings }: HeroProps) => {
 
           {/* Department of Art text below logo - Curved */}
           <div className="-mt-10 opacity-0 animate-hero-fade-in-delay-1" style={{ willChange: 'opacity, transform' }}>
-            <svg viewBox="0 0 900 150" className="w-full max-w-6xl mx-auto h-[220px] sm:h-[280px] md:h-[340px] lg:h-[400px]">
+            <svg viewBox="0 0 900 150" className="w-full max-w-6xl mx-auto h-[22vh] sm:h-[24vh] md:h-[26vh] lg:h-[28vh] max-h-[400px]">
               <defs>
                 <path id="curve" d="M 50,100 Q 450,20 850,100" />
               </defs>
