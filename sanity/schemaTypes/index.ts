@@ -13,11 +13,13 @@ import projectsPage from './projectsPage'
 
 // Objects
 import responsiveImage from './objects/responsiveImage'
+import circleImage from './objects/circleImage'
 import { bodyText, richBodyText } from './objects/bodyText'
 
 export const schemaTypes = [
   // Objects first
   responsiveImage,
+  circleImage,
   bodyText,
   richBodyText,
 
