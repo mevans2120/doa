@@ -31,11 +31,13 @@ const Hero = ({ settings }: HeroProps) => {
               <Image
                 src="/doa-logo.png"
                 alt="Department of Art Logo"
-                width={800}
-                height={300}
+                width={1400}
+                height={570}
+                sizes="(max-width: 640px) 340px, (max-width: 768px) 440px, (max-width: 1024px) 560px, 680px"
                 className="brightness-0 invert w-[340px] sm:w-[440px] md:w-[560px] lg:w-[680px] h-auto"
                 priority
                 fetchPriority="high"
+                quality={95}
               />
             </div>
           )}

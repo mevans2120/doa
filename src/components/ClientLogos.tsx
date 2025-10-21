@@ -32,7 +32,12 @@ const ClientLogos = ({ clients, sectionTitle }: ClientLogosProps) => {
     }
 
     try {
-      return urlFor(logo).width(280).height(140).url()
+      return urlFor(logo)
+        .width(280)
+        .height(140)
+        .quality(90)
+        .auto('format')
+        .url()
     } catch {
       return '/placeholder-logo.svg'
     }

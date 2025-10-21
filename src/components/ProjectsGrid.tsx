@@ -14,7 +14,12 @@ const ProjectsGrid = ({ projects, onProjectClick, showViewAllCTA = false }: Proj
   const getImageUrl = (image: ProjectData['mainImage']) => {
     if (!image) return '/placeholder.jpg'
     try {
-      return urlFor(image).width(800).height(600).url()
+      return urlFor(image)
+        .width(800)
+        .height(600)
+        .quality(85)
+        .auto('format')
+        .url()
     } catch {
       return '/placeholder.jpg'
     }

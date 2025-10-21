@@ -54,7 +54,12 @@ export default function ProjectsClient({ projects }: ProjectsClientProps) {
   const getImageUrl = (image: { _type: string; asset: { _ref: string; _type: string } } | undefined) => {
     if (!image) return '/placeholder.jpg'
     try {
-      return urlFor(image).width(800).height(600).url()
+      return urlFor(image)
+        .width(800)
+        .height(600)
+        .quality(85)
+        .auto('format')
+        .url()
     } catch {
       return '/placeholder.jpg'
     }
