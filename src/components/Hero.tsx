@@ -1,5 +1,3 @@
-import Image from 'next/image'
-
 interface HeroProps {
   settings?: {
     heroSection?: {
@@ -28,17 +26,45 @@ const Hero = ({ settings }: HeroProps) => {
           {/* DOA Logo - Now the hero element */}
           {showLogo && (
             <div className="mb-0 flex justify-center opacity-0 animate-hero-fade-in" style={{ willChange: 'opacity, transform' }}>
-              <Image
-                src="/doa-logo.png"
-                alt="Department of Art Logo"
-                width={1400}
-                height={570}
-                sizes="(max-width: 640px) 340px, (max-width: 768px) 440px, (max-width: 1024px) 560px, 680px"
-                className="brightness-0 invert w-[340px] sm:w-[440px] md:w-[560px] lg:w-[680px] h-auto"
-                priority
-                fetchPriority="high"
-                quality={95}
-              />
+              <picture>
+                {/* WebP sources for modern browsers */}
+                <source
+                  media="(max-width: 640px)"
+                  srcSet="/doa-logo-400.webp 1x, /doa-logo-800.webp 2x"
+                  type="image/webp"
+                />
+                <source
+                  media="(max-width: 1024px)"
+                  srcSet="/doa-logo-800.webp 1x, /doa-logo-1400.webp 2x"
+                  type="image/webp"
+                />
+                <source
+                  srcSet="/doa-logo-1400.webp 1x"
+                  type="image/webp"
+                />
+
+                {/* PNG fallback sources */}
+                <source
+                  media="(max-width: 640px)"
+                  srcSet="/doa-logo-400.png 1x, /doa-logo-800.png 2x"
+                  type="image/png"
+                />
+                <source
+                  media="(max-width: 1024px)"
+                  srcSet="/doa-logo-800.png 1x, /doa-logo-1400.png 2x"
+                  type="image/png"
+                />
+
+                {/* Final fallback img */}
+                <img
+                  src="/doa-logo-800.png"
+                  alt="Department of Art Logo"
+                  width="1400"
+                  height="570"
+                  className="brightness-0 invert w-[340px] sm:w-[440px] md:w-[560px] lg:w-[680px] h-auto"
+                  fetchPriority="high"
+                />
+              </picture>
             </div>
           )}
 

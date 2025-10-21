@@ -28,14 +28,6 @@ export default function RootLayout({
   return (
     <html lang="en" className="overflow-x-hidden">
       <head>
-        {/* Preload critical resources */}
-        <link
-          rel="preload"
-          as="image"
-          href="/doa-logo.png"
-          fetchPriority="high"
-        />
-
         {/* Preconnect to Google Fonts - CRITICAL for font loading */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
