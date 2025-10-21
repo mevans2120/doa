@@ -1,7 +1,6 @@
 'use client'
 
 import Image from 'next/image'
-import { urlFor } from '../../sanity/lib/image'
 import type { ProjectData } from '@/hooks/useProjectModal'
 
 interface ProjectsGridProps {
@@ -11,20 +10,6 @@ interface ProjectsGridProps {
 }
 
 const ProjectsGrid = ({ projects, onProjectClick, showViewAllCTA = false }: ProjectsGridProps) => {
-  const getImageUrl = (image: ProjectData['mainImage']) => {
-    if (!image) return '/placeholder.jpg'
-    try {
-      return urlFor(image)
-        .width(800)
-        .height(600)
-        .quality(85)
-        .auto('format')
-        .url()
-    } catch {
-      return '/placeholder.jpg'
-    }
-  }
-
   return (
     <>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -37,7 +22,7 @@ const ProjectsGrid = ({ projects, onProjectClick, showViewAllCTA = false }: Proj
             <div className="aspect-[4/3] relative overflow-hidden">
               {project.mainImage ? (
                 <Image
-                  src={getImageUrl(project.mainImage)}
+                  src={project.mainImage as unknown as string}
                   alt={project.mainImage.alt || project.title}
                   fill
                   className="object-cover"

@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { urlFor, getImageSource } from '../../sanity/lib/image'
+import { getImageSource } from '../../sanity/lib/image'
 import RichText from './RichText'
 import type { ProjectData } from '@/hooks/useProjectModal'
 import type { PortableTextBlock } from '@/types/sanity'
@@ -28,19 +28,6 @@ const ProjectModal = ({
   if (!isOpen || !project) return null
   // Modal sized at 1440px width and 90vh height
 
-  const getImageUrl = (image: ProjectData['mainImage']) => {
-    if (!image) return '/placeholder.jpg'
-    try {
-      return urlFor(image)
-        .width(800)
-        .height(600)
-        .quality(85)
-        .auto('format')
-        .url()
-    } catch {
-      return '/placeholder.jpg'
-    }
-  }
 
   const isPortableText = (description: string | PortableTextBlock[]): description is PortableTextBlock[] => {
     return Array.isArray(description)
@@ -123,7 +110,7 @@ const ProjectModal = ({
                     }`}
                   >
                     <Image
-                      src={getImageUrl(img)}
+                      src={img as unknown as string}
                       alt={img.alt || `Thumbnail ${idx + 1}`}
                       fill
                       className="object-cover"
