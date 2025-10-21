@@ -25,7 +25,7 @@ const Hero = ({ settings }: HeroProps) => {
         <div className="relative z-20">
           {/* DOA Logo - Now the hero element */}
           {showLogo && (
-            <div className="mb-0 flex justify-center opacity-0 animate-hero-fade-in" style={{ willChange: 'opacity, transform' }}>
+            <div className="mb-0 flex justify-center">
               <picture>
                 {/* WebP sources for modern browsers */}
                 <source

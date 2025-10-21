@@ -92,7 +92,7 @@
   }
 
   .bebas-font {
-    font-family: var(--font-bebas);
+    font-family: var(--font-bebas), 'Impact', 'Arial Narrow', 'Arial', sans-serif;
     font-weight: 400;
     letter-spacing: 0.11em;
   }
@@ -314,7 +314,7 @@
   /* Reusable page and section title styles */
   /* H1 - Main page titles */
   .page-title {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: var(--font-bebas), 'Impact', 'Arial Narrow', 'Arial', sans-serif;
     font-size: 3.75rem; /* text-6xl */
     line-height: 1;
     margin-bottom: 1.5rem; /* mb-6 */
@@ -323,10 +323,10 @@
     -webkit-text-stroke: 2px white;
     text-stroke: 2px white;
   }
-  
+
   /* H2 - Section titles */
   .section-title {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: var(--font-bebas), 'Impact', 'Arial Narrow', 'Arial', sans-serif;
     font-size: 3rem; /* text-5xl */
     line-height: 1;
     text-align: center;
@@ -336,10 +336,10 @@
     -webkit-text-stroke: 2px white;
     text-stroke: 2px white;
   }
-  
+
   /* H3 - Subsection titles */
   .subsection-title {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: var(--font-bebas), 'Impact', 'Arial Narrow', 'Arial', sans-serif;
     font-size: 2.25rem; /* text-4xl */
     line-height: 1;
     margin-bottom: 1.5rem; /* mb-6 */
