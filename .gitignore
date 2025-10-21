@@ -46,3 +46,8 @@ next-env.d.ts
 # Keep project-level memories tracked
 # .claude-memory/project/
 .env*.local
+
+# Project Analyzer (state changes frequently, reports are tracked)
+.project-analyzer/state.json
+.project-analyzer/scans/
+todo-analysis-detailed.md

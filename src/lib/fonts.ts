@@ -15,12 +15,14 @@ const ptSans = PT_Sans({
   display: "swap",
 });
 
-// Bebas Neue font
+// Bebas Neue font - CRITICAL for LCP element
 const bebasNeue = Bebas_Neue({
   weight: "400",
   variable: "--font-bebas",
   subsets: ["latin"],
   display: "swap",
+  preload: true,
+  adjustFontFallback: true,
 });
 
 export const fonts = {

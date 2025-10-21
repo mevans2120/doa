@@ -16,7 +16,10 @@ const Hero = ({ settings }: HeroProps) => {
   return (
     <section role="banner" className="relative min-h-[90vh] min-h-[90dvh] md:min-h-[60vh] lg:min-h-[64vh] bg-[#252525] flex items-center justify-center px-6 md:px-10 pt-16 overflow-visible">
       {/* Animated background gradient - moves opposite to navigation for complementary effect */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#710000] via-[#252525] to-black bg-[length:200%_200%] animate-gradient-x-reverse"></div>
+      <div
+        className="absolute inset-0 bg-gradient-to-br from-[#710000] via-[#252525] to-black bg-[length:200%_200%] animate-gradient-x-reverse"
+        style={{ willChange: 'background-position' }}
+      ></div>
 
       
       {/* Hero content - Centered */}
@@ -24,7 +27,7 @@ const Hero = ({ settings }: HeroProps) => {
         <div className="relative z-20">
           {/* DOA Logo - Now the hero element */}
           {showLogo && (
-            <div className="mb-0 flex justify-center opacity-0 animate-hero-fade-in">
+            <div className="mb-0 flex justify-center opacity-0 animate-hero-fade-in" style={{ willChange: 'opacity, transform' }}>
               <Image
                 src="/doa-logo.png"
                 alt="Department of Art Logo"
@@ -36,9 +39,9 @@ const Hero = ({ settings }: HeroProps) => {
               />
             </div>
           )}
-          
+
           {/* Department of Art text below logo - Curved */}
-          <div className="-mt-10 opacity-0 animate-hero-fade-in-delay-1">
+          <div className="-mt-10 opacity-0 animate-hero-fade-in-delay-1" style={{ willChange: 'opacity, transform' }}>
             <svg viewBox="0 0 900 150" className="w-full max-w-6xl mx-auto h-[220px] sm:h-[280px] md:h-[340px] lg:h-[400px]">
               <defs>
                 <path id="curve" d="M 50,100 Q 450,20 850,100" />
@@ -54,7 +57,7 @@ const Hero = ({ settings }: HeroProps) => {
       </div>
       
       {/* Sine wave bottom accent */}
-      <svg className="absolute -bottom-10 left-0 right-0 w-full h-32 overflow-visible z-50 opacity-0 animate-hero-fade-in-delay-2" preserveAspectRatio="none" viewBox="0 0 1200 160">
+      <svg className="absolute -bottom-10 left-0 right-0 w-full h-32 overflow-visible z-50 opacity-0 animate-hero-fade-in-delay-2" style={{ willChange: 'opacity, transform' }} preserveAspectRatio="none" viewBox="0 0 1200 160">
         <defs>
           <linearGradient id="waveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
             <stop offset="0%" stopColor="transparent" />

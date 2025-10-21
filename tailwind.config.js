@@ -77,18 +77,22 @@ module.exports = {
         },
         'gradient-shift': {
           '0%, 100%': {
-            'background-position': '0% 50%'
+            'background-position': '0% 50%',
+            'transform': 'translateZ(0)'
           },
           '50%': {
-            'background-position': '100% 50%'
+            'background-position': '100% 50%',
+            'transform': 'translateZ(0)'
           }
         },
         'gradient-shift-reverse': {
           '0%, 100%': {
-            'background-position': '100% 50%'
+            'background-position': '100% 50%',
+            'transform': 'translateZ(0)'
           },
           '50%': {
-            'background-position': '0% 50%'
+            'background-position': '0% 50%',
+            'transform': 'translateZ(0)'
           }
         },
         'hero-pulse': {
