@@ -70,18 +70,22 @@ const AboutPage = () => {
   const getPhotoUrl = (photo: SanityResponsiveImage | undefined) => {
     if (!photo) return null
     try {
-      // Respect Sanity crop/hotspot - no forced aspect ratio since displayed as circle
+      // For circular images, get full image and use hotspot for CSS positioning
+      // Don't use crop('focalpoint') as it applies saved crop rectangles
       return urlFor(photo)
-        .width(400)
-        .height(400)
-        .fit('crop')
-        .crop('focalpoint')
+        .width(800)
         .quality(85)
         .auto('format')
         .url()
     } catch {
       return null
     }
+  }
+
+  const getHotspotPosition = (photo: SanityResponsiveImage | undefined) => {
+    if (!photo?.hotspot) return 'center'
+    const { x, y } = photo.hotspot
+    return `${x * 100}% ${y * 100}%`
   }
 
 
@@ -210,6 +214,7 @@ const AboutPage = () => {
                           alt={member.photo?.alt || member.name}
                           fill
                           className="object-cover"
+                          style={{ objectPosition: getHotspotPosition(member.photo) }}
                           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         />
                       ) : (
