@@ -1,0 +1,2015 @@
+# TODO Scan Report
+
+**Repository:** /Users/michaelevans/doa
+**Scan Date:** 10/20/2025, 3:42:10 PM
+**Total TODOs:** 923
+
+## Summary
+
+### By Priority
+- 🔴 High: 0
+- 🟡 Medium: 890
+- 🟢 Low: 33
+
+### By Type
+- NOTE: 27
+- OPTIMIZE: 6
+- Unchecked Task: 869
+- TODO: 14
+- REFACTOR: 3
+- TODO Section: 4
+
+**Files Scanned:** 192
+**Scan Duration:** 610ms
+
+## TODOs
+
+### 🟡 Medium Priority
+
+- 🟡 **[Unchecked Task]** Run `npm run lint` - no errors
+  - 📁 COMPONENT_CONSOLIDATION_PLAN.md:534
+- 🟡 **[Unchecked Task]** Run `npm run build` - successful build
+  - 📁 COMPONENT_CONSOLIDATION_PLAN.md:536
+- 🟡 **[Unchecked Task]** Run `npm test` - all tests pass
+  - 📁 COMPONENT_CONSOLIDATION_PLAN.md:537
+- 🟡 **[Unchecked Task]** Test homepage projects section manually
+  - 📁 COMPONENT_CONSOLIDATION_PLAN.md:538
+- 🟡 **[Unchecked Task]** Test /projects page manually
+  - 📁 COMPONENT_CONSOLIDATION_PLAN.md:539
+- 🟡 **[Unchecked Task]** Test mobile responsive behavior
+  - 📁 COMPONENT_CONSOLIDATION_PLAN.md:540
+- 🟡 **[Unchecked Task]** Verify no console errors in browser
+  - 📁 COMPONENT_CONSOLIDATION_PLAN.md:541
+- 🟡 **[Unchecked Task]** Update memory bank with refactoring notes
+  - 📁 COMPONENT_CONSOLIDATION_PLAN.md:542
+- 🟡 **[Unchecked Task]** Consider adding unit tests for useProjectModal hook
+  - 📁 COMPONENT_CONSOLIDATION_PLAN.md:543
+- 🟡 **[Unchecked Task]** Portrait images display at correct aspect ratio
+  - 📁 CUSTOM_LOADER_IMPLEMENTATION_PLAN.md:1298
+- 🟡 **[Unchecked Task]** Landscape images display correctly
+  - 📁 CUSTOM_LOADER_IMPLEMENTATION_PLAN.md:1300
+- 🟡 **[Unchecked Task]** Square images remain square
+  - 📁 CUSTOM_LOADER_IMPLEMENTATION_PLAN.md:1301
+- 🟡 **[Unchecked Task]** Thumbnails maintain correct proportions
+  - 📁 CUSTOM_LOADER_IMPLEMENTATION_PLAN.md:1302
+- 🟡 **[Unchecked Task]** Slideshow navigation works (arrows, dots, keyboard, swipe)
+  - 📁 CUSTOM_LOADER_IMPLEMENTATION_PLAN.md:1303
+- 🟡 **[Unchecked Task]** Smooth transitions between different aspect ratios
+  - 📁 CUSTOM_LOADER_IMPLEMENTATION_PLAN.md:1304
+- 🟡 **[Unchecked Task]** Responsive behavior on mobile/tablet/desktop
+  - 📁 CUSTOM_LOADER_IMPLEMENTATION_PLAN.md:1305
+- 🟡 **[Unchecked Task]** Images load progressively (lazy loading)
+  - 📁 CUSTOM_LOADER_IMPLEMENTATION_PLAN.md:1306
+- 🟡 **[Unchecked Task]** WebP/AVIF served to modern browsers
+  - 📁 CUSTOM_LOADER_IMPLEMENTATION_PLAN.md:1307
+- 🟡 **[Unchecked Task]** Network requests show no height parameter
+  - 📁 CUSTOM_LOADER_IMPLEMENTATION_PLAN.md:1308
+- 🟡 **[Unchecked Task]** Lighthouse performance score maintained or improved
+  - 📁 CUSTOM_LOADER_IMPLEMENTATION_PLAN.md:1309
+- 🟡 **[Unchecked Task]** No console errors or warnings
+  - 📁 CUSTOM_LOADER_IMPLEMENTATION_PLAN.md:1310
+- 🟡 **[Unchecked Task]** All automated tests pass
+  - 📁 CUSTOM_LOADER_IMPLEMENTATION_PLAN.md:1311
+- 🟡 **[Unchecked Task]** Git commit created with changes
+  - 📁 CUSTOM_LOADER_IMPLEMENTATION_PLAN.md:1312
+- 🟡 **[Unchecked Task]** Documentation updated
+  - 📁 CUSTOM_LOADER_IMPLEMENTATION_PLAN.md:1313
+- 🟡 **[Unchecked Task]** Text remains readable with sufficient contrast
+  - 📁 docs/ANIMATED_GRADIENT_HEADER_PLAN.md:145
+- 🟡 **[Unchecked Task]** Animation is smooth without stuttering
+  - 📁 docs/ANIMATED_GRADIENT_HEADER_PLAN.md:146
+- 🟡 **[Unchecked Task]** Gradient transitions seamlessly at loop points
+  - 📁 docs/ANIMATED_GRADIENT_HEADER_PLAN.md:147
+- 🟡 **[Unchecked Task]** Mobile responsive behavior is maintained
+  - 📁 docs/ANIMATED_GRADIENT_HEADER_PLAN.md:148
+- 🟡 **[Unchecked Task]** Animation doesn't impact page performance
+  - 📁 docs/ANIMATED_GRADIENT_HEADER_PLAN.md:151
+- 🟡 **[Unchecked Task]** CPU/GPU usage remains reasonable
+  - 📁 docs/ANIMATED_GRADIENT_HEADER_PLAN.md:152
+- 🟡 **[Unchecked Task]** No memory leaks from continuous animation
+  - 📁 docs/ANIMATED_GRADIENT_HEADER_PLAN.md:153
+- 🟡 **[Unchecked Task]** Page load time is not significantly affected
+  - 📁 docs/ANIMATED_GRADIENT_HEADER_PLAN.md:154
+- 🟡 **[Unchecked Task]** Respects `prefers-reduced-motion` setting
+  - 📁 docs/ANIMATED_GRADIENT_HEADER_PLAN.md:157
+- 🟡 **[Unchecked Task]** Maintains WCAG AA contrast ratios
+  - 📁 docs/ANIMATED_GRADIENT_HEADER_PLAN.md:158
+- 🟡 **[Unchecked Task]** Doesn't interfere with screen readers
+  - 📁 docs/ANIMATED_GRADIENT_HEADER_PLAN.md:159
+- 🟡 **[Unchecked Task]** Keyboard navigation remains functional
+  - 📁 docs/ANIMATED_GRADIENT_HEADER_PLAN.md:160
+- 🟡 **[Unchecked Task]** Chrome/Edge (Chromium)
+  - 📁 docs/ANIMATED_GRADIENT_HEADER_PLAN.md:163
+- 🟡 **[Unchecked Task]** Firefox
+  - 📁 docs/ANIMATED_GRADIENT_HEADER_PLAN.md:164
+- 🟡 **[Unchecked Task]** Safari
+  - 📁 docs/ANIMATED_GRADIENT_HEADER_PLAN.md:165
+- 🟡 **[Unchecked Task]** Mobile browsers (iOS Safari, Chrome Mobile)
+  - 📁 docs/ANIMATED_GRADIENT_HEADER_PLAN.md:166
+- 🟡 **[Unchecked Task]** All content editable through Sanity Studio
+  - 📁 docs/CMS_INTEGRATION_PLAN.md:127
+- 🟡 **[Unchecked Task]** Contact form functional with email notifications
+  - 📁 docs/CMS_INTEGRATION_PLAN.md:128
+- 🟡 **[Unchecked Task]** SEO optimized with dynamic meta tags
+  - 📁 docs/CMS_INTEGRATION_PLAN.md:129
+- 🟡 **[Unchecked Task]** Routes updated for consistency
+  - 📁 docs/CMS_INTEGRATION_PLAN.md:130
+- 🟡 **[Unchecked Task]** Zero hardcoded content in components
+  - 📁 docs/CMS_INTEGRATION_PLAN.md:131
+- 🟡 **[Unchecked Task]** Set up testing infrastructure
+  - 📁 docs/CMS_TESTING_IMPLEMENTATION_PLAN.md:377
+- 🟡 **[Unchecked Task]** Install MSW and configure
+  - 📁 docs/CMS_TESTING_IMPLEMENTATION_PLAN.md:378
+- 🟡 **[Unchecked Task]** Create mock factories
+  - 📁 docs/CMS_TESTING_IMPLEMENTATION_PLAN.md:379
+- 🟡 **[Unchecked Task]** Create test utilities
+  - 📁 docs/CMS_TESTING_IMPLEMENTATION_PLAN.md:380
+- 🟡 **[Unchecked Task]** Mock Sanity client
+  - 📁 docs/CMS_TESTING_IMPLEMENTATION_PLAN.md:381
+- 🟡 **[Unchecked Task]** Write HomepageContext tests
+  - 📁 docs/CMS_TESTING_IMPLEMENTATION_PLAN.md:382
+- 🟡 **[Unchecked Task]** Write Services component tests
+  - 📁 docs/CMS_TESTING_IMPLEMENTATION_PLAN.md:383
+- 🟡 **[Unchecked Task]** Write Projects component tests
+  - 📁 docs/CMS_TESTING_IMPLEMENTATION_PLAN.md:386
+- 🟡 **[Unchecked Task]** Write remaining component tests
+  - 📁 docs/CMS_TESTING_IMPLEMENTATION_PLAN.md:387
+- 🟡 **[Unchecked Task]** Write GROQ query tests
+  - 📁 docs/CMS_TESTING_IMPLEMENTATION_PLAN.md:388
+- 🟡 **[Unchecked Task]** Write utility function tests
+  - 📁 docs/CMS_TESTING_IMPLEMENTATION_PLAN.md:389
+- 🟡 **[Unchecked Task]** Integration tests for pages
+  - 📁 docs/CMS_TESTING_IMPLEMENTATION_PLAN.md:390
+- 🟡 **[Unchecked Task]** Set up coverage reporting
+  - 📁 docs/CMS_TESTING_IMPLEMENTATION_PLAN.md:391
+- 🟡 **[Unchecked Task]** Fix failing tests
+  - 📁 docs/CMS_TESTING_IMPLEMENTATION_PLAN.md:394
+- 🟡 **[Unchecked Task]** Improve coverage to meet thresholds
+  - 📁 docs/CMS_TESTING_IMPLEMENTATION_PLAN.md:395
+- 🟡 **[Unchecked Task]** Set up CI/CD pipeline
+  - 📁 docs/CMS_TESTING_IMPLEMENTATION_PLAN.md:396
+- 🟡 **[Unchecked Task]** Documentation updates
+  - 📁 docs/CMS_TESTING_IMPLEMENTATION_PLAN.md:397
+- 🟡 **[Unchecked Task]** Team review and training
+  - 📁 docs/CMS_TESTING_IMPLEMENTATION_PLAN.md:398
+- 🟡 **[Unchecked Task]** Development Setup Guide
+  - 📁 docs/DOCUMENTATION_PLAN.md:183
+- 🟡 **[Unchecked Task]** Environment Variables Documentation
+  - 📁 docs/DOCUMENTATION_PLAN.md:184
+- 🟡 **[Unchecked Task]** CMS Management Guide
+  - 📁 docs/DOCUMENTATION_PLAN.md:185
+- 🟡 **[Unchecked Task]** System Architecture
+  - 📁 docs/DOCUMENTATION_PLAN.md:188
+- 🟡 **[Unchecked Task]** Tech Stack Documentation
+  - 📁 docs/DOCUMENTATION_PLAN.md:189
+- 🟡 **[Unchecked Task]** API Routes Documentation
+  - 📁 docs/DOCUMENTATION_PLAN.md:190
+- 🟡 **[Unchecked Task]** Deployment Guide
+  - 📁 docs/DOCUMENTATION_PLAN.md:191
+- 🟡 **[Unchecked Task]** Testing Guide
+  - 📁 docs/DOCUMENTATION_PLAN.md:194
+- 🟡 **[Unchecked Task]** Troubleshooting Guide
+  - 📁 docs/DOCUMENTATION_PLAN.md:195
+- 🟡 **[Unchecked Task]** Coding Standards
+  - 📁 docs/DOCUMENTATION_PLAN.md:196
+- 🟡 **[Unchecked Task]** Content Guidelines
+  - 📁 docs/DOCUMENTATION_PLAN.md:197
+- 🟡 **[Unchecked Task]** Design Decisions (as made)
+  - 📁 docs/DOCUMENTATION_PLAN.md:200
+- 🟡 **[Unchecked Task]** Security Documentation
+  - 📁 docs/DOCUMENTATION_PLAN.md:201
+- 🟡 **[Unchecked Task]** Performance Guide
+  - 📁 docs/DOCUMENTATION_PLAN.md:202
+- 🟡 **[Unchecked Task]** Migration Procedures
+  - 📁 docs/DOCUMENTATION_PLAN.md:203
+- 🟡 **[Unchecked Task]** Spell check all text
+  - 📁 docs/guides/CMS_MANAGEMENT.md:280
+- 🟡 **[Unchecked Task]** Verify all links work
+  - 📁 docs/guides/CMS_MANAGEMENT.md:281
+- 🟡 **[Unchecked Task]** Check image quality
+  - 📁 docs/guides/CMS_MANAGEMENT.md:282
+- 🟡 **[Unchecked Task]** Review on mobile preview
+  - 📁 docs/guides/CMS_MANAGEMENT.md:283
+- 🟡 **[Unchecked Task]** Confirm SEO fields completed
+  - 📁 docs/guides/CMS_MANAGEMENT.md:284
+- 🟡 **[TODO]** Analysis Reports
+  - 📁 docs/reports/README.md:1
+- 🟡 **[TODO]** -summary-latest.md** - Quick reference with statistics and counts
+  - 📁 docs/reports/README.md:7
+- 🟡 **[TODO]** -analysis-latest.md** - Full detailed report with all TODOs listed
+  - 📁 docs/reports/README.md:8
+- 🟡 **[TODO]** Scan Report
+  - 📁 docs/reports/todo-analysis-2025-10-20.md:1
+- 🟡 **[TODO]** s
+  - 📁 docs/reports/todo-analysis-2025-10-20.md:25
+- 🟡 **[TODO]** Scan Report
+  - 📁 docs/reports/todo-analysis-latest.md:1
+- 🟡 **[TODO]** s
+  - 📁 docs/reports/todo-analysis-latest.md:25
+- 🟡 **[TODO]** Scan Report
+  - 📁 docs/reports/todo-test-full-2025-10-20.md:1
+- 🟡 **[TODO]** s
+  - 📁 docs/reports/todo-test-full-2025-10-20.md:25
+- 🟡 **[Unchecked Task]** Create production Resend account
+  - 📁 docs/RESEND_SETUP.md:93
+- 🟡 **[Unchecked Task]** Verify production domain
+  - 📁 docs/RESEND_SETUP.md:95
+- 🟡 **[Unchecked Task]** Set production API key in hosting environment
+  - 📁 docs/RESEND_SETUP.md:96
+- 🟡 **[Unchecked Task]** Test form submission in production
+  - 📁 docs/RESEND_SETUP.md:97
+- 🟡 **[Unchecked Task]** Set up email forwarding/inbox for contact form recipient
+  - 📁 docs/RESEND_SETUP.md:98
+- 🟡 **[Unchecked Task]** Consider upgrading Resend plan if needed (free tier: 3,000 emails/month)
+  - 📁 docs/RESEND_SETUP.md:99
+- 🟡 **[Unchecked Task]** `/our-work` loads the projects page
+  - 📁 docs/ROUTE_MIGRATION_PLAN.md:75
+- 🟡 **[Unchecked Task]** `/what-we-do` loads the services page
+  - 📁 docs/ROUTE_MIGRATION_PLAN.md:76
+- 🟡 **[Unchecked Task]** `/our-clients` loads the clients page
+  - 📁 docs/ROUTE_MIGRATION_PLAN.md:77
+- 🟡 **[Unchecked Task]** Navigation menu links work correctly
+  - 📁 docs/ROUTE_MIGRATION_PLAN.md:78
+- 🟡 **[Unchecked Task]** Footer Quick Links work correctly
+  - 📁 docs/ROUTE_MIGRATION_PLAN.md:79
+- 🟡 **[Unchecked Task]** Old URLs redirect to new ones (if redirects added)
+  - 📁 docs/ROUTE_MIGRATION_PLAN.md:80
+- 🟡 **[Unchecked Task]** No console errors or 404s
+  - 📁 docs/ROUTE_MIGRATION_PLAN.md:81
+- 🟡 **[Unchecked Task]** Mobile menu works with new routes
+  - 📁 docs/ROUTE_MIGRATION_PLAN.md:82
+- 🟡 **[Unchecked Task]** Understand the requirement
+  - 📁 docs/TDD_WORKFLOW.md:362
+- 🟡 **[Unchecked Task]** Write a failing test
+  - 📁 docs/TDD_WORKFLOW.md:363
+- 🟡 **[Unchecked Task]** Run the test to confirm it fails
+  - 📁 docs/TDD_WORKFLOW.md:364
+- 🟡 **[Unchecked Task]** Understand why it fails
+  - 📁 docs/TDD_WORKFLOW.md:365
+- 🟡 **[Unchecked Task]** Write minimal code to pass the test
+  - 📁 docs/TDD_WORKFLOW.md:368
+- 🟡 **[Unchecked Task]** Run the test to confirm it passes
+  - 📁 docs/TDD_WORKFLOW.md:369
+- 🟡 **[Unchecked Task]** Don't add extra functionality yet
+  - 📁 docs/TDD_WORKFLOW.md:370
+- 🟡 **[REFACTOR]** ing
+  - 📁 docs/TDD_WORKFLOW.md:372
+- 🟡 **[Unchecked Task]** Improve code structure
+  - 📁 docs/TDD_WORKFLOW.md:373
+- 🟡 **[Unchecked Task]** Keep tests passing
+  - 📁 docs/TDD_WORKFLOW.md:374
+- 🟡 **[Unchecked Task]** Add more tests for edge cases
+  - 📁 docs/TDD_WORKFLOW.md:375
+- 🟡 **[Unchecked Task]** Ensure good test coverage
+  - 📁 docs/TDD_WORKFLOW.md:376
+- 🟡 **[Unchecked Task]** All tests pass
+  - 📁 docs/TDD_WORKFLOW.md:379
+- 🟡 **[Unchecked Task]** Code coverage meets requirements
+  - 📁 docs/TDD_WORKFLOW.md:380
+- 🟡 **[Unchecked Task]** Code is clean and readable
+  - 📁 docs/TDD_WORKFLOW.md:381
+- 🟡 **[Unchecked Task]** No console errors or warnings
+  - 📁 docs/TDD_WORKFLOW.md:382
+- 🟡 **[REFACTOR]** **: Improve code quality
+  - 📁 docs/TDD_WORKFLOW.md:426
+- 🟡 **[REFACTOR]** **: Improve code while keeping tests green
+  - 📁 docs/TECHNICAL_ARCHITECTURE.md:101
+- 🟡 **[Unchecked Task]** All tests pass
+  - 📁 docs/TECHNICAL_ARCHITECTURE.md:595
+- 🟡 **[Unchecked Task]** Code coverage meets requirements
+  - 📁 docs/TECHNICAL_ARCHITECTURE.md:596
+- 🟡 **[Unchecked Task]** TypeScript types are properly defined
+  - 📁 docs/TECHNICAL_ARCHITECTURE.md:597
+- 🟡 **[Unchecked Task]** Components follow naming conventions
+  - 📁 docs/TECHNICAL_ARCHITECTURE.md:598
+- 🟡 **[Unchecked Task]** Accessibility requirements met
+  - 📁 docs/TECHNICAL_ARCHITECTURE.md:599
+- 🟡 **[Unchecked Task]** Performance impact considered
+  - 📁 docs/TECHNICAL_ARCHITECTURE.md:600
+- 🟡 **[Unchecked Task]** Documentation updated
+  - 📁 docs/TECHNICAL_ARCHITECTURE.md:601
+- 🟡 **[Unchecked Task]** Feature implemented according to requirements
+  - 📁 docs/TECHNICAL_ARCHITECTURE.md:641
+- 🟡 **[Unchecked Task]** Unit tests written and passing (TDD)
+  - 📁 docs/TECHNICAL_ARCHITECTURE.md:642
+- 🟡 **[Unchecked Task]** Integration tests passing
+  - 📁 docs/TECHNICAL_ARCHITECTURE.md:643
+- 🟡 **[Unchecked Task]** Code review completed
+  - 📁 docs/TECHNICAL_ARCHITECTURE.md:644
+- 🟡 **[Unchecked Task]** Accessibility tested
+  - 📁 docs/TECHNICAL_ARCHITECTURE.md:645
+- 🟡 **[Unchecked Task]** Performance impact assessed
+  - 📁 docs/TECHNICAL_ARCHITECTURE.md:646
+- 🟡 **[Unchecked Task]** Documentation updated
+  - 📁 docs/TECHNICAL_ARCHITECTURE.md:647
+- 🟡 **[Unchecked Task]** Deployed to staging environment
+  - 📁 docs/TECHNICAL_ARCHITECTURE.md:648
+- 🟡 **[Unchecked Task]** QA testing completed
+  - 📁 docs/TECHNICAL_ARCHITECTURE.md:649
+- 🟡 **[TODO Section]** 1. **Set up MDX infrastructure** (2 hours)
+   - Install `@next/mdx` and dependencies
+   - Configure `next.config.ts` for MDX support
+   - Create content parsing utilities
+   - Set up TypeScript types
+
+2. **Create base layout and routing** (2 hours)
+   - Build `/cms-guide/layout.tsx` with sidebar structure
+   - Create landing page `/cms-guide/page.tsx`
+   - Set up responsive layout (mobile-first)
+   - Implement dark mode support (match main site)
+
+3. **Build navigation components** (3 hours)
+   - `Sidebar.tsx` with collapsible sections
+   - `Breadcrumbs.tsx` component
+   - `TableOfContents.tsx` with scroll-spy
+   - Navigation data structure in `/lib/cms-guide/navigation.ts`
+
+4. **Create reusable content components** (2 hours)
+   - `InfoBox.tsx` (tips, warnings, notes)
+   - `CodeBlock.tsx` with syntax highlighting
+   - `ImageSpec.tsx` table component
+   - `Checklist.tsx` interactive component
+
+5. **Style guide page** (1 hour)
+   - Typography system
+   - Color scheme (match DOA brand)
+   - Component showcase page
+
+**Deliverables:**
+- Functional layout with sidebar navigation
+- Empty route structure for all pages
+- Reusable components library
+- Design system documentation
+
+---
+  - 📁 memory-bank/CMS_USER_GUIDE_IMPLEMENTATION_PLAN.md:163
+- 🟡 **[TODO Section]** 1. **Convert outline to MDX pages** (10-12 hours)
+   - Section 1: Getting Started (1 hour)
+   - Section 2: How Things Work (2 hours)
+   - Section 3: Content Types (4-5 hours) - *largest section*
+   - Section 4: Common Tasks (2 hours)
+   - Section 5: Troubleshooting (1 hour)
+   - Section 6: Quick Reference (1 hour)
+   - Section 7: Getting Help (0.5 hour)
+
+2. **Add screenshot placeholders** (2 hours)
+   - Create placeholder images
+   - Document screenshot requirements
+   - Set up image optimization pipeline
+   - Test responsive image loading
+
+3. **Implement cross-linking** (1 hour)
+   - Add internal links between sections
+   - Create "Related Topics" component
+   - Add "Next/Previous" page navigation
+
+4. **Content review and editing** (1-2 hours)
+   - Proofread all content
+   - Ensure consistent formatting
+   - Verify code examples
+   - Test all links
+
+**Deliverables:**
+- Complete content in MDX format
+- All pages accessible via navigation
+- Placeholder screenshots in place
+- Cross-linked documentation
+
+---
+  - 📁 memory-bank/CMS_USER_GUIDE_IMPLEMENTATION_PLAN.md:203
+- 🟡 **[TODO Section]** 1. **Implement search functionality** (3-4 hours)
+   - Install and configure Pagefind
+   - Create `SearchBar.tsx` component
+   - Add search keyboard shortcuts (Cmd+K)
+   - Style search results UI
+   - Test search accuracy
+
+2. **Add interactive elements** (2 hours)
+   - Interactive checklists with localStorage persistence
+   - Expandable code blocks
+   - Copy-to-clipboard buttons
+   - Zoom-in image lightbox
+
+3. **Performance optimization** (1-2 hours)
+   - Lazy load images below fold
+   - Code-split large components
+   - Implement route prefetching
+   - Add loading states
+   - Lighthouse audit and fixes
+
+4. **Mobile optimization** (1 hour)
+   - Test all pages on mobile devices
+   - Optimize sidebar for mobile
+   - Improve touch targets
+   - Test search on mobile
+
+**Deliverables:**
+- Functional search with keyboard shortcuts
+- Interactive components with state persistence
+- Optimized performance (Lighthouse >90)
+- Mobile-responsive design verified
+
+---
+  - 📁 memory-bank/CMS_USER_GUIDE_IMPLEMENTATION_PLAN.md:240
+- 🟡 **[TODO Section]** 1. **Capture and add real screenshots** (3-4 hours)
+   - Log into Sanity CMS
+   - Take screenshots for each section
+   - Optimize images (WebP format)
+   - Replace placeholders
+   - Add alt text for accessibility
+
+2. **Add video tutorials (optional)** (2 hours)
+   - Record 2-3 key workflow videos
+   - Upload to Vimeo
+   - Embed in relevant pages
+   - Add transcripts for accessibility
+
+3. **SEO and metadata** (1 hour)
+   - Add meta titles and descriptions
+   - Create sitemap for guide pages
+   - Add Open Graph images
+   - Implement structured data
+
+4. **Testing and QA** (1-2 hours)
+   - Cross-browser testing
+   - Accessibility audit (WCAG 2.1 AA)
+   - Link checker
+   - Spell check
+   - User acceptance testing with content editors
+
+5. **Documentation** (1 hour)
+   - Create README for content editors
+   - Document how to add new pages
+   - Create style guide for MDX authoring
+   - Add contribution guidelines
+
+**Deliverables:**
+- Production-ready guide with real screenshots
+- Video tutorials embedded
+- SEO optimized
+- Fully tested and accessible
+- Editor documentation complete
+
+---
+  - 📁 memory-bank/CMS_USER_GUIDE_IMPLEMENTATION_PLAN.md:277
+- 🟡 **[Unchecked Task]** All 50+ pages accessible and functional
+  - 📁 memory-bank/CMS_USER_GUIDE_IMPLEMENTATION_PLAN.md:475
+- 🟡 **[Unchecked Task]** Search returns accurate results
+  - 📁 memory-bank/CMS_USER_GUIDE_IMPLEMENTATION_PLAN.md:476
+- 🟡 **[Unchecked Task]** Mobile navigation works smoothly
+  - 📁 memory-bank/CMS_USER_GUIDE_IMPLEMENTATION_PLAN.md:477
+- 🟡 **[Unchecked Task]** All screenshots captured and optimized
+  - 📁 memory-bank/CMS_USER_GUIDE_IMPLEMENTATION_PLAN.md:478
+- 🟡 **[Unchecked Task]** Lighthouse score >90
+  - 📁 memory-bank/CMS_USER_GUIDE_IMPLEMENTATION_PLAN.md:479
+- 🟡 **[Unchecked Task]** Zero broken links
+  - 📁 memory-bank/CMS_USER_GUIDE_IMPLEMENTATION_PLAN.md:480
+- 🟡 **[Unchecked Task]** Accessibility audit passed (WCAG 2.1 AA)
+  - 📁 memory-bank/CMS_USER_GUIDE_IMPLEMENTATION_PLAN.md:481
+- 🟡 **[Unchecked Task]** 2+ team members successfully use guide
+  - 📁 memory-bank/CMS_USER_GUIDE_IMPLEMENTATION_PLAN.md:482
+- 🟡 **[Unchecked Task]** Review and approve plan
+  - 📁 memory-bank/CMS_USER_GUIDE_IMPLEMENTATION_PLAN.md:541
+- 🟡 **[Unchecked Task]** Assign team members
+  - 📁 memory-bank/CMS_USER_GUIDE_IMPLEMENTATION_PLAN.md:542
+- 🟡 **[Unchecked Task]** Set up project board
+  - 📁 memory-bank/CMS_USER_GUIDE_IMPLEMENTATION_PLAN.md:543
+- 🟡 **[Unchecked Task]** Schedule kickoff meeting
+  - 📁 memory-bank/CMS_USER_GUIDE_IMPLEMENTATION_PLAN.md:544
+- 🟡 **[Unchecked Task]** Install MDX dependencies
+  - 📁 memory-bank/CMS_USER_GUIDE_IMPLEMENTATION_PLAN.md:547
+- 🟡 **[Unchecked Task]** Configure Next.js
+  - 📁 memory-bank/CMS_USER_GUIDE_IMPLEMENTATION_PLAN.md:548
+- 🟡 **[Unchecked Task]** Create route structure
+  - 📁 memory-bank/CMS_USER_GUIDE_IMPLEMENTATION_PLAN.md:549
+- 🟡 **[Unchecked Task]** Build navigation components
+  - 📁 memory-bank/CMS_USER_GUIDE_IMPLEMENTATION_PLAN.md:550
+- 🟡 **[Unchecked Task]** Create reusable components
+  - 📁 memory-bank/CMS_USER_GUIDE_IMPLEMENTATION_PLAN.md:551
+- 🟡 **[Unchecked Task]** Convert outline to MDX
+  - 📁 memory-bank/CMS_USER_GUIDE_IMPLEMENTATION_PLAN.md:554
+- 🟡 **[Unchecked Task]** Add placeholders
+  - 📁 memory-bank/CMS_USER_GUIDE_IMPLEMENTATION_PLAN.md:555
+- 🟡 **[Unchecked Task]** Implement cross-linking
+  - 📁 memory-bank/CMS_USER_GUIDE_IMPLEMENTATION_PLAN.md:556
+- 🟡 **[Unchecked Task]** Content review
+  - 📁 memory-bank/CMS_USER_GUIDE_IMPLEMENTATION_PLAN.md:557
+- 🟡 **[Unchecked Task]** Implement Pagefind
+  - 📁 memory-bank/CMS_USER_GUIDE_IMPLEMENTATION_PLAN.md:560
+- 🟡 **[Unchecked Task]** Add interactive elements
+  - 📁 memory-bank/CMS_USER_GUIDE_IMPLEMENTATION_PLAN.md:561
+- 🟡 **[Unchecked Task]** Performance optimization
+  - 📁 memory-bank/CMS_USER_GUIDE_IMPLEMENTATION_PLAN.md:562
+- 🟡 **[Unchecked Task]** Mobile testing
+  - 📁 memory-bank/CMS_USER_GUIDE_IMPLEMENTATION_PLAN.md:563
+- 🟡 **[Unchecked Task]** Capture screenshots
+  - 📁 memory-bank/CMS_USER_GUIDE_IMPLEMENTATION_PLAN.md:566
+- 🟡 **[Unchecked Task]** Record videos (optional)
+  - 📁 memory-bank/CMS_USER_GUIDE_IMPLEMENTATION_PLAN.md:567
+- 🟡 **[Unchecked Task]** SEO optimization
+  - 📁 memory-bank/CMS_USER_GUIDE_IMPLEMENTATION_PLAN.md:568
+- 🟡 **[Unchecked Task]** Accessibility audit
+  - 📁 memory-bank/CMS_USER_GUIDE_IMPLEMENTATION_PLAN.md:569
+- 🟡 **[Unchecked Task]** Launch to team
+  - 📁 memory-bank/CMS_USER_GUIDE_IMPLEMENTATION_PLAN.md:570
+- 🟡 **[Unchecked Task]** Rotate featured projects
+  - 📁 memory-bank/CMS_USER_GUIDE_OUTLINE.md:407
+- 🟡 **[Unchecked Task]** Add recent testimonials
+  - 📁 memory-bank/CMS_USER_GUIDE_OUTLINE.md:408
+- 🟡 **[Unchecked Task]** Check contact info accuracy
+  - 📁 memory-bank/CMS_USER_GUIDE_OUTLINE.md:409
+- 🟡 **[Unchecked Task]** Update team member bios/photos as needed
+  - 📁 memory-bank/CMS_USER_GUIDE_OUTLINE.md:410
+- 🟡 **[Unchecked Task]** Test contact form
+  - 📁 memory-bank/CMS_USER_GUIDE_OUTLINE.md:411
+- 🟡 **[Unchecked Task]** Update company overview on About page
+  - 📁 memory-bank/CMS_USER_GUIDE_OUTLINE.md:414
+- 🟡 **[Unchecked Task]** Refresh hero images
+  - 📁 memory-bank/CMS_USER_GUIDE_OUTLINE.md:415
+- 🟡 **[Unchecked Task]** Archive old projects
+  - 📁 memory-bank/CMS_USER_GUIDE_OUTLINE.md:416
+- 🟡 **[Unchecked Task]** Update team photos
+  - 📁 memory-bank/CMS_USER_GUIDE_OUTLINE.md:417
+- 🟡 **[Unchecked Task]** Review business hours for holidays
+  - 📁 memory-bank/CMS_USER_GUIDE_OUTLINE.md:418
+- 🟡 **[Unchecked Task]** All required fields filled (no red asterisks)
+  - 📁 memory-bank/CMS_USER_GUIDE_OUTLINE.md:483
+- 🟡 **[Unchecked Task]** Images have alt text
+  - 📁 memory-bank/CMS_USER_GUIDE_OUTLINE.md:484
+- 🟡 **[Unchecked Task]** Spelling checked
+  - 📁 memory-bank/CMS_USER_GUIDE_OUTLINE.md:485
+- 🟡 **[Unchecked Task]** Links tested
+  - 📁 memory-bank/CMS_USER_GUIDE_OUTLINE.md:486
+- 🟡 **[Unchecked Task]** Order number set (if using featured)
+  - 📁 memory-bank/CMS_USER_GUIDE_OUTLINE.md:487
+- 🟡 **[Unchecked Task]** Featured checkboxes correct
+  - 📁 memory-bank/CMS_USER_GUIDE_OUTLINE.md:488
+- 🟡 **[Unchecked Task]** No setInterval in serverless functions
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:532
+- 🟡 **[Unchecked Task]** Rate limiting works across serverless invocations
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:534
+- 🟡 **[Unchecked Task]** 429 status returned after 5 requests per hour per IP
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:535
+- 🟡 **[Unchecked Task]** Rate limit headers included in responses
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:536
+- 🟡 **[Unchecked Task]** All tests passing
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:537
+- 🟡 **[Unchecked Task]** No console errors in production
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:538
+- 🟡 **[Unchecked Task]** Vercel KV dashboard shows request activity
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:539
+- 🟡 **[Unchecked Task]** Contact form works normally for legitimate users
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:540
+- 🟡 **[Unchecked Task]** No increased latency (< 50ms overhead)
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:541
+- 🟡 **[Unchecked Task]** `/api/contact-test` endpoint returns 404
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:668
+- 🟡 **[Unchecked Task]** No references to `contact-test` in codebase
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:670
+- 🟡 **[Unchecked Task]** All tests passing
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:671
+- 🟡 **[Unchecked Task]** Production build successful
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:672
+- 🟡 **[TODO]** Consider using nonce for styles
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:799
+- 🟡 **[Unchecked Task]** Homepage loads with images
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:987
+- 🟡 **[Unchecked Task]** Projects page displays project images
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:988
+- 🟡 **[Unchecked Task]** Contact form works
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:989
+- 🟡 **[Unchecked Task]** About page loads
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:990
+- 🟡 **[Unchecked Task]** Services page loads
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:991
+- 🟡 **[Unchecked Task]** No console errors related to CSP
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:992
+- 🟡 **[Unchecked Task]** CSP header present in all responses
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:1017
+- 🟡 **[Unchecked Task]** No CSP violations in browser console
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:1019
+- 🟡 **[Unchecked Task]** Site fully functional (images, styles, scripts)
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:1020
+- 🟡 **[Unchecked Task]** Security scan shows A+ rating
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:1021
+- 🟡 **[Unchecked Task]** CSP Evaluator shows good score (> 80/100)
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:1022
+- 🟡 **[Unchecked Task]** All pages load without errors
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:1023
+- 🟡 **[TODO]** Send to error tracking service in production
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:1139
+- 🟡 **[Unchecked Task]** All `console.log` replaced with `logger.debug()`
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:1322
+- 🟡 **[Unchecked Task]** All `console.error` replaced with `logger.error()`
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:1324
+- 🟡 **[Unchecked Task]** ESLint warns on new console.log usage
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:1325
+- 🟡 **[Unchecked Task]** Production build removes debug logs
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:1326
+- 🟡 **[Unchecked Task]** Error logs still appear in production (for debugging)
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:1327
+- 🟡 **[Unchecked Task]** No performance degradation
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:1328
+- 🟡 **[Unchecked Task]** Logs have consistent format with prefixes
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:1329
+- 🟡 **[Unchecked Task]** Root error boundary (`error.tsx`) catches page-level errors
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:1888
+- 🟡 **[Unchecked Task]** Global error boundary (`global-error.tsx`) catches root layout errors
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:1890
+- 🟡 **[Unchecked Task]** Reusable `ErrorBoundary` component available
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:1891
+- 🟡 **[Unchecked Task]** Critical components wrapped in error boundaries
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:1892
+- 🟡 **[Unchecked Task]** Error boundaries show user-friendly messages
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:1893
+- 🟡 **[Unchecked Task]** Reset/retry functionality works
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:1894
+- 🟡 **[Unchecked Task]** Errors logged to monitoring service
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:1895
+- 🟡 **[Unchecked Task]** Tests passing
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:1896
+- 🟡 **[Unchecked Task]** No white screens of death in production
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:1897
+- 🟡 **[Unchecked Task]** No implicit `any` types in source code
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:2093
+- 🟡 **[Unchecked Task]** All function parameters properly typed
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:2095
+- 🟡 **[Unchecked Task]** All API responses properly typed
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:2096
+- 🟡 **[Unchecked Task]** Event handlers use React event types
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:2097
+- 🟡 **[Unchecked Task]** Error handling uses `unknown` instead of `any`
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:2098
+- 🟡 **[Unchecked Task]** ESLint rule enabled and passing
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:2099
+- 🟡 **[Unchecked Task]** TypeScript strict mode enabled
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:2100
+- 🟡 **[Unchecked Task]** Build succeeds without type errors
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:2101
+- 🟡 **[Unchecked Task]** No hardcoded project IDs in source code
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:2468
+- 🟡 **[Unchecked Task]** App throws error if env vars missing
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:2470
+- 🟡 **[Unchecked Task]** Clear error messages for invalid configuration
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:2471
+- 🟡 **[Unchecked Task]** Documentation updated with env var requirements
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:2472
+- 🟡 **[Unchecked Task]** Tests use mocked env vars
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:2473
+- 🟡 **[Unchecked Task]** Production deployment successful
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:2474
+- 🟡 **[Unchecked Task]** No fallback values in code
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:2475
+- 🟡 **[Unchecked Task]** Unit tests pass: `npm test`
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:2549
+- 🟡 **[Unchecked Task]** E2E tests pass: `npm run test:e2e`
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:2550
+- 🟡 **[Unchecked Task]** Build succeeds: `npm run build`
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:2551
+- 🟡 **[Unchecked Task]** Lint passes: `npm run lint`
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:2552
+- 🟡 **[Unchecked Task]** Type check passes: `npx tsc --noEmit`
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:2553
+- 🟡 **[Unchecked Task]** Dev server works: `npm run dev`
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:2556
+- 🟡 **[Unchecked Task]** Production build works: `npm start`
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:2557
+- 🟡 **[Unchecked Task]** Contact form submits successfully
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:2558
+- 🟡 **[Unchecked Task]** Images load from Sanity
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:2559
+- 🟡 **[Unchecked Task]** All pages render without errors
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:2560
+- 🟡 **[Unchecked Task]** Browser console has no errors
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:2561
+- 🟡 **[Unchecked Task]** Deploy to staging first (if available)
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:2564
+- 🟡 **[Unchecked Task]** Test all critical user flows
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:2565
+- 🟡 **[Unchecked Task]** Monitor error rates after deployment
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:2566
+- 🟡 **[Unchecked Task]** Check Vercel logs for errors
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:2567
+- 🟡 **[Unchecked Task]** Verify analytics still working
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:2568
+- 🟡 **[Unchecked Task]** SecurityHeaders.com score: A+
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:2750
+- 🟡 **[Unchecked Task]** CSP Evaluator score: > 80/100
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:2751
+- 🟡 **[Unchecked Task]** No test endpoints exposed
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:2752
+- 🟡 **[Unchecked Task]** No sensitive data in console logs
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:2753
+- 🟡 **[Unchecked Task]** No hardcoded credentials
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:2754
+- 🟡 **[Unchecked Task]** Rate limiting prevents abuse
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:2757
+- 🟡 **[Unchecked Task]** Error boundaries prevent white screens
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:2758
+- 🟡 **[Unchecked Task]** All API routes work in serverless
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:2759
+- 🟡 **[Unchecked Task]** Contact form 99%+ success rate
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:2760
+- 🟡 **[Unchecked Task]** No TypeScript any types
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:2763
+- 🟡 **[Unchecked Task]** ESLint passes with no warnings
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:2764
+- 🟡 **[Unchecked Task]** All tests passing
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:2765
+- 🟡 **[Unchecked Task]** Type check passes
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:2766
+- 🟡 **[Unchecked Task]** Contact form works smoothly
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:2769
+- 🟡 **[Unchecked Task]** Site loads with all images
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:2770
+- 🟡 **[Unchecked Task]** No visible errors to users
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:2771
+- 🟡 **[Unchecked Task]** Graceful error messages
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:2772
+- 🟡 **[Unchecked Task]** Is there a staging environment for testing?
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:2789
+- 🟡 **[Unchecked Task]** What's the rollback SLA if production breaks?
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:2791
+- 🟡 **[Unchecked Task]** Who should be notified of deployments?
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:2792
+- 🟡 **[Unchecked Task]** Are there any other active feature branches?
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:2793
+- 🟡 **[Unchecked Task]** Should we create a security fixes branch or work on main?
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:2794
+- 🟡 **[Unchecked Task]** Is there a maintenance window we can use?
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:2795
+- 🟡 **[Unchecked Task]** Do we have access to production environment variables?
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:2796
+- 🟡 **[Unchecked Task]** Should we set up error tracking (Sentry) before starting?
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:2797
+- 🟡 **[Unchecked Task]** Consider Phases 2-5 from LIGHTHOUSE_LCP_OPTIMIZATION_PLAN.md
+  - 📁 memory-bank/CURRENT.md:66
+- 🟡 **[Unchecked Task]** Preload critical fonts (Bebas Neue for LCP element)
+  - 📁 memory-bank/CURRENT.md:67
+- 🟡 **[Unchecked Task]** Further image optimization
+  - 📁 memory-bank/CURRENT.md:68
+- 🟡 **[Unchecked Task]** Code compiles without TypeScript errors
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:206
+- 🟡 **[Unchecked Task]** Admin email failure returns 500 status
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:207
+- 🟡 **[Unchecked Task]** Auto-reply failure doesn't block admin email
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:208
+- 🟡 **[Unchecked Task]** Console logs include timestamps and sanitized data
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:209
+- 🟡 **[Unchecked Task]** Go to https://resend.com
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:220
+- 🟡 **[Unchecked Task]** Log in or create account with production email
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:221
+- 🟡 **[Unchecked Task]** Navigate to API Keys section
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:222
+- 🟡 **[Unchecked Task]** Go to https://resend.com/api-keys
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:225
+- 🟡 **[Unchecked Task]** Click "Create API Key"
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:226
+- 🟡 **[Unchecked Task]** Name: "DOA Website Production"
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:227
+- 🟡 **[Unchecked Task]** Permission: "Sending access"
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:228
+- 🟡 **[Unchecked Task]** Click "Add"
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:229
+- 🟡 **[Unchecked Task]** Copy API key (starts with `re_`)
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:230
+- 🟡 **[Unchecked Task]** Save securely (it won't be shown again)
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:231
+- 🟡 **[Unchecked Task]** Go to https://resend.com/domains
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:234
+- 🟡 **[Unchecked Task]** Click "Add Domain"
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:235
+- 🟡 **[Unchecked Task]** Enter: `departmentofart.com`
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:236
+- 🟡 **[Unchecked Task]** Copy DNS records provided by Resend
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:237
+- 🟡 **[Unchecked Task]** Add TXT record for DKIM
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:254
+- 🟡 **[Unchecked Task]** Add TXT record for SPF
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:256
+- 🟡 **[Unchecked Task]** Wait 5-10 minutes for DNS propagation
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:257
+- 🟡 **[Unchecked Task]** Return to Resend dashboard and click "Verify"
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:258
+- 🟡 **[Unchecked Task]** Confirm domain shows "Verified" status
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:259
+- 🟡 **[Unchecked Task]** Domain verified in Resend dashboard
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:283
+- 🟡 **[Unchecked Task]** Can send test email from Resend dashboard
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:284
+- 🟡 **[Unchecked Task]** Environment variables updated locally
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:285
+- 🟡 **[Unchecked Task]** Environment variables updated in Vercel
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:286
+- 🟡 **[Unchecked Task]** DNS records propagated (check with `dig TXT resend._domainkey.departmentofart.com`)
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:287
+- 🟡 **[TODO]** Send to external logging service (Sentry, LogRocket, etc.)
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:325
+- 🟡 **[Unchecked Task]** All logs prefixed with `[ContactForm:Level]`
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:384
+- 🟡 **[Unchecked Task]** Logs include timestamps
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:385
+- 🟡 **[Unchecked Task]** Error logs include stack traces
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:386
+- 🟡 **[Unchecked Task]** Logs don't expose sensitive data (sanitize emails, API keys)
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:387
+- 🟡 **[Unchecked Task]** All 10+ test cases pass
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:684
+- 🟡 **[Unchecked Task]** Tests cover success and failure paths
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:685
+- 🟡 **[Unchecked Task]** Tests verify error handling
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:686
+- 🟡 **[Unchecked Task]** Tests verify rate limiting
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:687
+- 🟡 **[Unchecked Task]** Tests verify validation
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:688
+- 🟡 **[Unchecked Task]** Test coverage > 80%
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:689
+- 🟡 **[TODO]** Alert admin about bounced email
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:766
+- 🟡 **[TODO]** Alert admin about spam complaint
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:774
+- 🟡 **[Unchecked Task]** All tests pass
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:876
+- 🟡 **[Unchecked Task]** Coverage > 80%
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:877
+- 🟡 **[Unchecked Task]** No TypeScript errors
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:878
+- 🟡 **[Unchecked Task]** Form shows success message
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:894
+- 🟡 **[Unchecked Task]** Console logs show `[ContactForm:Info]` entries
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:895
+- 🟡 **[Unchecked Task]** Admin email received at CONTACT_FORM_TO_EMAIL
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:896
+- 🟡 **[Unchecked Task]** Auto-reply received at submitted email
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:897
+- 🟡 **[Unchecked Task]** Both emails contain correct content
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:898
+- 🟡 **[Unchecked Task]** Form shows error message
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:908
+- 🟡 **[Unchecked Task]** Console logs show `[ContactForm:Error]` with details
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:909
+- 🟡 **[Unchecked Task]** Response status is 500
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:910
+- 🟡 **[Unchecked Task]** No emails sent
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:911
+- 🟡 **[Unchecked Task]** First 5 submissions succeed
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:916
+- 🟡 **[Unchecked Task]** 6th submission returns 429 error
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:917
+- 🟡 **[Unchecked Task]** Error message includes "Too many requests"
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:918
+- 🟡 **[Unchecked Task]** **Code Changes Complete**
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1094
+- 🟡 **[Unchecked Task]** Error handling fixed in route.ts
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1096
+- 🟡 **[Unchecked Task]** Logging utility added
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1097
+- 🟡 **[Unchecked Task]** All console.logs updated
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1098
+- 🟡 **[Unchecked Task]** Tests written and passing
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1099
+- 🟡 **[Unchecked Task]** **Resend Configuration**
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1100
+- 🟡 **[Unchecked Task]** Domain verified in Resend dashboard
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1102
+- 🟡 **[Unchecked Task]** Production API key generated
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1103
+- 🟡 **[Unchecked Task]** Test email sent from Resend dashboard
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1104
+- 🟡 **[Unchecked Task]** **Environment Variables**
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1105
+- 🟡 **[Unchecked Task]** Updated locally in .env.local
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1107
+- 🟡 **[Unchecked Task]** Updated in Vercel dashboard
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1108
+- 🟡 **[Unchecked Task]** All three variables present:
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1109
+- 🟡 **[Unchecked Task]** **Testing**
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1113
+- 🟡 **[Unchecked Task]** Unit tests pass locally
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1115
+- 🟡 **[Unchecked Task]** Integration tests pass locally
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1116
+- 🟡 **[Unchecked Task]** Manual testing complete
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1117
+- 🟡 **[Unchecked Task]** Test script runs successfully
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1118
+- 🟡 **[Unchecked Task]** Watch Vercel deployment logs
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1145
+- 🟡 **[Unchecked Task]** Check for build errors
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1146
+- 🟡 **[Unchecked Task]** Verify environment variables loaded
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1147
+- 🟡 **[Unchecked Task]** Wait for deployment to complete
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1148
+- 🟡 **[Unchecked Task]** Run production smoke test (see Testing Plan)
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1151
+- 🟡 **[Unchecked Task]** Check Vercel logs for any errors
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1152
+- 🟡 **[Unchecked Task]** Monitor Resend dashboard for email activity
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1153
+- 🟡 **[Unchecked Task]** Send real test submission
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1154
+- 🟡 **[Unchecked Task]** **Monitor for 24 Hours**
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1157
+- 🟡 **[Unchecked Task]** Check Resend dashboard daily
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1159
+- 🟡 **[Unchecked Task]** Review Vercel logs for errors
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1160
+- 🟡 **[Unchecked Task]** Test form submission once per day
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1161
+- 🟡 **[Unchecked Task]** Verify email delivery
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1162
+- 🟡 **[Unchecked Task]** **Update Documentation**
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1163
+- 🟡 **[Unchecked Task]** Update /Users/michaelevans/DOA/doa-website/docs/RESEND_SETUP.md
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1165
+- 🟡 **[Unchecked Task]** Document error handling behavior
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1166
+- 🟡 **[Unchecked Task]** Document logging format
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1167
+- 🟡 **[Unchecked Task]** Add troubleshooting section
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1168
+- 🟡 **[Unchecked Task]** **Update Memory Bank**
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1169
+- 🟡 **[Unchecked Task]** Update /Users/michaelevans/DOA/memory-bank/CURRENT.md
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1171
+- 🟡 **[Unchecked Task]** Document fix completion
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1172
+- 🟡 **[Unchecked Task]** Note any issues encountered
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1173
+- 🟡 **[Unchecked Task]** Record deployment date/time
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1174
+- 🟡 **[Unchecked Task]** Verify RESEND_API_KEY is correct in Vercel
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1198
+- 🟡 **[Unchecked Task]** Verify domain is verified in Resend
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1199
+- 🟡 **[Unchecked Task]** Test API key with curl:
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1200
+- 🟡 **[Unchecked Task]** Check route.ts for type issues
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1248
+- 🟡 **[Unchecked Task]** Run `npm run lint`
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1249
+- 🟡 **[Unchecked Task]** Fix any errors shown
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1250
+- 🟡 **[Unchecked Task]** API route checks Resend responses for errors
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1283
+- 🟡 **[Unchecked Task]** Admin email failure returns 500 status
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1284
+- 🟡 **[Unchecked Task]** Auto-reply failure is non-blocking
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1285
+- 🟡 **[Unchecked Task]** All logs include timestamps and context
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1286
+- 🟡 **[Unchecked Task]** No TypeScript errors or lint warnings
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1287
+- 🟡 **[Unchecked Task]** Test submission delivers admin email to CONTACT_FORM_TO_EMAIL
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1290
+- 🟡 **[Unchecked Task]** Test submission delivers auto-reply to submitter
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1291
+- 🟡 **[Unchecked Task]** Emails contain correct content and formatting
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1292
+- 🟡 **[Unchecked Task]** From address is contact@departmentofart.com
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1293
+- 🟡 **[Unchecked Task]** Reply-to is set to submitter's email
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1294
+- 🟡 **[Unchecked Task]** Invalid submissions return appropriate error codes
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1297
+- 🟡 **[Unchecked Task]** Failed emails log detailed error information
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1298
+- 🟡 **[Unchecked Task]** Users see helpful error messages (not technical jargon)
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1299
+- 🟡 **[Unchecked Task]** No silent failures
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1300
+- 🟡 **[Unchecked Task]** All errors are caught and handled
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1301
+- 🟡 **[Unchecked Task]** Unit tests cover all success paths
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1304
+- 🟡 **[Unchecked Task]** Unit tests cover all failure paths
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1305
+- 🟡 **[Unchecked Task]** Test coverage > 80%
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1306
+- 🟡 **[Unchecked Task]** E2E test passes in CI/CD
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1307
+- 🟡 **[Unchecked Task]** Manual testing checklist complete
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1308
+- 🟡 **[Unchecked Task]** Domain verified in Resend
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1311
+- 🟡 **[Unchecked Task]** Production API key configured
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1312
+- 🟡 **[Unchecked Task]** Environment variables set in Vercel
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1313
+- 🟡 **[Unchecked Task]** Monitoring/alerting active
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1314
+- 🟡 **[Unchecked Task]** Documentation updated
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1315
+- 🟡 **[Unchecked Task]** Form submission completes in < 3 seconds
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1318
+- 🟡 **[Unchecked Task]** Emails delivered within 5 minutes
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1320
+- 🟡 **[Unchecked Task]** Rate limiting blocks spam effectively
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1321
+- 🟡 **[Unchecked Task]** No memory leaks or performance degradation
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1322
+- 🟡 **[Unchecked Task]** Success message displays immediately after submission
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1325
+- 🟡 **[Unchecked Task]** Error messages are clear and actionable
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1327
+- 🟡 **[Unchecked Task]** Users receive auto-reply within 5 minutes
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1328
+- 🟡 **[Unchecked Task]** Business owner receives notification within 5 minutes
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1329
+- 🟡 **[Unchecked Task]** No false success messages
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1330
+- 🟡 **[Unchecked Task]** Verify `pwd` shows correct location
+  - 📁 memory-bank/GIT_WORKFLOW.md:86
+- 🟡 **[Unchecked Task]** Run `git pull --no-rebase origin main` to get latest changes
+  - 📁 memory-bank/GIT_WORKFLOW.md:87
+- 🟡 **[Unchecked Task]** Check `git status` to see what will be committed
+  - 📁 memory-bank/GIT_WORKFLOW.md:88
+- 🟡 **[Unchecked Task]** Update memory-bank/CURRENT.md if needed
+  - 📁 memory-bank/GIT_WORKFLOW.md:89
+- 🟡 **[Unchecked Task]** Update memory-bank/progress.md with session notes
+  - 📁 memory-bank/GIT_WORKFLOW.md:90
+- 🟡 **[Unchecked Task]** Stage only relevant files
+  - 📁 memory-bank/GIT_WORKFLOW.md:91
+- 🟡 **[Unchecked Task]** Use proper commit message format
+  - 📁 memory-bank/GIT_WORKFLOW.md:92
+- 🟡 **[Unchecked Task]** Push immediately after committing
+  - 📁 memory-bank/GIT_WORKFLOW.md:93
+- 🟡 **[Unchecked Task]** Create `/Users/michaelevans/DOA/doa-website/sanity/schemaTypes/objects/responsiveImage.ts`
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:8
+- 🟡 **[Unchecked Task]** Define responsiveImage type with hotspot enabled
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:9
+- 🟡 **[Unchecked Task]** Add alt text field (required)
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:10
+- 🟡 **[Unchecked Task]** Add caption field (optional)
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:11
+- 🟡 **[Unchecked Task]** Configure preview
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:12
+- 🟡 **[Unchecked Task]** Create `/Users/michaelevans/DOA/doa-website/sanity/components/AspectRatioPreview.tsx`
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:15
+- 🟡 **[Unchecked Task]** Implement 16:9 preview
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:16
+- 🟡 **[Unchecked Task]** Implement 4:5 preview
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:17
+- 🟡 **[Unchecked Task]** Implement 1:1 preview
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:18
+- 🟡 **[Unchecked Task]** Add TypeScript types
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:19
+- 🟡 **[Unchecked Task]** Update `mainImage` field in `/Users/michaelevans/DOA/doa-website/sanity/schemaTypes/project.ts`
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:22
+- 🟡 **[Unchecked Task]** Update `gallery` field in project.ts
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:23
+- 🟡 **[Unchecked Task]** Test existing images still load
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:24
+- 🟡 **[Unchecked Task]** Update `photo` field in `/Users/michaelevans/DOA/doa-website/sanity/schemaTypes/teamMember.ts`
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:27
+- 🟡 **[Unchecked Task]** Add description for portrait usage
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:28
+- 🟡 **[Unchecked Task]** Update client.ts logo field
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:31
+- 🟡 **[Unchecked Task]** Update aboutPage.ts image fields
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:32
+- 🟡 **[Unchecked Task]** Update homepageSettings.ts image fields
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:33
+- 🟡 **[Unchecked Task]** Update servicesPage.ts image fields (if applicable)
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:34
+- 🟡 **[Unchecked Task]** Import responsiveImage in `/Users/michaelevans/DOA/doa-website/sanity/schemaTypes/index.ts`
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:37
+- 🟡 **[Unchecked Task]** Add to schemaTypes array
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:38
+- 🟡 **[Unchecked Task]** Restart Sanity Studio
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:39
+- 🟡 **[Unchecked Task]** Verify no schema errors
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:40
+- 🟡 **[Unchecked Task]** Update `/Users/michaelevans/DOA/doa-website/sanity/lib/image.ts`
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:47
+- 🟡 **[Unchecked Task]** Add AspectRatio type
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:48
+- 🟡 **[Unchecked Task]** Create urlForWithOptions function
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:49
+- 🟡 **[Unchecked Task]** Create landscapeImage function
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:50
+- 🟡 **[Unchecked Task]** Create portraitImage function
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:51
+- 🟡 **[Unchecked Task]** Create squareImage function
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:52
+- 🟡 **[Unchecked Task]** Add JSDoc documentation
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:53
+- 🟡 **[Unchecked Task]** Create/update `/Users/michaelevans/DOA/doa-website/src/types/sanity.ts`
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:56
+- 🟡 **[Unchecked Task]** Define SanityImageHotspot interface
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:57
+- 🟡 **[Unchecked Task]** Define SanityImageCrop interface
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:58
+- 🟡 **[Unchecked Task]** Define SanityImageAsset interface
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:59
+- 🟡 **[Unchecked Task]** Define SanityResponsiveImage interface
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:60
+- 🟡 **[Unchecked Task]** Update Project and TeamMember types
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:61
+- 🟡 **[Unchecked Task]** Modify `/Users/michaelevans/DOA/doa-website/src/components/Projects.tsx`
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:68
+- 🟡 **[Unchecked Task]** Import landscapeImage
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:69
+- 🟡 **[Unchecked Task]** Replace urlFor calls
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:70
+- 🟡 **[Unchecked Task]** Update alt text handling
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:71
+- 🟡 **[Unchecked Task]** Test visually
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:72
+- 🟡 **[Unchecked Task]** Modify `/Users/michaelevans/DOA/doa-website/src/components/ProjectSlideshow.tsx`
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:75
+- 🟡 **[Unchecked Task]** Handle mixed orientations
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:76
+- 🟡 **[Unchecked Task]** Add orientation detection
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:77
+- 🟡 **[Unchecked Task]** Test gallery display
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:78
+- 🟡 **[Unchecked Task]** Modify `/Users/michaelevans/DOA/doa-website/src/app/about/page.tsx`
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:81
+- 🟡 **[Unchecked Task]** Import portraitImage
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:82
+- 🟡 **[Unchecked Task]** Update team photo rendering
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:83
+- 🟡 **[Unchecked Task]** Verify 4:5 aspect ratio
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:84
+- 🟡 **[Unchecked Task]** Modify `/Users/michaelevans/DOA/doa-website/src/components/ClientLogos.tsx`
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:87
+- 🟡 **[Unchecked Task]** Import squareImage
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:88
+- 🟡 **[Unchecked Task]** Update logo rendering
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:89
+- 🟡 **[Unchecked Task]** Verify 1:1 aspect ratio
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:90
+- 🟡 **[Unchecked Task]** Modify `/Users/michaelevans/DOA/doa-website/src/lib/metadata.ts`
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:93
+- 🟡 **[Unchecked Task]** Create getOgImageUrl function
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:94
+- 🟡 **[Unchecked Task]** Use 1200x630 for OG images
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:95
+- 🟡 **[Unchecked Task]** Test social sharing
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:96
+- 🟡 **[Unchecked Task]** Modify `/Users/michaelevans/DOA/doa-website/src/__mocks__/sanity/lib/image.ts`
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:99
+- 🟡 **[Unchecked Task]** Mock urlForWithOptions
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:100
+- 🟡 **[Unchecked Task]** Mock landscapeImage
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:101
+- 🟡 **[Unchecked Task]** Mock portraitImage
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:102
+- 🟡 **[Unchecked Task]** Mock squareImage
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:103
+- 🟡 **[Unchecked Task]** Create `/Users/michaelevans/DOA/doa-website/src/sanity/lib/__tests__/image.test.ts`
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:110
+- 🟡 **[Unchecked Task]** Test urlFor backward compatibility
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:111
+- 🟡 **[Unchecked Task]** Test urlForWithOptions
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:112
+- 🟡 **[Unchecked Task]** Test aspect ratio calculations
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:113
+- 🟡 **[Unchecked Task]** Test convenience functions
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:114
+- 🟡 **[Unchecked Task]** Achieve 100% coverage
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:115
+- 🟡 **[Unchecked Task]** Update `/Users/michaelevans/DOA/doa-website/src/components/__tests__/Projects.cms.test.tsx`
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:118
+- 🟡 **[Unchecked Task]** Test landscape aspect ratio usage
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:119
+- 🟡 **[Unchecked Task]** Test alt text handling
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:120
+- 🟡 **[Unchecked Task]** Update other component tests
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:121
+- 🟡 **[Unchecked Task]** Verify no test regressions
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:122
+- 🟡 **[Unchecked Task]** Create `/Users/michaelevans/DOA/doa-website/tests/image-cropping.spec.ts`
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:125
+- 🟡 **[Unchecked Task]** Test 16:9 project images
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:126
+- 🟡 **[Unchecked Task]** Test 4:5 team photos
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:127
+- 🟡 **[Unchecked Task]** Test 1:1 client logos
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:128
+- 🟡 **[Unchecked Task]** Test image loading quality
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:129
+- 🟡 **[Unchecked Task]** Test Sanity Studio hotspot tool
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:132
+- 🟡 **[Unchecked Task]** Test aspect ratio previews
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:133
+- 🟡 **[Unchecked Task]** Test frontend rendering (all pages)
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:134
+- 🟡 **[Unchecked Task]** Test mobile responsive
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:135
+- 🟡 **[Unchecked Task]** Test tablet responsive
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:136
+- 🟡 **[Unchecked Task]** Test desktop responsive
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:137
+- 🟡 **[Unchecked Task]** Test Chrome, Firefox, Safari
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:138
+- 🟡 **[Unchecked Task]** Test mobile browsers
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:139
+- 🟡 **[Unchecked Task]** Check Lighthouse score
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:140
+- 🟡 **[Unchecked Task]** Verify no layout shift
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:141
+- 🟡 **[Unchecked Task]** Add JSDoc to all new functions
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:148
+- 🟡 **[Unchecked Task]** Include usage examples
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:149
+- 🟡 **[Unchecked Task]** Document parameters and returns
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:150
+- 🟡 **[Unchecked Task]** Create `/Users/michaelevans/DOA/doa-website/docs/IMAGE_EDITING_GUIDE.md`
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:153
+- 🟡 **[Unchecked Task]** Write hotspot instructions
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:154
+- 🟡 **[Unchecked Task]** Add best practices section
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:155
+- 🟡 **[Unchecked Task]** Include troubleshooting
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:156
+- 🟡 **[Unchecked Task]** Add screenshots (optional)
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:157
+- 🟡 **[Unchecked Task]** Create `/Users/michaelevans/DOA/memory-bank/IMAGE_MIGRATION_NOTES.md`
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:160
+- 🟡 **[Unchecked Task]** Document backward compatibility
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:161
+- 🟡 **[Unchecked Task]** Create GROQ queries for finding images
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:162
+- 🟡 **[Unchecked Task]** Write content update workflow
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:163
+- 🟡 **[Unchecked Task]** Estimate migration timeline
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:164
+- 🟡 **[Unchecked Task]** All tests passing (`npm run test:all`)
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:169
+- 🟡 **[Unchecked Task]** No TypeScript errors (`npm run build`)
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:171
+- 🟡 **[Unchecked Task]** No ESLint errors (`npm run lint`)
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:172
+- 🟡 **[Unchecked Task]** Lighthouse score maintained (90+)
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:173
+- 🟡 **[Unchecked Task]** Visual review of all key pages
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:174
+- 🟡 **[Unchecked Task]** Sanity Studio tested with real images
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:175
+- 🟡 **[Unchecked Task]** Documentation complete
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:176
+- 🟡 **[Unchecked Task]** Code review approved
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:177
+- 🟡 **[Unchecked Task]** Monitor Vercel Analytics (first 24 hours)
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:182
+- 🟡 **[Unchecked Task]** Check Sanity Studio usage logs
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:184
+- 🟡 **[Unchecked Task]** Collect editor feedback
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:185
+- 🟡 **[Unchecked Task]** Review image CDN metrics
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:186
+- 🟡 **[Unchecked Task]** Update Memory Bank with learnings
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:187
+- 🟡 **[Unchecked Task]** Schedule editor training session
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:188
+- 🟡 **[Unchecked Task]** Plan content migration priorities
+  - 📁 memory-bank/IMAGE_CROPPING_CHECKLIST.md:189
+- 🟡 **[Unchecked Task]** File created at correct path
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:108
+- 🟡 **[Unchecked Task]** TypeScript types properly defined
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:109
+- 🟡 **[Unchecked Task]** Hotspot enabled by default
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:110
+- 🟡 **[Unchecked Task]** Alt text field required
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:111
+- 🟡 **[Unchecked Task]** Preview displays correctly
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:112
+- 🟡 **[Unchecked Task]** Component renders multiple aspect ratio previews
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:167
+- 🟡 **[Unchecked Task]** Hotspot positioning visible in all previews
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:168
+- 🟡 **[Unchecked Task]** Responsive design works in Sanity Studio
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:169
+- 🟡 **[Unchecked Task]** TypeScript props properly typed
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:170
+- 🟡 **[Unchecked Task]** mainImage uses responsiveImage type
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:216
+- 🟡 **[Unchecked Task]** gallery uses responsiveImage type
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:217
+- 🟡 **[Unchecked Task]** Existing images still load correctly
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:218
+- 🟡 **[Unchecked Task]** Preview shows aspect ratio options
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:219
+- 🟡 **[Unchecked Task]** photo field uses responsiveImage
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:248
+- 🟡 **[Unchecked Task]** Description clearly indicates portrait usage
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:249
+- 🟡 **[Unchecked Task]** Existing team photos still display
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:250
+- 🟡 **[Unchecked Task]** client.ts logo updated
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:262
+- 🟡 **[Unchecked Task]** aboutPage.ts images updated
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:263
+- 🟡 **[Unchecked Task]** homepageSettings.ts images updated
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:264
+- 🟡 **[Unchecked Task]** servicesPage.ts images updated (if applicable)
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:265
+- 🟡 **[Unchecked Task]** All use responsiveImage type
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:266
+- 🟡 **[Unchecked Task]** responsiveImage imported
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:300
+- 🟡 **[Unchecked Task]** Added to schemaTypes array
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:301
+- 🟡 **[Unchecked Task]** Schema validates without errors
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:302
+- 🟡 **[Unchecked Task]** Sanity Studio restarts successfully
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:303
+- 🟡 **[Unchecked Task]** TypeScript types exported
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:416
+- 🟡 **[Unchecked Task]** Backward compatible (urlFor unchanged)
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:417
+- 🟡 **[Unchecked Task]** New functions properly handle hotspot
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:418
+- 🟡 **[Unchecked Task]** Quality and format optimization included
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:419
+- 🟡 **[Unchecked Task]** JSDoc comments added
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:420
+- 🟡 **[Unchecked Task]** All image-related types defined
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:492
+- 🟡 **[Unchecked Task]** Matches Sanity schema structure
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:493
+- 🟡 **[Unchecked Task]** Exported for use in components
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:494
+- 🟡 **[Unchecked Task]** Hotspot and crop types included
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:495
+- 🟡 **[Unchecked Task]** All project images use landscapeImage
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:529
+- 🟡 **[Unchecked Task]** Alt text from image or fallback
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:530
+- 🟡 **[Unchecked Task]** Multiple sizes for responsive images
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:531
+- 🟡 **[Unchecked Task]** TypeScript types correct
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:532
+- 🟡 **[Unchecked Task]** Gallery supports mixed orientations
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:558
+- 🟡 **[Unchecked Task]** Portrait detection works correctly
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:559
+- 🟡 **[Unchecked Task]** Slideshow maintains aspect ratios
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:560
+- 🟡 **[Unchecked Task]** Performance remains optimal
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:561
+- 🟡 **[Unchecked Task]** Team photos use portraitImage
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:581
+- 🟡 **[Unchecked Task]** Consistent 4:5 aspect ratio
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:582
+- 🟡 **[Unchecked Task]** Alt text properly handled
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:583
+- 🟡 **[Unchecked Task]** Responsive sizing
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:584
+- 🟡 **[Unchecked Task]** Logos use squareImage
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:603
+- 🟡 **[Unchecked Task]** Consistent sizing across logos
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:604
+- 🟡 **[Unchecked Task]** High quality maintained
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:605
+- 🟡 **[Unchecked Task]** OG images meet social platform requirements
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:628
+- 🟡 **[Unchecked Task]** Quality optimized for sharing
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:629
+- 🟡 **[Unchecked Task]** Hotspot respected in crops
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:630
+- 🟡 **[Unchecked Task]** All new functions mocked
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:659
+- 🟡 **[Unchecked Task]** Tests continue to pass
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:660
+- 🟡 **[Unchecked Task]** Mock API matches real implementation
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:661
+- 🟡 **[Unchecked Task]** All helper functions tested
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:748
+- 🟡 **[Unchecked Task]** URL parameters verified
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:749
+- 🟡 **[Unchecked Task]** Edge cases covered
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:750
+- 🟡 **[Unchecked Task]** 100% code coverage for helpers
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:751
+- 🟡 **[Unchecked Task]** All component tests updated
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:809
+- 🟡 **[Unchecked Task]** New image helpers mocked correctly
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:810
+- 🟡 **[Unchecked Task]** Alt text handling tested
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:811
+- 🟡 **[Unchecked Task]** No test regressions
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:812
+- 🟡 **[Unchecked Task]** All aspect ratios verified visually
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:885
+- 🟡 **[Unchecked Task]** Images load successfully
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:886
+- 🟡 **[Unchecked Task]** No layout shift issues
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:887
+- 🟡 **[Unchecked Task]** Performance acceptable
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:888
+- 🟡 **[Unchecked Task]** Upload new image to project
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:896
+- 🟡 **[Unchecked Task]** Set hotspot on image
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:897
+- 🟡 **[Unchecked Task]** View aspect ratio previews (16:9, 4:5, 1:1)
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:898
+- 🟡 **[Unchecked Task]** Verify hotspot stays in frame for all ratios
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:899
+- 🟡 **[Unchecked Task]** Publish and verify on frontend
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:900
+- 🟡 **[Unchecked Task]** Homepage featured projects (landscape)
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:903
+- 🟡 **[Unchecked Task]** Projects page grid (landscape)
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:904
+- 🟡 **[Unchecked Task]** Project gallery (mixed orientations)
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:905
+- 🟡 **[Unchecked Task]** About page team photos (portrait)
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:906
+- 🟡 **[Unchecked Task]** Clients page logos (square)
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:907
+- 🟡 **[Unchecked Task]** Mobile responsive behavior
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:908
+- 🟡 **[Unchecked Task]** Tablet responsive behavior
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:909
+- 🟡 **[Unchecked Task]** Desktop responsive behavior
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:910
+- 🟡 **[Unchecked Task]** Chrome latest
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:913
+- 🟡 **[Unchecked Task]** Firefox latest
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:914
+- 🟡 **[Unchecked Task]** Safari latest
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:915
+- 🟡 **[Unchecked Task]** Mobile Safari (iOS)
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:916
+- 🟡 **[Unchecked Task]** Chrome Mobile (Android)
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:917
+- 🟡 **[Unchecked Task]** Lighthouse score maintained
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:920
+- 🟡 **[Unchecked Task]** Image loading times acceptable
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:921
+- 🟡 **[Unchecked Task]** CDN cache hit rate high
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:922
+- 🟡 **[Unchecked Task]** No CLS (Cumulative Layout Shift)
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:923
+- 🟡 **[Unchecked Task]** All public functions documented
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:958
+- 🟡 **[Unchecked Task]** Examples provided
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:959
+- 🟡 **[Unchecked Task]** Parameters explained
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:960
+- 🟡 **[Unchecked Task]** Return types documented
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:961
+- 🟡 **[Unchecked Task]** Clear step-by-step instructions
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:1012
+- 🟡 **[Unchecked Task]** Screenshots included
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:1013
+- 🟡 **[Unchecked Task]** Best practices documented
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:1014
+- 🟡 **[Unchecked Task]** Troubleshooting section
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:1015
+- 🟡 **[Unchecked Task]** Migration strategy documented
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:1065
+- 🟡 **[Unchecked Task]** GROQ queries provided
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:1066
+- 🟡 **[Unchecked Task]** Timeline estimated
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:1067
+- 🟡 **[Unchecked Task]** Rollback plan included
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:1068
+- 🟡 **[Unchecked Task]** Add visual regression tests (consider Playwright screenshots)
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:1110
+- 🟡 **[Unchecked Task]** Monitor Lighthouse scores before/after
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:1112
+- 🟡 **[Unchecked Task]** Test with real Sanity data, not just mocks
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:1113
+- 🟡 **[Unchecked Task]** Verify existing images still render
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:1114
+- 🟡 **[Unchecked Task]** Schedule 30-minute walkthrough for editors
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:1136
+- 🟡 **[Unchecked Task]** Record video tutorial for async reference
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:1137
+- 🟡 **[Unchecked Task]** Provide written quick-reference guide
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:1138
+- 🟡 **[Unchecked Task]** Set up practice environment in Sanity
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:1139
+- 🟡 **[Unchecked Task]** Open in Sanity Studio
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:1158
+- 🟡 **[Unchecked Task]** Click "Edit hotspot"
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:1159
+- 🟡 **[Unchecked Task]** Position focal point on key subject
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:1160
+- 🟡 **[Unchecked Task]** Preview all aspect ratios
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:1161
+- 🟡 **[Unchecked Task]** Add/update alt text
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:1162
+- 🟡 **[Unchecked Task]** Add optional caption
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:1163
+- 🟡 **[Unchecked Task]** Save and publish
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:1164
+- 🟡 **[Unchecked Task]** All aspect ratio functions working correctly
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:1171
+- 🟡 **[Unchecked Task]** Hotspot data properly saved and retrieved
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:1173
+- 🟡 **[Unchecked Task]** Image URLs contain correct crop parameters
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:1174
+- 🟡 **[Unchecked Task]** Sanity Studio previews display accurately
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:1175
+- 🟡 **[Unchecked Task]** No performance degradation
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:1176
+- 🟡 **[Unchecked Task]** All tests passing (unit, integration, E2E)
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:1177
+- 🟡 **[Unchecked Task]** TypeScript types properly enforced
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:1178
+- 🟡 **[Unchecked Task]** Backward compatibility maintained
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:1179
+- 🟡 **[Unchecked Task]** Images display with consistent aspect ratios
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:1182
+- 🟡 **[Unchecked Task]** Important subjects stay in frame across devices
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:1184
+- 🟡 **[Unchecked Task]** No visible cropping artifacts
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:1185
+- 🟡 **[Unchecked Task]** Fast image loading times
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:1186
+- 🟡 **[Unchecked Task]** Responsive behavior smooth
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:1187
+- 🟡 **[Unchecked Task]** Alt text improves accessibility scores
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:1188
+- 🟡 **[Unchecked Task]** Editors can use hotspot tool without training
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:1191
+- 🟡 **[Unchecked Task]** Aspect ratio previews help decision-making
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:1193
+- 🟡 **[Unchecked Task]** Workflow feels intuitive
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:1194
+- 🟡 **[Unchecked Task]** Documentation is clear and helpful
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:1195
+- 🟡 **[Unchecked Task]** No increase in content publishing time
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:1196
+- 🟡 **[Unchecked Task]** Visual consistency across website improved
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:1199
+- 🟡 **[Unchecked Task]** Professional appearance on all devices
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:1201
+- 🟡 **[Unchecked Task]** Accessibility compliance maintained
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:1202
+- 🟡 **[Unchecked Task]** Page load performance maintained or improved
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:1203
+- 🟡 **[Unchecked Task]** Content team satisfied with tool
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:1204
+- 🟡 **[Unchecked Task]** Daily: Check Vercel Analytics for errors
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:1389
+- 🟡 **[Unchecked Task]** Daily: Review Sanity Studio usage
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:1391
+- 🟡 **[Unchecked Task]** Weekly: Collect editor feedback
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:1392
+- 🟡 **[Unchecked Task]** Weekly: Review image CDN metrics
+  - 📁 memory-bank/IMAGE_CROPPING_PLAN.md:1393
+- 🟡 **[Unchecked Task]** Convert `src/app/page.tsx` to async server component
+  - 📁 memory-bank/LIGHTHOUSE_LCP_OPTIMIZATION_PLAN.md:583
+- 🟡 **[Unchecked Task]** Add parallel data fetching with `Promise.all`
+  - 📁 memory-bank/LIGHTHOUSE_LCP_OPTIMIZATION_PLAN.md:584
+- 🟡 **[Unchecked Task]** Split `Projects.tsx` into server + client components
+  - 📁 memory-bank/LIGHTHOUSE_LCP_OPTIMIZATION_PLAN.md:585
+- 🟡 **[Unchecked Task]** Convert `Services.tsx` to server component
+  - 📁 memory-bank/LIGHTHOUSE_LCP_OPTIMIZATION_PLAN.md:586
+- 🟡 **[Unchecked Task]** Convert `ClientLogos.tsx` to server component
+  - 📁 memory-bank/LIGHTHOUSE_LCP_OPTIMIZATION_PLAN.md:587
+- 🟡 **[Unchecked Task]** Convert `Testimonials.tsx` to server component
+  - 📁 memory-bank/LIGHTHOUSE_LCP_OPTIMIZATION_PLAN.md:588
+- 🟡 **[Unchecked Task]** Convert `AboutCTA.tsx` to server component
+  - 📁 memory-bank/LIGHTHOUSE_LCP_OPTIMIZATION_PLAN.md:589
+- 🟡 **[Unchecked Task]** Remove or refactor `HomepageContext.tsx`
+  - 📁 memory-bank/LIGHTHOUSE_LCP_OPTIMIZATION_PLAN.md:590
+- 🟡 **[Unchecked Task]** Test: Verify LCP element renders immediately
+  - 📁 memory-bank/LIGHTHOUSE_LCP_OPTIMIZATION_PLAN.md:591
+- 🟡 **[Unchecked Task]** Measure: Run Lighthouse, target LCP < 2.5s
+  - 📁 memory-bank/LIGHTHOUSE_LCP_OPTIMIZATION_PLAN.md:592
+- 🟡 **[Unchecked Task]** Find Bebas Neue font filename in `.next/static/media/`
+  - 📁 memory-bank/LIGHTHOUSE_LCP_OPTIMIZATION_PLAN.md:595
+- 🟡 **[Unchecked Task]** Add font preload link in layout
+  - 📁 memory-bank/LIGHTHOUSE_LCP_OPTIMIZATION_PLAN.md:596
+- 🟡 **[Unchecked Task]** Update font config with `preload: true`
+  - 📁 memory-bank/LIGHTHOUSE_LCP_OPTIMIZATION_PLAN.md:597
+- 🟡 **[Unchecked Task]** Add font fallback CSS
+  - 📁 memory-bank/LIGHTHOUSE_LCP_OPTIMIZATION_PLAN.md:598
+- 🟡 **[Unchecked Task]** Test: Verify font loads without flash
+  - 📁 memory-bank/LIGHTHOUSE_LCP_OPTIMIZATION_PLAN.md:599
+- 🟡 **[Unchecked Task]** Measure: Run Lighthouse, check font timing
+  - 📁 memory-bank/LIGHTHOUSE_LCP_OPTIMIZATION_PLAN.md:600
+- 🟡 **[Unchecked Task]** Create `src/app/loading.tsx`
+  - 📁 memory-bank/LIGHTHOUSE_LCP_OPTIMIZATION_PLAN.md:603
+- 🟡 **[Unchecked Task]** Create skeleton components
+  - 📁 memory-bank/LIGHTHOUSE_LCP_OPTIMIZATION_PLAN.md:604
+- 🟡 **[Unchecked Task]** Wrap sections with Suspense boundaries
+  - 📁 memory-bank/LIGHTHOUSE_LCP_OPTIMIZATION_PLAN.md:605
+- 🟡 **[Unchecked Task]** Test: Verify progressive loading
+  - 📁 memory-bank/LIGHTHOUSE_LCP_OPTIMIZATION_PLAN.md:606
+- 🟡 **[Unchecked Task]** Measure: Check FCP improvement
+  - 📁 memory-bank/LIGHTHOUSE_LCP_OPTIMIZATION_PLAN.md:607
+- 🟡 **[Unchecked Task]** Dynamic import `ProjectModal`
+  - 📁 memory-bank/LIGHTHOUSE_LCP_OPTIMIZATION_PLAN.md:610
+- 🟡 **[Unchecked Task]** Update `next.config.ts` with optimizations
+  - 📁 memory-bank/LIGHTHOUSE_LCP_OPTIMIZATION_PLAN.md:611
+- 🟡 **[Unchecked Task]** Install and run bundle analyzer
+  - 📁 memory-bank/LIGHTHOUSE_LCP_OPTIMIZATION_PLAN.md:612
+- 🟡 **[Unchecked Task]** Identify large dependencies
+  - 📁 memory-bank/LIGHTHOUSE_LCP_OPTIMIZATION_PLAN.md:613
+- 🟡 **[Unchecked Task]** Optimize imports
+  - 📁 memory-bank/LIGHTHOUSE_LCP_OPTIMIZATION_PLAN.md:614
+- 🟡 **[Unchecked Task]** Test: Verify modal still works
+  - 📁 memory-bank/LIGHTHOUSE_LCP_OPTIMIZATION_PLAN.md:615
+- 🟡 **[Unchecked Task]** Measure: Check bundle size reduction
+  - 📁 memory-bank/LIGHTHOUSE_LCP_OPTIMIZATION_PLAN.md:616
+- 🟡 **[Unchecked Task]** Add missing preconnect/dns-prefetch links
+  - 📁 memory-bank/LIGHTHOUSE_LCP_OPTIMIZATION_PLAN.md:619
+- 🟡 **[Unchecked Task]** Test: Verify no broken resources
+  - 📁 memory-bank/LIGHTHOUSE_LCP_OPTIMIZATION_PLAN.md:620
+- 🟡 **[Unchecked Task]** Measure: Check network timing
+  - 📁 memory-bank/LIGHTHOUSE_LCP_OPTIMIZATION_PLAN.md:621
+- 🟡 **[Unchecked Task]** API route responds to POST requests
+  - 📁 memory-bank/SANITY_WEBHOOK_PLAN.md:210
+- 🟡 **[Unchecked Task]** Signature verification works
+  - 📁 memory-bank/SANITY_WEBHOOK_PLAN.md:211
+- 🟡 **[Unchecked Task]** Invalid signatures are rejected
+  - 📁 memory-bank/SANITY_WEBHOOK_PLAN.md:212
+- 🟡 **[Unchecked Task]** Rate limiting triggers after 60 requests
+  - 📁 memory-bank/SANITY_WEBHOOK_PLAN.md:213
+- 🟡 **[Unchecked Task]** All content types map to correct routes
+  - 📁 memory-bank/SANITY_WEBHOOK_PLAN.md:214
+- 🟡 **[Unchecked Task]** Revalidation actually updates pages
+  - 📁 memory-bank/SANITY_WEBHOOK_PLAN.md:215
+- 🟡 **[Unchecked Task]** Secret generated and saved securely
+  - 📁 memory-bank/SANITY_WEBHOOK_PLAN.md:250
+- 🟡 **[Unchecked Task]** Local `.env.local` updated
+  - 📁 memory-bank/SANITY_WEBHOOK_PLAN.md:251
+- 🟡 **[Unchecked Task]** Vercel environment variable set
+  - 📁 memory-bank/SANITY_WEBHOOK_PLAN.md:252
+- 🟡 **[Unchecked Task]** Secret is accessible in API route
+  - 📁 memory-bank/SANITY_WEBHOOK_PLAN.md:253
+- 🟡 **[Unchecked Task]** Webhook created in Sanity dashboard
+  - 📁 memory-bank/SANITY_WEBHOOK_PLAN.md:298
+- 🟡 **[Unchecked Task]** Secret matches environment variable
+  - 📁 memory-bank/SANITY_WEBHOOK_PLAN.md:299
+- 🟡 **[Unchecked Task]** Test webhook sends successfully
+  - 📁 memory-bank/SANITY_WEBHOOK_PLAN.md:300
+- 🟡 **[Unchecked Task]** Webhook appears in Sanity logs
+  - 📁 memory-bank/SANITY_WEBHOOK_PLAN.md:301
+- 🟡 **[Unchecked Task]** All pages have `export const revalidate = 300`
+  - 📁 memory-bank/SANITY_WEBHOOK_PLAN.md:359
+- 🟡 **[Unchecked Task]** No TypeScript errors
+  - 📁 memory-bank/SANITY_WEBHOOK_PLAN.md:360
+- 🟡 **[Unchecked Task]** Build succeeds locally
+  - 📁 memory-bank/SANITY_WEBHOOK_PLAN.md:361
+- 🟡 **[Unchecked Task]** Pages show revalidation timing in Vercel logs
+  - 📁 memory-bank/SANITY_WEBHOOK_PLAN.md:362
+- 🟡 **[Unchecked Task]** Invalid signature rejected
+  - 📁 memory-bank/SANITY_WEBHOOK_PLAN.md:402
+- 🟡 **[Unchecked Task]** Missing signature rejected
+  - 📁 memory-bank/SANITY_WEBHOOK_PLAN.md:404
+- 🟡 **[Unchecked Task]** Malformed payload handled gracefully
+  - 📁 memory-bank/SANITY_WEBHOOK_PLAN.md:405
+- 🟡 **[Unchecked Task]** Rate limiting triggers correctly
+  - 📁 memory-bank/SANITY_WEBHOOK_PLAN.md:406
+- 🟡 **[Unchecked Task]** Unknown document types handled
+  - 📁 memory-bank/SANITY_WEBHOOK_PLAN.md:407
+- 🟡 **[Unchecked Task]** Rapid successive updates work
+  - 📁 memory-bank/SANITY_WEBHOOK_PLAN.md:408
+- 🟡 **[Unchecked Task]** Local testing successful with ngrok
+  - 📁 memory-bank/SANITY_WEBHOOK_PLAN.md:424
+- 🟡 **[Unchecked Task]** Production webhook configured
+  - 📁 memory-bank/SANITY_WEBHOOK_PLAN.md:425
+- 🟡 **[Unchecked Task]** All content types trigger revalidation
+  - 📁 memory-bank/SANITY_WEBHOOK_PLAN.md:426
+- 🟡 **[Unchecked Task]** Pages update immediately after publish
+  - 📁 memory-bank/SANITY_WEBHOOK_PLAN.md:427
+- 🟡 **[Unchecked Task]** Error cases handled properly
+  - 📁 memory-bank/SANITY_WEBHOOK_PLAN.md:428
+- 🟡 **[Unchecked Task]** Logs show successful revalidation
+  - 📁 memory-bank/SANITY_WEBHOOK_PLAN.md:429
+- 🟡 **[Unchecked Task]** Memory bank updated
+  - 📁 memory-bank/SANITY_WEBHOOK_PLAN.md:476
+- 🟡 **[Unchecked Task]** Team documentation created
+  - 📁 memory-bank/SANITY_WEBHOOK_PLAN.md:477
+- 🟡 **[Unchecked Task]** Troubleshooting guide added
+  - 📁 memory-bank/SANITY_WEBHOOK_PLAN.md:478
+- 🟡 **[Unchecked Task]** All tests pass locally (`npm run test:all`)
+  - 📁 memory-bank/SECURITY_DELIVERY_PLAN.md:706
+- 🟡 **[Unchecked Task]** Build succeeds (`npm run build`)
+  - 📁 memory-bank/SECURITY_DELIVERY_PLAN.md:707
+- 🟡 **[Unchecked Task]** Manual testing completed on localhost
+  - 📁 memory-bank/SECURITY_DELIVERY_PLAN.md:708
+- 🟡 **[Unchecked Task]** Environment variables configured in Vercel
+  - 📁 memory-bank/SECURITY_DELIVERY_PLAN.md:709
+- 🟡 **[Unchecked Task]** Code reviewed and approved
+  - 📁 memory-bank/SECURITY_DELIVERY_PLAN.md:710
+- 🟡 **[Unchecked Task]** Zero `npm audit` vulnerabilities
+  - 📁 memory-bank/SECURITY_DELIVERY_PLAN.md:807
+- 🟡 **[Unchecked Task]** Security headers present on 100% of pages
+  - 📁 memory-bank/SECURITY_DELIVERY_PLAN.md:808
+- 🟡 **[Unchecked Task]** CORS only allows configured origin
+  - 📁 memory-bank/SECURITY_DELIVERY_PLAN.md:809
+- 🟡 **[Unchecked Task]** Rate limiting blocks 6th request from same IP
+  - 📁 memory-bank/SECURITY_DELIVERY_PLAN.md:810
+- 🟡 **[Unchecked Task]** Input validation blocks XSS attempts
+  - 📁 memory-bank/SECURITY_DELIVERY_PLAN.md:811
+- 🟡 **[Unchecked Task]** API response time < 500ms (including validation)
+  - 📁 memory-bank/SECURITY_DELIVERY_PLAN.md:814
+- 🟡 **[Unchecked Task]** Rate limiting overhead < 50ms
+  - 📁 memory-bank/SECURITY_DELIVERY_PLAN.md:815
+- 🟡 **[Unchecked Task]** No increase in build time
+  - 📁 memory-bank/SECURITY_DELIVERY_PLAN.md:816
+- 🟡 **[Unchecked Task]** Lighthouse security score: 100
+  - 📁 memory-bank/SECURITY_DELIVERY_PLAN.md:817
+- 🟡 **[Unchecked Task]** Contact form submission success rate > 98%
+  - 📁 memory-bank/SECURITY_DELIVERY_PLAN.md:820
+- 🟡 **[Unchecked Task]** Zero false positives in validation
+  - 📁 memory-bank/SECURITY_DELIVERY_PLAN.md:821
+- 🟡 **[Unchecked Task]** All existing tests pass
+  - 📁 memory-bank/SECURITY_DELIVERY_PLAN.md:822
+- 🟡 **[Unchecked Task]** New security tests achieve >90% coverage
+  - 📁 memory-bank/SECURITY_DELIVERY_PLAN.md:823
+- 🟡 **[Unchecked Task]** Vercel access for environment variables
+  - 📁 memory-bank/SECURITY_DELIVERY_PLAN.md:849
+- 🟡 **[Unchecked Task]** Vercel KV database created and linked
+  - 📁 memory-bank/SECURITY_DELIVERY_PLAN.md:850
+- 🟡 **[Unchecked Task]** Git branch protection rules reviewed
+  - 📁 memory-bank/SECURITY_DELIVERY_PLAN.md:851
+- 🟡 **[Unchecked Task]** Backup of current `.env.local` file
+  - 📁 memory-bank/SECURITY_DELIVERY_PLAN.md:852
+- 🟡 **[Unchecked Task]** List of all deployment domains (prod, staging, preview)
+  - 📁 memory-bank/SECURITY_DELIVERY_PLAN.md:853
+- 🟡 **[Unchecked Task]** Review Claude Memory status
+  - 📁 memory-bank/SESSION_CHECKLIST.md:8
+- 🟡 **[Unchecked Task]** Check Memory Bank for updates
+  - 📁 memory-bank/SESSION_CHECKLIST.md:10
+- 🟡 **[Unchecked Task]** Note any pending tasks
+  - 📁 memory-bank/SESSION_CHECKLIST.md:11
+- 🟡 **[Unchecked Task]** Major changes
+  - 📁 memory-bank/SESSION_CHECKLIST.md:21
+- 🟡 **[Unchecked Task]** New patterns learned
+  - 📁 memory-bank/SESSION_CHECKLIST.md:22
+- 🟡 **[Unchecked Task]** Architectural decisions
+  - 📁 memory-bank/SESSION_CHECKLIST.md:23
+- 🟡 **[Unchecked Task]** `memory-bank/CURRENT.md`
+  - 📁 memory-bank/SESSION_CHECKLIST.md:32
+- 🟡 **[Unchecked Task]** `memory-bank/progress.md`
+  - 📁 memory-bank/SESSION_CHECKLIST.md:33
+- 🟡 **[Unchecked Task]** `memory-bank/CHANGELOG.md` (if major features)
+  - 📁 memory-bank/SESSION_CHECKLIST.md:34
+- 🟡 **[Unchecked Task]** Unit tests pass: npm test
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:479
+- 🟡 **[Unchecked Task]** Build succeeds: npm run build
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:480
+- 🟡 **[Unchecked Task]** Rate limiting works in production
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:481
+- 🟡 **[Unchecked Task]** Cold starts don't reset rate limits
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:482
+- 🟡 **[Unchecked Task]** Graceful degradation if KV unavailable
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:483
+- 🟡 **[Unchecked Task]** All TypeScript errors resolved
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1020
+- 🟡 **[Unchecked Task]** No lint errors (`npm run lint`)
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1021
+- 🟡 **[Unchecked Task]** Tests pass (`npm test`)
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1022
+- 🟡 **[Unchecked Task]** Build succeeds (`npm run build`)
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1023
+- 🟡 **[Unchecked Task]** Import statement added for `@vercel/kv`
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1024
+- 🟡 **[Unchecked Task]** Old Map code completely removed
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1025
+- 🟡 **[Unchecked Task]** Async/await added to function calls
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1026
+- 🟡 **[Unchecked Task]** Error handling includes graceful degradation
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1027
+- 🟡 **[Unchecked Task]** KV database created in Vercel dashboard
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1030
+- 🟡 **[Unchecked Task]** Database named: `doa-rate-limiting`
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1031
+- 🟡 **[Unchecked Task]** Environment variables auto-configured
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1032
+- 🟡 **[Unchecked Task]** Region selected (close to users)
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1033
+- 🟡 **[Unchecked Task]** Free tier limits understood (10k commands/day)
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1034
+- 🟡 **[Unchecked Task]** This plan document reviewed
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1037
+- 🟡 **[Unchecked Task]** Rollback plan understood
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1038
+- 🟡 **[Unchecked Task]** Testing strategy prepared
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1039
+- 🟡 **[Unchecked Task]** Team notified of deployment
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1040
+- 🟡 **[Unchecked Task]** Code review completed
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1057
+- 🟡 **[Unchecked Task]** Tests pass in CI
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1058
+- 🟡 **[Unchecked Task]** Preview deployment works
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1059
+- 🟡 **[Unchecked Task]** Vercel deployment starts automatically
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1067
+- 🟡 **[Unchecked Task]** Build completes successfully
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1068
+- 🟡 **[Unchecked Task]** Function logs show no errors
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1069
+- 🟡 **[Unchecked Task]** Check Vercel dashboard: Deployment status = "Ready"
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1076
+- 🟡 **[Unchecked Task]** No build errors in logs
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1077
+- 🟡 **[Unchecked Task]** Function successfully deployed
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1078
+- 🟡 **[Unchecked Task]** Single submission succeeds
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1081
+- 🟡 **[Unchecked Task]** Email received
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1082
+- 🟡 **[Unchecked Task]** No errors in logs
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1083
+- 🟡 **[Unchecked Task]** No KV errors in function logs
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1086
+- 🟡 **[Unchecked Task]** Data written to KV (check with inspect script)
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1087
+- 🟡 **[Unchecked Task]** Submit 5 times quickly
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1092
+- 🟡 **[Unchecked Task]** 6th submission returns 429
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1093
+- 🟡 **[Unchecked Task]** Retry-After header present
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1094
+- 🟡 **[Unchecked Task]** Error message correct
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1095
+- 🟡 **[Unchecked Task]** Run inspect script (see section 5.2)
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1098
+- 🟡 **[Unchecked Task]** Timestamps stored correctly
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1099
+- 🟡 **[Unchecked Task]** TTL set to 7200 seconds
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1100
+- 🟡 **[Unchecked Task]** No KV errors
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1110
+- 🟡 **[Unchecked Task]** Rate limit events logged correctly
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1111
+- 🟡 **[Unchecked Task]** Submissions recorded properly
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1112
+- 🟡 **[Unchecked Task]** API route response times normal
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1116
+- 🟡 **[Unchecked Task]** No increase in 500 errors
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1117
+- 🟡 **[Unchecked Task]** 429 responses appearing (if rate limited)
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1118
+- 🟡 **[Unchecked Task]** Wait 15-30 minutes for cold start
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1123
+- 🟡 **[Unchecked Task]** Submit again
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1124
+- 🟡 **[Unchecked Task]** Rate limit persists (key test!)
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1125
+- 🟡 **[Unchecked Task]** Submit from different networks/devices
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1128
+- 🟡 **[Unchecked Task]** Each IP tracked separately
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1129
+- 🟡 **[Unchecked Task]** Wait >2 hours
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1132
+- 🟡 **[Unchecked Task]** Old data expires from KV
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1133
+- 🟡 **[Unchecked Task]** Storage not growing indefinitely
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1134
+- 🟡 **[Unchecked Task]** All pre-deployment checks pass
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1171
+- 🟡 **[Unchecked Task]** Deployment completes without errors
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1173
+- 🟡 **[Unchecked Task]** Contact form accepts submissions
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1174
+- 🟡 **[Unchecked Task]** Rate limiting works (5 per hour)
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1175
+- 🟡 **[Unchecked Task]** 429 responses returned after 5 submissions
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1176
+- 🟡 **[Unchecked Task]** Retry-After header present
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1177
+- 🟡 **[Unchecked Task]** KV data stored correctly
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1178
+- 🟡 **[Unchecked Task]** Cold starts don't reset rate limits
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1179
+- 🟡 **[Unchecked Task]** No increase in errors or response times
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1180
+- 🟡 **[Unchecked Task]** Logs show expected behavior
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1181
+- 🟡 **[Unchecked Task]** 24-hour monitoring shows stability
+  - 📁 memory-bank/VERCEL_KV_RATE_LIMITING_PLAN.md:1182
+- 🟡 **[Unchecked Task]** Unit tests for RichText component
+  - 📁 memory-bank/WYSIWYG_RICH_TEXT_PLAN.md:505
+- 🟡 **[Unchecked Task]** Update CMS integration tests
+  - 📁 memory-bank/WYSIWYG_RICH_TEXT_PLAN.md:507
+- 🟡 **[Unchecked Task]** Visual regression testing
+  - 📁 memory-bank/WYSIWYG_RICH_TEXT_PLAN.md:508
+- 🟡 **[Unchecked Task]** Browser compatibility testing
+  - 📁 memory-bank/WYSIWYG_RICH_TEXT_PLAN.md:509
+- 🟡 **[Unchecked Task]** Accessibility testing (contrast ratios)
+  - 📁 memory-bank/WYSIWYG_RICH_TEXT_PLAN.md:510
+- 🟡 **[Unchecked Task]** `/Users/michaelevans/DOA/doa-website/src/components/RichText.tsx`
+  - 📁 memory-bank/WYSIWYG_RICH_TEXT_PLAN.md:521
+- 🟡 **[Unchecked Task]** `/Users/michaelevans/DOA/doa-website/sanity/schemaTypes/objects/bodyText.ts`
+  - 📁 memory-bank/WYSIWYG_RICH_TEXT_PLAN.md:523
+- 🟡 **[Unchecked Task]** `/Users/michaelevans/DOA/doa-website/src/components/__tests__/RichText.test.tsx`
+  - 📁 memory-bank/WYSIWYG_RICH_TEXT_PLAN.md:524
+- 🟡 **[Unchecked Task]** `/Users/michaelevans/DOA/doa-website/sanity/schemaTypes/index.ts`
+  - 📁 memory-bank/WYSIWYG_RICH_TEXT_PLAN.md:529
+- 🟡 **[Unchecked Task]** `/Users/michaelevans/DOA/doa-website/sanity/schemaTypes/project.ts`
+  - 📁 memory-bank/WYSIWYG_RICH_TEXT_PLAN.md:530
+- 🟡 **[Unchecked Task]** `/Users/michaelevans/DOA/doa-website/sanity/schemaTypes/service.ts`
+  - 📁 memory-bank/WYSIWYG_RICH_TEXT_PLAN.md:531
+- 🟡 **[Unchecked Task]** `/Users/michaelevans/DOA/doa-website/sanity/schemaTypes/teamMember.ts`
+  - 📁 memory-bank/WYSIWYG_RICH_TEXT_PLAN.md:532
+- 🟡 **[Unchecked Task]** `/Users/michaelevans/DOA/doa-website/sanity/schemaTypes/testimonial.ts`
+  - 📁 memory-bank/WYSIWYG_RICH_TEXT_PLAN.md:533
+- 🟡 **[Unchecked Task]** `/Users/michaelevans/DOA/doa-website/sanity/schemaTypes/aboutPage.ts`
+  - 📁 memory-bank/WYSIWYG_RICH_TEXT_PLAN.md:534
+- 🟡 **[Unchecked Task]** `/Users/michaelevans/DOA/doa-website/sanity/schemaTypes/homepageSettings.ts`
+  - 📁 memory-bank/WYSIWYG_RICH_TEXT_PLAN.md:535
+- 🟡 **[Unchecked Task]** `/Users/michaelevans/DOA/doa-website/src/components/Projects.tsx`
+  - 📁 memory-bank/WYSIWYG_RICH_TEXT_PLAN.md:538
+- 🟡 **[Unchecked Task]** `/Users/michaelevans/DOA/doa-website/src/components/Services.tsx`
+  - 📁 memory-bank/WYSIWYG_RICH_TEXT_PLAN.md:539
+- 🟡 **[Unchecked Task]** `/Users/michaelevans/DOA/doa-website/src/components/Testimonials.tsx`
+  - 📁 memory-bank/WYSIWYG_RICH_TEXT_PLAN.md:540
+- 🟡 **[Unchecked Task]** `/Users/michaelevans/DOA/doa-website/src/app/about/page.tsx`
+  - 📁 memory-bank/WYSIWYG_RICH_TEXT_PLAN.md:541
+- 🟡 **[Unchecked Task]** `/Users/michaelevans/DOA/doa-website/src/components/AboutCTA.tsx`
+  - 📁 memory-bank/WYSIWYG_RICH_TEXT_PLAN.md:542
+- 🟡 **[Unchecked Task]** `/Users/michaelevans/DOA/doa-website/src/types/sanity.ts`
+  - 📁 memory-bank/WYSIWYG_RICH_TEXT_PLAN.md:545
+- 🟡 **[Unchecked Task]** `/Users/michaelevans/DOA/doa-website/src/components/__tests__/Projects.cms.test.tsx`
+  - 📁 memory-bank/WYSIWYG_RICH_TEXT_PLAN.md:546
+- 🟡 **[Unchecked Task]** `/Users/michaelevans/DOA/doa-website/src/components/__tests__/Services.cms.test.tsx`
+  - 📁 memory-bank/WYSIWYG_RICH_TEXT_PLAN.md:547
+- 🟡 **[Unchecked Task]** All tests pass
+  - 📁 README.md:235
+- 🟡 **[Unchecked Task]** Code coverage meets requirements
+  - 📁 README.md:236
+- 🟡 **[Unchecked Task]** TypeScript types properly defined
+  - 📁 README.md:237
+- 🟡 **[Unchecked Task]** Components follow naming conventions
+  - 📁 README.md:238
+- 🟡 **[Unchecked Task]** Accessibility requirements met
+  - 📁 README.md:239
+- 🟡 **[Unchecked Task]** Performance impact considered
+  - 📁 README.md:240
+
+### 🟢 Low Priority
+
+- 🟢 **[NOTE]** Store the error channel instance in the global scope so that the Studio application can
+  - 📁 .sanity/runtime/index.html:35
+- 🟢 **[OPTIMIZE]** images** through Sanity CDN
+  - 📁 CLAUDE.md:168
+- 🟢 **[NOTE]** s
+  - 📁 COMPONENT_CONSOLIDATION_PLAN.md:547
+- 🟢 **[OPTIMIZE]** CSS
+  - 📁 CUSTOM_LOADER_IMPLEMENTATION_PLAN.md:315
+- 🟢 **[NOTE]** **: Must be verified domain in production
+  - 📁 docs/api/ENVIRONMENT_VARS.md:61
+- 🟢 **[NOTE]** s\n\n- This plan provides a sys
+  - 📁 docs/CSS_OPTIMIZATION_PLAN.md:1
+- 🟢 **[NOTE]** any issues encountered
+  - 📁 docs/reports/todo-analysis-2025-10-20.md:933
+- 🟢 **[OPTIMIZE]** imports
+  - 📁 docs/reports/todo-analysis-2025-10-20.md:1603
+- 🟢 **[NOTE]** any pending tasks
+  - 📁 docs/reports/todo-analysis-2025-10-20.md:1731
+- 🟢 **[NOTE]** any issues encountered
+  - 📁 docs/reports/todo-analysis-latest.md:987
+- 🟢 **[OPTIMIZE]** imports
+  - 📁 docs/reports/todo-analysis-latest.md:1657
+- 🟢 **[NOTE]** any pending tasks
+  - 📁 docs/reports/todo-analysis-latest.md:1785
+- 🟢 **[NOTE]** any issues encountered
+  - 📁 docs/reports/todo-test-full-2025-10-20.md:937
+- 🟢 **[OPTIMIZE]** imports
+  - 📁 docs/reports/todo-test-full-2025-10-20.md:1607
+- 🟢 **[NOTE]** any pending tasks
+  - 📁 docs/reports/todo-test-full-2025-10-20.md:1735
+- 🟢 **[NOTE]** s
+  - 📁 docs/ROUTE_MIGRATION_PLAN.md:92
+- 🟢 **[NOTE]** ** This is low probability because:
+  - 📁 IMAGE_ASPECT_RATIO_INVESTIGATION.md:227
+- 🟢 **[NOTE]** ** Actual services are managed in the Services section (see 3.2)
+  - 📁 memory-bank/CMS_USER_GUIDE_OUTLINE.md:359
+- 🟢 **[NOTE]** ** Actual projects are managed in the Projects section (see 3.1)
+  - 📁 memory-bank/CMS_USER_GUIDE_OUTLINE.md:373
+- 🟢 **[NOTE]** **: `next.config.ts` already has `removeConsole: process.env.NODE_ENV === 'production'` (line 33), which removes console.log but NOT console.error/warn/info.
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:1061
+- 🟢 **[NOTE]** **: If comprehensive audit finds no issues (as initial scan suggests), this task is mostly about enabling stricter rules and documentation. Estimated time: 2 hours.
+  - 📁 memory-bank/CRITICAL_FIXES_PLAN.md:2103
+- 🟢 **[NOTE]** **: Tasks 1.1 and 1.2 can be done in parallel by different people, but 1.2 should complete first to have valid credentials for testing.
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1402
+- 🟢 **[NOTE]** s and Gotchas
+  - 📁 memory-bank/EMAIL_FIX_PLAN.md:1439
+- 🟢 **[NOTE]** **: You'll need to find the actual font filename after build. Check `.next/static/media/` directory.
+  - 📁 memory-bank/LIGHTHOUSE_LCP_OPTIMIZATION_PLAN.md:246
+- 🟢 **[NOTE]** s
+  - 📁 memory-bank/LIGHTHOUSE_LCP_OPTIMIZATION_PLAN.md:699
+- 🟢 **[NOTE]** **: Current scan shows no `eslint-plugin-security` installed. This task is conditional.
+  - 📁 memory-bank/SECURITY_DELIVERY_PLAN.md:527
+- 🟢 **[NOTE]** **: Current in-memory solution is sufficient for basic protection. KV integration would provide persistence but adds complexity and cost.
+  - 📁 memory-bank/SECURITY_PHASE_2_COMPLETION.md:93
+- 🟢 **[NOTE]** s
+  - 📁 memory-bank/SERVER_COMPONENT_MIGRATION_PLAN.md:322
+- 🟢 **[NOTE]** ** Keep 200 char validation
+  - 📁 memory-bank/WYSIWYG_RICH_TEXT_PLAN.md:28
+- 🟢 **[NOTE]** ** `companyOverview` and `storyContent` already use Portable Text
+  - 📁 memory-bank/WYSIWYG_RICH_TEXT_PLAN.md:41
+- 🟢 **[NOTE]** companyOverview and storyContent already use block type
+  - 📁 memory-bank/WYSIWYG_RICH_TEXT_PLAN.md:436
+- 🟢 **[OPTIMIZE]** CSS
+  - 📁 next.config.ts:31
+- 🟢 **[NOTE]** Our simple regex allows consecutive dots, which is acceptable for this use case
+  - 📁 src/lib/__tests__/utils.test.ts:122

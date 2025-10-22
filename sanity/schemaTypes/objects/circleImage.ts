@@ -1,15 +1,13 @@
 import {defineType, defineField} from 'sanity'
-import {CircleImageInput} from '../components/CircleImageInput'
 
 export default defineType({
   name: 'circleImage',
   title: 'Circle Image',
   type: 'image',
-  components: {
-    input: CircleImageInput,
-  },
   options: {
-    hotspot: true,
+    hotspot: {
+      previews: [] // Official way to disable aspect ratio buttons (Sanity v3.86.0+)
+    },
     accept: 'image/*',
   },
   fields: [
