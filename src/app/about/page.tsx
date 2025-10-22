@@ -70,8 +70,15 @@ const AboutPage = () => {
   const getPhotoUrl = (photo: SanityResponsiveImage | undefined) => {
     if (!photo) return null
     try {
-      // Use portraitImage for team member photos (4:5 aspect ratio)
-      return portraitImage(photo, 400).url()
+      // Respect Sanity crop/hotspot - no forced aspect ratio since displayed as circle
+      return urlFor(photo)
+        .width(400)
+        .height(400)
+        .fit('crop')
+        .crop('focalpoint')
+        .quality(85)
+        .auto('format')
+        .url()
     } catch {
       return null
     }

@@ -5,9 +5,7 @@ export default defineType({
   title: 'Circle Image',
   type: 'image',
   options: {
-    hotspot: {
-      previews: [] // Official way to disable aspect ratio buttons (Sanity v3.86.0+)
-    },
+    hotspot: true,
     accept: 'image/*',
   },
   fields: [
