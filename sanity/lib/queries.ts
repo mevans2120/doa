@@ -251,9 +251,6 @@ export const aboutPageQuery = groq`*[_type == "aboutPage"] | order(_updatedAt de
   missionText,
   visionTitle,
   visionText,
-  storyTitle,
-  storyContent,
-  storyImage,
   teamSectionTitle,
   seo
 }`

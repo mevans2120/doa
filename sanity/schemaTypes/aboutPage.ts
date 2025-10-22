@@ -58,23 +58,6 @@ export const aboutPage = defineType({
       description: 'Vision statement with optional formatting',
     }),
     defineField({
-      name: 'storyTitle',
-      title: 'Our Story Title',
-      type: 'string',
-    }),
-    defineField({
-      name: 'storyContent',
-      title: 'Our Story Content',
-      type: 'richBodyText',
-      description: 'Company story with formatting and lists',
-    }),
-    defineField({
-      name: 'storyImage',
-      title: 'Story Section Image',
-      type: 'responsiveImage',
-      description: 'Will be displayed in landscape (16:9) format',
-    }),
-    defineField({
       name: 'teamSectionTitle',
       title: 'Team Section Title',
       type: 'string',

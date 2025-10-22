@@ -31,9 +31,6 @@ interface AboutPageContent {
   missionText?: TypedObject | TypedObject[]
   visionTitle?: string
   visionText?: TypedObject | TypedObject[]
-  storyTitle?: string
-  storyContent?: TypedObject[]
-  storyImage?: SanityResponsiveImage
   teamSectionTitle?: string
   seo?: {
     metaTitle?: string
@@ -156,32 +153,6 @@ const AboutPage = () => {
                   {pageContent.visionText && <RichText value={pageContent.visionText} />}
                 </div>
               </div>
-            </div>
-          </section>
-        )}
-
-        {/* Our Story Section */}
-        {(pageContent?.storyTitle || pageContent?.storyContent) && (
-          <section className="mb-20 grid md:grid-cols-2 gap-12 items-center">
-            {pageContent?.storyImage && (
-              <div className="relative h-96 rounded-lg overflow-hidden bg-zinc-900 order-2 md:order-1">
-                <Image
-                  src={urlFor(pageContent.storyImage).url()}
-                  alt="Our Story"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            )}
-            <div className="order-1 md:order-2">
-              <h2 className="heading-font text-3xl font-semibold mb-6">
-                {pageContent?.storyTitle || 'Our Story'}
-              </h2>
-              {pageContent?.storyContent && (
-                <div className="text-gray-300 space-y-4 leading-relaxed">
-                  <PortableText value={pageContent.storyContent} />
-                </div>
-              )}
             </div>
           </section>
         )}
