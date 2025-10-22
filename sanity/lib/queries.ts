@@ -193,7 +193,19 @@ export const teamMembersQuery = groq`*[_type == "teamMember"] | order(order asc,
   name,
   role,
   bio,
-  photo,
+  photo {
+    asset-> {
+      _id,
+      url,
+      metadata {
+        dimensions,
+        lqip
+      }
+    },
+    hotspot,
+    crop,
+    alt
+  },
   imdbUrl
 }`
 
