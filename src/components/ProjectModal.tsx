@@ -110,7 +110,7 @@ const ProjectModal = ({
                     }`}
                   >
                     <Image
-                      src={img as unknown as string}
+                      src={getImageSource(img)}
                       alt={img.alt || `Thumbnail ${idx + 1}`}
                       fill
                       className="object-cover"

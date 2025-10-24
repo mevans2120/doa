@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import { getImageSource } from '../../sanity/lib/image'
 import type { ProjectData } from '@/hooks/useProjectModal'
 
 interface ProjectsGridProps {
@@ -22,7 +23,7 @@ const ProjectsGrid = ({ projects, onProjectClick, showViewAllCTA = false }: Proj
             <div className="aspect-[4/3] relative overflow-hidden">
               {project.mainImage ? (
                 <Image
-                  src={project.mainImage as unknown as string}
+                  src={getImageSource(project.mainImage)}
                   alt={project.mainImage.alt || project.title}
                   fill
                   className="object-cover"
